@@ -1,0 +1,24 @@
+ID:401901ffe5c50cebb573fb9cb5d90a55
+
+{
+    "window.zoomLevel": 1,
+    "guides.enabled": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+    "vetur.validation.template": false,
+    "path-intellisense.extensionOnImport": true,
+    "workbench.colorTheme": "Arc Dark",
+    "fileheader.Author": "yb",
+    "fileheader.LastModifiedBy": "yb",
+    "sync.gist": "401901ffe5c50cebb573fb9cb5d90a55",
+    "sync.lastUpload": "2018-01-22T03:29:56.328Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false
+}

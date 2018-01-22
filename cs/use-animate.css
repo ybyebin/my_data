@@ -1,0 +1,17 @@
+.a {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: zoomIn;
+    animation-timing-function: cubic-bezier(0.74, 1.38, 1, 0.43)
+}
+
+.a {
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    animation-name: shake;
+}
+
+.a {
+    animation: finger .6s infinite;
+    -webkit-animation: finger .6s infinite;
+}
