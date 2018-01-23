@@ -360,6 +360,19 @@
             } else {
                 return 'Unkonwn';
             }
+        },
+
+        // 倒计时
+        countDown: function(num, fun) {
+            for (var i = 0; i <= num; i++) {
+                (function(i) {
+                    setTimeout(function() {
+                        console.log(i);
+                        fun();
+                    }, (num + 1 - i) * 1000);
+                })(i);
+            }
+
         }
 
 
@@ -373,6 +386,6 @@
 console.log('日期:' + base.format(new Date(), 'yyyy-MM-dd'));
 console.log(base.getExplore() + '========' + base.getExploreName())
 
-function randomNumber(n) {
 
-}
+
+base.countDown(5);
