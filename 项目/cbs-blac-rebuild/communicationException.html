@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>通讯状态</title>
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="plugin/jQuery/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" href="./css/bayax.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- <link rel="stylesheet" href="./css/basegreen.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/datashow.css">
+    <link rel="stylesheet" href="plugin/jQuery/jquery.mCustomScrollbar.css" type="text/css">
+</head>
+
+<body class="layui-layout-body">
+    <div id="app" class="bayax-layout-admin  layui-layout">
+        <div class="bayax-layout-header  layui-header clearfix">
+            <div class="bayax-logo">
+                <img src="./images/logo.png" alt="">
+                <label>
+					<span class="bayax-proname">智能建筑管理系统</span>
+				</label>
+
+            </div>
+            <ul class="bayax-nav  bayax-layout-left">
+                    <li class="layui-nav-item"><a href="./deviceControlCanvas.html">设备监控</a></li>
+                    <li class="layui-nav-item "><a href="./warn.html">报警</a></li>
+                    <li class="layui-nav-item"><a href="./energyView.html">能源管理</a></li>
+                    <li class="layui-nav-item"><a  class="active" href="./communicationException.html">系统管理</a></li>
+
+            </ul>
+            <div class="bayax-hover-select bayax-head-bar">
+                <span class="bayax-icon icon-format_list_bulleted"></span>
+                <ul class="bayax-hover-ul bayax-anim bayax-anim-upbit">
+                        <li><a href="./deviceControlCanvas.html">设备监控</a></li>
+                        <li><a href="warn.html">报警</a></li>
+                        <li><a href="./energyView.html">能源管理</a></li>
+                        <li><a href="./communicationException.html">系统管理</a></li>
+                </ul>
+            </div>
+
+            <ul class="bayax-nav bayax-layout-right">
+
+                <li class="layui-nav-item"><a>2017-11-7 17:04:42</a></li>
+                <li class="layui-nav-item"><a href="">系统设置</a></li>
+                <li class="layui-nav-item person-operate bayax-hover-select">
+                    <a href="javascript:;">
+                        <img src="./images/People.png" class="">
+                    </a>
+                    <ul class="bayax-hover-ul bayax-anim bayax-anim-upbit">
+                        <li><a href="javascript:;">修改密码</a></li>
+                        <li><a href="javascript:;">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="bayax-nav bayax-layout-right head-warn">
+                <li>
+                    <a> <img src="images/warn.png"></a>
+                </li>
+            </ul>
+
+
+
+
+
+        </div>
+
+        <div class="bayax-body sys-man-body">
+
+            <!-- 内容主体区域 -->
+            <div class="bayax-content">
+
+                <div class="sys-management layui-side bayax-bg-black">
+                    <div class="layui-side-scroll">
+
+                        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+                            <li class="layui-nav-item layui-nav-itemed active">
+                                <a class="" href="javascript:;"> <i class="txzt"></i> 通讯状态</a>
+
+                            </li>
+                            <li class="layui-nav-item layui-nav-itemed">
+                                <a class="" href="javascript:;"><i class="xtrz"></i>系统日志</a>
+                                <dl class="layui-nav-child">
+                                    <dd><a href="./commExceptionlog.html">通信异常日志</a></dd>
+
+                                </dl>
+                            </li>
+
+                            <li class="layui-nav-item"><a href="javascript:;"><i class="gyxt"></i>关于系统</a></li>
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+                <div class="sys-management-body">
+
+                    <div v-bind:class="{basehide:showSecondDiv}" class="bayaxMscroll content-main content-main-border">
+                        <div class="div-equipment">
+                            <table class="bayax-table">
+                                <thead>
+                                    <tr>
+                                        <th>设备名称</th>
+                                        <th>IP地址</th>
+                                        <th>设备状态</th>
+                                        <th>发生时间</th>
+                                        <th>查看子设备</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in allEquipment">
+                                        <td v-text="item.name"></td>
+                                        <td v-text="item.ip"></td>
+                                        <td v-text="item.status" v-bind:class="{warn:item.iswarn}"></td>
+                                        <td v-text="item.create_time"></td>
+                                        <td>
+                                            <a @click="commexcSonGetData(item.id)" v-bind:class="{ basehide: item.ishide }" class="bayax-a" href="javascript:;">查询子设备</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                    <div v-bind:class="{baseshow:showSecondDiv}" class="basehide bayaxMscroll content-main content-main-border">
+                        <div>
+                            <button @click="btnGoBack" class="bayax-btn">返回</button>
+                        </div>
+                        <div class="div-sonequipment">
+                            <table class="bayax-table">
+                                <thead>
+                                    <tr>
+                                        <th>设备名称</th>
+                                        <th>设备状态</th>
+                                        <th>发生时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in allSonEquipment">
+                                        <td v-text="item.name"></td>
+                                        <!-- <td v-text="item.ip"></td> -->
+                                        <td v-text="item.status" v-bind:class="{warn:item.iswarn}"></td>
+                                        <td v-text="item.create_time"></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div v-bind:class="{ loadingShow:loadingShow }" class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script src="plugin/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="js/basic/api.js "></script>
+    <!-- <script src="./js/basic/common.js"></script> -->
+    <script src="plugin/vue.js "></script>
+    <script src="plugin/layui/layui.js "></script>
+    <script src="plugin/jQuery/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./js/datashow/communicationException.js"></script>
+
+</body>
+
+</html>

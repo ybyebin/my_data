@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-24 10:16:04 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-24 14:13:00
+ * @Last Modified time: 2018-01-25 14:01:16
  */
 
 "use strict";
@@ -22,18 +22,57 @@
         root.base = factory(root);
     }
 }(this, function() {
-    var isFunc = function(f) {
+
+    /******************************私有方法*****************************************/
+    // 判断是否是function
+    function isFunc(f) {
         return typeof f === 'function';
     }
 
-    function isEmptyObject(e) {
-        var t;
-        for (t in e)
-            return !1;
-        return !0
+    // 判断数据类型
+    function type(elem) {
+        if (elem == null) {
+            return elem + '';
+        }
+        return toString.call(elem).replace(/[\[\]]/g, '').split(' ')[1].toLowerCase();
     }
+
+    // 全局数据状态管理
+    var states = {}; // 私有变量，用来存储状态与数据
+    /**********************************对外接口******************************************/
     var base = {
-        /**********************************公共******************************************/
+
+        // 全局数据状态管理方法--------------begin
+        /*
+         * @param options {object} 键值对
+         * @param target {object} 属性值为对象的属性，只在函数实现时递归中传入
+         * @desc 通过传入键值对的方式修改state树，使用方式与小程序的data或者react中的setStates类似
+         */
+        statesSet: function(options, target) {
+            var keys = Object.keys(options);
+            var o = target ? target : states;
+
+            keys.map(function(item) {
+                if (typeof o[item] == 'undefined') {
+                    o[item] = options[item];
+                } else {
+                    type(o[item]) == 'object' ? set(options[item], o[item]) : o[item] = options[item];
+                }
+                return item;
+            })
+        },
+        /**
+         * @Param name 属性名
+         * @Description 通过属性名获取保存在states中的值
+         */
+        statesGet: function(name) {
+            return states[name] ? states[name] : undefined;
+        },
+        getGlobalStatusData: function() {
+            return states;
+        },
+        // 全局数据状态管理方法--------------end
+
         /**
          * [时间格式化函数]
          * @param  {[obj]} date [日期对象]
@@ -41,7 +80,7 @@
          * @return {[string]}        [返回格式化后的字符串]
          * 
          */
-        format: function(date, format) {
+        timeFormat: function(date, format) {
             var args = {
                 "M+": date.getMonth() + 1,
                 "d+": date.getDate(),
@@ -69,7 +108,7 @@
          *>= 1day && < 1year, 显示日期“XX月XX日 XX:XX” 
          *>= 1year, 显示具体日期“XXXX年XX月XX日 XX:XX” 
          */
-        timeFormat: function(time) {
+        individuationTimeFormat: function(time) {
             var date = new Date(time),
                 curDate = new Date(),
                 year = date.getFullYear(),
@@ -225,8 +264,8 @@
 
         /**
          * 图片预加载
-         * 
-         *  var loader = new loadimg({
+         *  var loading = base.imgLoader;
+         *  var loader = new loading({
          *      resources: [
          *          // 新增
          *          './image/bgnew.jpg',
@@ -253,7 +292,7 @@
                 onComplete: null //加载完毕回调函数，传入参数total
             }
             if (config) {
-                for (i in config) {
+                for (var i in config) {
                     this.option[i] = config[i];
                 }
             } else {
@@ -433,12 +472,33 @@
         // 倒计时
         countDown: function(num, fun) {
             for (var i = 0; i <= num; i++) {
-                (function(i) {
-                    setTimeout(function() {
+                // (function(i) {
+                //     setTimeout(function() {
+                //         console.log(i);
+                //         if (i === 0) {
+                //             if (typeof(fun) === 'function') {
+                //                 fun();
+                //             }
+                //         }
+
+                //     }, (num + 1 - i) * 1000);
+                // })(i);
+
+                setTimeout((function(i, fun) {
+                    return function() {
                         console.log(i);
-                        fun();
-                    }, (num + 1 - i) * 1000);
-                })(i);
+                        if (i === 0) {
+                            if (typeof(fun) === 'function') {
+                                fun();
+                            }
+                        }
+                    }
+                })(i, fun), (num + 1 - i) * 1000)
+
+
+
+
+
             }
 
         },
@@ -462,24 +522,55 @@
             };
             return type;
         },
-        // 自适应rem初始化
+        // 自适应rem初始化(淘宝~)
         setHtmlRem: function() {
-            (function(b) {
-                var a = {};
-                a.Html = b.getElementsByTagName('html')[0];
-                a.widthProportion = function() {
-                    var c = (b.body && b.body.clientWidth || a.Html.offsetWidth) / 750;
-                    console.log(c)
-                    return c > 1 ? 1 : c < 0.4 ? 0.4 : c;
-                };
-                a.changePage = function() {
-                    // console.log(a.widthProportion())
-                    a.Html.setAttribute('style', 'font-size:' + a.widthProportion() * 100 + 'px!important;height:auto');
-                }
+            // (function(b) {
+            var b = document;
+            var a = {};
+            a.Html = b.getElementsByTagName('html')[0];
+            a.widthProportion = function() {
+                var c = (b.body && b.body.clientWidth || a.Html.offsetWidth) / 750;
+                console.log(c)
+                return c > 1 ? 1 : c < 0.4 ? 0.4 : c;
+            };
+            a.changePage = function() {
+                // console.log(a.widthProportion())
+                a.Html.setAttribute('style', 'font-size:' + a.widthProportion() * 100 + 'px!important;height:auto');
+            }
 
-                a.changePage();
-                setInterval(a.changePage, 1000);
-            })(document);
+            a.changePage();
+            setInterval(a.changePage, 1000);
+            // })(document);
+        },
+
+        /**
+         *  生成随机字符串
+         * 
+         * @param {number} length   随机字符串长度 如果不填或0 默认为18
+         * @returns 
+         */
+        randomString: function(length) {
+            var type = typeof(length);
+            if (type === 'number' || type === 'undefined') {
+                length = length || 18;
+                var random_number = new Date().getTime().toString(36);　
+                var base_charts = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'; /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/ 　　
+                var chart_length = base_charts.length;
+                var str = '';
+                for (var i = 0; i < length; i++) {　　　　
+                    str += base_charts.charAt(Math.floor(Math.random() * chart_length));　　
+                }　
+
+                if (length <= 8) {
+                    return str;
+                } else {
+
+                    return str.substr(0, str.length - 8) + random_number;
+                }
+                console.log('输入length:' + length);
+            } else {
+                alert('输入错误')
+            }
         }
 
 
@@ -491,12 +582,17 @@
     return base;
 }));
 
-console.log('日期:' + base.format(new Date(), 'yyyy-MM-dd'));
-console.log(base.getExplore() + '========' + base.getExploreName())
 
 
-console.log(base.getBrowserLanguage());
-console.log(base.judgeMachine());
 
-// base.setHtmlRem();
-console.log(base.timeFormat('2018/01/24 11:54:56'))
+base.countDown(5);
+console.log('日期:' + base.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
+console.log('浏览器类型:' + base.getExplore() + '========' + base.getExploreName())
+console.log('获取浏览器语言:' + base.getBrowserLanguage());
+console.log('pc？移动:' + base.judgeMachine());
+console.log('个性化输出:' + base.individuationTimeFormat('2018/01/25 13:20:56'));
+console.log('随机字符串:' + base.randomString());
+
+base.statesSet({ name: 'yb' });
+console.log(JSON.stringify(base.getGlobalStatusData(), null, 2));
+console.log(base.statesGet('names'));

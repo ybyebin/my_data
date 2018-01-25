@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>智能建筑管理系统</title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="webscada" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="./css/basic/colpick.css">
+    <link rel="stylesheet" href="plugin/jQuery/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" href="./css/bayax.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- <link rel="stylesheet" href="./css/basegreen.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/canvas.css">
+
+
+
+
+    <!-- 必须导入的JS -->
+
+    <script src="plugin/jQuery/jquery-1.11.1.min.js"></script>
+    <!-- <script type="text/javascript" src="js/edit/jquery-1.10.2.min.js"></script> -->
+    <script type="text/javascript" src="js/canvas/basic/canvg.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/Class.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/jquery.autoresize.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/jquery.contextmenu.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/jquery-touch_punch.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/json2.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/pathfinding-browser.min.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/raphael.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/rgbcolor.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/shifty.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/draw2d.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/fraphael.js"></script>
+
+    <!-- 拖动效果 -->
+    <script type="text/javascript" src="js/canvas/basic/jquery.browser.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/jquery-ui-1.8.23.custom.min.js"></script>
+    <script type="text/javascript" src="js/canvas/actionJS/view.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="app" class="draw2d-canvas bayax-layout-admin  layui-layout">
+        <div class="bayax-layout-header  layui-header clearfix">
+            <div class="bayax-logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+            <ul class="bayax-nav  bayax-layout-left  bayax-layout-leftone">
+                <li class="layui-nav-item head">
+                    <a class="go-subsys" href="javascript:;">
+                        <span><i class="icon-keyboard_arrow_left"></i></span>
+                        <span class="group-name"> <div v-bind:class="classObject">123123</div></span>
+                        </span>
+                    </a>
+                    <label>
+                         <span class="title"> 当前您所在的位置:</span>  
+                         <span class="image-name"></span>
+                    </label>
+
+                </li>
+            </ul>
+
+
+
+        </div>
+        <div class="bayax-layout-header bayax-layout-header2  layui-header clearfix">
+            <div class="bayax-logo ">
+                <ul id="toolbar" class="toolbar clearfix">
+
+                </ul>
+            </div>
+
+            <div class="bayax-layout-left bayax-layout-lefttwo">
+                <div class="layui-tab">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">基本图形</li>
+                        <li>通用</li>
+                        <li>专业</li>
+                        <li>建筑设备</li>
+                        <li>安全防范</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <ul class="comportant-ul clearfix">
+                                <li>
+                                    <span class="juxing componentImg draw2d_droppable" data-shape="rectangleComponent"></span>
+                                    <p>矩形</p>
+                                </li>
+
+                                <li>
+                                    <span class="yuanjiajuxing componentImg draw2d_droppable" data-shape="RoundedRectangleComponent"></span>
+                                    <p>圆角矩形</p>
+                                </li>
+                                <li>
+                                    <span class="tuoyuan componentImg draw2d_droppable" data-shape="EllipseComponent"></span>
+                                    <p>椭圆</p>
+                                </li>
+                                <li>
+                                    <span class="straightline componentImg draw2d_droppable" data-shape="LineComponent"></span>
+                                    <p>直线</p>
+                                </li>
+                                <li>
+                                    <span class="duobianxing componentImg draw2d_droppable" data-shape="polygonComponent"></span>
+                                    <p>多边形</p>
+                                </li>
+                                <li>
+                                    <span class="ArrowUp componentImg draw2d_droppable" data-shape="forUpComponent"></span>
+                                    <p>箭头</p>
+                                </li>
+                                <li>
+                                    <span class="Arrowright componentImg draw2d_droppable" data-shape="forRightComponent"></span>
+                                    <p>箭头</p>
+                                </li>
+                                <li>
+                                    <span class="down componentImg draw2d_droppable" data-shape="forDownComponent"></span>
+                                    <p>箭头</p>
+                                </li>
+                                <li>
+                                    <span class="left componentImg draw2d_droppable" data-shape="forLeftComponent"></span>
+                                    <p>箭头</p>
+                                </li>
+                                <li>
+                                    <span class="leveldouble componentImg draw2d_droppable" data-shape="BothArrowHComponent"></span>
+                                    <p>双箭头</p>
+                                </li>
+                                <li>
+                                    <span class="Verticaldouble componentImg draw2d_droppable" data-shape="BothArrowVComponent"></span>
+                                    <p>双箭头</p>
+                                </li>
+                                <li>
+                                    <span class="juxing componentImg draw2d_droppable" data-shape="conduitCompontent"></span>
+                                    <p>管道</p>
+                                </li>
+                                <li>
+                                    <span class="juxing componentImg draw2d_droppable" data-shape="conduitCompontentV"></span>
+                                    <p>管道</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul class="comportant-ul clearfix">
+                                <li>
+                                    <span class="tag componentImg draw2d_droppable" data-shape="LabelComponent"></span>
+                                    <p>标签</p>
+                                </li>
+                                <!-- <li>
+                                    <span class="button componentImg draw2d_droppable" data-shape="buttonComponent"></span>
+                                    <p>按钮</p>
+                                </li> -->
+                                <li>
+                                    <span class="text componentImg draw2d_droppable" data-shape="textComponent"></span>
+                                    <p>文本</p>
+                                </li>
+                                <li>
+                                    <span class="jpg componentImg draw2d_droppable" data-shape="imageComponent"></span>
+                                    <p>自定义</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul class="comportant-ul clearfix">
+                                <li>
+                                    <span class="switch componentImg draw2d_droppable" data-shape="switchComponent"></span>
+                                    <p>开关</p>
+                                </li>
+                                <li>
+                                    <span class="piping componentImg draw2d_droppable" data-shape="pipingComponent"></span>
+                                    <p>管道</p>
+                                </li>
+                                <li>
+                                    <span class="Warninglamp componentImg draw2d_droppable" data-shape="WarninglampComponent"></span>
+                                    <p>报警提示灯</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="layui-tab-item ">
+                            <div class="components-num4">
+                                <a id="LeftBotton" class="LeftBotton" href="javascript:void(0);" target="_self"></a>
+
+                                <div class="pcont" id="scroll_div">
+                                    <div class="ScrCont">
+                                        <ul id="scroll_ul_1" class="comportant-ul scroll-ul">
+                                            <li>
+                                                <span class="Blowerfan componentImg draw2d_droppable" data-shape="blowerfanComponent"></span>
+                                                <p>送风机</p>
+                                            </li>
+
+                                            <li class="space-border">
+                                                <span class="Exhaustfan componentImg draw2d_droppable" data-shape="exhaustfanComponent"></span>
+                                                <p>排风机</p>
+                                            </li>
+                                            <li class="space-border">
+                                                <span class="beng componentImg draw2d_droppable" data-shape="bengComponent"></span>
+                                                <p>泵</p>
+                                            </li>
+                                            <li>
+                                                <span class="ElectricTwo-wayValve componentImg draw2d_droppable" data-shape="ElectricTwoWayValveComponent"></span>
+                                                <p>电动两通阀</p>
+                                            </li>
+                                            <li>
+                                                <span class="SolenoidValve componentImg draw2d_droppable" data-shape="SolenoidValveComponent"></span>
+                                                <p>电磁阀</p>
+                                            </li>
+                                            <li class="space-border">
+                                                <span class="ElectricButterflyValves componentImg draw2d_droppable" data-shape="ElectricButterflyValvesComponent"></span>
+                                                <p>电动蝶阀</p>
+                                            </li>
+
+                                            <li>
+                                                <span class="AirFiltration componentImg draw2d_droppable" data-shape="AirFiltrationComponent"></span>
+                                                <p>空气过滤器</p>
+                                            </li>
+                                            <li>
+                                                <span class="AirHeating componentImg draw2d_droppable" data-shape="AirHeatingComponent"></span>
+                                                <p>空气加热器</p>
+                                            </li>
+                                            <li>
+                                                <span class="AirCooler componentImg draw2d_droppable" data-shape="AirCoolerComponent"></span>
+                                                <p>空气冷却器</p>
+                                            </li>
+                                            <li>
+                                                <span class="Humidifier componentImg draw2d_droppable" data-shape="HumidifierComponent"></span>
+                                                <p>加湿器</p>
+                                            </li>
+                                            <li class="space-border">
+                                                <span class="controlPanel componentImg draw2d_droppable" data-shape="controlPanelComponent"></span>
+                                                <p>温控面板</p>
+                                            </li>
+                                            <li>
+                                                <span class="FluorescentLamp componentImg draw2d_droppable" data-shape="FluorescentLampComponent"></span>
+                                                <p>荧光灯</p>
+                                            </li>
+
+                                            <li>
+                                                <span class="LED componentImg draw2d_droppable" data-shape="LEDComponent"></span>
+                                                <p>LED灯</p>
+                                            </li>
+                                            <li>
+                                                <span class="Incandescent componentImg draw2d_droppable" data-shape="IncandescentComponent"></span>
+                                                <p>白炽灯</p>
+                                            </li>
+                                            <li class="space-border">
+                                                <span class="MetalHalide componentImg draw2d_droppable" data-shape="MetalHalideComponent"></span>
+                                                <p>金卤灯</p>
+                                            </li>
+                                            <li>
+                                                <span class="temperature componentImg draw2d_droppable" data-shape="temperatureComponent"></span>
+                                                <p>温度</p>
+                                            </li>
+                                            <li>
+                                                <span class="humidity componentImg draw2d_droppable" data-shape="humidityComponent"></span>
+                                                <p>湿度</p>
+                                            </li>
+                                            <li>
+                                                <span class="pressure componentImg draw2d_droppable" data-shape="pressureComponent"></span>
+                                                <p>压力</p>
+                                            </li>
+                                            <li>
+                                                <span class="differentialPressure componentImg draw2d_droppable" data-shape="differentialPressureComponent"></span>
+                                                <p>压差</p>
+                                            </li>
+                                            <li class="space-border">
+                                                <span class="liquid componentImg draw2d_droppable" data-shape="liquidComponent"></span>
+                                                <p>液位</p>
+                                            </li>
+                                            <li>
+                                                <span class="electric componentImg draw2d_droppable" data-shape="electricComponent"></span>
+                                                <p>电流</p>
+                                            </li>
+                                            <li>
+                                                <span class="Voltage componentImg draw2d_droppable" data-shape="VoltageComponent"></span>
+                                                <p>电压</p>
+                                            </li>
+
+                                            <li>
+                                                <span class="frequency componentImg draw2d_droppable" data-shape="frequencyComponent"></span>
+                                                <p>频率</p>
+                                            </li>
+                                            <li>
+                                                <span class="activePower componentImg draw2d_droppable" data-shape="activePowerComponent"></span>
+                                                <p>有功功率</p>
+                                            </li>
+                                            <li>
+                                                <span class="ElectricityConsumption componentImg draw2d_droppable" data-shape="ElectricityConsumptionComponent"></span>
+                                                <p>用电量</p>
+                                            </li>
+                                            <li>
+                                                <span class="level componentImg draw2d_droppable" data-shape="levelComponent"></span>
+                                                <p>液体流量</p>
+                                            </li>
+                                            <li>
+                                                <span class="Gas componentImg draw2d_droppable" data-shape="GasComponent"></span>
+                                                <p>气体流量</p>
+                                            </li>
+                                            <li class="space-border ">
+                                                <span class="Broadcast componentImg draw2d_droppable" data-shape="BroadcastComponent"></span>
+                                                <p>广播</p>
+                                            </li>
+
+
+
+
+
+                                        </ul>
+                                        <ul id="scroll_ul_2" class="comportant-ul scroll-ul"></ul>
+                                    </div>
+                                </div>
+                                <a id="RightBotton" class="RightBotton" href="javascript:void(0);" target="_self"></a>
+
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul class="comportant-ul clearfix">
+                                <li>
+                                    <span class="monitoring componentImg draw2d_droppable" data-shape="monitoringComponent"></span>
+                                    <p>枪机</p>
+                                </li>
+                                <li>
+                                    <span class="qiuji componentImg draw2d_droppable" data-shape="qiujiComponent"></span>
+                                    <p>球机</p>
+                                </li>
+                                <li>
+                                    <span class="highqiuji componentImg draw2d_droppable" data-shape="highqiujiComponent"></span>
+                                    <p>高速球</p>
+                                </li>
+                                <li>
+                                    <span class="menjin componentImg draw2d_droppable" data-shape="EntranceGuardComponent"></span>
+                                    <p>门禁</p>
+                                </li>
+                                <li>
+                                    <span class="tance componentImg draw2d_droppable" data-shape="detectorComponent"></span>
+                                    <p>探测器</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="bayax-body">
+            <div class="draw2d-body">
+                <div class="content-body-border-top"></div>
+                <div class="draw2d-body-content">
+                    <div class="canvas-div">
+                        <div id="canvas" class="canvas"></div>
+                        <div id="tooltips"></div>
+                    </div>
+                    <div class="global-btn-div bayaxMscroll">
+                        <div class="global-btn-head">
+                            <span>全局按钮</span>
+                            <span @click="addGlobalBtn">添加</span>
+                        </div>
+                        <div class="global-btn-body">
+                            <ul class="globalbtn-ul">
+                                <li v-for="item in globalBtnData.btndata">
+                                    <button v-text="item.name" @click="setGlobalBtnAttr(item)" class="bayax-btn"></button>
+                                    <span @click="deleteGlobalBtn(item)" class="btn-tag-status"></span>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div v-bind:class="{'basic-hide':showHideFlag.attrdiv}" class="component-attribute-div attribute-div">
+                <div class="attr-head">
+                    <p>修改属性</p>
+                </div>
+                <div class="attr-body">
+                    <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                            <li class="li-comp layui-this">控件属性</li>
+                            <li class="li-canvas">画布属性</li>
+                        </ul>
+                        <div class="layui-tab-content bayaxMscroll">
+                            <div class="layui-tabscroll-item layui-tab-item layui-show">
+                                <div class="attr-content">
+                                    <p class="attr-toggle-default attr-content-titles collapsed reset-title" data-toggle="collapse" data-for="routine">
+                                        <i></i>
+                                        <span>常规</span>
+                                    </p>
+
+                                    <div class="routine attr-content-body reset-content">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">名称</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="routine.name" type="text" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-formdesc-item layui-form-item">
+                                            <label class="layui-form-label">描述</label>
+                                            <div class="layui-input-block">
+                                                <textarea v-model="routine.description" class="layui-input"></textarea>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv},{'basic-hide':hidediv.labelHideDiv}]" class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label">尺寸</label>
+                                                <div class="layui-attrinput-inline layui-input-inline" style="padding-left:5px;">
+                                                    <input v-model="routine.width" type="number" autocomplete="off" class="layui-input">
+                                                </div>
+                                                <div class="layui-form-mid">-</div>
+                                                <div class="layui-attrinput-inline layui-input-inline">
+                                                    <input v-model="routine.height" type="number" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="{'basic-hide':hidediv.lineHideDiv}" class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label">位置</label>
+                                                <div class="layui-attrinput-inline layui-input-inline" style="padding-left:5px;">
+                                                    <input v-model="routine.offx" type="text" autocomplete="off" class="layui-input">
+                                                </div>
+                                                <div class="layui-form-mid"> </div>
+                                                <div class="layui-attrinput-inline layui-input-inline">
+                                                    <input v-model="routine.offy" type="text" autocomplete="off" class="layui-input">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="{'basic-hide':hidediv.lineHideDiv}" class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"></label>
+                                                <div class="layui-attrinput-inline layui-input-inline" style="padding-left:5px;">
+                                                    <span>X</span>
+                                                </div>
+                                                <div class="layui-form-mid"> </div>
+                                                <div class="layui-attrinput-inline layui-input-inline">
+                                                    <span>Y</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.textHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="routine.horizontal" type="checkbox" id="horizontal" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="horizontal"></label>
+                                            <span>水平</span>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.textHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="routine.vertical" type="checkbox" id="vertical" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="vertical"></label>
+                                            <span>垂直</span>
+                                        </div>
+                                        <div v-bind:class="{'basic-hide':hidediv.lineHideDiv}" class="layui-form-item">
+                                            <label class="layui-form-label">旋转角度</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="routine.rotationAngle" type="number" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="routine.title" type="checkbox" id="comp-title" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="comp-title"></label>
+                                            <span>显示标题</span>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">标题内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="routine.titledata.text" :disabled="routine.titledata.disabled" type="text" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="routine.hover" type="checkbox" id="comp-hover" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="comp-hover"></label>
+                                            <span>显示说明</span>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">说明内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="routine.hoverdata.text" :disabled="routine.hoverdata.disabled" type="text" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="routine.visible" type="checkbox" id="comp-hides" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="comp-hides"></label>
+                                            <span>隐藏组件</span>
+                                        </div>
+
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="routine.enable" type="checkbox" id="comp-unabel" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="comp-unabel"></label>
+                                            <span>不可用</span>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">访问等级</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="routine.accessLevel.level" class="bayax-division-text">123</p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="comp-level-ul">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="comp-level-ul  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in routine.accessLevel.levelData" v-text="item" @click="setAccessLevel(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="attr-content">
+                                    <p class="attr-toggle-default attr-content-titles collapsed reset-title" data-toggle="collapse" data-for="data-div">
+                                        <i></i>
+                                        <span>Data</span>
+                                    </p>
+                                    <div class="data-div attr-content-body reset-content">
+                                        <div v-bind:class="{'basic-hide':hidediv.vlcUrlHideDiv}" class="layui-form-item">
+                                            <label class="layui-form-label">摄像地址</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="datas.vlcUrl" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-formtag-item layui-form-item">
+                                            <label class="layui-form-label">Tag地址</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="layui-input-inline">
+                                                    <div class="bayax-division-select bayax-select-group">
+                                                        <div class="bayax-division-title">
+                                                            <p v-text="datas.tag.tagname" class="bayax-division-text"></p>
+                                                            <span @click='setComTag' class="bayax-division-span">
+                                                                <span>···</span>
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <span v-bind:class="datas.tag.isrighttag" class="tag-status rights"></span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="datas.readonly" type="checkbox" id="comp-readonly" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="comp-readonly"></label>
+                                            <span>只读</span>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="attr-content">
+                                    <p class="attr-toggle-status attr-content-titles" data-toggle="collapse" data-for="style-div" data-status="defaults">
+                                        <i></i>
+                                        <!-- 原 styles -->
+                                        <span>Default</span>
+                                    </p>
+                                    <div class="style-div status-div attr-content-body reset-content">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框宽度</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="defaults.borderWidth" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="default-border-width">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="default-border-width  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderWidth" v-text="item" @click="setDefaultBorderWidth(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- <div class="layui-form-item">
+                                            <label class="layui-form-label">边框样式</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="default.borderStyle" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="style-border-style">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="style-border-style  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderStyle" v-text="item.name" @click="setStyleBorderStyle(item)">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in defaults.borderColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setDefaultBorderColor(item)"></li>
+                                                    <li class="default-border-color">+</li>
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">填充颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in defaults.fillColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setDefaultFillColor(item)"></li>
+                                                    <li class="default-fill-color">+</li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="defaults.fontText" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">字体大小</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="defaults.fontSize" type="number" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">单位</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="defaults.fontUnit" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in defaults.fontColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setDefaultFontColor(item)"></li>
+                                                    <li class="defaults-font-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="defaults.setAlpha" type="checkbox" id="default-alpha-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="default-alpha-check"></label>
+                                            <span>背景透明</span>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.conduitHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">透明度</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="defaults.alpha" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">图片</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="layui-input-inline">
+                                                    <div class="bayax-division-select bayax-select-group">
+                                                        <div class="bayax-division-title">
+                                                            <p v-text="defaults.picture" class="bayax-division-text"></p>
+                                                            <span @click='upImageStyle' class="bayax-division-span">
+                                                                    <span>···</span>
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="defaults.flashing" type="checkbox" id="default-flashing-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="default-flashing-check"></label>
+                                            <span>闪烁</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- ontrue -->
+                                <div v-bind:class="{'basic-hide':hidediv.labelHideDiv}" class="attr-content">
+                                    <p class="attr-toggle-status attr-content-titles " data-toggle="collapse" data-for="ontrue-div" data-status="onTrue">
+                                        <i></i>
+                                        <span>onTrue</span>
+                                    </p>
+                                    <div class="ontrue-div status-div attr-content-body reset-content">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框宽度</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="ontrue.borderWidth" class="bayax-division-text">123</p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="ontrue-border-width">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="ontrue-border-width  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderWidth" v-text="item" @click="setOnTrueBorderWidth(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- <div class="layui-form-item">
+                                            <label class="layui-form-label">边框样式</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="ontrue.borderStyle" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="ontrue-border-style">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="ontrue-border-style  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderStyle" v-text="item.name" @click="setOnTrueBorderStyle(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in ontrue.borderColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnTrueBorderColor(item)"></li>
+                                                    <li class="ontrue-border-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">填充颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in ontrue.fillColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnTrueFillColor(item)"></li>
+                                                    <li class="ontrue-fill-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="ontrue.fontText" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in ontrue.fontColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnTrueFontColor(item)"></li>
+                                                    <li class="ontrue-font-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="ontrue.setAlpha" type="checkbox" id="ontrue-alpha-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="ontrue-alpha-check"></label>
+                                            <span>背景透明</span>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.conduitHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">透明度</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="ontrue.alpha" type="text" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">图片</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="layui-input-inline">
+                                                    <div class="bayax-division-select bayax-select-group">
+                                                        <div class="bayax-division-title">
+                                                            <p v-text="ontrue.picture" class="bayax-division-text"></p>
+                                                            <span @click='upImageOnTrue' class="bayax-division-span">
+                                                                <span>···</span>
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="ontrue.flashing" type="checkbox" id="ontrue-flashing-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="ontrue-flashing-check"></label>
+                                            <span>闪烁</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div v-bind:class="{'basic-hide':hidediv.labelHideDiv}" class="attr-content">
+                                    <p class="attr-toggle-status attr-content-titles " data-toggle="collapse" data-for="onfalse-div" data-status="onFalse">
+                                        <i></i>
+                                        <span>onFalse</span>
+                                    </p>
+                                    <div class="onfalse-div status-div attr-content-body reset-content">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框宽度</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="onfalse.borderWidth" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="onfalse-border-width">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="onfalse-border-width  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderWidth" v-text="item" @click="setOnFalseBorderWidth(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- <div class="layui-form-item">
+                                            <label class="layui-form-label">边框样式</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="onfalse.borderStyle" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="onfalse-border-style">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="onfalse-border-style  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderStyle" v-text="item.name" @click="setOnFalseBorderStyle(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in onfalse.borderColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnFalseBorderColor(item)"></li>
+                                                    <li class="onfalse-border-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">填充颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in onfalse.fillColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnFalseFillColor(item)"></li>
+                                                    <li class="onfalse-fill-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="onfalse.fontText" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in onfalse.fontColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnFalseFontColor(item)"></li>
+                                                    <li class="onfalse-font-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="onfalse.setAlpha" type="checkbox" id="onfalse-alpha-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="onfalse-alpha-check"></label>
+                                            <span>背景透明</span>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.conduitHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">透明度</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="onfalse.alpha" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">图片</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="layui-input-inline">
+                                                    <div class="bayax-division-select bayax-select-group">
+                                                        <div class="bayax-division-title">
+                                                            <p v-text="onfalse.picture" class="bayax-division-text"></p>
+                                                            <span @click='upImageOnFalse' class="bayax-division-span">
+                                                                <span>···</span>
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="onfalse.flashing" type="checkbox" id="onfalse-flashing-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="onfalse-flashing-check"></label>
+                                            <span>闪烁</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div v-bind:class="{'basic-hide':hidediv.labelHideDiv}" class="attr-content">
+                                    <p class="attr-toggle-status attr-content-titles " data-toggle="collapse" data-for="onalarm-div" data-status="onAlarm">
+                                        <i></i>
+                                        <span>onAlarm</span>
+                                    </p>
+                                    <div class="onalarm-div status-div attr-content-body reset-content">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框宽度</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="onalarm.borderWidth" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="onalarm-border-width">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="select-ul-up onalarm-border-width  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderWidth" v-text="item" @click="setOnAlarmBorderWidth(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- <div class="layui-form-item">
+                                            <label class="layui-form-label">边框样式</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="onalarm.borderStyle" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="onalarm-border-style">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="onalarm-border-style  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderStyle" v-text="item.name" @click="setOnAlarmBorderStyle(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in onalarm.borderColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnAlarmBorderColor(item)"></li>
+                                                    <li class="onalarm-border-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">填充颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in onalarm.fillColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnAlarmFillColor(item)"></li>
+                                                    <li class="onalarm-fill-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="onalarm.fontText" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in onalarm.fontColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnAlarmFontColor(item)"></li>
+                                                    <li class="onalarm-font-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="onalarm.setAlpha" type="checkbox" id="onalarm-alpha-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="onalarm-alpha-check"></label>
+                                            <span>背景透明</span>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.conduitHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">透明度</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="onalarm.alpha" type="text" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">图片</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="layui-input-inline">
+                                                    <div class="bayax-division-select bayax-select-group">
+                                                        <div class="bayax-division-title">
+                                                            <p v-text="onalarm.picture" class="bayax-division-text"></p>
+                                                            <span @click='upImageOnAlarm' class="bayax-division-span">
+                                                                <span>···</span>
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="onalarm.flashing" type="checkbox" id="onalarm-flashing-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="onalarm-flashing-check"></label>
+                                            <span>闪烁</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div v-bind:class="{'basic-hide':hidediv.labelHideDiv}" class="attr-content">
+                                    <p class="attr-toggle-status attr-content-titles " data-toggle="collapse" data-for="ondisc-div" data-status="onDisconnected">
+                                        <i></i>
+                                        <span>onDisconnected</span>
+                                    </p>
+                                    <div class="ondisc-div status-div attr-content-body reset-content">
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框宽度</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="ondisc.borderWidth" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="ondisc-border-width">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="select-ul-up ondisc-border-width  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderWidth" v-text="item" @click="setOnDiscBorderWidth(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- <div class="layui-form-item">
+                                            <label class="layui-form-label">边框样式</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="ondisc.borderStyle" class="bayax-division-text"></p>
+                                                        <span class="bayax-division-span bayax-division-icon" data-for="ondisc-border-style">
+                                                            <i></i>
+                                                        </span>
+                                                    </div>
+                                                    <ul class="ondisc-border-style  bayax-select-ul bayax-anim bayax-anim-upbit">
+                                                        <li v-for="(item,index) in borderData.borderStyle" v-text="item.name" @click="setOnDiscBorderStyle(item)"></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">边框颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in ondisc.borderColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnDiscBorderColor(item)"></li>
+                                                    <li class="ondisc-border-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">填充颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in ondisc.fillColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnDiscFillColor(item)"></li>
+                                                    <li class="ondisc-fill-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本内容</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="ondisc.fontText" type="text" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">文本颜色</label>
+                                            <div class="layui-input-block">
+                                                <ul class="color-ul">
+                                                    <li v-for="(item,index) in ondisc.fontColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setOnDiscFontColor(item)"></li>
+                                                    <li class="ondisc-font-color">+</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.imgHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv}]" class="layui-formcheck-item layui-form-item">
+                                            <input v-model="ondisc.setAlpha" type="checkbox" id="ondisc-alpha-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="ondisc-alpha-check"></label>
+                                            <span>背景透明</span>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.conduitHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class="layui-form-item">
+                                            <label class="layui-form-label">透明度</label>
+                                            <div class="layui-input-block">
+                                                <input v-model="ondisc.alpha" type="text" name="title" autocomplete="off" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                        <div v-bind:class="[{'basic-hide':hidediv.basicHideDiv},{'basic-hide':hidediv.lineHideDiv},{'basic-hide':hidediv.labelHideDiv},{'basic-hide':hidediv.safeHideDiv},{'basic-hide':hidediv.textHideDiv}]" class=" layui-form-item">
+                                            <label class="layui-form-label">图片</label>
+                                            <div class="layui-input-block">
+
+                                                <div class="layui-input-inline">
+                                                    <div class="bayax-division-select bayax-select-group">
+                                                        <div class="bayax-division-title">
+                                                            <p v-text="ondisc.picture" class="bayax-division-text"></p>
+                                                            <span @click='upImageOnDisc' class="bayax-division-span">
+                                                                <span>···</span>
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-formcheck-item layui-form-item">
+                                            <input v-model="ondisc.flashing" type="checkbox" id="ondisc-flashing-check" class="bayaxcheckbox ">
+                                            <label class="checkbox-i" for="ondisc-flashing-check"></label>
+                                            <span>闪烁</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tabscroll-item layui-tab-item">
+                                <div class="attr-content-body" style="display: block">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">图片</label>
+                                        <div class="layui-input-block">
+                                            <div class="layui-input-inline">
+                                                <div class="bayax-division-select bayax-select-group">
+                                                    <div class="bayax-division-title">
+                                                        <p v-text="canvas.bgColor.bgimage" class="bayax-division-text"></p>
+                                                        <span @click='upCanvasbgImage' class="bayax-division-span">
+                                                             <span>···</span>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">背景颜色</label>
+                                        <div class="layui-input-block">
+                                            <ul class="color-ul">
+                                                <li v-for="(item,index) in canvas.bgColor.colorData" :class="{active:item.active}" :style="item.colorstyle" @click="setCanvasBgColor(item)"></li>
+                                                <li class="canvas-bgcolor">+</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-formcheck-item layui-form-item">
+                                        <input v-model="canvas.setDefault" type="checkbox" id="set-default" class="bayaxcheckbox ">
+                                        <label class="checkbox-i" for="set-default"></label>
+                                        <span>恢复默认</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div v-bind:class="{'basic-show':showHideFlag.attrdiv}" class="globalbtn-attribute-div attribute-div">
+                <div class="attr-head">
+                    <p>全局按钮属性</p>
+                </div>
+
+                <div class="attr-body">
+                    <div class="attr-content-body">
+
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">名称</label>
+                            <div class="layui-input-block">
+                                <input v-model="globalBtnData.attr.name" type="text" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">Tag地址</label>
+                            <div class="layui-input-block">
+                                <div class="layui-input-inline">
+                                    <div class="bayax-division-select bayax-select-group">
+                                        <div class="bayax-division-title">
+                                            <p v-text="globalBtnData.attr.tag_name" class="bayax-division-text"></p>
+                                            <span @click="setBtnTag" class="bayax-division-span">
+                                                <span>···</span>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div v-show="globalBtnData.flag.alreadybind">
+                            <div v-show="!globalBtnData.flag.isBoolean" class="layui-form-item">
+                                <label class="layui-form-label">默认值</label>
+                                <div class="layui-input-block">
+                                    <input v-model="globalBtnData.attr.num" type="text" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div v-show="globalBtnData.flag.isBoolean">
+                                <div class="layui-formcheck-item layui-form-item">
+                                    <input v-model="globalBtnData.attr.boolean" value="true" name="values" type="radio" id="gbtn-value-true" class="bayaxcheckbox ">
+                                    <label class="radiobox-i" for="gbtn-value-true"></label>
+                                    <span>true</span>
+                                </div>
+                                <div class="layui-formcheck-item layui-form-item">
+                                    <input v-model="globalBtnData.attr.boolean" value="false" name="values" type="radio" id="gbtn-value-false" class="bayaxcheckbox ">
+                                    <label class="radiobox-i" for="gbtn-value-false"></label>
+                                    <span>false</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div v-bind:class="{ loadingShow:loadingShow }" class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+
+
+        </div>
+        <!-- 绑定标签-->
+        <div id="layer-add-tags" class="layer-default">
+            <div class="canvas-layer bayax-layer-content">
+                <div class="layui-row">
+                    <div class="layui-form">
+                        <div class="clearfix">
+                            <div class="layui-input-inline content-search">
+                                <span class="search-span icon-search"></span>
+                                <input v-model="bindTag.searchText" v-on:input="searchtags(1)" type="text" placeholder="请输入标签名称" required>
+                                <span @click="cleanSearchVal" class="span-del icon-highlight_off"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="tag-table">
+                            <div class="content">
+                                <!-- <div class="noData">
+                                    无数据
+                                </div> -->
+                                <div class="havedata">
+                                    <table class="bayax-table">
+                                        <thead>
+                                            <tr>
+                                                <th>标签名称</th>
+                                                <th>类型</th>
+                                                <th>描述</th>
+                                                <th>节点名称</th>
+                                                <th>寄存器</th>
+                                                <th>选择</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="item in bindTag.labels">
+                                                <td v-text="item.name"></td>
+                                                <td v-text="item.tag_type"></td>
+                                                <td v-text="item.description"></td>
+                                                <td v-text="item.node_name"></td>
+                                                <td v-text="item.point_id"></td>
+                                                <td>
+                                                    <input v-bind:class="{ 'basic-hide': item.ishide }" v-model="bindTag.checkRadio" type="radio" :id="item.id+'tags'" :value="item" class="bayaxcheckbox" name="tags">
+                                                    <label v-bind:class="{ 'basic-hide': item.ishide }" class="radiobox-i" :for="item.id+'tags'"></label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="relode-data tcdPageCode"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 上传图片 for  imageComponent style  -->
+    <input type="file" id="imageFileStyle" class="up-image" onchange="basicSet.uploadImage.upFileStyleImage(this)" />
+    <!-- 上传图片 for  imageComponent  onTrue -->
+    <input type="file" id="imageFileOnTrue" class="up-image" onchange="basicSet.uploadImage.upFileOnTrueImage(this)" />
+    <!-- 上传图片 for  imageComponent  onFalse -->
+    <input type="file" id="imageFileOnFalse" class="up-image" onchange="basicSet.uploadImage.upFileOnFalseImage(this)" />
+    <!-- 上传图片 for  imageComponent  onAlerm -->
+    <input type="file" id="imageFileOnAlarm" class="up-image" onchange="basicSet.uploadImage.upFileOnAlarmImage(this)" />
+    <!-- 上传图片 for  imageComponent  onDisconnected -->
+    <input type="file" id="imageFileOnDisc" class="up-image" onchange="basicSet.uploadImage.upFileOnDiscImage(this)" />
+    <!-- 上传图片 for  Canvas   -->
+    <input type="file" id="fileCanvasImage" class="up-image" onchange="basicSet.uploadImage.upCanvasImage(this)" />
+
+    <script>
+        var type = 'edit';
+    </script>
+    <!-- <script type="text/javascript" src="js/canvas/basic/icheck.min.js"></script> -->
+    <script type="text/javascript" src="./plugin/jQuery/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="js/canvas/basic/colpick.js"></script>
+    <script type="text/javascript" src="js/canvas/ComponentSet/safeComponent.js"></script>
+    <script type="text/javascript" src="js/canvas/ComponentSet/labelComponent.js"></script>
+    <script type="text/javascript" src="js/canvas/ComponentSet/textComponent.js"></script>
+    <script type="text/javascript" src="js/canvas/ComponentSet/imageComponent.js"></script>
+    <script type="text/javascript" src="js/canvas/ComponentSet/RectangleComponent.js"></script>
+    <script type="text/javascript" src="js/canvas/ComponentSet/LineComponent.js"></script>
+
+
+    <script src="js/basic/api.js "></script>
+    <script src="plugin/vue.js "></script>
+    <script src="plugin/layui/layui.js "></script>
+    <script src="js/canvas/actionJS/attrmenu.js"></script>
+    <script src="./js/canvas/actionJS/canvas.js"></script>
+
+
+
+</body>
+
+</html>

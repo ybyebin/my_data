@@ -1,0 +1,51 @@
+
+
+/** {
+  box-sizing: border-box
+}
+*/
+
+table.dataTable {
+  border-collapse: separate;
+  border-spacing: 0;
+  clear: both
+}
+
+
+
+
+
+
+.table-box {
+  width: 100%;
+/*  border: 1px solid #ddd;
+  border-collapse: separate;
+  margin-top: 0;
+  border-left: 0*/
+}
+
+
+
+
+
+
+
+
+
+.table-box td,
+.table-box th {
+  min-width: 35px;
+  max-width: 400px
+}
+
+.oneline {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+
+
+
+
+

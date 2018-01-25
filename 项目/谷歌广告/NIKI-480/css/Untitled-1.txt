@@ -1,0 +1,10 @@
+<!-- <head>
+    <meta charset="UTF-8">
+    <title>Love Nikki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="ad.size" content="width=320,height=480">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index-d0f00ba01d.css">
+    <script type="text/javascript" src="https://tpc.googlesyndication.com/pagead/
+                    gadgets/html5/api/exitapi.js"></script>
+</head> -->

@@ -37,8 +37,27 @@
         </div>
     </section>
 
+    <table id="table">
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>yb</td>
+                <td>28</td>
+
+            </tr>
+        </tbody>
+    </table>
 
     <script src="./js/base.js"></script>
+    <script src="./plug-in/浏览器导出table为excel/tableExport.js"></script>
+    <script>
+        tableExport('table', 'table', 'csv');
+    </script>
 </body>
 
 </html>

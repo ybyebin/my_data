@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>用户权限管理</title>
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="plugin/jQuery/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/bayax.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- <link rel="stylesheet" href="./css/basegreen.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/sysManagement.css">
+    <script src="plugin/jQuery/jquery-1.11.1.min.js"></script>
+</head>
+
+<body class="layui-layout-body">
+    <div id="app" class="layui-layout ">
+        <div class="layui-side bayax-bg-black">
+            <div class="layui-side-scroll">
+
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+                    <li class="layui-nav-item bayax-li-item-img">
+                        <a href="deviceControlCanvas.html">
+                            <img class="logo" v-bind:src="project.logo_path"></a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <a class="" href="engineeringManagement.html">
+                            <i class="gcgl"></i> 工程管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="nodeManagement.html">
+                            <i class="jdgl"></i> 节点管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="datalabelManagement.html">
+                            <i class="sjbqgl"></i> 数据标签管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="energyconsumptionStatisticDis.html">
+                            <i class="nhtjsd"></i> 能耗统计设定
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="graphicImages.html">
+                            <i class="txhmgl"></i> 图形画面管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="energyconsumptionStatisticClassification.html">
+                            <i class="nhtjfj"></i> 能耗统计分级
+                        </a>
+                    </li>
+                    <li class="layui-nav-item active">
+                        <a href="userManagement.html">
+                            <i class="yhqxgl"></i> 用户权限管理
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body" style="padding-top:50px;">
+            <!-- 内容主体区域 -->
+            <div class="bayax-content">
+                <div class="content-head">
+                    <button @click="addUser" class="layui-btn bayax-btn">添加</button>
+
+                </div>
+                <div class="content-body">
+
+                    <div class="layui-row">
+                        <div class="userManage-main layui-col-xs8">
+                            <div class="user-div-l bayaxMscroll content-main">
+                                <table class="bayax-table">
+                                    <thead>
+                                        <tr>
+                                            <th>用户名</th>
+                                            <th>角色</th>
+                                            <th>姓名</th>
+                                            <th>员工号</th>
+                                            <th>最后登录时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr :class="{sele:item.seletcs}" v-for="(item,index) in userData" @click="getOneUserMes(item,index)">
+                                            <td v-text="item.username"></td>
+                                            <td v-text="item.role"></td>
+                                            <td v-text="item.full_name"></td>
+                                            <td v-text="item.employee_id"></td>
+                                            <td v-text="item.last_login_time"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="layui-col-xs4">
+                            <div v-show="divHideShow.showDiv" class="user-div-set content-main">
+                                <div class="user-set-conten1">
+                                    <div class="user-set-head">
+                                        <span class="user-set-head-title">用户信息</span>
+                                        <a @click="userMsgEdl" href="javascript:;" class="bayax-a">删除</a>
+                                        <a @click="userMsgEdit" href="javascript:;" class="bayax-a">编辑</a>
+                                    </div>
+                                    <div class="user-set-content">
+                                        <ul class="user-content-ul user-content-ul-head">
+                                            <li>
+                                                <span class="title">用户名</span>
+                                                <span v-text="personData.username"></span>
+                                            </li>
+                                            <li>
+                                                <span class="title">角色</span>
+                                                <span v-text="personData.role">管理员</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">姓名</span>
+                                                <span v-text="personData.full_name">admin</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">员工号</span>
+                                                <span v-text="personData.employee_id">007</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="user-set-conten2">
+                                    <div class="user-set-head">
+                                        <span class="user-set-head-quanxian">子系统权限</span>
+                                    </div>
+                                    <div class="user-set-content">
+                                        <div class="layui-form bayaxMscroll user-set-ul-scroll">
+                                            <ul class="user-content-ul">
+                                                <li v-for="(item,index) in personData.user_view_group">
+                                                    <div v-bind:class="{ userquanxianlishow:  item.ishide }" class="layui-form">
+                                                        <input checked disabled type="checkbox" lay-skin="primary" name='labelcheckall' :id="item.id" :value=item.id :title="item.name">
+                                                    </div>
+
+                                                </li>
+                                            </ul>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div :class={userdivsetshow:divHideShow.editDiv} class="user-div-set content-main user-div-set-hide">
+                                <div class="user-set-conten1">
+                                    <div class="user-set-head">
+                                        <span class="user-set-head-title">编辑用户信息</span>
+                                        <a @click="editCancel" href="javascript:;" class="bayax-a">取消</a>
+                                        <a @click="editSaveUser" href="javascript:;" class="bayax-a">保存</a>
+                                    </div>
+                                    <div class="user-set-content">
+                                        <ul class="user-content-ul user-content-ul-edit user-content-ul-head">
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">用户名</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="editPersonData.username" type="text" autocomplete="off" class="layui-input" maxlength="30">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">密码</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="editPersonData.password" type="password" autocomplete="off" class="layui-input" maxlength="10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">确认密码</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="editPersonData.sure_password" type="password" autocomplete="off" class="layui-input" maxlength="10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="layui-form">
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">角色</label>
+                                                        <div class="layui-input-inline">
+                                                            <select class="edit-role" lay-filter="editRoleSel">
+																  <option value="2">普通用户</option>
+																  <option value="1">管理员</option>
+															</select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">姓名</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="editPersonData.full_name" type="text" autocomplete="off" class="layui-input" maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">员工号</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="editPersonData.employee_id" type="text" autocomplete="off" class="layui-input" maxlength="10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="user-set-conten2">
+                                    <div class="user-set-head">
+                                        <span class="user-set-head-quanxian">子系统权限</span>
+                                    </div>
+                                    <div class="user-set-content">
+                                        <div class="layui-form bayaxMscroll user-set-ul-scroll user-set-editul-scroll">
+                                            <ul class="user-content-ul">
+                                                <li v-for="(item,index) in graphicImage">
+                                                    <input class="powerCheck" lay-filter="powerCheck" type="checkbox" lay-skin="primary" name='powerCheck' :id="item.id" :value=item.id :title="item.name">
+
+                                                </li>
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div :class={userdivsetshow:divHideShow.addDiv} class="user-div-set content-main user-div-set-hide">
+                                <div class="user-set-conten1">
+                                    <div class="user-set-head">
+                                        <span class="user-set-head-title">添加用户</span>
+                                        <a @click="addCancel" href="javascript:;" class="bayax-a">取消</a>
+                                        <a @click="addSaveUser" href="javascript:;" class="bayax-a">保存</a>
+                                    </div>
+                                    <div class="user-set-content">
+                                        <ul class="user-content-ul user-content-ul-edit user-content-ul-head">
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">用户名</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="addPersonData.username" type="text" autocomplete="off" class="layui-input" maxlength="30">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">密码</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="addPersonData.password" type="password" autocomplete="off" class="layui-input" maxlength="10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">确认密码</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="addPersonData.sure_password" type="password" autocomplete="off" class="layui-input" maxlength="10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="layui-form">
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">角色</label>
+                                                        <div class="layui-input-inline">
+                                                            <select class="add-role" lay-filter="addRoleSel">
+																<option value="2">普通用户</option>
+																<option value="1">管理员</option>
+															</select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">姓名</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="addPersonData.full_name" type="text" autocomplete="off" class="layui-input" maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class=" layui-form-label">员工号</label>
+                                                        <div class="layui-input-inline">
+                                                            <input v-model="addPersonData.employee_id" type="text" autocomplete="off" class="layui-input" maxlength="10">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="user-set-conten2">
+                                    <div class="user-set-head">
+                                        <span class="user-set-head-quanxian">子系统权限</span>
+                                    </div>
+                                    <div class="user-set-content">
+                                        <div class="layui-form bayaxMscroll user-set-ul-scroll user-set-editul-scroll">
+                                            <ul class="  user-content-ul">
+                                                <li v-for="(item,index) in graphicImage">
+                                                    <input class="addpowerCheck" lay-filter="addpowerCheck" type="checkbox" lay-skin="primary" :id="item.id" :value=item.id :title="item.name">
+
+                                                </li>
+                                            </ul>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div v-bind:class="{ loadingShow:loadingShow }" class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </div>
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $(".user-set-ul-scroll").mCustomScrollbar();
+                $(".user-div-l").mCustomScrollbar();
+            });
+        })(jQuery);
+    </script>
+
+    <script src="js/basic/api.js"></script>
+    <script src="plugin/jQuery/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="plugin/vue.js"></script>
+    <script src="plugin/layui/layui.js"></script>
+    <script src="js/sysSet/userManagement.js"></script>
+
+</body>
+
+</html>

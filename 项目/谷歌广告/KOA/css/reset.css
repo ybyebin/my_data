@@ -1,0 +1,986 @@
+html {
+    color: #000;
+    background: #FFF
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+caption,
+th {
+    text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before,
+q:after {
+    content: ''
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    position: relative;
+    font-family: '微软雅黑';
+    width: 100%;
+    background: #222222;
+    /*overflow: hidden;*/
+}
+
+body {
+    /*max-width: 750px;*/
+    width: 100%;
+    height: 100%;
+    /*height: 26.72rem;*/
+    margin: 0 auto !important;
+    background: #222222;
+}
+
+section {
+    position: absolute;
+    /*max-width: 750px;*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    background: #222222;
+}
+
+section img.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.loadbar {
+    position: absolute;
+    bottom: 7%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    /*height: 15px;*/
+    z-index: 10;
+}
+
+
+/*加载页进度条*/
+
+.progress {
+    overflow: visible;
+    border-radius: 10px;
+    /*height: 6px;*/
+    height: 0.5%;
+    border-radius: 4px;
+    position: absolute;
+    width: 75%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 7.6%;
+    z-index: 20;
+}
+
+.progress .progress-bar {
+    position: absolute;
+    border-radius: 10px 0 0 10px;
+    float: left;
+    width: 0;
+    height: 100%;
+    text-align: center;
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+    background: -webkit-linear-gradient(top, red, #000 50%, red);
+}
+
+.progress .progress-bar.animal {
+    animation: animate-positive 2.5s;
+    width: 100%;
+}
+
+.progress .progress-bar span {
+    position: absolute;
+    top: -24px;
+    /*margin-top: -5.8%;*/
+    right: -29px;
+    display: block;
+    font-size: 17px;
+    width: 65px;
+    height: 50px;
+    background-image: url(../images/loading.png);
+    background-size: cover;
+}
+
+@-webkit-keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+
+@keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+
+
+/*首页*/
+
+
+/*new css*/
+
+.sec-div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.div-dowm-a {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+}
+
+.a-download {
+    width: 36%;
+    height: 2rem;
+    display: inline-block;
+    position: absolute;
+    right: 3%;
+    margin-top: 1.5%;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.a-download img {
+    width: 3.97rem;
+    height: 1.06rem;
+}
+
+.text-download {
+    color: #aaaeb8;
+    font-size: .5rem;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    top: -9%;
+    left: 0;
+    letter-spacing: 0.1rem;
+}
+
+.div-bing-enemy {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.page-1-enemy {
+    position: absolute;
+    width: 82%;
+    bottom: 0;
+    margin-left: 18.3%;
+}
+
+.appear {
+    animation: bounceInRight 2s 1;
+}
+
+
+/*兵种出现推进动画*/
+
+@keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    from {
+        opacity: 0;
+        transform: translate3d(0, 1000px, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.div-dialogue {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    margin-top: 20%;
+    background: red;
+}
+
+.img-dialogue {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 94%;
+    margin: auto;
+    /*margin-left: 39%;*/
+}
+
+.p-dialogue {
+    /*background: red;*/
+    font-size: .6rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    margin-left: 29%;
+}
+
+.p-dialogue-1 {
+    margin-top: 9%;
+}
+
+.p-dialogue-2 {
+    margin-top: 14.5%;
+    font-size: .8rem;
+}
+
+.p-dialogue-3 {
+    margin-top: 22%;
+}
+
+
+/*招募-按钮*/
+
+.div-zhaomu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    margin: auto;
+    margin-top: 86%;
+    display: none;
+}
+
+.div-zhaomu img.btn-zm {
+    position: absolute;
+    /*width: 10.2rem;*/
+    width: 56%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.text-zhaomu {
+    color: #aaaeb8;
+    font-size: 1rem;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-top: -0.5%;
+    background: red;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fef5de), to(#ddba50));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /*letter-spacing:1rem;*/
+}
+
+
+/*选择兵种*/
+
+.text-bingying {
+    position: absolute;
+    color: #b2ab9e;
+    font-size: 0.6rem;
+    display: inline-block;
+    position: absolute;
+    top: 0.01rem;
+    left: 45%;
+    letter-spacing: 1rem;
+}
+
+.div-bing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+.div-explation {
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.explation {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 85%;
+    z-index: 20;
+}
+
+.div-explation-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    margin: auto;
+    margin-top: 85.2%;
+    z-index: 21;
+}
+
+.div-explation-text {
+    display: none;
+}
+
+.div-explation-text p {
+    /*position: absolute;*/
+    text-align: center;
+    color: #fff;
+}
+
+.div-explation-text p.text-name {
+    font-size: .6rem;
+}
+
+.div-explation-text p.text-explation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: .7rem;
+    /*font-size: 44%;*/
+    margin-top: 13.2%;
+    margin-left: 6%;
+    color: #aaaeb8;
+}
+
+.div-explation-text p.text-explation-zm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: .8rem;
+    margin-top: 37.6%;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fef5de), to(#ddba50));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-explation-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    margin-top: 34.4%;
+}
+
+.div-bing .bing-big-img {
+    position: absolute;
+    width: 100%;
+    margin-top: 7%;
+}
+
+.bing-small {
+    position: absolute;
+    width: 30%;
+    background: url(../images/img.png) no-repeat;
+    background-size: 300% 300%;
+    -webkit-background-origin: 0 0;
+    background-position: 0% 0%;
+}
+
+.bing-small-1 {
+    margin-top: 147%;
+    margin-left: 5%;
+}
+
+.bing-small-2 {
+    margin-top: 148%;
+    margin-left: 38%;
+    background-position: 0 50%;
+}
+
+.bing-small-3 {
+    margin-top: 147%;
+    margin-left: 70%;
+    background-position: 50% 0%;
+}
+
+.div-bing-cq .bing-big-img {
+    width: 95%;
+    margin-left: 7%;
+}
+
+.div-bing-cq .bing-small-1 {
+    margin-top: 147%;
+    margin-left: 5%;
+}
+
+.div-bing-cq .bing-small-2 {
+    margin-top: 146%;
+    margin-left: 38%;
+    background-position: 100% 50%;
+}
+
+.div-bing-cq .bing-small-3 {
+    margin-top: 148%;
+    margin-left: 70%;
+    background-position: 50% 50%;
+}
+
+.div-bing-zq .bing-small-1 {
+    margin-top: 147%;
+    margin-left: 5%;
+    background-position: 100% 0;
+}
+
+.div-bing-zq .bing-small-2 {
+    margin-top: 148%;
+    margin-left: 38%;
+}
+
+.div-bing-zq .bing-small-3 {
+    margin-top: 148%;
+    margin-left: 70%;
+    background-position: 50% 50%;
+}
+
+.img-talk {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: auto;
+    /*margin-left: 43%;*/
+}
+
+.p-talk {
+    font-size: .6rem;
+    position: absolute;
+    left: 0;
+    width: 80%;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    margin-left: 33%;
+}
+
+.p-talk-1 {
+    margin-top: 9%;
+}
+
+.p-talk-2 {
+    margin-top: 15%;
+}
+
+.p-talk-3 {
+    margin-top: 21%;
+}
+
+
+/*对战*/
+
+.div-bing-my {
+    position: absolute;
+    width: 100%;
+    margin-top: 130%;
+}
+
+.div-bing-my .page-1-enemy-my {
+    position: absolute;
+    width: 100%;
+    margin-left: 2.3%;
+    margin-top: -62%;
+}
+
+.invasions {
+    animation: invasion 1s 1;
+}
+
+
+/*迎战动画*/
+
+@-webkit-keyframes invasion {
+    0% {
+        margin-top: -62%;
+    }
+    100% {
+        margin-top: -38%;
+    }
+}
+
+.div-bing-my .my-qb,
+.div-bing-my .my-cqb {
+    margin-left: 0;
+}
+
+.div-my-qb {
+    margin-top: 134%;
+}
+
+.div-my-qb .my-qb {
+    margin-left: 0;
+}
+
+
+/*迎战-按钮*/
+
+.div-fight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    margin: auto;
+    margin-top: 106%;
+    display: none;
+}
+
+.div-fight img.btn-fight {
+    position: absolute;
+    /*width: 10.2rem;*/
+    width: 56%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.text-fight {
+    color: #aaaeb8;
+    font-size: 1rem;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    /*top: -5%;*/
+    margin-top: -0.7%;
+    left: 0;
+    right: 0;
+    /*letter-spacing: 1rem;*/
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#fef5de), to(#ddba50));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*成功失败*/
+
+.bg-model {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    opacity: 0.7;
+}
+
+.div-yes-no {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.div-yes-no img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    /*margin-top: 20%;*/
+    /*margin-left: 17%;*/
+}
+
+.p-talk-result {
+    /*margin-left: 53%;*/
+}
+
+.p-talk-win {
+    margin-top: 14%;
+}
+
+.p-talk-default-1 {
+    margin-top: 10%;
+}
+
+.p-talk-default-2 {
+    margin-top: 15%;
+}
+
+.text-success {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    margin-top: 77%;
+    margin-left: 10%;
+    font-size: 2rem;
+    color: #ddba50;
+    text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+.text-default {
+    color: #eee;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    margin-top: 77%;
+    margin-left: 10%;
+    font-size: 2rem;
+    text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+.div-finish img.finish-img {
+    width: 88%;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 40%;
+}
+
+.div-have-a-btn {
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 98%;
+}
+
+.div-finish a {
+    display: inline-block;
+    position: absolute;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 32%;
+    background: red;
+}
+
+.div-have-a-btn a.a-play-again {
+    margin-left: 7%;
+}
+
+.div-have-a-btn a.a-down {
+    margin-left: 51%;
+}
+
+.div-have-a-btn a img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 105%;
+    margin-top: 10%;
+    margin-left: 17%;
+}
+
+.div-have-a-btn2 a.a-down {
+    margin-left: 27%;
+}
+
+.div-have-a-btn span {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 105%;
+    margin-top: 17.5%;
+    color: #fff;
+    margin-left: 17%;
+    font-size: .5rem;
+}
+
+.div-have-a-btn a.a-down span {
+    color: #ddba50;
+}
+
+.creat-own-city {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    margin-top: -20.5%;
+    margin-left: 8%;
+    font-size: .6rem;
+    color: #fff;
+}
+
+
+/*
+.sec {
+	display: none;
+}*/
+
+.sec-1 {
+    z-index: 99;
+}
+
+.sec-2 {
+    z-index: 90;
+}
+
+.sec-3 {
+    z-index: 70;
+}
+
+.finger {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 11%;
+    margin-left: 68%;
+    width: 18%;
+    -webkit-animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 1.15, 1.15);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+/*英文适配*/
+
+.div-have-a-btn .textdownload-us,
+.textdownload-us {
+    letter-spacing: normal;
+}
+
+.div-explation-text p.text-explation-us {
+    font-size: .6rem;
+    margin-top: 11%;
+    margin-left: 22%;
+    width: 66%;
+}
+
+
+/*.p-dialogue-page1-us{
+	margin-left: 27%;
+}*/
+
+.p-dialogue-us {
+    margin-left: 34%;
+}
+
+.creat-own-city1-us {
+    margin-top: -23.5%;
+}
+
+.creat-own-city2-us {
+    margin-top: -18%;
+    margin-left: 5%;
+}
+
+
+/*韩语适配*/
+
+.div-have-a-btn .textdownload-ko,
+.textdownload-ko {
+    letter-spacing: normal;
+}
+
+.div-explation-text p.text-explation-ko {
+    font-size: .54rem;
+    margin-top: 14.2%;
+}
+
+.p-dialogue-2-ko {
+    margin-top: 15%;
+    font-size: 0.7rem;
+}
+
+.p-dialogue-3-ko {
+    margin-top: 22%;
+}
+
+.p-talk-1-ko {
+    margin-top: 10%;
+    /*margin-left: 51%;*/
+}
+
+.p-talk-2-ko {
+    margin-top: 17%;
+    /*margin-left: 51%;*/
+}
+
+
+/*日语适配*/
+
+.a-download-ja img {
+    width: 5.7rem;
+    height: 1.06rem;
+}
+
+.div-have-a-btn .textdownload-ja,
+.textdownload-ja {
+    letter-spacing: normal;
+}
+
+.div-explation-text p.text-explation-ja {
+    font-size: .6rem;
+    margin-top: 11%;
+    margin-left: 22%;
+    width: 66%;
+}
+
+.p-talk-1-ja {
+    margin-top: 10%;
+}
+
+.p-talk-2-ja {
+    margin-top: 16%;
+}
+
+.creat-own-city-ja {
+    width: 50%;
+    margin-left: 32%;
+    margin-top: -22.5%;
+}

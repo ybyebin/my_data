@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>工程管理</title>
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="css/bayax.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- <link rel="stylesheet" href="./css/basegreen.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/sysManagement.css">
+
+</head>
+
+<body class="layui-layout-body">
+    <div id="app" class="layui-layout ">
+        <div class="layui-side bayax-bg-black">
+            <div class="layui-side-scroll">
+
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+
+                    <li class="layui-nav-item bayax-li-item-img">
+                        <a href="deviceControlCanvas.html">
+                            <img class="logo" v-bind:src="proLogo"></a>
+                    </li>
+
+                    <li class="layui-nav-item active">
+                        <a class="" href="javascript:;"> <i class="gcgl"></i> 工程管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="nodeManagement.html"> <i class="jdgl"></i> 节点管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="datalabelManagement.html">
+                            <i class="sjbqgl"></i> 数据标签管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="energyconsumptionStatisticDis.html">
+                            <i class="nhtjsd"></i> 能耗统计设定
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="graphicImages.html">
+                            <i class="txhmgl"></i> 图形画面管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="energyconsumptionStatisticClassification.html">
+                            <i class="nhtjfj"></i> 能耗统计分级
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="userManagement.html">
+                            <i class="yhqxgl"></i> 用户权限管理
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="app" class="layui-body">
+            <!-- 内容主体区域 -->
+            <!-- show -->
+            <div v-bind:class="{ displayShow: isDisplayShow}" class="bayax-content">
+                <div class="content-head">
+                    <button @click="edit" class="layui-btn bayax-btn">编辑</button>
+                    <button class="layui-btn bayax-btn bayax-btn-other">导入工程</button>
+                    <button class="layui-btn bayax-btn bayax-btn-other">导出工程</button>
+                </div>
+                <div class="content-body">
+                    <div class="content-body-border-top"></div>
+                    <div class="content-main">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">项目名称</label>
+                                <div class="enginM-div layui-input-inline ">
+                                    <label v-text="showProName" class="bayax-label-input-des"></label>
+                                </div>
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">标志</label>
+                                <div class="layui-input-inline ">
+                                    <div class="bayax-inline-img">
+                                        <img class="logo-content" v-bind:src="proLogoShow">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">界面语言</label>
+                                <div class="enginM-div layui-input-block">
+                                    <label v-text="showProLanguage" class="bayax-label-input-des"></label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- edit -->
+            <div v-bind:class="{ editshow: isEditShow}" class="bayax-content edithide">
+                <div class="content-head">
+                    <button @click="saveProMsg" class="layui-btn bayax-btn">保存</button>
+                    <button @click="cancelEdit" class="layui-btn bayax-btn-cancel">取消</button>
+                </div>
+                <div class="content-body">
+                    <div class="content-body-border-top"></div>
+                    <div class="content-main">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">项目名称</label>
+                                <div class="enginM-div layui-input-inline ">
+                                    <input v-model="proName" v-on:input="proNameOnInput" v-on:blur="proNameOnBlur" type="text" name="number" autocomplete="off" class="layui-input">
+
+                                </div>
+                                <div class="bayax-inline">
+                                    <label v-bind:class="{ rightName: isRightName}" class="bayax-label-input-des"><span>*</span>最大10文字或20字符,不能包含特殊字符</label>
+                                    <label v-text="warnStr" v-bind:class="{ rightName: !isRightName }" class="bayax-label-input-warn"></label>
+                                </div>
+
+                            </div>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">标志</label>
+                                <div class="layui-input-inline ">
+                                    <div class="bayax-inline-img">
+                                        <img class="logo-content" v-bind:src="proLogoEdit">
+                                    </div>
+                                </div>
+                                <div class="bayax-inline">
+                                    <button @click="upImg" class="layui-btn bayax-btn" type="button">上传图片</button><br>
+                                    <label class="bayax-label-input-des">请上传小于5MB的JPG、PNG等文件</label>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">界面语言</label>
+                                <div class="enginM-div layui-input-block">
+
+                                    <select id="sel-labguage" lay-filter="filter">
+
+                        <option value="1">中文</option>
+                        <option value="2">英文</option>
+                        <option value="3">日文</option>
+                      </select>
+
+                                </div>
+                            </div>
+
+                            <input type="file" id="imageFileField-logo" style="opacity: 0;display:none;" onchange="showPreview(this)" />
+                        </form>
+                    </div>
+                </div>
+                <div v-bind:class="{ loadingShow:loadingShow }" class="loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="plugin/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="js/basic/api.js"></script>
+    <script src="plugin/vue.js"></script>
+    <script src="plugin/layui/layui.js"></script>
+    <script src="js/sysSet/engineeringManagement.js"></script>
+    <script>
+        //JavaScript代码区域
+    </script>
+</body>
+
+</html>

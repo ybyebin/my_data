@@ -1,0 +1,845 @@
+/*侧边栏    -begin*/
+
+.layui-layout-admin .layui-side {
+    top: 80px;
+}
+
+.icon-handler {
+    font-size: 20px;
+}
+
+.layui-side-scroll .layui-nav {
+    background: transparent !important;
+}
+
+.layui-bg-black {
+    background: transparent!important;
+}
+
+.layui-nav-tree .layui-nav-item {
+    margin-bottom: 1px;
+}
+
+.layui-nav-tree .layui-nav-item a {
+    height: 66px !important;
+    line-height: 66px;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.layui-side-scroll ul li a {
+    font-size: 16px !important;
+}
+
+.layui-side a i {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-right: 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.layui-nav-tree .layui-nav-bar {
+    background: none;
+    opacity: 0 !important;
+    height: 0!important;
+}
+
+.logo {
+    width: 129px;
+    height: 27px;
+    display: inline-block;
+    position: relative;
+}
+
+
+/*侧边栏  -end*/
+
+.layui-body {
+    left: 200px;
+    padding-top: 88px;
+    padding-left: 20px;
+    overflow: auto!important;
+}
+
+.bayax-content {
+    min-width: 900px;
+}
+
+
+/*工程管理*/
+
+.enginM-div {
+    width: 400px!important;
+}
+
+.bayax-inline {
+    float: left;
+    padding-left: 25px;
+}
+
+.bayax-inline-img {
+    height: 90px;
+    width: 400px;
+    background: #999999;
+}
+
+.logo-content {
+    width: 100%;
+    height: 100%;
+}
+
+.layui-form-label {
+    text-align: left;
+}
+
+.bayax-label-input-warn,
+.bayax-label-input-des {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.bayax-label-input-warn {
+    color: red;
+}
+
+.bayax-label-input-des span {
+    color: red;
+    display: inline-block;
+    position: relative;
+    margin-right: 6px;
+    top: 2px;
+}
+
+.rightName {
+    display: none;
+}
+
+.displayShow {
+    display: none;
+}
+
+.edithide {
+    display: none;
+}
+
+.editshow {
+    display: block;
+}
+
+
+/*节点管理    -begin*/
+
+.node-content-main {
+    /*padding-bottom: 0;*/
+}
+
+.tdshow {
+    display: none;
+}
+
+
+/*node-弹窗*/
+
+.node-layer-content {
+    height: 332px;
+    padding-top: 30px;
+}
+
+.node-layer-content .layui-form-label {
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+}
+
+.node-label-title {
+    text-align: right;
+    padding-left: 0;
+}
+
+.node-layer-content .layui-input-inline {
+    width: 250px;
+}
+
+.node-layer-content input {
+    width: 250px;
+}
+
+.node-textarea {
+    width: 228px;
+    height: 80px;
+}
+
+.node-layer-content .bayax-label-input-des {
+    width: 274px;
+    padding-right: 0;
+    top: 10px;
+}
+
+.node-layer-content .bayax-label-input-warn {
+    padding-left: 10px;
+    display: inline-block;
+    top: 10px;
+    width: 200px;
+}
+
+.rightinput {
+    display: none!important;
+}
+
+.del-node-content {
+    font-size: 16px;
+}
+
+
+/*node-弹窗*/
+
+
+/*节点管理   -end*/
+
+
+/*数据标签管理   -begin*/
+
+
+/*弹窗*/
+
+#creatEditLabel .bayax-layer-content {
+    margin-right: 0;
+    padding-left: 10px;
+}
+
+.labels-layer-content {
+    height: 442px;
+    overflow: auto;
+}
+
+.labels-layer-content form {
+    padding-bottom: 50px;
+}
+
+.label-title {
+    min-width: 85px;
+}
+
+.label-title-right {
+    padding-left: 30px;
+    min-width: 70px;
+}
+
+.label-title-right-2 {
+    padding-left: 35px;
+}
+
+.label-title-right-3 {
+    width: 90px;
+    padding-left: 19px;
+    padding-right: 13px;
+}
+
+.label-title-right-4 {
+    width: 30px;
+    min-width: 30px;
+}
+
+.label-warn-span {
+    color: red;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+}
+
+.label-warn-danwei {
+    color: #fff;
+}
+
+.label-check-div {
+    padding-left: 35px;
+}
+
+.label-check-div-readonly {
+    padding-left: 30px;
+}
+
+.label-check-div-checkwarn {
+    padding-left: 15px;
+}
+
+.label-check-div span {
+    position: relative;
+    top: 2px;
+}
+
+.label-content-base .base-title label {
+    display: block;
+    padding: 0 15px;
+    margin: 20px 0;
+    margin-left: 17px;
+}
+
+.label-node-div dl {
+    max-height: 220px;
+    overflow: auto;
+}
+
+.chenyi {
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    position: relative;
+    -webkit-transform: scale(0.7857142857142857);
+    transform: scale(0.7857142857142857);
+}
+
+.add-limit-label {
+    cursor: pointer;
+}
+
+.table-ul-head li {
+    float: left;
+    display: inline-block;
+}
+
+.other-warn-content .table-ul-div {
+    padding-left: 20px;
+    margin-right: 80px;
+}
+
+.other-warn-content .li-text-center {
+    text-align: center;
+}
+
+.other-warn-content .li-text-center-a.li-sort {
+    padding-top: 14px;
+    padding-left: 3px;
+}
+
+.other-warn-content .li-sort {
+    width: 60px;
+    padding: 5px 5px;
+}
+
+.other-warn-content .li-lenth {
+    width: 200px;
+    padding: 5px 5px;
+}
+
+.table-ul-body li>div {
+    float: left;
+}
+
+.layui-inline.history-inline-check {
+    padding-bottom: 10px;
+}
+
+.layui-form-item .layui-input-inline.label-history-unit {
+    width: 60px;
+}
+
+.layui-form-item .layui-input-inline.label-history-unit dl {
+    bottom: 42px;
+    top: auto;
+}
+
+.bayaxMscroll .mCustomScrollBox .mCSB_container,
+.layui-anim-upbit .mCustomScrollBox .mCSB_container {
+    margin-right: 10px;
+}
+
+.layui-anim-upbit .mCSB_scrollTools {
+    margin: -3px;
+}
+
+
+/*数据标签管理    -end*/
+
+
+/* 能耗统计设定 */
+
+.energyStatistics {
+    padding-right: 20px;
+}
+
+.energyStatistics .content-main-statis {
+    background-color: #191C33;
+}
+
+.energyStatistics-head {
+    padding-bottom: 15px;
+}
+
+.energyStatistics-head span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.energyStatistics-head a {
+    float: right;
+}
+
+.energyStatistics-content {
+    padding-top: 10px;
+}
+
+.energyStatistics-content-head {
+    padding-bottom: 10px;
+}
+
+.energyStatistics-content-head label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    min-width: 35px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.energyStatistics-content-head i {
+    font-size: 16px;
+    display: inline-block;
+}
+
+.energyStatistics-content-head.clicks i {
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    top: 1px;
+    position: relative;
+}
+
+.energyStatistics-content-body {
+    max-height: 645px;
+    overflow: hidden;
+}
+
+.energyStatistics-content-body .bayax-ul li {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    min-width: 35px;
+    display: inline-block;
+}
+
+.energyStatistics-content-body .bayax-ul li.active {
+    padding-left: 7px;
+}
+
+.energyStatistics-content-body .bayax-ul li:hover {
+    padding-left: 7px;
+}
+
+.energyStatistics-right {
+    padding-top: 30px;
+    padding-right: 15px;
+}
+
+.energyStatistics-right-head span.head-title {
+    padding-left: 10px;
+}
+
+.energyStatistics-right-content {
+    padding-top: 20px;
+}
+
+.energyStatistics-right-content table {
+    border-bottom: none;
+}
+
+.energyStatistics-right-content {
+    max-height: 680px;
+    overflow: hidden;
+}
+
+.energyStatistics-right-content table thead tr th {
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    /* background-color: #2E3554; */
+    border-bottom: none !important;
+}
+
+
+/* 能耗统计设定 */
+
+
+/* 能耗统计编辑 */
+
+.energyStatistics-content-body div.group-edit {
+    position: relative;
+    padding-right: 10px;
+}
+
+.energyStatistics-content-body div.group-edit.grouphover {
+    padding-right: 100px;
+}
+
+.energyStatistics-content-body div.group-rename {
+    position: relative;
+    padding-right: 90px;
+}
+
+label.group-name-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    min-width: 35px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+label.group-input-label {
+    width: 100%;
+    display: inline-block;
+    padding-top: 5px;
+}
+
+.group-rename-label {
+    position: absolute;
+    right: 20px;
+}
+
+.energyStatistics-right-head div.layui-form {
+    padding-top: 20px;
+}
+
+.energyStatistics-right-content.right-edit-content {
+    max-height: 610px;
+}
+
+.tips-span {
+    margin-left: 20px;
+}
+
+.statistic-layer .content-search {
+    float: left;
+}
+
+.statistic-layer-left-div {
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+.statistic-layer-right-div {
+    padding-left: 5px;
+    padding-top: 25px;
+}
+
+.statistic-layer-left-div div.content,
+.statistic-layer-right-div div.content {
+    height: 405px;
+}
+
+.statistic-layer-right-div div.content {
+    margin-top: 22px;
+    padding: 0 10px;
+    padding-right: 2px;
+}
+
+.statistic-layer .bayax-table {
+    border-bottom: none;
+}
+
+.statistic-layer .bayax-table>thead>tr>th {
+    padding-bottom: 10px;
+}
+
+.statistic-layer .bayax-table thead th:last-child {
+    width: 40px;
+}
+
+.statistic-layer .bayax-table tbody tr td {
+    height: 38px;
+}
+
+.statistic-right-scroll {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.statistic-layer-left-div .noData {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: 350px;
+    font-size: 16px;
+}
+
+
+/* 能耗统计编辑 */
+
+
+/* 图形画面管理 */
+
+.graphi-div {
+    height: 675px;
+    overflow: hidden;
+}
+
+.graphi-div table {
+    border-bottom: none;
+}
+
+.graphicimg-warn-label {
+    float: right;
+    color: red;
+}
+
+.graphi-div table tbody tr {
+    cursor: pointer;
+}
+
+
+/* 图形画面管理 */
+
+
+/* 图形画面详情 */
+
+.subsystem-head {
+    left: 200px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    height: 66px;
+    line-height: 66px;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.go-subsys {
+    display: inline-block;
+    padding-left: 30px;
+    margin-right: 60px;
+    cursor: pointer;
+}
+
+.go-subsys i {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    font-size: 26px;
+}
+
+.graphi-div.graphi-div-view table tbody tr {
+    cursor: default;
+}
+
+.creatViews .layui-form-label.layui-form-label-head {
+    width: 140px;
+}
+
+.creatViews div.layui-inline:last-child {
+    margin-top: 20px;
+}
+
+.creatViews .layui-form-checkbox[lay-skin=primary] span {
+    font-size: 14px;
+}
+
+
+/* 图形画面详情 */
+
+
+/* 能耗统计分级 */
+
+.panel-heading {
+    border: none;
+    height: 48px;
+    text-align: left;
+    padding-left: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.tree-panel-title {
+    box-sizing: border-box;
+    position: relative;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.panel-heading a {
+    display: inline-block;
+    padding-top: 12px;
+    width: 330px;
+    max-height: 25px;
+    overflow: hidden;
+}
+
+.icon-tree {
+    position: absolute;
+    right: 10px;
+    font-size: 22px;
+    top: 12px;
+}
+
+div.bayaxtree-div {
+    text-align: center;
+    border: none;
+    width: 380px;
+}
+
+div.bayaxtree-divs {
+    float: left;
+}
+
+div.bayaxTree {
+    margin-top: 10px;
+    max-height: 600px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 380px;
+}
+
+.ztree li a.curSelectedNode {
+    padding-top: 0px;
+    background-color: transparent;
+    height: 16px;
+    border: none;
+    opacity: 1;
+}
+
+div.bayaxTree ul li {
+    padding: 5px 0;
+}
+
+div.bayaxTree ul li a span {
+    font-size: 16px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+ul.ztree {
+    width: 400px;
+}
+
+
+/* 能耗统计分级 */
+
+
+/*用户权限管理*/
+
+.userManage-main {
+    padding-right: 20px;
+}
+
+.user-div-l,
+.user-div-set {
+    border: 1px solid rgba(143, 152, 186, .2);
+    padding: 20px 13px;
+}
+
+.user-div-set-hide {
+    display: none;
+}
+
+.userdivsetshow {
+    display: block;
+}
+
+.user-div-l {
+    height: 720px;
+    max-height: 720px;
+    overflow: hidden;
+    padding-right: 5px;
+}
+
+.user-div-l table tbody tr {
+    cursor: pointer;
+}
+
+.user-set-head {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(143, 152, 186, .2);
+}
+
+.user-set-head span.user-set-head-title {
+    padding-left: 5px;
+}
+
+.user-set-head a {
+    float: right;
+    display: block;
+    padding: 0 5px;
+}
+
+ul.user-content-ul {
+    padding: 10px 0;
+}
+
+ul.user-content-ul-head {
+    border-bottom: 1px solid rgba(143, 152, 186, .2);
+}
+
+ul.user-content-ul li {
+    display: block;
+    padding: 10px 5px;
+}
+
+ul.user-content-ul li span:first-child {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.user-set-head span.user-set-head-quanxian {
+    margin-top: 12px;
+    display: block;
+}
+
+.user-set-ul-scroll {
+    height: 440px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(143, 152, 186, .2);
+}
+
+
+/* 编辑 */
+
+ul.user-content-ul-edit li {
+    padding: 0;
+}
+
+.user-content-ul .layui-form-label {
+    padding: 9px 0;
+    padding-left: 5px;
+    padding-right: 10px;
+    position: absolute;
+    left: 0;
+}
+
+.user-content-ul .layui-input-inline {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 80px;
+    top: 0;
+}
+
+.user-content-ul .layui-inline {
+    width: 100%;
+}
+
+.user-set-ul-scroll.user-set-editul-scroll {
+    height: 250px;
+    overflow: hidden;
+}
+
+.userquanxianlishow {
+    visibility: hidden;
+}
+
+
+/*用户权限管理*/
