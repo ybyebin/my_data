@@ -1,3 +1,11 @@
+/*
+ * @Author: yb 
+ * @Date: 2018-01-24 10:16:04 
+ * @Last Modified by: yb
+ * @Last Modified time: 2018-01-24 14:13:00
+ */
+
+"use strict";
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         //AMD
@@ -52,6 +60,34 @@
             }
             return format;
         },
+        /*
+         *时间个性化输出功能
+         *
+         *< 60s, 显示为“刚刚”
+         *>= 1min && < 60 min, 显示与当前时间差“XX分钟前”
+         *>= 60min && < 1day, 显示与当前时间差“今天 XX:XX”
+         *>= 1day && < 1year, 显示日期“XX月XX日 XX:XX” 
+         *>= 1year, 显示具体日期“XXXX年XX月XX日 XX:XX” 
+         */
+        timeFormat: function(time) {
+            var date = new Date(time),
+                curDate = new Date(),
+                year = date.getFullYear(),
+                month = date.getMonth() + 10,
+                day = date.getDate(),
+                hour = date.getHours(),
+                minute = date.getMinutes(),
+                curYear = curDate.getFullYear(),
+                curHour = curDate.getHours(),
+                timeStr;
+            if (year < curYear) { timeStr = year + '年' + month + '月' + day + '日 ' + hour + ':' + minute; } else {
+                var pastTime = curDate - date,
+                    pastH = pastTime / 3600000;
+                if (pastH > curHour) { timeStr = month + '月' + day + '日 ' + hour + ':' + minute; } else if (pastH >= 1) { timeStr = '今天 ' + hour + ':' + minute + '分'; } else { var pastM = curDate.getMinutes() - minute; if (pastM > 1) { timeStr = pastM + '分钟前'; } else { timeStr = '刚刚'; } }
+            }
+            return timeStr;
+        },
+
 
         // 深拷贝
         deepClone: function(obj) {
@@ -133,7 +169,7 @@
         },
 
         /**
-         * [时间格式化函数]
+         * [js 添加on]
          * @param  {[obj]} elem [要添加的 js对象]
          * @param  {[string]} even ['click','input'。。。。。。]
          * @param  {[]} fn [执行的方法]
@@ -148,6 +184,37 @@
         },
         // 判断输入字符串是否合法
         strRegeMatch: function(str) {
+            //正整数 /^[0-9]*[1-9][0-9]*$/;
+            //负整数 /^-[0-9]*[1-9][0-9]*$/;
+            //正浮点数 /^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/;
+            //负浮点数 /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;
+            //浮点数 /^(-?\d+)(\.\d+)?$/; //email地址 /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+            //url地址 /^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/; 或：^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$
+            //年/月/日（年-月-日、年.月.日） /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/;
+            //匹配中文字符 /[\u4e00-\u9fa5]/;
+            //匹配帐号是否合法(字母开头，允许5-10字节，允许字母数字下划线) /^[a-zA-Z][a-zA-Z0-9_]{4,9}$/;
+            //匹配空白行的正则表达式 /\n\s*\r/;
+            //匹配中国邮政编码 /[1-9]\d{5}(?!\d)/;
+            //匹配身份证 /\d{15}|\d{18}/;
+            //匹配国内电话号码 /(\d{3}-|\d{4}-)?(\d{8}|\d{7})?/;
+            //匹配IP地址 /((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)/;
+            //匹配首尾空白字符的正则表达式 /^\s*|\s*$/;
+            //匹配HTML标记的正则表达式 < (\S*?)[^>]*>.*?|< .*? />;
+            //sql 语句 ^(select|drop|delete|create|update|insert).*$
+            //提取信息中的网络链接 (h|H)(r|R)(e|E)(f|F) *= *('|")?(\w|\\|\/|\.)+('|"| *|>)?
+            //提取信息中的邮件地址 \w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*
+            //提取信息中的图片链接 (s|S)(r|R)(c|C) *= *('|")?(\w|\\|\/|\.)+('|"| *|>)? 
+            //提取信息中的 IP 地址 (\d+)\.(\d+)\.(\d+)\.(\d+)
+            //取信息中的中国手机号码 (86)*0*13\d{9} 
+            //提取信息中的中国邮政编码 [1-9]{1}(\d+){5}
+            //提取信息中的浮点数（即小数） (-?\d*)\.?\d+ 
+            //提取信息中的任何数字 (-?\d*)(\.\d+)? 
+            //电话区号 ^0\d{2,3}$ //腾讯 QQ 号 ^[1-9]*[1-9][0-9]*$ 
+            //帐号（字母开头，允许 5-16 字节，允许字母数字下划线） ^[a-zA-Z][a-zA-Z0-9_]{4,15}$ 
+            //中文、英文、数字及下划线 ^[\u4e00-\u9fa5_a-zA-Z0-9]+$
+
+
+
             var pattern = new RegExp(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\-_]/g);
             if (pattern.test(val)) {
                 return false;
@@ -362,6 +429,7 @@
             }
         },
 
+
         // 倒计时
         countDown: function(num, fun) {
             for (var i = 0; i <= num; i++) {
@@ -373,7 +441,47 @@
                 })(i);
             }
 
+        },
+        // 检测浏览器语言
+        getBrowserLanguage: function() {
+            var currentLang = navigator.language; //判断除IE外其他浏览器使用语言
+            if (!currentLang) { //判断IE浏览器使用语言
+                currentLang = navigator.browserLanguage;
+            }
+            return currentLang;
+        },
+        // 判断iPhone|iPad|iPod|iOS|Android
+        judgeMachine: function() {
+            var type;
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                type = 'ios';
+            } else if (/(Android)/i.test(navigator.userAgent)) {
+                type = 'Android';
+            } else {
+                type = 'pc';
+            };
+            return type;
+        },
+        // 自适应rem初始化
+        setHtmlRem: function() {
+            (function(b) {
+                var a = {};
+                a.Html = b.getElementsByTagName('html')[0];
+                a.widthProportion = function() {
+                    var c = (b.body && b.body.clientWidth || a.Html.offsetWidth) / 750;
+                    console.log(c)
+                    return c > 1 ? 1 : c < 0.4 ? 0.4 : c;
+                };
+                a.changePage = function() {
+                    // console.log(a.widthProportion())
+                    a.Html.setAttribute('style', 'font-size:' + a.widthProportion() * 100 + 'px!important;height:auto');
+                }
+
+                a.changePage();
+                setInterval(a.changePage, 1000);
+            })(document);
         }
+
 
 
 
@@ -387,5 +495,8 @@ console.log('日期:' + base.format(new Date(), 'yyyy-MM-dd'));
 console.log(base.getExplore() + '========' + base.getExploreName())
 
 
+console.log(base.getBrowserLanguage());
+console.log(base.judgeMachine());
 
-base.countDown(5);
+// base.setHtmlRem();
+console.log(base.timeFormat('2018/01/24 11:54:56'))

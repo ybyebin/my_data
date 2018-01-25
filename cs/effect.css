@@ -1,0 +1,18 @@
+/* 单行文本溢出 */
+
+.texts {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* 多行文本溢出 */
+
+.text-p {
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+}
