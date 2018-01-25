@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-24 10:16:04 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-25 14:01:16
+ * @Last Modified time: 2018-01-25 15:46:06
  */
 
 "use strict";
@@ -72,6 +72,21 @@
             return states;
         },
         // 全局数据状态管理方法--------------end
+
+        // 动态加载样式表
+        loadStyle: function(url) {
+            try {
+                document.createStyleSheet(url)
+            } catch (e) {
+                var cssLink = document.createElement('link');
+                cssLink.rel = 'stylesheet';
+                cssLink.type = 'text/css';
+                cssLink.href = url;
+                var head = document.getElementsByTagName('head')[0];
+                head.appendChild(cssLink)
+            }
+        },
+
 
         /**
          * [时间格式化函数]
@@ -585,14 +600,18 @@
 
 
 
-base.countDown(5);
-console.log('日期:' + base.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
-console.log('浏览器类型:' + base.getExplore() + '========' + base.getExploreName())
-console.log('获取浏览器语言:' + base.getBrowserLanguage());
-console.log('pc？移动:' + base.judgeMachine());
-console.log('个性化输出:' + base.individuationTimeFormat('2018/01/25 13:20:56'));
-console.log('随机字符串:' + base.randomString());
+// base.countDown(5);
+// console.log('日期:' + base.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
+// console.log('浏览器类型:' + base.getExplore() + '========' + base.getExploreName())
+// console.log('获取浏览器语言:' + base.getBrowserLanguage());
+// console.log('pc？移动:' + base.judgeMachine());
+// console.log('个性化输出:' + base.individuationTimeFormat('2018/01/25 13:20:56'));
+// console.log('随机字符串:' + base.randomString());
 
-base.statesSet({ name: 'yb' });
-console.log(JSON.stringify(base.getGlobalStatusData(), null, 2));
-console.log(base.statesGet('names'));
+// base.statesSet({ name: 'yb' });
+// console.log(JSON.stringify(base.getGlobalStatusData(), null, 2));
+// console.log(base.statesGet('names'));
+// tableExport('table', 'table', 'csv');
+
+
+base.loadStyle('./css/reset.css');

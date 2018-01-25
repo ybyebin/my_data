@@ -1,0 +1,137 @@
+/*
+ * @Author: yb 
+ * @Date: 2018-01-25 09:48:01 
+ * @Last Modified by: yb
+ * @Last Modified time: 2018-01-25 16:12:38
+ */
+
+
+/* 单行文本溢出 */
+
+.texts {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* 多行文本溢出 */
+
+.text-p {
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+}
+
+
+/*  table*/
+
+.bayax-table {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.bayax-table td {
+    max-width: 200px;
+    min-width: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bayax-table tbody>tr:nth-of-type(even) {
+    background-color: #f8fbfa;
+}
+
+.bayax-table tbody>tr:nth-of-type(odd) {
+    background-color: #FFFFFF;
+}
+
+
+/* 自定义 checkbox   -begin*/
+
+.bayaxcheckbox {
+    display: none;
+}
+
+.checkbox-i {
+    margin-right: 10px;
+    background: url(../images/icheckblack.png) no-repeat;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    background-position: 0 0;
+    cursor: pointer;
+}
+
+.checkbox-i:hover {
+    background-position: -24px 0;
+}
+
+.bayaxcheckbox:checked+.checkbox-i {
+    background-position: -48px 0;
+}
+
+.bayaxcheckbox:checked:hover+.checkbox-i {
+    background-position: -48px 0;
+}
+
+.bayaxcheckbox:disabled+.checkbox-i {
+    background-position: -72px 0;
+}
+
+.bayaxcheckbox:disabled:hover+.checkbox-i {
+    background-position: -72px 0;
+}
+
+.radiobox-i {
+    margin-right: 10px;
+    background: url(../images/icheckblack.png) no-repeat;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    background-position: -120px 0;
+    cursor: pointer;
+}
+
+.radiobox-i:hover {
+    background-position: -144px 0;
+}
+
+.bayaxcheckbox:checked+.radiobox-i {
+    background-position: -168px 0
+}
+
+.bayaxcheckbox:checked:hover+.radiobox-i {
+    /* background-position: -48px 0; */
+}
+
+.bayaxcheckbox:disabled+.radiobox-i {
+    /* background-position: -192px 0; */
+}
+
+.bayaxcheckbox:disabled:hover+.radiobox-i {
+    background-position: -72px 0;
+}
+
+@media (-o-min-device-pixel-ratio:5/4),
+(-webkit-min-device-pixel-ratio:1.25),
+(min-resolution:120dpi) {
+    .icheckbox_square-green,
+    .iradio_square-green {
+        background-image: url(../../images/icheckbalck@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px
+    }
+}
+
+
+/* 自定义 chenckbox  -end */
