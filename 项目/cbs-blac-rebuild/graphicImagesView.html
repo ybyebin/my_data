@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>图形画面管理</title>
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="css/bayax.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- <link rel="stylesheet" href="./css/basegreen.css"> -->
+    <link rel="stylesheet" href="plugin/jQuery/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/sysManagement.css">
+    <script src="plugin/jQuery/jquery-1.11.1.min.js"></script>
+</head>
+
+<body class="layui-layout-body">
+    <div id="app" class="layui-layout ">
+        <div class="layui-side bayax-bg-black">
+            <div class="layui-side-scroll">
+
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+                    <li class="layui-nav-item bayax-li-item-img">
+                        <a href="deviceControlCanvas.html">
+                            <img class="logo" v-bind:src="project.logo_path"></a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <a class="" href="engineeringManagement.html"> <i class="gcgl"></i> 工程管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item ">
+                        <a href="nodeManagement.html"> <i class="jdgl"></i> 节点管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="datalabelManagement.html">
+                            <i class="sjbqgl"></i> 数据标签管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <i class="nhtjsd"></i> 能耗统计设定
+                        </a>
+                    </li>
+                    <li class="layui-nav-item active">
+                        <a href="javascript:;">
+                            <i class="txhmgl"></i> 图形画面管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="energyconsumptionStatisticClassification.html">
+                            <i class="nhtjfj"></i> 能耗统计分级
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="userManagement.html">
+                            <i class="yhqxgl"></i> 用户权限管理
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="subsystem-head">
+
+            <span @click="goSubsys" class="go-subsys"><i class="icon-keyboard_arrow_left"></i>子系统列表</span>
+            <label>当前您所在的位置: <span v-text="headData.name"></span>
+					</label>
+        </div>
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div class="bayax-content">
+                <div class="content-head">
+                    <button @click="creatNewViews" class="layui-btn bayax-btn">新建画布</button>
+
+                </div>
+                <div class="content-body">
+                    <div class="content-body-border-top"></div>
+                    <div class="content-main node-content-main bayaxMscroll">
+                        <div class="graphi-div graphi-div-view">
+
+                            <table class="bayax-table">
+                                <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th style="width:180px;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in sysGroupsData">
+                                        <td v-text="item.name"></td>
+
+                                        <td>
+                                            <a v-bind:class="{ tdshow: item.ishide }" @click.stop="viewReName(item)" href="javascript:;" class="bayax-a">重命名</a>
+                                            <a v-bind:class="{ tdshow: item.ishide }" @click.stop="viewDelete(item)" href="javascript:;" class="bayax-a">删除</a>
+                                            <a v-bind:class="{ tdshow: item.ishide }" @click.stop="sysEditViews(item)" href="javascript:;" class="bayax-a">编辑画面</a>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- 重命名弹窗 -->
+        <div id="creatsys" class="layer-default">
+            <div class="bayax-layer-content">
+                <div class="layui-inline">
+                    <label class=" layui-form-label">画面名称</label>
+                    <div class="layui-input-inline" style="width:230px">
+                        <input v-model="changeViewNameData.sysName" v-on:input="sysNameOnInput" v-on:blur="sysNameOnInput" type="text" autocomplete="off" class="layui-input" maxlength="20">
+                    </div>
+                    <label v-text="changeViewNameData.nameWarnStr" v-bind:class="{ rightinput: changeViewNameData.isRightName }" class="graphicimg-warn-label layui-form-label"></label>
+                </div>
+            </div>
+        </div>
+        <!-- 新建画面弹窗 -->
+        <div id="creatViews" class="layer-default">
+            <div class="bayax-layer-content creatViews">
+
+                <div class="layui-inline">
+                    <label class="layui-form-label layui-form-label-head">画面名称</label>
+                    <div class="layui-input-inline" style="width:230px">
+                        <input v-model="creatViewData.viewName" v-on:input="sysViewNameOnInput" v-on:blur="sysViewNameOnInput" type="text" autocomplete="off" class="layui-input" maxlength="20">
+                    </div>
+                    <label v-text="creatViewData.nameWarnStr" v-bind:class="{ rightinput: creatViewData.isRightName }" class="graphicimg-warn-label layui-form-label"></label>
+                </div>
+                <div class="layui-inline layui-form">
+                    <div class="layui-form-label layui-form-label-head">
+                        <input class="view-linkcheck" v-model='creatViewData.otherLinkCheck' lay-filter="useOtherLinkCheck" type="checkbox" lay-skin="primary" title="使用外部链接">
+
+                    </div>
+
+                    <div class="layui-input-inline" style="width:230px">
+                        <input v-model="creatViewData.linkval" :disabled="creatViewData.linkvalDisabled" type="text" autocomplete="off" class="layui-input" maxlength="20">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 弹窗 -->
+        <!-- <div id="delsys" class="layer-default">
+            <div class="bayax-layer-content">
+                <div class="layui-inline">
+                    <label class=" layui-form-label" style="width:200px;">确认删除该系统吗</label>
+                </div>
+            </div>
+        </div> -->
+
+        <div v-bind:class="{ loadingShow:loadingShow }" class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $(".graphi-div").mCustomScrollbar();
+
+            });
+        })(jQuery);
+    </script>
+
+    <script src="plugin/vue.js"></script>
+    <script src="plugin/jQuery/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="plugin/layui/layui.js"></script>
+    <script src="js/basic/api.js"></script>
+    <script src="js/sysSet/graphicImgesView.js"></script>
+
+</body>
+
+</html>

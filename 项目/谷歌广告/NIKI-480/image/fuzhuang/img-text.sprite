@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../images" ImageName="img-text" IsPhone="false" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="d-xl.png" LocationX="0" LocationY="0" />
+    <Sprite Path="m-set-face.png" LocationX="46" LocationY="0" />
+    <Sprite Path="上衣.png" LocationX="182" LocationY="0" />
+    <Sprite Path="m-set-hair.png" LocationX="258" LocationY="0" />
+    <Sprite Path="red-hair.png" LocationX="521" LocationY="0" />
+    <Sprite Path="m-set-clothes.png" LocationX="1677" LocationY="0" />
+    <Sprite Path="d-set-clothes.png" LocationX="2133" LocationY="0" />
+    <Sprite Path="res-d-clothes.png" LocationX="2614" LocationY="0" />
+    <Sprite Path="res-m-clothes.png" LocationX="3095" LocationY="0" />
+    <Sprite Path="d-set-hair-shang.png" LocationX="0" LocationY="411" />
+    <Sprite Path="d-set-hair-xia.png" LocationX="214" LocationY="411" />
+    <Sprite Path="res-d-hair-shang.png" LocationX="400" LocationY="411" />
+    <Sprite Path="res-d-hair-xia.png" LocationX="614" LocationY="411" />
+    <Sprite Path="手链.png" LocationX="435" LocationY="0" />
+    <Sprite Path="头花.png" LocationX="364" LocationY="0" />
+    <Sprite Path="m-set-tou.png" LocationX="695" LocationY="0" />
+    <Sprite Path="头纱.png" LocationX="1111" LocationY="0" />
+    <Sprite Path="项链.png" LocationX="895" LocationY="0" />
+    <Sprite Path="梦中的婚礼-_03.png" LocationX="112" LocationY="0" />
+  </SpriteList>
+</SpriteFile>

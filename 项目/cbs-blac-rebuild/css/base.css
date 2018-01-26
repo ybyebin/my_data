@@ -1,0 +1,817 @@
+/* 黑色版本 */
+
+html {
+    background-color: #15182D;
+}
+
+body {
+    font-family: "微软雅黑";
+    background-color: #15182D;
+}
+
+.layui-body {
+    color: #fff;
+}
+
+
+/* a标签 */
+
+a {
+    color: #fff;
+}
+
+
+/*表格 bayax-table */
+
+.bayax-table {
+    border-bottom-color: #555769;
+}
+
+.bayax-table>thead>tr>th {
+    color: #fff;
+    border-bottom-color: #555769;
+    background: #1C203F;
+}
+
+.bayax-table tbody td {
+    color: #fff;
+}
+
+.bayax-table tbody>tr:nth-of-type(even) {
+    background: #262A50;
+}
+
+.bayax-table tbody>tr:nth-of-type(odd) {
+    background-color: #1D2141;
+}
+
+
+/*表格 bayax-table */
+
+
+/*分页-begin*/
+
+
+/* .tcdPageCode span.current {
+    color: #fff;
+} */
+
+
+/*分页-end*/
+
+
+/*按钮 -begin*/
+
+.bayax-btn,
+.bayax-btn-cancel,
+.bayax-btn-other,
+.bayax-btn-export {
+    background: #DEE2FF;
+    color: #000;
+}
+
+.bayax-btn:hover {
+    color: #000;
+    background: #C4CAFA;
+}
+
+.bayax-btn-export,
+.bayax-btn-cancel {
+    color: #fff;
+    background: #3F446E;
+}
+
+.bayax-btn-export:hover,
+.bayax-btn-cancel:hover {
+    background: #30366A;
+}
+
+
+/* 按钮  -end*/
+
+
+/* 下拉按钮组 公共   -begin */
+
+.bayax-select-ul {
+    background: #3F446E;
+}
+
+.bayax-select-ul li {
+    color: #fff;
+}
+
+.bayax-select-ul li:hover {
+    background: #1C1F38;
+    color: #fff;
+}
+
+
+/* 下拉按钮组 公共     -end */
+
+
+/* hover 按钮组 -begin */
+
+.bayax-hover-select .bayax-hover-ul {
+    background: #3F446E;
+    color: #fff;
+}
+
+.bayax-hover-select .bayax-hover-ul li:hover {
+    background: #1C1F38;
+}
+
+.bayax-hover-select .bayax-hover-ul li a {
+    padding: 0 10px !important;
+    color: #fff;
+}
+
+
+/* hover 按钮组 -end*/
+
+
+/*checkbox -begin*/
+
+.layui-form-checkbox i {
+    color: transparent;
+}
+
+.layui-form-checkbox[lay-skin=primary] i {
+    width: 20px;
+    height: 20px;
+    line-height: 22px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #A78FBD;
+    background-color: #A78FBD;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #A78FBD;
+    color: transparent;
+}
+
+.layui-checkbox-disbaled[lay-skin=primary]:hover i {
+    color: transparent!important;
+    border-color: #fff;
+}
+
+.layui-form-checked.layui-checkbox-disbaled[lay-skin=primary] i {
+    background: #D2D2D2;
+    border: none;
+}
+
+.layui-form-checked.layui-checkbox-disbaled[lay-skin=primary]:hover i {
+    color: #fff!important;
+    border-color: transparent;
+}
+
+.layui-form-checked[lay-skin=primary]:hover i {
+    color: #fff;
+}
+
+.layui-form-checkbox[lay-skin=primary] span {
+    float: right;
+    line-height: 20px;
+    /* font-size: 16px; */
+    color: #fff;
+}
+
+.layui-form-checkbox[lay-skin=primary] span {
+    color: #fff;
+    line-height: 20px;
+}
+
+
+/*checkbox  -end*/
+
+
+/* 加载动画 -begin */
+
+.loading span {
+    background: #354078;
+}
+
+
+/* 加载动画 -end */
+
+
+/*content-body*/
+
+.content-head+.content-body {
+    margin-top: 15px;
+}
+
+.content-body {
+    padding-right: 20px;
+}
+
+.content-body-border-top {
+    background-image: -webkit-linear-gradient(left, #C96DD8 20%, #3023AE 100%);
+    height: 2px;
+}
+
+.content-main {
+    background: #1C203F;
+    padding: 20px 20px;
+}
+
+
+/*select input textarea    -begin*/
+
+.bayax-select {
+    background: #1D2142;
+    color: #fff;
+}
+
+.layui-input {
+    color: #fff;
+}
+
+.layui-input,
+.layui-select,
+.layui-textarea {
+    color: #fff;
+}
+
+.layui-input:hover,
+.layui-select:hover,
+.layui-textarea:hover {
+    color: #fff;
+}
+
+.layui-form-select dl {
+    background: #3F446E;
+    color: #fff;
+}
+
+.layui-form-select dl dd {
+    margin-bottom: 1px;
+    color: #fff;
+}
+
+.layui-form-select dl dd:hover,
+.layui-form-select dl dt:hover,
+.layui-form-select dl dd.layui-this {
+    background: #1C1F38!important;
+    color: #fff;
+}
+
+.bayax-textarea {
+    color: #fff;
+}
+
+
+/*select input textarea    -end*/
+
+
+/* ul  li -begin*/
+
+.bayax-statis-ul li:nth-of-type(even) {
+    background: #191c33;
+}
+
+.bayax-statis-ul li:nth-of-type(odd) {
+    background-color: #1D203B;
+}
+
+
+/* ul  li  -end*/
+
+
+/*弹窗样式  -begin*/
+
+body .bayax-layer-skin div.layui-layer-title {
+    color: #fff;
+    background: #3E4687;
+}
+
+body .bayax-layer-skin .layui-layer-content {
+    background: #2B2E4B;
+    color: #fff;
+}
+
+body .bayax-layer-skin .layui-layer-content {
+    background-color: #2B2E4B;
+}
+
+.bayax-layer-content-border {
+    border-bottom: 1px solid #606277;
+}
+
+body .bayax-layer-skin .layui-layer.layui-layer-dialog.layui-layer-border.layui-layer-msg .layui-layer-content {
+    background: #3E4687;
+}
+
+body .bayax-layer-skin .layui-layer-page .layui-layer-content {
+    background-color: #2B2E4B;
+}
+
+body .bayax-layer-skin .layui-layer-btn {
+    background-color: #2B2E4B;
+}
+
+body .bayax-layer-skin .layui-layer-btn a,
+body .bayax-layer-skin .layui-layer-btn a.layui-layer-btn0 {
+    background: #DEE2FF;
+    color: #000;
+}
+
+body .bayax-layer-skin .layui-layer-btn a:last-child {
+    color: #fff;
+    background: #3F446E;
+}
+
+
+/*弹窗样式  -end*/
+
+
+/*日期组件   颜色-begin */
+
+.laydate-theme-balck {
+    border: none !important;
+    background-color: #404469 !important;
+}
+
+.laydate-theme-balck .layui-laydate-list {
+    background-color: #404469 !important;
+}
+
+.laydate-theme-balck .layui-laydate-header {
+    border-bottom: none;
+}
+
+.laydate-theme-balck .layui-laydate-header i {
+    color: #fff;
+    font-size: 12px;
+}
+
+.laydate-theme-balck .laydate-set-ym {
+    color: #fff;
+}
+
+.laydate-theme-balck .layui-laydate-content th {
+    color: #fff !important;
+}
+
+.laydate-theme-balck .layui-laydate-content .laydate-day-next,
+.laydate-theme-balck .layui-laydate-content .laydate-day-prev {
+    color: #A78FBD !important;
+}
+
+.laydate-theme-balck .layui-laydate-content td {
+    color: #fff !important;
+}
+
+.laydate-theme-balck .layui-laydate-list>li {
+    color: #fff;
+}
+
+.laydate-theme-balck.layui-laydate .layui-this {
+    background-color: #1B2036!important;
+}
+
+.laydate-theme-balck .layui-laydate-content td:hover,
+.laydate-theme-balck .layui-laydate-list li:hover {
+    color: #fff;
+    background: #3E4687
+}
+
+.laydate-theme-balck .layui-laydate-header i:hover,
+.laydate-theme-balck .layui-laydate-header span:hover {
+    color: #fff;
+}
+
+
+/*日期组件   颜色-end */
+
+
+/*搜索框   -begin*/
+
+.content-search {
+    background: #1D2142;
+    color: #fff;
+    border: 1px solid rgba(143, 152, 186, 0.31);
+}
+
+.content-search input {
+    background: #1D2142;
+    color: #fff;
+}
+
+
+/*搜索框   -end*/
+
+
+/* 页面样式 */
+
+
+/*1 工程配置   -begin */
+
+.bayax-bg-black {
+    background: #2D3057;
+}
+
+.layui-nav-tree .layui-nav-item a:hover {
+    background: #3E4687!important;
+}
+
+.layui-nav-tree .layui-nav-item.bayax-li-item-img a,
+.layui-nav-tree .layui-nav-item.bayax-li-item-img a:hover {
+    background: #1C203F !important;
+}
+
+.layui-nav-tree .layui-nav-item.active a {
+    background: #3E4687!important;
+    color: #fff;
+}
+
+.layui-side a i {
+    background: url(../images/syssettitle.png) no-repeat;
+}
+
+.layui-side a i.gcgl {
+    background-position: -120px 0;
+}
+
+.layui-side a i.jdgl {
+    background-position: -140px 0;
+}
+
+.layui-side a i.sjbqgl {
+    background-position: 0 0;
+}
+
+.layui-side a i.nhtjsd {
+    background-position: -160px 0;
+}
+
+.layui-side a i.txhmgl {
+    background-position: -80px 0;
+}
+
+.layui-side a i.nhtjfj {
+    background-position: -160px 0;
+}
+
+.layui-side a i.yhqxgl {
+    background: url(../images/system.png) no-repeat;
+    background-position: 0 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.gcgl {
+    background-position: -100px 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.jdgl {
+    background-position: -180px 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.sjbqgl {
+    background-position: -40px 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.nhtjsd {
+    background-position: -20px 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.txhmgl {
+    background-position: -60px 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.nhtjfj {
+    background-position: -20px 0;
+}
+
+.layui-nav-tree .layui-nav-item.active a i.yhqxgl {
+    background-position: -40px 0;
+}
+
+
+/*1 工程配置   -end */
+
+
+/* 数据标签弹窗 */
+
+.label-content-base .base-title label {
+    border-left: 5px solid #3E4687;
+}
+
+.label-check-div span {
+    color: #fff!important;
+}
+
+.other-warn-content .table-ul-body-bg li:nth-of-type(even) {
+    background: #262A50;
+}
+
+.other-warn-content .table-ul-body-bg li:nth-of-type(odd) {
+    background-color: #1D2141;
+}
+
+.table-ul-head {
+    border-bottom: 2px solid #555769;
+}
+
+
+/* 能耗统计设定 */
+
+.energyStatistics-head {
+    border-bottom: 1px solid #555769;
+}
+
+.energyStatistics .content-main-statis {
+    background-color: #191C33;
+}
+
+.energyStatistics-content-body .bayax-ul li.active {
+    border-left: 6px solid #A78FBE;
+    color: #A78FBE;
+}
+
+.energyStatistics-content-body .bayax-ul li:hover {
+    border-left: 6px solid #A78FBE;
+    color: #A78FBE;
+}
+
+.energyStatistics-right-head span.head-title {
+    border-left: 3px solid #3E4687;
+}
+
+.energyStatistics-right-content table thead {
+    border: 1px solid #3e4364;
+}
+
+.energyStatistics-right-content table thead tr th {
+    background-color: #2E3554;
+}
+
+.statistic-layer-left-div div.content,
+.statistic-layer-right-div div.content {
+    border: 1px solid #3C3F61;
+}
+
+.statistic-layer .bayax-table>thead>tr>th {
+    background: #2C2F4C;
+}
+
+.statistic-layer .bayax-table tbody>tr:nth-of-type(odd) {
+    background: #2C2F4C;
+}
+
+.statistic-layer .bayax-table tbody>tr:nth-of-type(even) {
+    background: #1D2241;
+}
+
+
+/* 图形画面管理 */
+
+.graphi-div {
+    border-bottom: 1px solid #555769;
+}
+
+.subsystem-head {
+    color: #fff;
+    background: #3E4687;
+}
+
+
+/* 能耗统计分级 */
+
+.panel-heading {
+    background: #3C4663;
+}
+
+.panel-heading a {
+    color: #fff;
+}
+
+div.bayaxtree-div {
+    background-color: #2D3452;
+}
+
+div.bayaxTree ul li a span {
+    color: #fff;
+}
+
+
+/*用户权限管理   -begin*/
+
+.user-div-l table tbody tr.sele {
+    border-left: 5px solid #A78FBE
+}
+
+.user-set-head span.user-set-head-title {
+    border-left: 4px solid #3E4687;
+}
+
+.user-set-ul-scroll li:nth-of-type(even) {
+    background: #262A50;
+}
+
+.user-set-ul-scroll li:nth-of-type(odd) {
+    background-color: #1D2141;
+}
+
+
+/*用户权限管理   -end*/
+
+
+/* 数据展示模块*******  布局 */
+
+
+/* 头部    -begin */
+
+.bayax-layout-admin .bayax-layout-header {
+    background-color: #15182D;
+    border-bottom: 1px solid #3E4687;
+}
+
+.bayax-layout-header .active {
+    border-bottom: 5px solid #fff;
+}
+
+.bayax-proname {
+    color: #fff;
+}
+
+.bayax-proname:before {
+    background-color: #fff;
+}
+
+.bayax-layout-header .layui-nav-item a,
+.bayax-nav .layui-nav-item>a {
+    color: #fff;
+}
+
+.bayax-nav {
+    background-color: #393D49;
+}
+
+
+/* 头部  -end */
+
+
+/* body  -begin  */
+
+.bayax-body {
+    color: #fff;
+}
+
+
+/* body  -end  */
+
+
+/*   tab切换  -begin */
+
+.bayax-tab-title {
+    border-bottom: 1px solid #3B3E5F;
+}
+
+.bayax-tab-title li {
+    border: 1px solid #385E93;
+}
+
+.bayax-tab-title li.layui-this {
+    background: #2A2E4B;
+    color: #fff;
+}
+
+.bayax-tab-item a.btn-sure {
+    background: #3E4687;
+}
+
+.bayax-tab-item a.btn-sure:hover {
+    background: #374087;
+    color: #fff;
+}
+
+.tab-warn-div input {
+    background: #3F446E;
+}
+
+
+/*  tab切换  -end */
+
+
+/* 系统管理 -begin */
+
+.sys-management .layui-nav-tree .layui-nav-item,
+.sys-management .layui-nav-tree .layui-nav-item.layui-this>a {
+    background-color: #2D3057;
+}
+
+.sys-management .layui-nav-tree li.no-hover a:hover {
+    background: #2D3057 !important;
+}
+
+.sys-management .layui-nav-tree li.no-hover dl.layui-nav-child,
+.sys-management .layui-nav-tree li.no-hover dl.layui-nav-child a:hover {
+    background: #3E4687!important;
+}
+
+.sys-management .layui-nav-tree dl dd.active.layui-this a,
+.sys-management .layui-nav-tree dl dd.active {
+    background: #3E4687!important;
+}
+
+.sys-management .layui-nav-tree dl dd.active a {
+    color: #fff;
+}
+
+.layui-side a i {
+    background: url(../images/system.png) no-repeat;
+}
+
+.layui-side a i.txzt {
+    background-position: -140px 0;
+}
+
+.layui-side a i.xtrz {
+    background-position: -160px 0;
+}
+
+.layui-side a i.gyxt {
+    background-position: -120px 0;
+}
+
+.layui-side li.active a i.txzt {
+    background-position: -180px 0;
+}
+
+.layui-side li.active a i.xtrz {
+    background-position: 0 0;
+}
+
+.layui-side li.active a i.gyxt {
+    background-position: 0 0;
+}
+
+.sys-management-body td.warn {
+    color: red;
+}
+
+
+/* 系统管理 -end */
+
+
+/* draw2d-canvas   -begin */
+
+.draw2d-canvas {
+    color: #fff;
+}
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header {
+    background-color: #3E4687;
+}
+
+.draw2d-canvas .bayax-layout-header .bayax-logo {
+    background-color: #15182D;
+}
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2,
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2 .bayax-logo {
+    background: #1C1F38;
+}
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2 .bayax-logo {
+    border-right: 1px solid #2B2F4C;
+}
+
+.bayax-layout-header2 .bayax-logo .toolbar li:hover span span {
+    border-color: #BBBBBB;
+    background-color: #DADADA;
+}
+
+.bayax-layout-header2 .bayax-logo .toolbar li:hover {
+    color: #A78FBE;
+}
+
+.bayax-layout-lefttwo .layui-tab-title {
+    border-bottom: 1px solid #2B2F4C;
+}
+
+.bayax-layout-lefttwo .layui-tab-title .layui-this {
+    color: #A78FBE;
+    border-bottom: 2px solid #A78FBE;
+}
+
+.componentImg:hover {
+    border-color: #BBBBBB;
+    background-color: #DADADA;
+}
+
+#tooltips {
+    position: absolute;
+    background: #88b7d5;
+    border: 4px solid #c2e1f5;
+    padding: 5px;
+    display: block;
+    display: none;
+}
+
+/* draw2d-canvas   -end */
+
+

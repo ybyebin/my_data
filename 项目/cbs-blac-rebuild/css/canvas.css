@@ -1,0 +1,1179 @@
+/* 头部   -begin */
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header {
+    height: 64px;
+    line-height: 66px;
+    border: none!important;
+}
+
+.bayax-header {
+    position: fixed;
+    z-index: 1000;
+}
+
+.draw2d-canvas .bayax-layout-header .bayax-logo {
+    width: 280px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    line-height: 60px;
+    font-size: 16px;
+}
+
+.bayax-layout-header .bayax-logo img {
+    width: 127px;
+    height: 27px;
+}
+
+.bayax-layout-left {
+    position: absolute!important;
+    left: 280px;
+    top: 0;
+    overflow: hidden;
+}
+
+.bayax-layout-admin .bayax-layout-header .layui-nav {
+    background: 0 0;
+}
+
+.bayax-layout-admin .bayax-layout-header .bayax-nav {
+    background: 0 0;
+}
+
+.bayax-nav {
+    position: relative;
+    padding: 0 20px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.bayax-nav .layui-nav-item {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    line-height: 60px
+}
+
+.draw2d-canvas .layui-nav-item.head span {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.draw2d-canvas .go-subsys i {
+    font-size: 25px;
+    position: relative;
+    top: 6px;
+}
+
+.draw2d-canvas .group-name,
+.draw2d-canvas .image-name {
+    max-width: 200px;
+}
+
+.draw2d-canvas span.title {
+    font-weight: 700;
+}
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2 {
+    height: 85px;
+    line-height: normal;
+}
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2,
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2 .bayax-logo {
+    background: #1C1F38;
+}
+
+.draw2d-canvas.bayax-layout-admin .bayax-layout-header2 .bayax-logo {
+    line-height: normal;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.toolbar {
+    position: absolute;
+    top: -8px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    margin: auto;
+}
+
+.toolbar li {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.toolbar li:first-child {
+    margin-left: 25px;
+}
+
+.toolbar li:nth-child(3) {
+    width: 50px;
+}
+
+.bayax-layout-header2 .bayax-logo .toolbar li span span {
+    /* width: 24px; */
+    /* height: 24px; */
+    display: inline-block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.bayax-layout-header2 .bayax-logo .toolbar li span span {
+    background: url(../images/img/img.png) no-repeat;
+}
+
+.Path972 {
+    height: 14px;
+    width: 8px;
+    background-position: -1px -1px!important;
+}
+
+.Path973 {
+    height: 14px;
+    width: 8px;
+    background-position: -1px -15px!important;
+}
+
+.huifu {
+    height: 24px;
+    width: 24px;
+    background-position: -1px -29px!important;
+}
+
+.baocun {
+    height: 24px;
+    width: 24px;
+    background-position: -1px -53px!important;
+}
+
+.chexiao {
+    height: 24px;
+    width: 24px;
+    background-position: -1px -77px!important;
+}
+
+.clear {
+    height: 24px;
+    width: 24px;
+    background-position: -1px -101px!important;
+}
+
+.delete {
+    height: 24px;
+    width: 24px;
+    background-position: -1px -125px!important;
+}
+
+.bayax-layout-lefttwo {
+    right: 0;
+    height: 85px;
+}
+
+.bayax-layout-lefttwo .layui-tab-title {
+    height: 22px;
+    padding-left: 16px;
+}
+
+.bayax-layout-lefttwo .layui-tab-title li {
+    font-size: 14px;
+    line-height: normal;
+    min-width: 30px;
+    padding: 0;
+    margin-left: 20px;
+    height: 21px;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.bayax-layout-lefttwo .layui-tab-title li:first-child {
+    margin-left: 7px;
+}
+
+.bayax-layout-lefttwo .layui-tab-title .layui-this:after {
+    width: 0%;
+    height: 0;
+    border: none;
+}
+
+.comportant-ul {
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    padding-left: 16px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.comportant-ul li {
+    float: left;
+    /* width: 40px; */
+    height: 40px;
+    margin-left: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    /* background: red; */
+}
+
+.comportant-ul li:first-child {
+    margin-left: 0;
+}
+
+.comportant-ul li span {
+    /* width: 24px; */
+    /* height: 24px; */
+    display: inline-block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.comportant-ul li p {
+    position: relative;
+    top: -3px;
+}
+
+
+/*滚动条-开始*/
+
+.scroll-ul.comportant-ul {
+    position: relative;
+    top: 2px;
+    padding: 0;
+    padding-right: 15px;
+}
+
+.scroll-ul.comportant-ul li {
+    position: relative;
+}
+
+.scroll-ul.comportant-ul li:first-child {
+    /* margin-left: 15px; */
+}
+
+.components-num4 {
+    overflow: hidden;
+    zoom: 1;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* background: red; */
+}
+
+.components-num4 .pcont {
+    width: 90%;
+    float: left;
+    overflow: hidden;
+    padding-left: 5px;
+}
+
+.components-num4 .ScrCont {
+    width: 327699px;
+    zoom: 1;
+    margin-left: -5px;
+}
+
+.components-num4 #scroll_ul_1,
+.components-num4 #scroll_ul_2 {
+    float: left;
+}
+
+.components-num4 .LeftBotton,
+.components-num4 .RightBotton {
+    width: 15px;
+    height: 54px;
+    float: left;
+    /* position: relative; */
+    background: url(../images/img/img.png) no-repeat;
+}
+
+.components-num4 .LeftBotton {
+    margin: 15px -5px 0 5px;
+    width: 30px;
+    background: url(../images/img/Path973.png) no-repeat;
+}
+
+.components-num4 .RightBotton {
+    margin: 15px 1px 0 15px;
+    background: url(../images/img/Path972.png) no-repeat;
+}
+
+.components-num4 .space-border-before:before,
+.components-num4 .space-border:after {
+    width: 2px;
+    height: 24px;
+    content: "";
+    top: 12px;
+    right: -8px;
+    position: absolute;
+    background: #DEDEDE;
+}
+
+.components-num4 .space-border-before:before {
+    left: -5px;
+}
+
+
+/*滚动条-结束*/
+
+.componentImg {
+    background: url(../images/img/componentImg.png) no-repeat;
+}
+
+.ArrowDown {
+    height: 14px;
+    width: 11px;
+    background-position: 0 0;
+}
+
+.ArrowLeft {
+    height: 11px;
+    width: 14px;
+    background-position: -13px -1px;
+}
+
+.label {
+    height: 12px;
+    width: 17px;
+    background-position: -27px -1px;
+}
+
+.jpgbutton {
+    height: 11px;
+    width: 19px;
+    background-position: -43px -1px;
+}
+
+.left {
+    height: 24px;
+    width: 24px;
+    background-position: -62px -1px;
+}
+
+.leveldouble {
+    height: 24px;
+    width: 24px;
+    background-position: -86px -1px;
+}
+
+.menjin {
+    height: 24px;
+    width: 24px;
+    background-position: -110px -1px;
+}
+
+.liquid {
+    height: 24px;
+    width: 24px;
+    background-position: -134px -1px;
+}
+
+.monitoring {
+    height: 24px;
+    width: 24px;
+    background-position: -158px -1px;
+}
+
+.jpg button {
+    height: 24px;
+    width: 24px;
+    background-position: -182px -1px;
+}
+
+.Incandescent {
+    height: 24px;
+    width: 24px;
+    background-position: -206px -1px;
+}
+
+.jpg {
+    height: 24px;
+    width: 24px;
+    background-position: -230px -1px;
+}
+
+.LED {
+    height: 24px;
+    width: 24px;
+    background-position: -254px -1px;
+}
+
+.juxing {
+    height: 24px;
+    width: 24px;
+    background-position: -278px -1px;
+}
+
+.piping {
+    height: 24px;
+    width: 24px;
+    background-position: -302px -1px;
+}
+
+.Verticaldouble {
+    height: 24px;
+    width: 24px;
+    background-position: -326px -1px;
+}
+
+.tuoyuan {
+    height: 24px;
+    width: 24px;
+    background-position: -350px -1px;
+}
+
+.text {
+    height: 24px;
+    width: 24px;
+    background-position: -374px -1px;
+}
+
+.yuanjiajuxing {
+    height: 24px;
+    width: 24px;
+    background-position: -399px -1px;
+}
+
+.Warninglamp {
+    height: 24px;
+    width: 24px;
+    background-position: -422px -1px;
+}
+
+.Voltage {
+    height: 24px;
+    width: 24px;
+    background-position: -446px -1px;
+}
+
+.straightline {
+    height: 24px;
+    width: 24px;
+    background-position: -470px -1px;
+}
+
+.SolenoidValve {
+    height: 24px;
+    width: 24px;
+    background-position: -494px -1px;
+}
+
+.qiuji {
+    height: 24px;
+    width: 24px;
+    background-position: -518px -1px;
+}
+
+.tance {
+    height: 24px;
+    width: 24px;
+    background-position: -542px -1px;
+}
+
+.tag {
+    height: 24px;
+    width: 24px;
+    background-position: -566px -1px;
+}
+
+.switch {
+    height: 24px;
+    width: 24px;
+    background-position: -590px -1px;
+}
+
+.button {
+    height: 24px;
+    width: 24px;
+    background-position: -614px -1px;
+}
+
+.Broadcast {
+    height: 24px;
+    width: 24px;
+    background-position: -638px -1px;
+}
+
+.Blowerfan {
+    height: 24px;
+    width: 24px;
+    background-position: -662px -1px;
+}
+
+.activePower {
+    height: 24px;
+    width: 24px;
+    background-position: -686px -1px;
+}
+
+.curve {
+    height: 24px;
+    width: 24px;
+    background-position: -710px -1px;
+}
+
+.controlPanel {
+    height: 24px;
+    width: 24px;
+    background-position: -734px -1px;
+}
+
+.AirHeating {
+    height: 24px;
+    width: 24px;
+    background-position: -758px -1px;
+}
+
+.AirFiltration {
+    height: 24px;
+    width: 24px;
+    background-position: -782px -1px;
+}
+
+.AirCooler {
+    height: 24px;
+    width: 24px;
+    background-position: -806px -1px;
+}
+
+.beng {
+    height: 24px;
+    width: 24px;
+    background-position: -830px -1px;
+}
+
+.ArrowUp {
+    height: 24px;
+    width: 24px;
+    background-position: -854px -1px;
+}
+
+.Arrowright {
+    height: 24px;
+    width: 24px;
+    background-position: -878px -1px;
+}
+
+.duobianxing {
+    height: 24px;
+    width: 24px;
+    background-position: -902px -1px;
+}
+
+.highqiuji {
+    height: 24px;
+    width: 24px;
+    background-position: -926px -1px;
+}
+
+.ElectricTwo-wayValve {
+    height: 24px;
+    width: 24px;
+    background-position: -950px -1px;
+}
+
+.ElectricityConsumption {
+    height: 24px;
+    width: 24px;
+    background-position: -974px -1px;
+}
+
+.frequency {
+    height: 24px;
+    width: 24px;
+    background-position: -998px -1px;
+}
+
+.Gas {
+    height: 24px;
+    width: 24px;
+    background-position: -1022px -1px;
+}
+
+.FluorescentLamp {
+    height: 24px;
+    width: 24px;
+    background-position: -1046px -1px;
+}
+
+.electric {
+    height: 24px;
+    width: 24px;
+    background-position: -1070px -1px;
+}
+
+.Exhaustfan {
+    height: 24px;
+    width: 24px;
+    background-position: -1094px -1px;
+}
+
+.down {
+    height: 24px;
+    width: 24px;
+    background-position: -1118px -1px;
+}
+
+.ElectricButterflyValves {
+    height: 24px;
+    width: 24px;
+    background-position: -1142px -1px;
+}
+
+.Humidifier {
+    height: 24px;
+    width: 24px;
+    background-position: -1166px -1px;
+}
+
+.humidity {
+    height: 24px;
+    width: 32px;
+    background-position: -1190px -1px;
+}
+
+.pressure {
+    height: 24px;
+    width: 32px;
+    background-position: -1222px -1px;
+}
+
+.differentialPressure {
+    height: 24px;
+    width: 32px;
+    background-position: -1254px -1px;
+}
+
+.level {
+    height: 24px;
+    width: 32px;
+    background-position: -1286px -1px;
+}
+
+.temperature {
+    height: 24px;
+    width: 32px;
+    background-position: -1318px -1px;
+}
+
+.MetalHalide {
+    height: 24px;
+    width: 32px;
+    background-position: -1350px -1px;
+}
+
+@media screen and (max-width:768px) {
+    .bayax-head-bar {
+        display: block;
+    }
+    .bayax-layout-leftone {
+        display: none;
+    }
+}
+
+
+/* 头部 end */
+
+
+/* body   -begin*/
+
+.bayax-body {
+    position: absolute;
+    padding-top: 15px;
+    padding-right: 15px;
+    left: 15px;
+    right: 0;
+    top: 150px;
+    bottom: 0;
+    z-index: 998;
+    width: auto;
+    /* box-sizing: border-box; */
+    /* background: gray; */
+    overflow: auto;
+}
+
+.draw2d-body {
+    position: absolute;
+    left: 15px;
+    right: 330px;
+    top: 15px;
+    bottom: 0;
+    z-index: 998;
+    width: auto;
+    background: #1B1F3D;
+    box-sizing: border-box;
+    max-height: 800px;
+}
+
+.canvas-div {
+    position: absolute;
+    left: 0;
+    right: 220px;
+    top: 30px;
+    bottom: 0;
+    width: auto;
+    box-sizing: border-box;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: #1B1F3D;
+    overflow: hidden;
+    /* background: red; */
+}
+
+.canvas {
+    background-color: #2B2F4C;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(Hydrangeas.jpg);
+    background-position: center;
+    width: 1300px;
+    height: 730px;
+}
+
+
+/*tooltip-开始*/
+
+#tooltips {
+    position: absolute;
+    background: #88b7d5;
+    border: 4px solid #c2e1f5;
+    padding: 5px;
+    display: block;
+    display: none;
+}
+
+
+/* #tooltips:after,
+#tooltips:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#tooltips:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #88b7d5;
+	border-width: 7px;
+	left: 50%;
+	margin-left: -7px;
+}
+
+#tooltips:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #c2e1f5;
+	border-width: 13px;
+	left: 50%;
+	margin-left: -13px;
+} */
+
+
+/*tooltip-结束*/
+
+.global-btn-div {
+    float: right;
+    width: 220px;
+    /* background: blue; */
+    padding-top: 20px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* margin-right: 15px; */
+}
+
+.global-btn-div .global-btn-head {
+    border-bottom: 1px solid #fff;
+}
+
+.global-btn-div .global-btn-head span:last-child {
+    float: right;
+    cursor: pointer;
+}
+
+.global-btn-body {
+    height: 730px;
+    overflow: hidden;
+}
+
+.globalbtn-ul {
+    display: none;
+}
+
+.global-btn-body ul li {
+    margin-top: 10px;
+}
+
+.global-btn-body ul li button {
+    width: 165px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.global-btn-body ul li span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 5px;
+    display: none;
+    cursor: pointer;
+    background-position: -40px 0;
+}
+
+.global-btn-body ul li:hover span {
+    display: inline-block;
+}
+
+
+/* 属性 */
+
+.attribute-div {
+    float: right;
+    width: 300px;
+    height: 781px;
+    /* overflow: auto; */
+}
+
+.attr-head {
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    background: #2A3147;
+}
+
+.attr-body .layui-tab {
+    margin: 0;
+}
+
+.attr-body .layui-tab-title {
+    border: none;
+}
+
+.attr-body .layui-tab-title li {
+    font-size: 14px;
+    min-width: 30px;
+    padding: 0;
+    height: 21px;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #3E4687;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.attr-body .layui-tab-title li:first-child {
+    /* margin-left: 7px; */
+    border-right: 1px solid #2B2F4C;
+}
+
+.attr-body .layui-tab-title li.layui-this {
+    color: #A78FBE;
+}
+
+.attr-body .layui-tab-title .layui-this:after {
+    width: 0%;
+    height: 0;
+    border: none;
+}
+
+.attribute-div .layui-tab-item {
+    height: 700px;
+    overflow: hidden;
+}
+
+.attribute-div .mCustomScrollBox .mCSB_container {
+    margin-right: 0;
+}
+
+.attribute-div .mCSB_scrollTools {
+    right: -2px;
+}
+
+.attr-content .attr-content-titles {
+    background: #3F446E;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 15px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.attr-content [data-toggle="collapse"] i {
+    position: relative;
+    display: inline-block;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #9A9A9A;
+    top: 0px;
+    margin-right: 16px;
+}
+
+.attr-content [data-toggle="collapse"].collapsed i {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #9A9A9A;
+    position: relative;
+    top: 0;
+    margin-right: 12px;
+}
+
+.attr-content-body {
+    /* height: 400px; */
+    display: none;
+    padding: 20px 0;
+    padding-right: 20px;
+    background: #191C33;
+}
+
+.routine,
+.data-div {
+    display: block;
+}
+
+.attr-content-body .layui-form-item {
+    margin-bottom: 0;
+    /* background: red; */
+}
+
+.attr-content-body .layui-form-item.layui-formdesc-item {
+    margin-bottom: 10px;
+}
+
+.attr-content-body .layui-form-item.layui-formcheck-item {
+    padding-left: 15px;
+    padding-top: 5px;
+    /* background: red; */
+}
+
+.attr-content-body .layui-form-item.layui-formcheck-item span {
+    position: relative;
+    top: -5px;
+}
+
+.attr-content-body .layui-form-label {
+    width: 70px;
+    text-align: left;
+    padding-right: 0;
+    padding-top: 7px;
+}
+
+.attr-content-body .layui-input-block {
+    margin-left: 90px;
+    padding-top: 2px;
+}
+
+.attr-content-body input.layui-input {
+    height: 30px;
+}
+
+.attr-content-body textarea.layui-input {
+    min-height: 80px;
+    resize: none;
+    padding-top: 5px;
+    padding-right: 6px;
+}
+
+.attr-content-body .layui-form-item .layui-input-inline,
+.attr-content-body .layui-form-item .layui-inline {
+    margin-right: 0;
+}
+
+.attr-content-body .layui-form-item .layui-attrinput-inline {
+    width: 86px;
+    text-align: center;
+}
+
+.attr-content-body .layui-form-item .layui-form-mid {
+    /* margin-left: 5px; */
+    margin-right: 0;
+    width: 18px;
+    text-align: center;
+}
+
+.bayax-division-select ul {
+    top: 40px;
+}
+
+.layui-formtag-item .layui-input-inline {
+    width: 160px;
+}
+
+.layui-formtag-item .bayax-division-select {
+    width: 160px;
+}
+
+.bayax-division-title .bayax-division-text {
+    max-width: 140px;
+    min-width: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.btn-tag-status,
+.tag-status {
+    background: url(../images/img/rightWrong.png) no-repeat;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.rights {
+    background-position: -20px 0;
+}
+
+.worry {
+    background-position: 0 0;
+}
+
+.color-ul {
+    padding-top: 5px;
+}
+
+.color-ul li {
+    list-style: none;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    float: left;
+    line-height: 12px;
+    text-align: center;
+    /* box-sizing: border-box; */
+}
+
+.color-ul li.active {
+    border: 1px solid #fff;
+}
+
+.colpick {
+    z-index: 99999;
+}
+
+.select-ul-up {
+    top: auto !important;
+    bottom: 43px;
+}
+
+
+/* .style-div {
+    display: block;
+} */
+
+.globalbtn-attribute-div {
+    display: none;
+}
+
+.globalbtn-attribute-div .attr-content-body {
+    display: block;
+}
+
+
+/* 基本图形--无属性 */
+
+.basic-hide {
+    display: none;
+}
+
+.basic-show {
+    display: block;
+}
+
+
+/* 上传图片 input */
+
+.up-image {
+    display: none;
+    opacity: 0;
+}
+
+
+/*bind  tag */
+
+.canvas-layer {
+    padding: 20px 25px;
+    padding-bottom: 0;
+}
+
+.canvas-layer .content-search {
+    float: left;
+}
+
+.tag-table {
+    border: 1px solid #3C3F61;
+    margin-top: 10px;
+    height: 415px;
+}
+
+.noData {
+    margin-top: 25%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.havedata {
+    /* display: none; */
+}
+
+.tag-table .bayax-table {
+    border-bottom: none;
+}
+
+.bayax-table>thead>tr>th {
+    padding-bottom: 9px;
+}
+
+.bayax-table tbody td {
+    height: 40px;
+}
+
+.tag-table .bayax-table tbody tr td:last-child {
+    width: 45px;
+}
+
+.bayax-table tbody>tr:nth-of-type(even) {
+    background-color: #1D2141;
+}
+
+.bayax-table tbody>tr:nth-of-type(odd) {
+    background-color: #2B2E4B;
+}
+
+
+/* body   -end */

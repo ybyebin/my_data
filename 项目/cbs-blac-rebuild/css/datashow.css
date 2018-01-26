@@ -1,0 +1,1021 @@
+/* 数据展示模块********  */
+
+
+/* 头部   -begin */
+
+.bayax-layout-admin .bayax-layout-header {
+    height: 64px;
+    line-height: 66px;
+}
+
+.bayax-header {
+    position: fixed;
+    z-index: 1000;
+}
+
+.bayax-layout-header .bayax-logo {
+    width: 280px;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    height: 100%;
+    line-height: 60px;
+    font-size: 16px;
+}
+
+.bayax-layout-header .bayax-logo img {
+    width: 127px;
+    height: 27px;
+}
+
+.bayax-layout-header label {
+    display: inline-block;
+    width: 120px;
+    padding-left: 20px;
+    height: 100%;
+    font-size: 14px;
+}
+
+.bayax-layout-header label .bayax-proname {
+    padding-left: 4px;
+    position: relative;
+    top: 2px;
+}
+
+.bayax-layout-header label .bayax-proname:before {
+    width: 4px;
+    height: 15px;
+    content: "";
+    top: 3px;
+    left: -7px;
+    position: absolute
+}
+
+.bayax-layout-left {
+    position: absolute!important;
+    left: 300px;
+    top: 0;
+    overflow: hidden;
+}
+
+.bayax-layout-right {
+    position: absolute!important;
+    right: 0;
+    top: 0;
+}
+
+.bayax-layout-admin .bayax-layout-header .layui-nav {
+    background: 0 0;
+}
+
+.bayax-layout-admin .bayax-layout-header .bayax-nav {
+    background: 0 0;
+}
+
+.bayax-nav {
+    position: relative;
+    padding: 0 20px;
+    border-radius: 2px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.bayax-nav .layui-nav-item {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    line-height: 60px
+}
+
+.bayax-nav .layui-nav-item a {
+    display: block;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: all .3s;
+    -webkit-transition: all .3s
+}
+
+.bayax-nav .layui-nav-item>a {
+    height: 60px;
+}
+
+.bayax-nav .person-operate a {
+    padding-right: 0px;
+}
+
+.bayax-head-bar {
+    display: none;
+    float: right;
+    margin-right: 15px;
+    padding-top: 8px;
+}
+
+.bayax-head-bar .bayax-icon {
+    cursor: point;
+    font-size: 28px;
+    display: inline-block;
+    color: #fff;
+    height: 100%;
+}
+
+.bayax-head-bar .bayax-hover-ul {
+    left: -40px;
+    top: 64px;
+}
+
+.head-warn {
+    margin-right: 30%;
+}
+
+@media screen and (max-width:768px) {
+    .bayax-head-bar {
+        display: block;
+    }
+    .bayax-nav,
+    .bayax-layout-left {
+        display: none;
+    }
+}
+
+
+/* 头部 end */
+
+
+/* body  -begin */
+
+.bayax-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 66px;
+    bottom: 0;
+    padding: 0 30px;
+    padding-top: 20px;
+    z-index: 998;
+    width: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    min-width: 768px;
+    /* overflow-x: scroll; */
+}
+
+
+/* body   -end */
+
+
+/* tabs -begin*/
+
+.bayax-tab-item a.btn-sure {
+    height: 27px;
+    width: 70px;
+    padding: 4px 18px;
+    border-radius: 15px;
+    line-height: 20px;
+    border: none;
+    outline: none;
+}
+
+.tab-warn-div {
+    margin-left: 10px;
+}
+
+.tab-warn-div>span {
+    margin-right: 10px;
+}
+
+.tab-warn-div input {
+    width: 105px;
+}
+
+.tab-warn-div-export {
+    float: right;
+}
+
+
+/* tabs    -end */
+
+
+/* 系统管理   -begin*/
+
+.sys-management {
+    top: 65px;
+    left: 0;
+}
+
+.layui-side-scroll ul,
+.layui-side-scroll .layui-nav-bar {
+    background: transparent !important;
+}
+
+.sys-management .layui-nav-tree .layui-nav-item {
+    margin-bottom: 1px;
+    /* background-color: #2D3057; */
+}
+
+.layui-nav-tree .layui-nav-item a {
+    height: 66px !important;
+    line-height: 66px;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.layui-side-scroll ul li a {
+    font-size: 16px !important;
+}
+
+.layui-side-scroll ul li.layui-nav-item .layui-nav-more {
+    top: 30px;
+}
+
+.layui-side-scroll ul li.layui-nav-itemed .layui-nav-more {
+    top: 22px;
+}
+
+.layui-side a i {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.layui-side-scroll ul li.layui-nav-item dl dd a {
+    height: 46px !important;
+    line-height: 46px;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.sys-man-body {
+    left: 200px;
+    padding-right: 0;
+    overflow-x: auto !important;
+    min-width: inherit !important;
+}
+
+.bayax-content {
+    min-width: 900px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.content-main-border {
+    border: 1px solid rgba(143, 152, 186, .2);
+    height: 750px;
+    padding-right: 18px;
+}
+
+.div-equipment {
+    height: 750px;
+    overflow: hidden;
+    /* background: red; */
+}
+
+.div-sonequipment {
+    height: 700px;
+    overflow: hidden;
+}
+
+
+/* 系统管理   -end */
+
+
+/* 设备监控   -begin */
+
+.device-control-side {
+    top: 65px;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-item a {
+    height: 50px !important;
+    line-height: 50px;
+    text-align: left;
+    padding-right: 20px;
+    padding-left: 25px;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-item dl dd>a {
+    padding-left: 60px;
+    padding-right: 0;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-item a>span {
+    font-size: 16px;
+    background: #2D3057;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-more {
+    top: 22px!important;
+    right: 15px;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-itemed .layui-nav-more {
+    right: 15px;
+    top: 16px!important;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-item>a:hover {
+    background: #2D3057!important;
+}
+
+.device-control-side .layui-nav-tree li {
+    margin-top: 1px;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-child dd {
+    margin-top: 1px;
+}
+
+.device-control-side .layui-nav-tree .layui-nav-child dd.layui-this,
+.layui-nav-tree .layui-nav-child dd.layui-this a,
+.layui-nav-tree .layui-this,
+.layui-nav-tree .layui-this>a,
+.layui-nav-tree .layui-this>a:hover {
+    background: #3E4687;
+}
+
+.device-control-side .layui-nav-item>a>i.device-type-i {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top: 9px;
+    margin-right: 2px;
+    background: url(../images/flags.png) no-repeat;
+}
+
+.device-control-side .layui-nav li>a>i.dianti {
+    background-position: 0 -420px;
+}
+
+.device-control-side li>a:hover>i.dianti {
+    background-position: 0 -448px;
+}
+
+.device-control-side .layui-nav li>a>i.huanjing {
+    background-position: 0 -364px;
+}
+
+.device-control-side li>a:hover>i.huanjing {
+    background-position: 0 -392px;
+}
+
+.device-control-side .layui-nav li>a>i.jishui {
+    background-position: 0 -588px;
+}
+
+.device-control-side li>a:hover>i.jishui {
+    background-position: 0 -616px;
+}
+
+.device-control-side .layui-nav li>a>i.paishui {
+    background-position: 0 -84px;
+}
+
+.device-control-side li>a:hover>i.paishui {
+    background-position: 0 -112px;
+}
+
+.device-control-side .layui-nav li>a>i.lengshui {
+    background-position: 0 -532px;
+}
+
+.device-control-side li>a:hover>i.lengshui {
+    background-position: 0 -560px;
+}
+
+.device-control-side .layui-nav li>a>i.ruqin {
+    background-position: 0 -140px;
+}
+
+.device-control-side li>a:hover>i.ruqin {
+    background-position: 0 0;
+}
+
+.device-control-side .layui-nav li>a>i.zhaoming {
+    background-position: 0 -308px;
+}
+
+.device-control-side li>a:hover>i.zhaoming {
+    background-position: 0 -168px;
+}
+
+.device-control-side .layui-nav li>a>i.kongtiao {
+    background-position: 0 -644px;
+}
+
+.device-control-side li>a:hover>i.kongtiao {
+    background-position: 0 -504px;
+}
+
+.device-control-side .layui-nav li>a>i.vedio {
+    background-position: 0 -28px;
+}
+
+.device-control-side li>a:hover>i.vedio {
+    background-position: 0 -56px;
+}
+
+.device-control-side .layui-nav li>a>i.tingche {
+    background-position: 0 -252px;
+}
+
+.device-control-side li>a:hover>i.tingche {
+    background-position: 0 -280px;
+}
+
+.device-control-side .layui-nav li>a>i.fengji {
+    background-position: 0 -476px;
+}
+
+.device-control-side li>a:hover>i.fengji {
+    background-position: 0 -336px;
+}
+
+.device-control-side .layui-nav li>a>i.custom {
+    background-position: 0 -196px;
+}
+
+.device-control-side li>a:hover>i.custom {
+    background-position: 0 -224px;
+}
+
+.h-noview {
+    text-align: center;
+    color: #666;
+}
+
+.device-control-body {
+    padding-right: 20px;
+    left: 190px;
+}
+
+.device-control-body .content-main-mon {
+    position: absolute;
+    top: 81px;
+    left: 30px;
+    right: 20px;
+    bottom: 0;
+    /* height: 750px; */
+}
+
+.canvas-div {
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 20px;
+    right: 180px;
+    background: blue;
+}
+
+#canvas {
+    background-color: #2B2F4C;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-image: url(Hydrangeas.jpg); */
+    background-position: center;
+    width: 1300px;
+    height: 730px;
+}
+.mark{
+    background-image: url('../images/imgs.png');
+}
+.global-btn-body {
+    float: right;
+    width: 145px;
+    /* height: 100%; */
+    max-height: 100%;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    padding: 0 3px;
+
+}
+.globalbtn-title{
+    padding: 5px 0;
+    padding-left: 10px;
+    padding-top: 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    background: rgba(195,233,255,0.1);
+    border: 1px solid rgba(172,177,218,.1);
+    border-bottom: none;
+}
+
+
+
+.global-btn-body >div{
+    background-color: rgba(28, 31, 56, .1);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+.globalbtn-title span:first-child{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: -40px 0;
+}
+.globalbtn-title span:last-child{
+    position: relative;
+    top: -4px;
+    left: 10px;
+    font-size: 16px;
+}
+
+.global-btn-body .mCSB_inside > .mCSB_container{
+    margin-right: 0;
+}
+.global-btn-body .mCSB_scrollTools .mCSB_draggerRail{
+    background: transparent;
+}
+.scrollFullBtn{
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.globalbtn-ul {
+    box-sizing: border-box;
+    padding:15px;
+    padding-top: 10px;
+}
+
+.global-btn-body ul li {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.global-btn-body ul li:first-child {
+    margin-top: 0;
+}
+
+.global-btn-body ul li button {
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    background: #3F446E;
+    border-radius: 4px;
+    height: 34px;
+    line-height: 34px;
+}
+.global-btn-body ul li button:hover{
+    background-color: #30366A;
+    color: #fff;
+}
+
+/* 列表与趋势图 */
+table.table-trend span.mark{
+    width: 20px;
+    height: 22px;
+    margin-right: 3px;
+}
+table.table-trend span.mark.warn{
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    background-position: -20px 0 ;
+}
+
+table.table-trend span.mark.error{
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    background-position: 0 0 ;
+}
+
+
+/* 组件操作 */
+.action-div{
+    padding:10px 20px;
+    padding-bottom: 0;
+}
+.action-div:first-child{
+    /* padding-left: 40px; */
+    padding-top: 30px;
+    text-align: center;
+}
+.action-div .radio_data span{
+    display:inline-block;
+    position: relative;
+    top: -5px;
+    left: -10px;;
+    margin-right: 5px;
+}
+
+/* 趋势图 */
+.trendMap{
+    display: none;
+    padding: 20px 20px;
+    padding-bottom: 0;
+    min-width: 500px;
+}
+.trendMap > div>div.head-title{
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.hisTrendContent{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    top: 65px;
+    min-width: 500px;
+    /* background: gray; */
+}
+.realTrendContent{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    top: 65px;
+    min-width: 500px;
+    /* background: red; */
+}
+
+
+/* 设备监控   -end */
+
+/*能源管理  -begin*/
+.energy-tab-title li{
+    border-bottom: none!important;
+}
+.energy-tab-title.bayax-tab-title li:first-child {
+    margin-left: 20px;
+}
+.energy-content{
+    position: absolute;
+    bottom: 20px;
+    top: 81px;
+    left: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.3);
+}  
+.energy-content >div{
+    height: 100%;
+}
+.energy-content >div >div.node-content-main{
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+}
+.energy-content .explain{
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    position: relative;
+    top: 40%;
+}
+.energy-slide{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 283px;
+    padding: 20px;
+    padding-left: 0;
+    border-right: 1px solid #6B6E80;
+    /* background: gray; */
+}
+.energy-slide > div{
+    height: 100%;
+    width: 100%;
+    /* background: #35c99d; */
+}
+.energy-content .slide-menu .title{
+    font-size: 18px;
+    padding-left:10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #6B6E80; 
+}
+.energy-slide div.menu{
+    padding-top: 5px;
+    position: absolute;
+    top: 55px;
+    bottom: 20px;
+    left: 10px;
+    right: 20px;
+    /* background: gray; */
+    overflow: hidden;
+}
+.energy-slide div.menu ul li{
+    padding: 10px 5px;
+    color: #9D9BAF;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.energy-slide div.menu ul li:nth-of-type(even) {
+    background: #262A50;
+}
+
+.energy-slide div.menu ul li:nth-of-type(odd) {
+    background-color: #1D2141;
+}
+.energy-slide div.menu ul li.active {
+    border-left: 4px solid #A78FBE;
+}
+.energy-main{
+    position: absolute;
+    left: 324px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 10px 20px;
+}
+.energy-main ul.energy.bayax-select-ul{
+    top: 50px;
+}
+.energy-main span.bayax-select-span{
+    height: 44px;
+    padding-top: 12px;
+}
+.energy-main input{
+    height: 44px;
+}
+.div-btn-comhis{
+    margin-left: 15px;
+}
+.energy-bayax-body .layui-tab{
+    min-width: 1130px; 
+    overflow: auto;
+}
+.energy-content.layui-tab-content{
+    min-width: 1130px;
+}
+
+.energy-main div.content{
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 80px;
+    bottom: 0;
+    /* background: gray; */
+}
+.energy-main div.content .head{
+    border-bottom: 1px solid #6B6E80; 
+    padding: 10px 20px;
+}
+.energy-main div.content .head  a{
+    display: inline-block;  
+    padding: 5px;
+    margin-left: 10px;
+    color: #9D9BAF;
+    box-sizing: border-box;
+    text-align: center;
+}
+.energy-main div.content .head .getshi a{
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    border: 1px solid transparent;
+}
+.energy-main div.content .head  a.active{
+    color: #fff;
+    border-color: #fff;
+}
+.energy-main div.content .gettrend{
+    float: right;
+}
+.energy-main div.content .conten-main .explain{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 30px;
+    width: 200px;
+}
+.energy-main div.content .conten-main .analysisContent{
+    position: absolute;
+    top: 55px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+/* 对比历史数据 */
+.comparise-body{
+    display: none;
+    padding: 30px;
+    padding-bottom: 50px;
+    /* background: red; */
+}
+.comparise-body .head span:not(:first-child){
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.comparise-body .add{
+    margin-top: 20px;
+
+} 
+.comparise-body .add a{
+    color: #A78FBE;
+}
+
+.comparise-body .add-time{
+    /* background: gray; */
+}
+
+.comparise-body .add-time ul> li.time-li{
+    padding: 5px 0;
+    text-align: center;
+}
+.comparise-body .add-time ul> li.time-li span.time-li-span{
+    margin-left: 10px;
+}
+#absolute.comparise-body .add-time ul> li.time-li span.time-li-span{
+    margin-right: 10px;
+}
+
+.comparise-body .add-time ul> li.time-li span.time-li-span:first-child{
+    margin-left: 0;
+}
+.comparise-body .add-time ul> li.time-li .bayax-select-title span{
+    padding-left: 30px;
+}
+.comparise-body .add-time ul> li.time-li .layui-inline{
+    text-align: left;
+}
+.comparise-body .add-time ul> li.time-li .bayax-select-ul li{
+    padding-left: 30px;
+}
+.comparise-body .add-time ul> li.time-li span.icon-highlight_off{
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+    left: 17px;
+    cursor: pointer;
+}
+
+
+/* tag-tree */
+.tag-tree{
+    position: absolute;
+    z-index: 10;
+    top: 51px;
+    right: 0;
+    /* height: 650px; */
+    max-height: 650px;
+    width: 432px;
+    background: #2D3452;
+    max-height: 680px;
+    border: 0 solid rgba(172,177,218,.7);
+    box-shadow: 0 5px 7px 3px rgba(0,0,0,.5);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: none;
+    /* padding: 10px; */
+    padding-top: 10px;
+}
+.tag-tree::before {
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #2D3452;
+    border-bottom-color: rgba(0,0,0,.2);
+    top: -7px;
+    right: 17px;
+}
+.tag-tree::after {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #2D3452;
+    top: -6px;
+    right: 18px;
+}
+.tag-tree::after, .tag-tree::before {
+    content: '';
+    border-top: 0;
+    display: inline-block;
+    position: absolute;
+}
+.tag-tree >div{
+    padding:10px;
+}
+.tag-tree .tag-tree-head{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4F546C;
+}
+.tag-tree .content-search{
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: 0;
+    background-color: #3C4663;
+}
+.tag-tree .content-search input{
+    width: 86%;
+    background-color: #3C4663;
+}
+.tag-tree .tag-tree-body .panel-heading{
+    border-radius: 3px;
+    cursor: pointer;
+}
+.tag-tree .tag-tree-body .tree-panel-title{
+    padding: 10px;
+    font-size: 18px;
+
+}
+.tag-tree .tag-tree-body .bayax-tree{
+    /* background: red; */
+    padding-top: 10px;
+    max-height: 440px;
+    overflow-y: hidden;
+}
+
+.tag-tree .tag-tree-foot {
+    border-top: 1px solid #4F546C;
+    text-align: center;
+}
+.tag-tree .tag-tree-foot >div:last-child button{
+    margin-left: 30px;
+}
+
+.save-othersave.comparise-body{
+    padding-bottom: 0;
+    text-align: center;
+}
+.save-othersave.comparise-body span{
+    margin-right: 10px;
+}
+
+.laydate-footer-btns span{
+    height: 28px!important;
+}
+.energy-main.table-main div.content{
+    top: 60px;
+}
+.energy-main.table-main div.content .head{
+    border: none;
+    padding: 0;
+}
+.table-main .conten-main{
+    position: absolute;
+    top: 10px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #1C203F;
+    width:inherit;
+    height: inherit;
+    
+}
+.table-main .conten-main > div:nth-child(1),
+.table-main .conten-main > div:nth-child(2){
+    text-align: right;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+.table-main .conten-main > div:nth-child(1) a{
+    margin-right: 20px;
+}
+.table-main .conten-main > div:nth-child(2) span:first-child{
+    float: left;
+    padding-left: 20px;
+}
+.table-main .conten-main.screen{
+    padding-top: 40px;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.energy-table-div{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #555769;
+    /* background: #666; */
+    overflow: auto;
+
+  
+}
+.energy-table{
+border: none;
+}
+.energy-table.bayax-table>thead>tr>th{
+    font-size: 14px;
+    padding: 10px 0;
+    padding-left:10px; 
+    text-align: center;
+    /* border: none; */
+}
+.energy-table.bayax-table>tbody>tr>td{
+    text-align: center;
+}
+
+
+/*能源管理  -end*/
+
+
+

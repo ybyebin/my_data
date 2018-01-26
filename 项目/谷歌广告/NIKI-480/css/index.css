@@ -1,0 +1,2173 @@
+html {
+    background: #222222;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+caption,
+th {
+    text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before,
+q:after {
+    content: ''
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/* 
+html{
+    background: #f3dfe5;
+} */
+
+body {
+    /*max-width: 750px;*/
+    /* width: 100%; */
+    /* height: 100%; */
+    /*height: 26.72rem;*/
+    margin: 0 auto !important;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+section {
+    position: absolute;
+    /* max-width: 414px; */
+    /* width: 100%; */
+    /* height: 100%; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    background: #f3dfe5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    text-align: center;
+}
+
+.loading>div {
+    text-align: center;
+}
+
+.loading-title {
+    margin-top: 6.25rem;
+}
+
+.loading-title img {
+    width: 3.85rem;
+}
+
+.loading-logo {
+    margin-top: 1.25rem;
+}
+
+.loading-logo img {
+    width: 8.55rem;
+}
+
+.loading-progress {
+    margin-top: 1.65rem;
+}
+
+.progress-content {
+    width: 13.9rem;
+    background: #fff;
+    height: 0.55rem;
+    margin: 0 auto;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    padding: 0.05rem;
+}
+
+.progress-content .progressbar {
+    height: 0.45rem;
+    border-radius: 0.2rem;
+    background: #ffa5b9;
+    width: 0;
+}
+
+.ad-dead {
+    position: absolute;
+    top: .5rem;
+    height: 20px;
+    left: 0;
+    right: 0;
+    text-align: justify;
+    z-index: 10;
+}
+
+.spirit {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 29.225rem 10.125rem;
+}
+
+.spirit-flag {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 10.7rem 19.925rem;
+}
+
+.ad-dead span.logo {
+    margin-left: 1rem;
+    width: 5.55rem;
+    height: 1.7rem;
+    background-position: -23rem -3.9rem;
+}
+
+.ad-dead span.install {
+    margin-right: .57rem;
+    width: 4.2rem;
+    height: 1.5rem;
+    float: right;
+    color: #fff;
+    text-align: center;
+    background-position: -3.875rem -14.475rem;
+}
+.ad-dead span.install a{
+    width: 4.2rem;
+    height: 1.5rem;
+    display: inline-block;
+}
+
+.sec-start .nikki {
+    margin: 0 auto;
+    margin-top: 2.7rem;
+    width: 6.75rem;
+}
+
+.sec-start .nikki img {
+    width: 6.75rem;
+    height: 19.05rem;
+}
+
+.dialog-box {
+    display: table;
+    position: relative;
+    width: 13.3rem;
+    height: 4.3rem;
+    background: rgba(255, 255, 255, .7);
+    border: 0.1rem solid rgba(223, 205, 197, .3);
+    border-radius: 0.25rem;
+    margin: 0 auto;
+    margin-top: -7.3rem;
+    font-size: .8rem;
+}
+.dialog-box > div.content{
+    vertical-align: middle;
+    display: table-cell;
+    text-align: left;
+    color: #79644d;
+    font-size: .8rem;
+    /* width: 12.8rem; */
+    margin: auto;
+    padding-left: .95rem;
+}
+
+@keyframes bounceInLeft {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(-10.3rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes bounceInLeft {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(-10.3rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.bounceInLeft {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: bounceInLeft;
+}
+
+@keyframes bounceOutLeft {
+    20% {
+        opacity: 1;
+        transform: translate3d(10px, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(-2000px, 0, 0);
+    }
+}
+
+.bounceOutLeft {
+    animation-duration: .4s;
+    animation-fill-mode: both;
+    animation-name: bounceOutLeft;
+}
+.dialog-head {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 3.3rem;
+    height: 1.25rem;
+    background: rgba(240, 167, 170, 1);
+    color: #fff;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, .7);
+    position: absolute;
+    top: -.8rem;
+    left: 1rem;
+    text-align: center;
+    line-height: 1.23rem;
+}
+
+.sec3-dialog >div.content{
+    width: 100%;
+    font-size: .75rem;
+    text-align: center;
+    padding-left: 0;
+}
+
+.ripple {
+    position: absolute;
+    top: 16rem;
+    left: 8rem;
+}
+
+.ripple1 {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    left: .1rem;
+    top: .1rem;
+    border: 2px solid rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .6);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    -webkit-animation: warn .7s ease-out;
+    -moz-animation: warn .7s ease-out;
+    animation: warn .7s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    box-shadow: 1px 1px 30px #fff;
+    z-index: 2;
+}
+
+.ripple2 {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    left: .1rem;
+    top: .1rem;
+    border: 2px solid rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .6);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    -webkit-animation: warn1 .7s ease-out;
+    -moz-animation: warn1 .7s ease-out;
+    animation: warn1 .7s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    box-shadow: 1px 1px 30px #fff;
+    z-index: 2;
+}
+
+@keyframes warn {
+    0% {
+        transform: scale(0.3);
+        -webkit-transform: scale(0.3);
+        opacity: 0.0;
+    }
+    25% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        opacity: 0.0;
+    }
+}
+
+@keyframes warn1 {
+    0% {
+        transform: scale(0.1);
+        -webkit-transform: scale(0.1);
+        opacity: 0.0;
+    }
+    25% {
+        transform: scale(0.3);
+        -webkit-transform: scale(0.3);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale(0.7);
+        -webkit-transform: scale(0.7);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        opacity: 0.0;
+    }
+}
+
+.finger {
+    position: absolute;
+    top: 1.6rem;
+    left: 1.8rem;
+    width: 2.8rem;
+    height: 2.35rem;
+    background-position: -26.425rem 0;
+    z-index: 3;
+}
+
+
+
+.div-center {
+    background-repeat: no-repeat;
+    background-size: 13.25rem 18.25rem;
+    position: relative;
+    top: 4.2rem;
+    margin: auto;
+    width: 13.25rem;
+    height: 18.25rem;
+    /* background: red; */
+}
+
+.sec-public div.title {
+    position: absolute;
+    top: -1rem;
+    left: 1.4rem;
+}
+
+.sec-public div.title span {
+    width: 10.75rem!important;
+    height: 3.45rem!important;
+    background-position: 0 -16.675rem;
+    display: inline-block!important;
+    background-repeat: no-repeat!important;
+    overflow: hidden;
+}
+
+.sec-public .ripple {
+    top: -1rem;
+}
+
+.attr {
+    width: 13.25rem;
+    margin: 0 auto;
+    text-align: right;
+    box-sizing: border-box;
+    position: absolute;
+    top: 1.95rem;
+    padding-right: 2.3rem;
+}
+
+.attr>div {
+    float: right;
+    margin-right: .1rem;
+    position: relative;
+}
+
+.attr>div>div {
+    border-radius: .6rem;
+    text-align: center;
+    color: #fff;
+    padding: .1rem;
+}
+
+.attr p {
+    font-size: .5rem;
+    padding: .1rem;
+    padding-top: .03rem;
+    padding-bottom: .03rem;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: .6rem;
+    text-align: center;
+}
+
+.goods {
+    position: absolute;
+}
+
+
+
+/* 
+.goods-tom-face {
+    width: 11.6rem;
+    height: 8.05rem;
+    top: 4.7rem;
+    left: .5rem;
+    background-position: 0 0;
+} */
+
+
+
+@keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(.6, .6, .6);
+    }
+    40% {
+        opacity: 1;
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    80% {
+        transform: scale3d(1, 1, 1);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.bounceIn {
+    animation-name: bounceIn;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+
+@keyframes bounceOut {
+    20% {
+        transform: scale3d(.9, .9, .9);
+    }
+    50%,
+    55% {
+        opacity: 1;
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+}
+
+.bounceOut {
+    animation-name: bounceOut;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+}
+
+.poetic {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 13.1rem;
+    font-size: .7rem;
+    color: #fff;
+}
+
+.poetic p {
+    width: 8.25rem;
+    margin: 0 auto;
+}
+
+.sec-public .claim-div {
+    position: absolute;
+    top: 15rem;
+    left: 0;
+    right: 0;
+}
+
+.sec-public .claim-div span.spirit-flag {
+    width: 3.95rem;
+    height: 1.85rem;
+    background-position: 0 -8.75rem;
+}
+
+.sec-public .claim-div .ripple {
+    left: 6rem;
+}
+
+
+
+
+/* sec6 */
+.sec6-dialog >div.content{
+    width: 100%;
+    font-size: .8rem;
+    padding-left: .4rem;
+}
+
+
+
+
+/* sec7  */
+
+
+.sec7-dialog >div.content{
+    width: 100%;
+    font-size: .7rem;
+    padding-left: 1.2rem;
+}
+
+
+
+
+.sec7 .claim-div {
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.sec7 .claim-div span.sec7-start {
+    width: 4.35rem;
+    height: 2rem;
+    background-position: 0 -10.625rem;
+}
+
+.sec7 .claim-div .ripple {
+    top: -1rem;
+    margin-left: .1rem;
+}
+
+
+/* sec8 */
+
+.sec8-dialog >div.content{
+    width: 100%;
+    padding-left: 0;
+    font-size: .67rem;
+    padding-left: .2rem;
+
+}
+
+
+
+
+
+
+.slide-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 5.4rem;
+    background: rgba(255, 255, 255, .4);
+    border-left: 1px solid rgba(194, 194, 194, .7);
+    z-index: 7;
+}
+
+@keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    from {
+        opacity: 0;
+        transform: translate3d(5.4rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0px, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.bounceInRight {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: bounceInRight;
+}
+
+@keyframes bounceOutRight {
+    20% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(5.4rem, 0, 0);
+        display: none;
+    }
+}
+
+.bounceOutRight {
+    animation-name: bounceOutRight;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+}
+
+.slide-all .ripple {
+    left: .7rem;
+    top: 2rem;
+}
+
+.slide-all p {
+    margin-top: .8rem;
+    color: #684a49;
+    height: 1.85rem;
+    width: 3.95rem;
+    line-height: 1.85rem;
+    font-size: .7rem;
+    box-sizing: border-box;
+    padding-left: 1.3rem;
+}
+
+.category-hair {
+    margin-top: 2.9rem!important;
+    background-position: 0 0;
+}
+
+.category-dress {
+    background-position: 0 -1.875rem;
+}
+
+.category-access {
+    background-position: 0 -3.725rem;
+    font-size: .5rem !important;
+}
+
+.category-makeup {
+    background-position: 0 -5.625rem;
+    font-size: .5rem !important;
+}
+
+.category-last {
+    background: url('../image/noclick.png');
+    width: 4.1rem;
+    height: 9.8rem;
+    margin-top: .8rem;
+    margin-left: .7rem;
+    background-repeat: no-repeat;
+    background-size: 4.1rem 9.8rem;
+    background-position: 0 0;
+}
+
+.category-last p.category-tops {
+    margin-top: 0 !important;
+}
+
+
+
+.category-hair-e {
+    width: 1.15rem;
+    height: 0.5rem;
+    background-position: 0 -.02rem;
+    position: relative;
+    top: -.03rem;
+    margin-left: -.2rem;
+}
+
+.category-hair-f {
+    width: 1.875rem;
+    height: 0.475rem;
+    margin-left: .2rem;
+    background-position: 0 0;
+}
+
+.category-dress-e {
+    width: 1.6rem;
+    height: 0.5rem;
+    position: relative;
+    top: -.04rem;
+    background-position: 0 -.525rem;
+}
+
+.category-dress-f {
+    width: 1.475rem;
+    height: 0.52rem;
+    background-position: 0 -.5rem;
+}
+
+.category-accessory-e {
+    width: 2.2rem;
+    height: 0.65rem;
+    margin-top: .7rem;
+    margin-left: .3rem;
+    background-position: 0 -1.025rem;
+}
+
+.category-accessory-f {
+    width: 2.05rem;
+    height: 0.52rem;
+    margin-top: .6rem;
+    margin-left: .2rem;
+    background-position: 0 -1.025rem;
+}
+
+.category-makeup-e {
+    width: 1.875rem;
+    height: 0.675rem;
+    margin-top: .6rem;
+    margin-left: .3rem;
+    background-position: 0 -1.675rem;
+}
+
+.category-makeup-f {
+    width: 2.025rem;
+    height: .65rem;
+    margin-top: .58rem;
+    margin-left: .4rem;
+    background-position: 0 -1.55rem;
+}
+
+.category-tops-e {
+    width: 1.45rem;
+    height: 0.625rem;
+    margin-top: .6rem;
+    background-position: 0 -2.375rem;
+}
+
+.category-tops-f {
+    width: 1.4rem;
+    height: 0.4764rem;
+    margin-top: .7rem;
+    background-position: 0 -2.225rem;
+}
+
+.category-bottoms-e {
+    width: 1.975rem;
+    height: 0.475rem;
+    position: relative;
+    top: -.12rem;
+    background-position: 0 -3.025rem;
+}
+
+.category-bottoms-f {
+    width: 1rem;
+    height: 0.475rem;
+    margin-top: .7rem;
+    background-position: 0 -2.728rem;
+}
+
+.category-handheld-e {
+    width: 2.025rem;
+    height: 0.55rem;
+    position: relative;
+    top: 0;
+    background-position: 0 -3.525rem;
+}
+
+.category-handheld-f {
+    width: 2rem;
+    height: 0.537rem;
+    margin-top: .4rem;
+    background-position: 0 -3.225rem;
+}
+
+.category-special-e {
+    width: 1.925rem;
+    height: 0.7rem;
+    background-position: 0 -4.075rem;
+}
+
+.category-special-f {
+    width: 2rem;
+    height: 0.75rem;
+    margin-top: .4rem;
+    background-position: 0 -3.775rem;
+}
+
+.person {
+    margin: 0 auto;
+    margin-top: 2.4rem;
+    position: relative;
+    height: 21.3rem;
+}
+
+
+
+/* 模特 */
+
+.person img {
+    width: 6.05rem;
+    height: 18.65rem;
+    position: absolute;
+    top: 1rem;
+    left: 2em;
+    z-index: 5;
+}
+
+
+/* 默认发型 */
+
+.default-hair {
+    width: 5.75rem;
+    height: 8.9rem;
+    position: absolute;
+    top: .7rem;
+    left: 1.77rem;
+    background-position: -17.3666667rem 0;
+    z-index: 6;
+}
+
+.default-clothes {
+    width: 2.5rem;
+    height: 2.85rem;
+    position: absolute;
+    top: 4.1rem;
+    left: 3.8rem;
+    background-position: -6.06666667rem 0;
+    z-index: 6;
+}
+
+.dream-hair-up {
+    width: 7.1rem;
+    height: 11.8666667rem;
+    position: absolute;
+    top: .77rem;
+    left: 0;
+    background-position: 0 -13.7rem;
+    z-index: 6;
+}
+
+.dream-hair-down {
+    width: 6.16666667rem;
+    height: 14.6666667rem;
+    position: absolute;
+    top: 2.4rem;
+    left: 0rem;
+    background-position: -7.13333333rem -13.7rem;
+    z-index: 2;
+}
+
+.dream-tou {
+    width: 2.33333333rem;
+    height: 8.3rem;
+    position: absolute;
+    top: 1.3rem;
+    left: 2.35rem;
+    background-position: -12.1333333rem 0;
+    z-index: 6;
+}
+.dream-tou-shou{
+    width: 0.75rem;
+    height: 0.85rem;
+    position: absolute;
+    top: 8.6rem;
+    left: 7.04rem;
+    background-position: -14.5rem 0;
+    z-index: 5;
+}
+
+
+/* 项链 */
+
+.dream-xl {
+    width: 1.55rem;
+    height: .8rem;
+    position: absolute;
+    top: 3.93rem;
+    left: 4rem;
+    background-position: 0 0;
+    z-index: 5;
+}
+.tomorrow-xl{
+    width: 1.55rem;
+    height: .8rem;
+    position: absolute;
+    top: 3.93rem;
+    left: 4rem;
+    background-position: -29.83333333rem 0;
+    z-index: 5;
+}
+
+.dream-face {
+    width: 1.56666667rem;
+    height: 1.56666667rem;
+    position: absolute;
+    top: 2.02rem;
+    left: 4.467rem;
+    background-position: -3.73333333rem 0;
+    z-index: 5;
+}
+
+.dream-clothes {
+    width: 16rem;
+    height: 17.4rem;
+    position: absolute;
+    top: 4.17rem;
+    left: 0;
+    background-position: -71.1rem 0;
+    z-index: 6;
+}
+
+.tomorrow-hair {
+    width: 3.5rem;
+    height: 10.95rem;
+    position: absolute;
+    top: 1rem;
+    left: 2.8rem;
+    background-position: -8.6rem 0;
+    z-index: 6;
+}
+
+.tomorrow-tou {
+    width: 6.6rem;
+    height: 12.65rem;
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    background-position: -23.1666667rem 0;
+    z-index: 6;
+}
+
+.tomorrow-face {
+    width: 2.15rem;
+    height: 2.65rem;
+    position: absolute;
+    top: 1rem;
+    left: 3.95rem;
+    background-position: -1.53333333rem 0;
+    z-index: 5;
+}
+
+.tomorrow-clothes {
+    width: 15.1rem;
+    height: 16.6rem;
+    position: absolute;
+    top: 4.8rem;
+    left: -.04rem;
+    background-position: -55.9rem 0;
+    z-index: 6;
+}
+
+
+/* 发型侧边栏 */
+
+.slide-hair .hair-dream {
+    margin-top: 4.9rem;
+    width: 2.85rem;
+    height: 3.95rem;
+    background-position: -8.625rem 0;
+}
+
+.slide-hair .hair-tomorrow {
+    margin-top: 1.85rem;
+    width: 2.55rem;
+    height: 3.9rem;
+    background-position: -8.825rem -5.95rem;
+}
+
+.slide-back {
+    width: 2.05rem;
+    height: 1.25rem;
+    margin-top: 5.5rem;
+    background-position: -26.425rem -2.675rem;
+}
+
+.movedream {
+    animation: movedream .5s 1;
+}
+
+.movetomorrow {
+    animation: movetomorrow .5s 1;
+}
+
+@keyframes movedream {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-8rem, 3rem, 0) scale3d(.5, .5, .5);
+    }
+}
+
+@keyframes movetomorrow {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-8rem, -3rem, 0) scale3d(.5, .5, .5);
+    }
+}
+
+.slide-hair .ripple {
+    left: .4rem;
+    display: none;
+}
+
+.slide-hair .slide-hair-rippledream {
+    top: 5.5rem;
+}
+
+.slide-hair .slide-hair-rippletomo {
+    top: 11.5rem;
+}
+
+.slide-hair .slide-hair-rippleback {
+    top: 20.5rem;
+    left: 1rem;
+}
+
+.move {
+    position: absolute;
+    display: none;
+}
+
+.hair-dream.move {
+    left: 1.1rem;
+    top: 0;
+}
+
+.hair-tomorrow.move {
+    left: 1.4rem;
+    top: 9.1rem;
+}
+
+.clothes-dream.move {
+    left: .4rem;
+    top: 0;
+}
+
+.clothes-tomorrow.move {
+    left: .4rem;
+    top: 9.7rem;
+}
+
+.accessory-dream.move {
+    left: 1.2rem;
+    top: 0;
+}
+
+.accessory-tomorrow.move {
+    left: 1.5rem;
+    top: 9.3rem;
+}
+
+.face-dream.move {
+    left: 1rem;
+    top: 0;
+}
+
+.face-tomorrow.move {
+    left: 1.1rem;
+    top: 9.3rem;
+}
+
+
+/* 服装侧边栏 */
+
+.slide-clothes .clothes-dream {
+    margin-top: 5.9rem;
+    width: 4.65rem;
+    height: 3.6rem;
+    background-position: -17.8rem 0;
+}
+
+.slide-clothes .clothes-tomorrow {
+    margin-top: 2.85rem;
+    width: 4.6rem;
+    height: 3.35rem;
+    background-position: -17.075rem -5.95rem;
+}
+
+.slide-clothes .slide-back {
+    margin-top: 4.5rem;
+}
+
+
+/* 饰品侧边栏 */
+
+.slide-accessory .accessory-dream {
+    margin-top: 4rem;
+    width: 2.85rem;
+    height: 5.05rem;
+    background-position: -14.925rem 0;
+}
+
+.slide-accessory .accessory-tomorrow {
+    margin-top: 2.7rem;
+    width: 2.35rem;
+    height: 4.15rem;
+    background-position: -14.7rem -5.95rem;
+}
+.slide-accessory .slide-back {
+    margin-top: 4.2rem;
+}
+
+
+/* 妆容侧边栏 */
+
+.slide-face .face-dream {
+    margin-top: 5.9rem;
+    width: 3.35rem;
+    height: 3.15rem;
+    background-position: -11.5rem 0;
+}
+
+.slide-face .face-tomorrow {
+    margin-top: 2.2rem;
+    width: 3.2rem;
+    height: 3rem;
+    background-position: -11.425rem -5.95rem;
+}
+
+.slide-face .slide-back {
+    margin-top: 6rem;
+}
+
+.click-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10.6rem;
+    z-index: 10;
+    background: rgba(240, 167, 170, 0);
+    display: none;
+}
+
+.getpress-div {
+    position: absolute;
+    width: 2.85rem;
+    height: 1.9rem;
+    top: 20.3rem;
+    left: .6rem;
+    z-index: 11;
+}
+
+.getpress-div .press-btn.unable-e {
+    width: 2.85rem;
+    height: 1.9rem;
+    background-position: 0 -6.825rem;
+}
+
+.getpress-div .press-btn.enable-e {
+    width: 2.85rem;
+    height: 1.9rem;
+    background-position: 0 -4.9rem;
+}
+
+.getpress-div .press-btn.unable-f {
+    width: 2.85rem;
+    height: 1.9rem;
+    background-position: 0 -6.825rem;
+}
+
+.getpress-div .press-btn.enable-f {
+    width: 2.85rem;
+    height: 1.9rem;
+    background-position: 0 -4.9rem;
+}
+
+.sec8 .dialog-box {
+    z-index: 5;
+    width: 9.6rem;
+    height: 3.25rem;
+    margin-left: .4rem;
+    margin-top: -9rem;
+}
+
+@keyframes sec8-bounceInLeft {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(-9.6rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes sec8-bounceInLeft {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(-9.6rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.sec8-bounceInLeft {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: sec8-bounceInLeft;
+}
+
+.sec8 .dialog-box .ripple {
+    top: .3rem;
+    left: 4rem;
+}
+
+.time-div {
+    font-size: .6rem;
+    width: 9.8rem;
+    height: 2rem;
+    color: #79644d;
+    position: absolute;
+    top: 21.8rem;
+    left: .6rem;
+    z-index: 13;
+}
+
+.time-progress {
+    margin-top: .2rem;
+}
+
+.time-content {
+    /* width: 13.9rem; */
+    background: #fff;
+    height: 0.35rem;
+    margin: 0 auto;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    padding: 0.05rem;
+}
+
+.time-content .timebar {
+    height: 0.25rem;
+    border-radius: 0.2rem;
+    background: #a5cfe8;
+}
+
+.spirit-person-add{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 119.166667rem 29.5rem;
+    background-image: url("../image/img-text.png");
+}
+
+
+/* sec9 */
+
+.sec9 {
+    /* background-image: url("../image/cpbg.jpg"); */
+}
+
+.sec9 .person-result {
+    margin: 0 auto;
+    margin-top: 4rem;
+    position: relative;
+    height: 21.3rem;
+}
+.sec9 .person-result span{
+    /* display: block; */
+}
+
+.sec9 .person-result img {
+    width: 6.05rem;
+    height: 18.65rem;
+    margin-top: -.4rem;
+    margin-left: -.3rem;
+    display: none;
+}
+
+.sec9 .dialog-box {
+    width: 13.45rem;
+    height: 4.35rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4rem;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.sec9-dialog-success >div.content{
+    font-size: .79rem;
+    width: 100%;
+    padding-left: .4rem;
+}
+.sec9-dialog-fail >div.content{
+    font-size: .8rem;
+    width: 100%;
+    padding-left: .4rem;
+}
+
+.res-person {
+    display: none;
+}
+
+.sec9 .operation-div {
+    width: 13.25rem;
+    margin: 0 auto;
+    margin-top: -4.2rem;
+    display: none;
+}
+
+.sec9 .operation-div a {
+    color: #fff;
+    font-size: .8rem;
+    position: relative;
+    z-index: 10;
+}
+
+.sec9 .operation-div a:nth-child(1) {
+    width: 3.85rem;
+    height: 1.75rem;
+    background-position: -2.4rem -8.05rem;
+}
+
+.sec9 .operation-div a:nth-child(2) {
+    width: 3.85rem;
+    height: 1.8rem;
+    line-height: 1.7rem;
+    background-position: -2.4rem -6.2rem;
+    margin-left: 2rem;
+}
+
+.perfect {
+    width: 3.45rem;
+    height: 3.6rem;
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    background-position: -22.975rem 0;
+    display: block;
+}
+
+
+
+.res-default-hair {
+    top: -0.7rem;
+    left: 4.6rem;
+}
+
+.res-default-clothes {
+    top: 2.7rem;
+    left: 6.68rem;
+}
+
+.res-tomorrow-hair {
+    top: -.4rem;
+    left: 5.65rem;
+}
+
+.res-tomorrow-clothes {
+    width: 16rem;
+    height: 18.1rem;
+    top: 3.5rem;
+    left: 0;
+    background-position: -103.166667rem 0;
+}
+
+.res-tomorrow-tou {
+    width: 9.4rem;
+    height: 15.65rem;
+    top: -.4rem;
+    left: 0;
+    background-position: -37.0333333rem 0;
+}
+.res-tomorrow-tou.tomorrow-xl {
+    width: 1.55rem;
+    height: .8rem;
+    position: absolute;
+    top: 2.7rem;
+    left: 6.8rem;
+    background-position: -29.83333333rem 0;
+}
+
+.res-tomorrow-face {
+    top: -.4rem;
+    left: 6.8rem;
+}
+
+.res-hair-up{
+    position: absolute;
+    width: 7.1rem;
+    height: 11.8666667rem;
+    top: -.64rem;
+    left: 2.8rem;
+    z-index: 6;
+    background-position: -13.3333333rem -13.7rem;
+}
+
+.res-hair-down{
+    position: absolute;
+    width: 8.46666667rem;
+    height: 15.8rem;
+    top: 1.03rem;
+    left: .5rem;
+    background-position: -20.46666667rem -13.7rem;
+}
+
+.res-dream-clothes {
+    width: 16rem;
+    height: 17.4rem;
+    top: 2.7rem;
+    background-position: -87.1333333rem 0;
+    z-index: 6;
+}
+
+.res-dream-tou {
+    width: 5.2rem;
+    height: 8.3rem;
+    top: -.1rem;
+    left: 5.23rem;
+    background-position: -12.1333333rem 0;
+    z-index: 6;
+}
+.res-dream-tou.dream-tou-shou {
+    width: 0.75rem;
+    height: 0.85rem;
+    position: absolute;
+    top: 7.1rem;
+    left: 9.8rem;
+    background-position: -14.5rem 0;
+    z-index: 5;
+}
+
+.res-dream-xl {
+    top: 2.5rem;
+    left: 6.8rem;
+}
+
+.res-dream-face {
+    top: 0.62rem;
+    left: 7.3rem;
+}
+
+.sec-start-add {
+    background-image: url('../image/startbg.jpg');
+}
+
+.spirit-add {
+    background-image: url('../image/img.png');
+}
+
+.spirit-flag-e {
+    background-image: url('../image/e-img.png');
+}
+
+.spirit-flag-f {
+    background-image: url('../image/f-img.png');
+}
+
+
+
+.sec-public-add {
+    background-image: url('../image/cpbg.jpg');
+}
+
+.div-center-add {
+    background-image: url('../image/center.png');
+}
+
+.sec8-add {
+    background-image: url("../image/hzbj.jpg")
+}
+
+.sec9-add {
+    background-image: url("../image/cpbg.jpg");
+}
+
+
+/* 效果处理 */
+
+.sec {
+    display: none;
+}
+
+.loading {
+    display: block;
+}
+
+.sec2-dialog-ripple {
+    display: none;
+}
+
+.sec3-dialog-claim {
+    display: none;
+}
+
+.sec-public {
+    display: none;
+}
+
+.sec-public .div-center {
+    display: none;
+}
+
+.sec6-dialog {
+    /* display: none; */
+}
+
+.sec6-dialog-ripple {
+    display: none;
+}
+
+.sec7-dialog {
+    /* display: none; */
+}
+
+.sec7-claim {
+    display: none;
+}
+
+.sec8-dialog {
+    visibility: hidden;
+}
+
+.sec8-dialog .ripple {
+    display: none;
+}
+
+.sec8 .slide-all {
+    display: none;
+    /* opacity: 0; */
+}
+
+.sec8 .slide-menu-ripple {
+    display: none;
+}
+
+.sec8 .slide-hair .ripple {
+    /* display: none; */
+}
+
+.finger-anima {
+    animation: finger .6s infinite;
+    -webkit-animation: finger .6s infinite;
+}
+
+@keyframes finger {
+    from {
+        transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+    }
+}
+
+.pulse {
+    animation: finger .6s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+}
+
+.sec9-dialog-fail.dialog-box p {
+    /* text-align: left; */
+    /* padding-left: 1rem; */
+}
+
+.sec9-dialog-fail p:nth-child(1) {
+    /* margin-top: 1.2rem !important; */
+}
+
+.bling {
+    width: 16rem;
+    height: 24rem;
+    background-repeat: no-repeat;
+    background-size: 160.45rem 48.05rem;
+    -webkit-animation: blingbling 1.5s step-start;
+}
+
+.bling-add {
+    /* background-image: url("../image/bling.png"); */
+}
+
+@-webkit-keyframes blingbling {
+    0% {
+        background-position: 0 0;
+    }
+    6% {
+        background-position: -16.05rem 0;
+    }
+    12% {
+        background-position: -32.1rem 0;
+    }
+    18% {
+        background-position: -48.15rem 0;
+    }
+    24% {
+        background-position: -64.2rem 0;
+    }
+    30% {
+        background-position: -80.25rem 0;
+    }
+    36% {
+        background-position: -96.3rem 0;
+    }
+    42% {
+        background-position: -112.35rem 0;
+    }
+    48% {
+        background-position: -128.4rem 0;
+    }
+    54% {
+        background-position: -144.45rem 0;
+    }
+    60% {
+        background-position: 0 -24.05rem;
+    }
+    66% {
+        background-position: -16.05rem -24.05rem;
+    }
+    72% {
+        background-position: -32.1rem -24.05rem;
+    }
+    78% {
+        background-position: -48.15rem -24.05rem;
+    }
+    84% {
+        background-position: -64.2rem -24.05rem;
+    }
+    90% {
+        background-position: -80.25rem -24.05rem;
+    }
+    96% {
+        background-position: -96.3rem -24.05rem;
+    }
+    100% {
+        background-position: -112.35rem -24.05rem;
+    }
+}
+
+.s-bling {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 3.6rem;
+    height: 7.4rem;
+    background-repeat: no-repeat;
+    background-size: 7.25rem 7.4rem;
+    -webkit-animation: smallbling .2s step-start;
+}
+
+@-webkit-keyframes smallbling {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: -3.65rem 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.s-bling-add {
+    background-image: url("../image/smallbling.png");
+}
+
+
+
+
+
+/* 新增-修改 */
+.div-new{
+    background-repeat: no-repeat;
+    background-size: 51.6333333rem 36.5666667rem;
+}
+.sec-new-add{
+    background-image: url(../image/bgnew.jpg); 
+}
+.div-new-add{
+    background-image: url(../image/img-new.png);
+}
+.sec2 .sec2-person >div {
+    position: absolute;
+   
+}
+.sec2 .sec2-person >div.man-royce{
+    top: 3.1rem;
+    left: 0;
+    width: 10.4333333rem;
+    height: 20.9333333rem;
+    background-position: -15.7333333rem 0;
+}
+
+.sec2 .sec2-person >div.woman-niki{
+    top: 5.7rem;
+    left: 8rem;
+    width: 7.83333333rem;
+    height: 18.2666667rem;
+    background-position: 0 -18.3rem;
+}
+.sec2 .sec2-person >div.woman-niki-yes{
+    background-position: 0 0;
+
+}
+.sec2-div-click{
+    /* background: red; */
+    z-index: 10;
+    position: relative;
+}
+
+.sec2-dialog{
+   margin-top: 16rem;
+}
+.dialog-box > div.content{
+    padding-left: .4rem;
+}
+.sec2-dialog-ripple{
+    top: 18rem;
+}
+
+.sec2-dialog-man{
+    z-index: 2;
+}
+.sec2-dialog-woman{
+    position: absolute;
+    bottom: 3.7rem;
+    right: 1.35rem;
+    opacity: 0;
+    z-index: 0;
+}
+.sec2-dialog-woman .dialog-head{
+    left: auto;
+    right: 1rem;
+}
+.sec2-dialog-woman div.content{
+    padding-left:1rem;
+}
+
+.sec2-dialog-ripple2{
+    display: none;
+    top: 18rem;
+}
+
+
+
+@keyframes sec2bounceInright {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(10.3rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes sec2bounceInright {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(10.3rem, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.sec2bounceInright {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: sec2bounceInright;
+}
+
+@keyframes sec2bounceOutright {
+    20% {
+        opacity: 1;
+        transform: translate3d(10px, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(2000px, 0, 0);
+    }
+}
+
+.sec2bounceOutright {
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-name: sec2bounceOutright;
+}
+
+
+.sec6-dialog >div.content{
+    padding-left: 1.4rem;
+}
+.sec7-dialog >div.content{
+    padding-left: 1.15rem;
+}
+
+.sec-public-6 .attr .gorgeous,
+.sec-public-6 .attr .elegance{
+    font-size: .3rem;
+    padding-top: .15rem;
+    padding-bottom: .15rem;
+}
+
+
+.operation-div{
+    position: relative;
+    z-index: 10;
+}
+
+.sec8-dialog >div.content {
+    padding-left: .2rem;
+}
+
+.pumping-cell .dialog-box {
+    margin-top: 16rem;
+
+}
+.pumping-cell .dialog-box .content{
+    text-align: left!important;
+    padding-left: 1rem;
+}
+.pumping-cell .claim-div {
+    margin-top: 1.9rem;
+    position: relative;
+}
+
+.claim-div>span {
+    width: 3.95rem;
+    height: 1.85rem;
+    line-height: 2.1rem;
+    color: #fff;
+    background-position: 0 -8.75rem;
+}
+
+.pumping-cell .claim-div .ripple {
+    top: -1rem;
+    left: 7.4rem;
+}
+
+.sec9-dialog-success >div.content {
+    font-size: .77rem;
+    padding-left: .4rem;
+}
+
+
+.sec9-dialog-fail >div.content {
+    font-size: .7rem;
+    padding-left: .4rem;
+}
+
+.sec9 .operation-div .ripple{
+    top: -.7rem;
+    left: 6rem;
+}
+
+.sec10-dialog >div.content {
+    width: 100%;
+    font-size: .75rem;
+    text-align: center;
+    padding-left: 0;
+}
+
+.sec10-person{
+    position: absolute;
+    top: 3.3rem;
+    width: 16rem ;
+    height: 20.75rem ;
+    background-position: -26.2rem 0;
+}
+
+.sec10 .sec10operation-div {
+    width: 13.25rem;
+    margin: 0 auto;
+    margin-top: 2.4rem;
+    display: none;
+    position: absolute;
+    bottom: 1rem;
+    left: 1.5rem;
+}
+
+.sec10 .sec10operation-div a {
+    color: #fff;
+    font-size: .8rem;
+    position: relative;
+    z-index: 10;
+}
+
+.sec10 .sec10operation-div a:nth-child(1) {
+    width: 3.85rem;
+    height: 1.75rem;
+    background-position: 0 -14.475rem;
+}
+
+.sec10 .sec10operation-div a:nth-child(2) {
+    width: 3.85rem;
+    height: 1.8rem;
+    line-height: 1.7rem;
+    background-position: 0 -12.65rem;
+    margin-left: 2rem;
+}
+
+
+.sec-public-1 .attr >div:first-child{
+    top: -.2rem;
+}
+
+
+/* 明日如诗 -妆容 */
+
+.sec-public-1 .attr div:nth-child(1) div:nth-child(1) {
+    margin-top: .2rem;
+    font-size: 0.3475rem;
+    background: #ffe57e;
+    color: #ff775c;
+}
+.sec-public-1 .attr div:nth-child(1) div:nth-child(2) {
+    margin-top: .2rem;
+    font-size: 0.3475rem;
+    background: #aaa3ca;
+    color: #ffffff;
+}
+
+
+.sec-public-1 .attr div:nth-child(2) div:nth-child(1) {
+    font-size: 0.256rem;
+    background: #d0dfe7;
+    color: #70889b;
+}
+.sec-public-1 .attr div:nth-child(2) div:nth-child(2) {
+    margin-top: .2rem;
+    background: #ffe2de;
+    color: #ff747a;
+    font-size: 0.4205rem;
+}
+.goods-tom-face {
+    width: 9.4rem;
+    height: 7.5rem;
+    top: 4.8rem;
+    left: 2.4rem;
+    background-position: -42.2333333rem 0;
+}
+
+/* 梦中的婚礼 - 妆容 */
+
+
+.sec-public-6 .attr div:nth-child(2) div:nth-child(1) {
+    font-size: 0.256rem;
+    background: #ffe2de;
+    color: #ff747a;
+}
+.sec-public-6 .attr div:nth-child(2) div:nth-child(2) {
+    margin-top: .2rem;
+    background: #eeb261;
+    color: #ffffff;
+    font-size: 0.4205rem;
+}
+
+.sec-public-6 .attr div:nth-child(1) div:nth-child(1) {
+    background: #def3d6;
+    color: #6bbbab;
+    font-size: 0.3805rem;
+}
+.sec-public-6 .attr div:nth-child(1) div:nth-child(2) {
+    margin-top: .2rem;
+    background: #ebe8ff;
+    color: #a789bc;
+    font-size: 0.2925rem;
+}
+
+.goods-dream-face {
+    width: 8.8rem;
+    height: 8.56666667rem;
+    top: 4.3rem;
+    left: 2.5rem;
+    background-position: -42.2333333rem -7.53333333rem;
+}
+
+
+
+.sec8person-tomo,
+.sec8person-dream {
+    display: none ;
+}
+
+
+
+
+/* 新增-修改 */

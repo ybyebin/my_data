@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>能耗统计设定</title>
+    <link rel="stylesheet" href="plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="css/bayax.css">
+    <link rel="stylesheet" href="plugin/jQuery/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- <link rel="stylesheet" href="./css/basegreen.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/sysManagement.css">
+    <script src="plugin/jQuery/jquery-1.11.1.min.js"></script>
+</head>
+
+<body class="layui-layout-body">
+    <div id="app" class="layui-layout ">
+        <div class="layui-side bayax-bg-black">
+            <div class="layui-side-scroll">
+
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+                    <li class="layui-nav-item bayax-li-item-img">
+                        <a href="deviceControlCanvas.html">
+                            <img class="logo" v-bind:src="project.logo_path"></a>
+                    </li>
+
+                    <li class="layui-nav-item">
+                        <a class="" href="engineeringManagement.html"> <i class="gcgl"></i> 工程管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="nodeManagement.html"> <i class="jdgl"></i> 节点管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="datalabelManagement.html">
+                            <i class="sjbqgl"></i> 数据标签管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item active">
+                        <a href="energyconsumptionStatisticDis.html">
+                            <i class="nhtjsd"></i> 能耗统计设定
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="graphicImages.html">
+                            <i class="txhmgl"></i> 图形画面管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="energyconsumptionStatisticClassification.html">
+                            <i class="nhtjfj"></i> 能耗统计分级
+                        </a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="userManagement.html">
+                            <i class="yhqxgl"></i> 用户权限管理
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div class="bayax-content">
+                <div class="content-head">
+                    <a href="energyconsumptionStatisticDis.html" class="layui-btn bayax-btn">取消</a>
+                </div>
+                <div class="content-body">
+                    <div class="layui-row">
+                        <div class="energyStatistics layui-col-xs3">
+                            <div class="content-body-border-top"></div>
+                            <div class=" bayaxMscroll content-main content-main-statis">
+                                <div class="energyStatistics-head">
+                                    <span>能耗统计</span>
+                                    <a @click="creatNewGroups" class="bayax-a" href="javascript:;">添加</a>
+                                </div>
+                                <div class="energyStatistics-content">
+                                    <div @click="leftUlShowHide" :class="{clicks:ulhide}" class="energyStatistics-content-head ">
+                                        <label>
+											<i class="icon-arrow_drop_down"></i>
+											<span v-text="project.name"></span>
+										</label>
+                                    </div>
+                                    <div class="energyStatistics-content-body">
+                                        <ul class="bayax-statis-ul">
+                                            <li class="basehide" v-bind:class="{ baseshow: newGroups.addGroups }">
+                                                <div class="group-rename">
+                                                    <label class="group-input-label">
+															<input v-model="newGroups.newGroupsNameVal" type="text" autocomplete="off" class="layui-input" >
+													</label>
+                                                    <label class="group-rename-label">
+														<a @click.stop="sureCreatNewGroups"  class="bayax-a" href="javascript:;">确定</a>
+														<a @click.stop="cancleCreatNewGroups" class="bayax-a" href="javascript:;">取消</a>
+													</label>
+                                                </div>
+                                            </li>
+                                            <li @click="gettags(item)" :class="{active:item.active}" v-for="(item,index) in statisticsGroupData">
+                                                <div @mouseover="showRename(item)" @mouseout="hideRename(item)" v-bind:class="{ tdshow: !item.divIsHide,grouphover:item.divhover }" class="group-edit">
+                                                    <label class="group-name-label" v-text="item.name"></label>
+                                                    <label v-bind:class="{ tdshow: item.operationIsHide }" class="group-rename-label">
+															<a @click.stop="rename(item)"  class="bayax-a" href="javascript:;">重命名</a>
+															<a @click.stop="deleteGroup(item)"  class="bayax-a" href="javascript:;">删除</a>
+													</label>
+                                                </div>
+
+                                                <div v-bind:class="{ tdshow: item.divIsHide }" class="group-rename">
+                                                    <label class="group-input-label">
+															<input v-model="item.renameVal"   @click.stop="focusinput"   type="text" autocomplete="off" class="layui-input" >
+													</label>
+                                                    <label class="group-rename-label">
+														<a  @click.stop="sureRename(item)"   class="bayax-a" href="javascript:;">确定</a>
+														<a  @click.stop="cancelRename(item)" class="bayax-a" href="javascript:;">取消</a>
+													</label>
+                                                </div>
+                                            </li>
+
+
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="layui-col-xs9">
+                            <div class="energyStatistics-right bayaxMscroll content-main">
+                                <div class="energyStatistics-right-head">
+                                    <button @click="addtagsMethod(true)" class="layui-btn bayax-btn">添加数据标签</button>
+                                    <button @click="saveOrCreatgroup" class="layui-btn bayax-btn">保存</button>
+                                    <span class="tips-span">对数据标签的操作保存后会生效</span>
+                                    <div class="layui-form">
+
+                                        <input class="showstags" lay-filter="filterShowTags" type="checkbox" lay-skin="primary" title="显示数据标签">
+                                    </div>
+                                </div>
+                                <div class="energyStatistics-right-content right-edit-content">
+                                    <table class="bayax-table">
+                                        <thead>
+                                            <tr>
+                                                <th>名称</th>
+                                                <th>计算方式</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="item in statisticsGroupTagsData">
+                                                <td v-text="item.name"></td>
+                                                <td>
+                                                    <select v-model='item.oprate' v-bind:class="{ tdshow: item.ishide }" class="bayax-select">											
+														<option value="1">加</option>
+														<option value="0">减</option>
+													</select>
+                                                </td>
+
+                                                <td><a v-bind:class="{ tdshow: item.ishide }" @click="deleteThisTags(item)" href="javascript:;" class="bayax-a">删除</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 添加标签-->
+        <div id="layer-add-tags" class="layer-default">
+            <div class="statistic-layer bayax-layer-content">
+                <form>
+                    <div class="layui-row">
+                        <div class="layui-col-xs7 layui-form">
+                            <div class="clearfix">
+                                <div class="layui-input-inline content-search">
+                                    <span class="search-span icon-search"></span>
+                                    <input v-model="layerData.searchText" v-on:input="searchtags(1)" type="text" placeholder="请输入标签名称" required>
+                                    <span @click="cleanSearchVal" class="span-del icon-highlight_off"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="statistic-layer-left-div">
+                                <div class="content">
+                                    <div v-show="!layerData.showPage" class="noData">
+                                        无数据
+                                    </div>
+                                    <div v-show="layerData.showPage">
+                                        <table class="bayax-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>名称</th>
+                                                    <th>类型</th>
+                                                    <th>寄存器</th>
+                                                    <th>选择</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="item in layerData.searchData">
+                                                    <td v-text="item.name"></td>
+                                                    <td v-text="item.tag_type"></td>
+                                                    <td v-text="item.point_id"></td>
+                                                    <td>
+                                                        <div v-bind:class="{ basehide: item.ishide }">
+                                                            <input :id="item.tag_id" :value="item.tag_id" lay-filter="filterlayertags" class="showstags" type="checkbox" lay-skin="primary" title="">
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="relode-data tcdPageCode"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs5">
+                            <div class="statistic-layer-right-div">
+                                <div>
+                                    已添加数据标签
+                                </div>
+                                <div class="content bayaxMscroll">
+                                    <div class="statistic-right-scroll">
+                                        <table class="bayax-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>标签名称</th>
+                                                    <th>计算方式</th>
+                                                    <th>选择</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="item in layerData.alreadyHave">
+                                                    <td v-text="item.name"></td>
+                                                    <td>
+                                                        <select v-model="item.oprate" class="bayax-select">											
+																<option value="1">加</option>
+																<option value="0">减</option>
+															</select>
+                                                    </td>
+                                                    <td>
+                                                        <a class="bayax-a" href="javascript:;" @click="layerRightADel(item)">删除</a>
+                                                    </td>
+                                                </tr>
+
+
+
+
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div v-bind:class="{ loadingShow:loadingShow }" class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $(".energyStatistics-content-body").mCustomScrollbar();
+                $(".right-edit-content").mCustomScrollbar();
+                $('.statistic-right-scroll').mCustomScrollbar();
+            });
+        })(jQuery);
+    </script>
+
+    <script src="js/basic/api.js"></script>
+    <script src="plugin/jQuery/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="plugin/vue.js"></script>
+    <script src="plugin/layui/layui.js"></script>
+    <script src="js/sysSet/energyconsumptionStatisticEdit.js"></script>
+
+</body>
+
+</html>
