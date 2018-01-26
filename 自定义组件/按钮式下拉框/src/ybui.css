@@ -1,0 +1,151 @@
+.ybui-inline,
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.ybui-edge,
+.ybui-header,
+.ybui-inline,
+.ybui-main {
+    position: relative;
+}
+
+.ybui-btn,
+.ybui-edge,
+.ybui-inline,
+img {
+    vertical-align: middle;
+}
+
+.ybui-btn,
+.ybui-disabled,
+.ybui-icon,
+.ybui-unselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none
+}
+
+blockquote,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+img {
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+button,
+input,
+optgroup,
+option,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
+}
+
+body {
+    line-height: 24px;
+    font: 14px Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, Tahoma, Arial, sans-serif
+}
+
+hr {
+    height: 1px;
+    margin: 10px 0;
+    border: 0;
+    clear: both
+}
+
+a {
+    color: #333;
+    text-decoration: none
+}
+
+a:hover {
+    color: #777
+}
+
+.ybui-border-box,
+.ybui-border-box * {
+    box-sizing: border-box;
+}
+
+.ybui-box,
+.ybui-box * {
+    box-sizing: content-box;
+}
+
+.ybui-clear {
+    clear: both;
+    *zoom: 1
+}
+
+.ybui-clear:after {
+    content: '\20';
+    clear: both;
+    *zoom: 1;
+    display: block;
+    height: 0
+}
+
+.ybui-inline {
+    *display: inline;
+    *zoom: 1;
+}

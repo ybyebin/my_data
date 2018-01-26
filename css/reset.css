@@ -111,3 +111,8 @@ a {
 .clearfix {
     *zoom: 1;
 } */
+
+.base-inline {
+    position: relative;
+    display: inline-block;
+}
