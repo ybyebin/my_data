@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>工程巡检-安全管理</title>
+  <link rel="stylesheet" href="./plugins/layui/css/layui.css">
+  <link rel="stylesheet" href="plugins/ztree/metroStyle/metroStyle.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/engineeringPatrol.css">
+
+<body>
+  <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">
+        <img class="logo" src="img/logo.png"></div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item project-li">
+          <a class="project-name">工程项目协同管理平台</a>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="javascript:;">北京鹿港嘉苑住宅建设项目</a>
+          <dl class="layui-nav-child">
+            <dd>
+              <a href="javascript:void(0);">北京鹿港建设项目</a>
+            </dd>
+            <dd>
+              <a href="javascript:void(0);">嘉苑住宅建设项目</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:void(0);">
+            <img src="img/help.png"></a>
+        </li>
+        <li class="layui-nav-item info-li-hover">
+          <a class="ling" href="javascript:void(0);">
+            <span class="layui-badge-dot"></span>
+          </a>
+          <ul class="mes-ul-pop">
+            <li style="position: relative;">
+              <input type="text" class="search-ipt" placeholder="请输入搜索内容"> <i style="position: absolute;right: 20px;top: 2px;font-size: 23px;color:#be0e21;" class="layui-icon">&#xe615;</i>
+            </li>
+            <li class="sanjiao-top"></li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>1/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                    去设置:
+                    http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>2/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                        去设置:
+                        http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>3/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                        去设置:
+                        http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:void(0);">
+            <img src="img/logout.png"></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+            <span class="head-portrait">
+              <img src="img/person.png"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+      <span onclick="methodSlide()" class="bars"></span>
+      <div class="bar-span">
+        <div class="layui-side-scroll cy-scroll-big">
+          <ul class="layui-nav layui-nav-tree cy-sidebar-list">
+            <li class="layui-nav-item layui-nav-iteme scroll-li-sec active">
+              <a class="" href="engineeringPatrol.html">
+                <span>
+                  <img src="img/ico-1.png"></span>
+                工程巡检
+              </a>
+            </li>
+            <li class="layui-nav-item ">
+              <a href="engineeringPreControl.html">
+                <span>
+                  <img src="img/ico-2.png"></span>
+                工程预控
+              </a>
+
+            </li>
+            <li class="layui-nav-item ">
+              <a href="engineeringInformation.html">
+                <span >
+                  <img src="img/ico-3.png"></span>
+                工程信息
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="archivedData.html">
+                <span>
+                  <img src="img/ico-4.png"></span>
+                归档资料
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="projectInformation.html">
+                <span >
+                  <img src="img/ico-5.png"></span>
+                项目信息
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="materialInspection.html">
+                <span >
+                  <img src="img/ico-6.png"></span>
+                物资检查
+              </a>
+            </li>
+            <li class=" layui-nav-item">
+              <a href="riskPreWarnings.html">
+                <span>
+                  <img src="img/ico-7.png"></span>
+                风险预警
+             
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInspections.html">
+              <span>
+                <img src="img/ico-8.png"></span>
+              工程检查
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="qualityAcceptance.html">
+              <span>
+                <img src="img/ico-9.png"></span>
+              质量验收
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="supervisionStation.html">
+              <span >
+                <img src="img/ico-10.png"></span>
+              监理旁站
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="witnessSample.html">
+              <span>
+                <img src="img/ico-11.png"></span>
+              见证取样
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="drawingManagement.html">
+              <span>
+                <img src="img/ico-12.png"></span>
+              图纸管理
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+              <span>
+                <img src="img/ico-14.png"></span>
+              系统设置
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="CollaborativeOfficeManagement.html">
+              <span>
+                <img src="img/ico-13.png"></span>
+              协同办公管理
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="layui-side-scroll cy-scroll-small">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+          <li class="layui-nav-item scroll-li-sec active">
+            <a href="engineeringPatrol.html">
+              <img src="img/ico-1.png"></a>
+          </li>
+          <li class="layui-nav-item ">
+            <a href="engineeringPreControl.html">
+              <img src="img/ico-2.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInformation.html">
+              <img src="img/ico-3.png"></a>
+          </li>
+          <li class="layui-nav-item ">
+            <a href="archivedData.html">
+              <img src="img/ico-4.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="projectInformation.html">
+              <img src="img/ico-5.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="materialInspection.html">
+              <img src="img/ico-6.png"></a>
+          </li>
+          <li class=" layui-nav-item">
+            <a href="riskPreWarnings.html">
+              <img src="img/ico-7.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInspections.html">
+              <img src="img/ico-8.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="qualityAcceptance.html">
+              <img src="img/ico-9.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="supervisionStation.html">
+              <img src="img/ico-10.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="witnessSample.html">
+              <img src="img/ico-11.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="drawingManagement.html">
+              <img src="img/ico-12.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+              <img src="img/ico-14.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="CollaborativeOfficeManagement.html">
+              <img src="img/ico-13.png"></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="layui-body cy-layui-body">
+    <div class="layui-row" style="margin-top: 40px;">
+      <div class="layui-col-xs12 cy-col-l">
+        <div class="cy-col-conent ">
+          <div class="clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">安全管理</li>
+              </ul>
+
+            </div>
+
+            <div class="layui-inline search-groups">
+              <a class="cy-back" href="#">返回</a>
+
+            </div>
+
+          </div>
+
+          <div class="layui-row" >
+            <div class="layui-col-xs4 cy-col-l clearfix">
+              <div class="div-title">安全管理</div>
+              <div class="content_wrap">
+                <div class="zTreeDemoBackground left">
+                  <ul id="treeDemo" class="ztree"></ul>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="layui-col-xs8 cy-col-r clearfix">
+              <div class="div-title">详情-总包管理</div>
+              <div class="ep-contents">123</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script src="./plugins/layui/layui.js"></script>
+<script type="text/javascript" src="plugins/jQuery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="plugins/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="plugins/ztree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/epSon.js"></script>
+
+<script>
+           layui.use(['layer', 'element', 'laydate','form'], function () { //独立版的layer无需执行这一句
+       
+              var layer = layui.layer; //独立版的layer无需执行这一句
+
+      });
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    /*background: red;*/
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.panel-title ul li.li-s span:first-child {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #00a8e4;
+}
+
+.panel-title ul li.li-s span.li-s-third {
+    background: #e9ab0d;
+}
+
+.panel-title ul li.li-s span.li-s-forth {
+    background: #e2162c;
+}
+
+.datatime-group {
+    float: right;
+}
+
+.date-line {
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    position: relative;
+    top: -2px;
+}
+
+.panel-left {
+    /*background: red;*/
+    height: 460px;
+    padding: 0;
+}
+
+.panel-right {
+    padding: 0;
+    padding-top: 20px;
+    /*background: blue;*/
+}
+
+.chart-page {
+    text-align: center;
+}
+
+.span-page {
+    display: inline-block;
+}
+
+.current-page {
+    padding-left: 20px;
+}
+
+.total-page {
+    padding-right: 20px;
+}
+
+.cy-icon-ll {
+    color: #666;
+    font-size: 14px !important;
+}
+
+.search-groups {
+    /*width: 300px;*/
+    padding: 0;
+    float: right;
+    z-index: 1000;
+}
+
+.search-groups input {
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: #efefef;
+}
+
+.search-groups input:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.search-groups button {
+    background: #be0e21;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+}
+
+.search-groups button:focus,
+.search-groups button:active {
+    border: none;
+    outline: none;
+}
+
+.table-edit-span,
+.table-file-span {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.table-edit-span {
+    width: 17px;
+    height: 18px;
+    background: url(../img/edit.png) no-repeat;
+}
+
+.table-file-span {
+    width: 17px;
+    height: 15px;
+    background: url(../img/file.png) no-repeat center;
+}
+
+.btn-creat {
+    background: #be0e21;
+    color: #fff;
+    width: 115px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.base-table th,
+.base-table td {
+    text-align: center;
+}
+
+.layui-btn {
+    color: #fff;
+    border: none;
+}
+
+.layui-btn .layui-icon {
+    color: #fff;
+}
+
+.layui-btn:hover {
+    color: #fff;
+}
+
+.layui-btn-1 {
+    background: #5a5a5a;
+}
+
+.layui-btn-2 {
+    height: 36px;
+    line-height: 36px;
+    margin-top: 2px;
+    background: #00a8e3;
+}
+
+.layui-btn-3 {
+    height: 36px;
+    line-height: 36px;
+    background: #be0e21;
+    margin-left: 15px;
+}
+
+.zlzs {
+    color: #be0e21;
+}
+
+.pi-titles {
+    line-height: 40px;
+    height: 40px;
+    color: #f8f8f9;
+    font-size: 14px;
+    background: #7c7a85;
+    padding: 5px 8px 5px 17px;
+}
+
+.pi-div {
+    font-size: 12px;
+    padding: 5px 8px 5px 17px;
+    border: 1px solid #e8e8e8;
+    line-height: 34px;
+}
+
+table.base-table thead th {
+    background: #7c7a85;
+}
+
+.layui-tab {
+    margin: 0 0 10px;
+}
+
+.bianji-pic {
+    margin-right: 20px;
+}
+
+
+
+/*弹窗*/
+.layer-content{
+    text-align: center;
+    padding-top: 40px;
+    font-size: 14px;
+}
+.layui-layer-btn a.del-person{
+    border: none;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 20px !important;
+     bottom: 20px;
+     position: relative;
+}
+
+.layui-layer-btn a.cancel{
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    background: #f3f3f3!important;
+    color: #333;
+     padding: 0 20px !important;
+     bottom: 0px;
+     position: relative;
+}
+.layui-layer-btn a.sure{
+    border: none;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 20px !important;
+     bottom: 0px;
+     position: relative;
+}
+.lc form {
+   padding: 0 20px;
+   padding-left: 10px;
+}
+.lc form li{
+    font-size: 14px;
+    color: #666;
+}
+.lc form li input{
+    border-radius: 2px;
+}
+li.title-firsts{
+    /*margin-bottom: 10px;*/
+    margin-top: 10px !important;
+
+}
+.form-title .layui-form-label{
+    width: 104px;
+    /*background: red;*/
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.layer-add-person label{
+    /*background: red;*/
+    width: 70px !important;
+}
+.layer-add-person .layui-input-block{
+    margin-left: 80px;
+}
+
+.title-ad-person {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.title-ad-person .layui-input-inline{
+   width: 200px!important;
+}
+
+.title-ad-persons {
+    margin-bottom: 10px!important;
+}
+.title-ad-persons .layui-input-inline{
+     width: 200px!important;
+}
+.input-inline-1{
+    margin-left: 8px!important;
+}
+ .layui-form-select dl dd, .layui-form-select dl dt,
+.input-inline-1 input{
+   text-align: left!important;
+}
+
+.input-inline-2{
+    margin-left: 15px!important;
+}
+
+.btn-up-file{
+    height: 33px;
+    width: 91px;
+    color: #be0e21;
+    display: inline-block;
+    background: #eaeaea;
+    line-height: 33px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-up-file:hover{
+     color: #be0e21;
+}
+.change-li-first{
+    margin-top: 15px;
+}
+
+
+/* 工程信息的二级页面 */
+.header-title {
+    line-height: 50px;
+    height: 50px;
+    background: #7c7a85;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #e3e2e4;
+}
+.info-header{
+    line-height: 25px;
+    padding: 10px  20px;
+    line-height: 30px;
+}

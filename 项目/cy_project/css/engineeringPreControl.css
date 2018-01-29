@@ -1,0 +1,468 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.panel-title ul li.li-s span:first-child {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #00a8e4;
+}
+
+.panel-title ul li.li-s span.li-s-third {
+    background: #e9ab0d;
+}
+
+.panel-title ul li.li-s span.li-s-forth {
+    background: #e2162c;
+}
+
+.datatime-group {
+    float: right;
+}
+
+.date-line {
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    position: relative;
+    top: -2px;
+}
+
+.panel-left {
+    /*background: red;*/
+    height: 460px;
+    padding: 0;
+}
+
+.panel-right {
+    padding: 0;
+    padding-top: 20px;
+    /*background: blue;*/
+}
+
+.chart-page {
+    text-align: center;
+}
+
+.span-page {
+    display: inline-block;
+}
+
+.current-page {
+    padding-left: 20px;
+}
+
+.total-page {
+    padding-right: 20px;
+}
+
+.cy-icon-ll {
+    color: #666;
+    font-size: 14px !important;
+}
+
+.btn-set {
+    float: right;
+    background: #be0e21;
+    color: #fff;
+    width: 115px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    line-height: 40px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-set:active,
+.btn-set:focus {
+    outline: none;
+    border: none;
+}
+
+.btn-set span {
+    position: relative;
+    left: -5px;
+    top: 3px;
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    background-image: url(../img/set.png);
+    background-repeat: no-repeat;
+}
+
+
+/*弹窗*/
+
+.layer-content {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.layer-content span {
+    color: #be0e21;
+}
+
+.layer-contents {
+    padding: 20px;
+    max-height: 330px;
+}
+
+.layui-layer-page .layui-layer-btn {
+    padding-top: 0;
+}
+
+body .layui-layer-btn a {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background: #00a8e4;
+    color: #fff;
+    padding-left: 40px !important;
+    background: #00a8e4 url(../img/c-del.png) no-repeat 20px 11px ;
+    background-size: 16px 18px !important;
+}
+
+.layui-layer-btn a:first-child {
+    background: #f3f3f3!important;
+    padding: 0 20px!important;
+    border: none;
+    color: #333;
+    border: 1px solid #c2c2c2;
+}
+
+.layui-layer-btn a.only-three-btn-last ,.layui-layer-btn a.sure-btn-a {
+    color: #fff;
+    margin-right: 25px;
+    border:1px solid #be0e21;
+    background-color: #be0e21 !important;
+}
+ body .layui-layer-btn a.only-three-btn-last{
+    background: #be0e21 url(../img/c-save.png) no-repeat 20px 11px !important;
+    background-size: 18px 18px !important;
+    padding-left: 43px !important;
+
+}
+
+.layui-layer-btn a.only-two-btn-last {
+    background: #be0e21!important;
+    color: #fff;
+    padding-left: 20px!important;
+}
+
+.layer-contents table {
+    border-collapse: collapse;
+    border: none;
+}
+
+.layer-contents table td {
+    border: solid #DDDDDD 1px;
+    font-size: 12px;
+}
+
+ 
+
+table.base-table  tbody > tr td.bgFff {
+  background: #fff !important; 
+  text-align: center;
+  background: url('../img/c-add.png') no-repeat center  !important;
+  background-size: 19px 19px  !important;
+  border-right:solid #DDDDDD 1px  !important;
+  cursor: pointer;
+}
+table.base-table  tbody > tr td.bgAdd {
+  text-align: center;
+  background-size: 19px 19px  !important;
+  border-right:solid #DDDDDD 1px  !important;
+  cursor: pointer;
+}
+table.base-table  tbody > tr:nth-child(odd) td.bgAdd {
+  background:#fff url('../img/c-add.png') no-repeat center  !important;
+}
+table.base-table  tbody > tr:nth-child(even) td.bgAdd {
+  background:#e7e7e7 url('../img/c-add.png') no-repeat center  !important;
+}
+table.base-table  tbody > tr:nth-of-type(odd) td {
+  /* border-right: 1px solid #E7E7E7 !important; */
+}
+
+.icon-star {
+    color: #979797!important;
+}
+
+.star-red {
+    color: #be0e21 !important;
+}
+
+.fir {
+    width: 75px !important;
+    min-width: 75px !important;
+    background: blue;
+}
+
+.sed {
+    width: 75px !important;
+    max-width: 175px !important;
+    min-width: 75px !important;
+    background: red;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+tspan{
+    font-size: 12px;
+}
+
+.ccc-pic{
+    width: 18px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+table.base-table tbody tr td ,table.base-table thead th{
+    text-align: left;
+}
+
+/*树形菜单*/
+
+.zTreeDemoBackground{
+    background: #f6f6f6;
+    position: absolute;
+    z-index: 1000;
+    top:30px;
+    left: 0;
+    display: none;
+}
+
+.tree-sure{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #be0e21;
+    color: #fff;
+}
+.search-groups .datapick-btn,.set-btn-a {
+    background: #be0e21;
+}
+.layui-tab-card {
+    border:none;
+    border-radius: 0;
+    box-shadow:none;
+}
+.layui-tab-card>.layui-tab-title {
+    background: #fff;
+    margin-bottom: 20px;
+}
+.layui-tab-card-first.layui-tab-card {
+    color: #363636 !important;
+    border-radius: 5px 5px  0 0  !important;
+}
+.layui-tab-card-first.layui-tab-card .layui-tab-title .layui-this {
+    color: #fff !important;
+    background: #be0e21 !important;
+    border-radius: 5px 5px  0 0  !important;
+}
+
+.set-div {
+    text-align: right;
+}
+
+table.base-table tbody>tr.tr-type td {
+    background: #fae9e9 !important;
+    border: none !important;
+    height: 35px;
+}
+
+.a-colo-red{
+    color: #be0e21;
+}
+
+.table-left{
+    width: 278px;
+}
+.table-middle{
+    width: 320px;
+    margin:10px 15px 0;
+}
+
+.table-right{
+    width: 405px;
+}
+.table-middle .ipt-td-middle input{
+    display: inline-block;
+    width: 213px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    line-height: 25px;
+    height: 25px;
+    padding-left: 5px;
+}
+.ipt-td-middle  img{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.ipt-td-middle  img.icon-jia{
+    margin: 0 2px 0 11px;
+}
+
+.yiban {
+    color: #24afe6;
+}
+.active.yiban {
+    background: #24afe6;
+    color:#fff;
+}
+.yanzhong {
+    color: #eaab0e;
+}
+.active.yanzhong {
+    background: #eaab0e;
+    color:#fff;
+}
+.zhongda {
+    color: #ba1a2e;
+}
+.active.zhongda {
+    background: #ba1a2e;
+    color:#fff;
+}
+.table-right .ipt-td-middle input{
+    display: inline-block;
+    width: 195px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    line-height: 25px;
+    height: 25px;
+    padding-left: 5px;
+}
+.tab-span-a  {
+    display: inline-block;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+.tab-span-a  span{
+    display: inline-block;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+.pinglun {
+    padding: 20px;
+    text-align: right;
+}
+.pinglun a{
+    margin:10px  0 0 15px;
+    background-color: #be0e21;
+}
+.pinglun span{
+    cursor: pointer;
+}
+
+.row-lays{
+    margin-top: 20px;
+}
+ .div-title{
+        height: 59px;
+    line-height: 59px;
+    background: #5B5863;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+}
+
+.ep-son-content{
+    padding: 0 200px;
+    border: none;
+}
+
+.ep-son-content .content_wrap{
+     border: 1px solid #dedede;
+}
+.ep-Q-ul{
+    border: 1px solid #dedede;
+}
+.ep-Q-ul li{
+    box-sizing: border-box;
+    /*height: 38px;*/
+    padding: 15px 30px;
+    padding-left: 20px;
+    padding-right: 0;
+    display: inline-block;
+    /*background: blue;*/
+    width: 100%;
+}
+.ep-Q-ul li:nth-of-type(even)  {
+    background: #e7e7e7 !important;
+}
+.gczl-div{
+    position: relative;
+    padding: 10px;
+}
+.fujian{
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-image: url(../img/fj-gray.png);
+    cursor: pointer;
+}
+.trees{
+    background: #F6F6F6;
+    padding-bottom: 50px;
+    position: relative;
+    display: none;
+}
+
+.tree-btn{
+    padding: 10px 30px;
+    background:  #be0e21;
+    border-radius: 4px;color: #fff;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+.tree-btn:hover{
+    color: #fff;
+}
+
+
+.ep-Q-ul li nth-of-type(odd) {
+    background-color: #FFF !important;
+}
+.row-lays form span{
+    color: #fff!important;
+}
+.ep-Q-ul form span{
+      color: #333!important;
+}
+.cy-col-r{
+    padding-left: 3px;
+}

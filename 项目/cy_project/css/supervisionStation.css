@@ -1,0 +1,198 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    /*background: red;*/
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.panel-title ul li.li-s span:first-child {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #00a8e4;
+}
+
+.panel-title ul li.li-s span.li-s-third {
+    background: #e9ab0d;
+}
+
+.panel-title ul li.li-s span.li-s-forth {
+    background: #e2162c;
+}
+
+.datatime-group {
+    float: right;
+}
+
+.date-line {
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    position: relative;
+    top: -2px;
+}
+
+.panel-left {
+    /*background: red;*/
+    height: 460px;
+    padding: 0;
+}
+
+.panel-right {
+    padding: 0;
+    padding-top: 20px;
+    /*background: blue;*/
+}
+
+.chart-page {
+    text-align: center;
+}
+
+.span-page {
+    display: inline-block;
+}
+
+.current-page {
+    padding-left: 20px;
+}
+
+.total-page {
+    padding-right: 20px;
+}
+
+.cy-icon-ll {
+    color: #666;
+    font-size: 14px !important;
+}
+
+.search-groups {
+    /*width: 300px;*/
+    padding: 0;
+    float: right;
+}
+
+.search-groups input {
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: #efefef;
+}
+
+.search-groups input:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.search-groups button {
+    background: #be0e21;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+}
+
+.search-groups button:focus,
+.search-groups button:active {
+    border: none;
+    outline: none;
+}
+
+.table-edit-span {
+    display: inline-block;
+    width: 17px;
+    cursor: pointer;
+    height: 18px;
+    background: url(../img/edit.png);
+}
+
+.btn-creat {
+    background: #be0e21;
+    color: #fff;
+    width: 115px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-creat-span {
+    position: relative;
+    left: -5px;
+    top: 5px;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(../img/creat.png);
+}
+
+.base-table th,
+.base-table td {
+    text-align: center;
+}
+
+table.base-table tbody>tr:nth-of-type(odd) td {
+    background-color: #e7e7e7 !important;
+}
+
+table.base-table tbody>tr:nth-of-type(even) td {
+    background-color: #FFF !important;
+}
+
+table.base-table tbody>tr.tr-type td {
+    background: #fae9e9 !important;
+    border: none !important;
+}
+
+.tr-type i {
+    margin-right: 10px;
+}
+
+.ss-ul-1>li {
+    float: left;
+}
+
+.div-3-1-span {
+    margin-left: 30px;
+}
+
+.div-3-1-form {
+    width: 100px;
+    float: left;
+}
+
+.div-3,
+.div-4 {
+    margin-top: 20px;
+}
+
+.default-select .layui-input {
+    background: #be0e21 !important;
+    color: #fff;
+}
+
+.all-btn {
+    cursor: pointer;
+    margin-right: 10px;
+}

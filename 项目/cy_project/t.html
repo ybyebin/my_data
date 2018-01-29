@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>layout 后台大布局 - Layui</title>
+  <link rel="stylesheet" href="plugins/layui/css/layui.css">
+  <style>
+  .bars{
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: red;
+    top: 300px;
+    left: 200px;
+    z-index: 1000;
+  }
+/*  .layui-side.layui-bg-black{
+    overflow-x:auto !important;
+  }*/
+</style>
+</head>
+    <body>     
+
+              
+
+ 
+<!-- <form class="layui-form" action=""> -->
+ <div class="layui-form" >
+    
+
+
+ 
+      <input type="checkbox" value="1"  lay-skin="primary" lay-filter="test" title="" checked=""><span>123123123123123123123</span>
+      <input type="checkbox" value="2"  lay-skin="primary" lay-filter="test" title="阅读">
+      <input type="checkbox" value="3"  lay-skin="primary" lay-filter="test" title="游戏">
+
+  
+ 
+</div>
+ <button onclick="aa()">按钮</button>
+    <script type="text/javascript" src="plugins/jQuery/jquery-1.11.1.min.js"></script>
+            <script src="plugins/layui/layui.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+
+  form.on('checkbox(test)', function(data){
+  // console.log(data.elem); //得到checkbox原始DOM对象
+  console.log(data.elem.checked); //是否被选中，true或者false
+  console.log(data.value); //复选框value值，也可以通过data.elem.value得到
+  // console.log(data.othis); //得到美化后的DOM对象
+});        
+    
+});
+
+  function aa(){
+    $('input:checked').each(function(index,ele){
+      console.log($(ele).prop('title'))
+    })
+  }
+</script>
+
+</body>
+</html>

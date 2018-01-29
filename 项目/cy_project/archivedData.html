@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>归档资料</title>
+  <link rel="stylesheet" href="./plugins/layui/css/layui.css">
+  <link rel="stylesheet" href="plugins/ztree/metroStyle/metroStyle.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/archivedData.css">
+<body>
+  <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">
+        <img class="logo" src="img/logo.png"></div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item project-li">
+          <a class="project-name" style="">工程项目协同管理平台</a>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="javascript:;">北京鹿港嘉苑住宅建设项目</a>
+          <dl class="layui-nav-child">
+            <dd>
+              <a href="javascript:void(0);">北京鹿港嘉苑住宅建设项目</a>
+            </dd>
+            <dd>
+              <a href="javascript:void(0);">北京鹿港嘉苑住宅建设项目</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:void(0);">
+            <img src="img/help.png"></a>
+        </li>
+        <li class="layui-nav-item info-li-hover">
+          <a class="ling" href="javascript:void(0);">
+            <span class="layui-badge-dot"></span>
+          </a>
+          <ul class="mes-ul-pop">
+            <li style="position: relative;">
+              <input type="text" class="search-ipt" placeholder="请输入搜索内容"> <i style="position: absolute;right: 20px;top: 2px;font-size: 23px;color:#be0e21;" class="layui-icon">&#xe615;</i>
+            </li>
+            <li class="sanjiao-top"></li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>1/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                    去设置:
+                    http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>2/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                        去设置:
+                        http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>3/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                        去设置:
+                        http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:void(0);">
+            <img src="img/logout.png"></a>
+        </li>
+
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+            <span class="head-portrait">
+              <img src="img/person.png"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+      <span onclick="methodSlide()" class="bars"></span>
+      <div class="bar-span">
+        <div class="layui-side-scroll cy-scroll-big">
+          <ul class="layui-nav layui-nav-tree cy-sidebar-list">
+            <li class="layui-nav-item layui-nav-iteme scroll-li-sec">
+              <a class="" href="engineeringPatrol.html">
+                <span>
+                  <img src="img/ico-1.png"></span>
+                工程巡检
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="engineeringPreControl.html">
+                <span>
+                  <img src="img/ico-2.png"></span>
+                工程预控
+              </a>
+
+            </li>
+            <li class="layui-nav-item">
+              <a href="engineeringInformation.html">
+                <span >
+                  <img src="img/ico-3.png"></span>
+                工程信息
+              </a>
+            </li>
+            <li class="active layui-nav-item">
+              <a href="archivedData.html">
+                <span>
+                  <img src="img/ico-4.png"></span>
+                归档资料
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="projectInformation.html">
+                <span >
+                  <img src="img/ico-5.png"></span>
+                项目信息
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="materialInspection.html">
+                <span >
+                  <img src="img/ico-6.png"></span>
+                物资检查
+              </a>
+            </li>
+            <li class=" layui-nav-item">
+              <a href="riskPreWarnings.html">
+                <span>
+                  <img src="img/ico-7.png"></span>
+                风险预警
+             
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInspections.html">
+              <span>
+                <img src="img/ico-8.png"></span>
+              工程检查
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="qualityAcceptance.html">
+              <span>
+                <img src="img/ico-9.png"></span>
+              质量验收
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="supervisionStation.html">
+              <span >
+                <img src="img/ico-10.png"></span>
+              监理旁站
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="witnessSample.html">
+              <span>
+                <img src="img/ico-11.png"></span>
+              见证取样
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="drawingManagement.html">
+              <span>
+                <img src="img/ico-12.png"></span>
+              图纸管理
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+              <span>
+                <img src="img/ico-14.png"></span>
+              系统设置
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="CollaborativeOfficeManagement.html">
+              <span>
+                <img src="img/ico-13.png"></span>
+              协同办公管理
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="layui-side-scroll cy-scroll-small">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+          <li class="layui-nav-item scroll-li-sec">
+            <a href="engineeringPatrol.html">
+              <img src="img/ico-1.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringPreControl.html">
+              <img src="img/ico-2.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInformation.html">
+              <img src="img/ico-3.png"></a>
+          </li>
+          <li class="layui-nav-item active">
+            <a href="archivedData.html">
+              <img src="img/ico-4.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="projectInformation.html">
+              <img src="img/ico-5.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="materialInspection.html">
+              <img src="img/ico-6.png"></a>
+          </li>
+          <li class=" layui-nav-item">
+            <a href="riskPreWarnings.html">
+              <img src="img/ico-7.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInspections.html">
+              <img src="img/ico-8.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="qualityAcceptance.html">
+              <img src="img/ico-9.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="supervisionStation.html">
+              <img src="img/ico-10.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="witnessSample.html">
+              <img src="img/ico-11.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="drawingManagement.html">
+              <img src="img/ico-12.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+              <img src="img/ico-14.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="CollaborativeOfficeManagement.html">
+              <img src="img/ico-13.png"></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+<div class="layui-body cy-layui-body">
+  <div class="layui-row" style="margin-top: 40px;">
+    <div class="layui-col-xs12 cy-col-l">
+      <div class="cy-col-conent ">
+        <form class="layui-form" action="">
+          <div class="layui-inline">
+            <label class="layui-form-label labeltitle" >归档资料</label>
+            <label class="layui-form-label">工程名称:</label>
+            <div class="layui-input-inline">
+              <select name="modules" lay-verify="required" lay-search="">
+                <option value="">直接选择或搜索选择</option>
+                <option value="1">layer</option>
+                <option value="2">form</option>
+                <option value="3">layim</option>
+                <option value="4">element</option>
+                <option value="5">laytpl</option>
+                <option value="6">upload</option>
+                <option value="7">laydate</option>
+                <option value="8">laypage</option>
+                <option value="9">flow</option>
+                <option value="10">util</option>
+                <option value="11">code</option>
+                <option value="12">tree</option>
+                <option value="13">layedit</option>
+                <option value="14">nav</option>
+                <option value="15">tab</option>
+                <option value="16">table</option>
+                <option value="17">select</option>
+                <option value="18">checkbox</option>
+                <option value="19">switch</option>
+                <option value="20">radio</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <div class="layui-tab">
+          <ul class="layui-tab-title cy-tab-title">
+            <li class="li-one layui-this ">
+              <div class="tab-divs">
+                <span class="spantitle span1">
+                  归档资料
+                  <a href="#">查看明细 >></a>
+                </span>
+                <span class="spantitle span2">
+                  <img src="img/guidang1.png" alt=""></span>
+              </div>
+            </li>
+            <li class="li-two ">
+              <div class="tab-divs">
+                <span class="spantitle span1">
+                  分部总会
+                  <a href="#">查看明细 >></a>
+                </span>
+                <span class="spantitle span2">
+                  <img src="img/guidang2.png" alt=""></span>
+              </div>
+            </li>
+            <li class="li-three ">
+              <div class="tab-divs">
+                <span class="spantitle span1">
+                  资料库
+                  <a href="#">查看明细 >></a>
+                </span>
+                <span class="spantitle span2">
+                  <img src="img/guidang3.png" alt=""></span>
+              </div>
+            </li>
+            <li class="li-four">
+              <div class="tab-divs">
+                <span class="spantitle span1">
+                  批量输出
+                  <a href="#">查看明细 >></a>
+                </span>
+                <span class="spantitle span2">
+                  <img src="img/guidang4.png" alt=""></span>
+              </div>
+            </li>
+
+          </ul>
+          <div class="layui-tab-content cy-tab-content">
+            <div class="layui-tab-item layui-show">
+              <ul class="tab-tab-ul clearfix">
+                <li class="tab-tab-li active" data-div=".tab-1">过程资料</li>
+                <li class="tab-tab-li" data-div=".tab-2">竣工资料</li>
+              </ul>
+
+              <div class="tab-tab-content">
+                <div class="tab-tab-item tab-1">
+
+                  <form class="layui-form" action="">
+                    <div class="layui-inline">
+                      <label class="layui-form-label cy-labels">单体工程名称:</label>
+                      <div class="layui-input-inline">
+                        <select name="modules">
+                          <option value=""></option>
+                          <option value="1">1号楼</option>
+                          <option value="2">2号楼</option>
+                          <option value="3">3号楼</option>
+                          <option value="4">4号楼</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="layui-inline">
+                      <label class="layui-form-label">选择专业:</label>
+                      <div class="layui-input-inline">
+                        <select name="modules">
+                          <option value=""></option>
+                          <option value="1">安全</option>
+                          <option value="2">安全</option>
+                          <option value="3">安全</option>
+                          <option value="4">安全</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="layui-inline search-groups fr">
+                      <div class="cy-search-div">
+                        <input type="text" class="layui-input cy-search-input" placeholder="请输入工程名称、地点、负责"></div>
+                      <button class="datapick-btn">
+                        <i class="layui-icon" style="color: #fff">&#xe615;</i>
+                      </button>
+                    </div>
+                  </form>
+
+                  <div class="layui-row" >
+                    <div class="layui-col-xs4 cy-col-l clearfix">
+                      <div class="div-title">工程归档资料目录</div>
+                      <div class="content_wrap">
+                        <div class="zTreeDemoBackground left">
+                          <ul id="treeDemo" class="ztree"></ul>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div class="layui-col-xs8 cy-col-r clearfix">
+                      <table class="base-table layui-table">
+                        <thead>
+                          <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>创建人</th>
+                            <th>修改时间</th>
+                            <th>详情</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="tab-tab-item tab-2">
+                  <form class="layui-form" action="">
+                    <div class="layui-inline">
+                      <label class="layui-form-label cy-labels">单体工程名称:</label>
+                      <div class="layui-input-inline">
+                        <select name="modules">
+                          <option value=""></option>
+                          <option value="1">1号楼</option>
+                          <option value="2">2号楼</option>
+                          <option value="3">3号楼</option>
+                          <option value="4">4号楼</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="layui-inline">
+                      <label class="layui-form-label">选择专业:</label>
+                      <div class="layui-input-inline">
+                        <select name="modules">
+                          <option value=""></option>
+                          <option value="1">安全</option>
+                          <option value="2">安全</option>
+                          <option value="3">安全</option>
+                          <option value="4">安全</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="layui-inline search-groups fr">
+                      <div class="cy-search-div">
+                        <input type="text" class="layui-input cy-search-input" placeholder="请输入工程名称、地点、负责"></div>
+                      <button class="datapick-btn">
+                        <i class="layui-icon" style="color: #fff">&#xe615;</i>
+                      </button>
+                    </div>
+                  </form>
+
+                  <div class="layui-row" >
+                    <div class="layui-col-xs4 cy-col-l clearfix">
+                      <div class="div-title">工程归档资料目录</div>
+                      <div class="content_wrap">
+                        <div class="zTreeDemoBackground left">
+                          <ul id="treeDemo2" class="ztree"></ul>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div class="layui-col-xs8 cy-col-r clearfix">
+                      <table class="base-table layui-table">
+                        <thead>
+                          <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>创建人</th>
+                            <th>修改时间</th>
+                            <th>详情</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+                          <tr>
+                            <td>华科家属楼</td>
+                            <td>在施</td>
+                            <td>房建</td>
+                            <td>燕郊海油大街</td>
+
+                            <td>
+                              <img src="./img/details.png" class="details-pic"></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="layui-tab-item">
+              <form class="layui-form" action="">
+                <div class="layui-inline">
+                  <label class="layui-form-label cy-labels">单体名称:</label>
+                  <div class="layui-input-inline">
+                    <select name="modules">
+                      <option value=""></option>
+                      <option value="1">1号楼</option>
+                      <option value="2">2号楼</option>
+                      <option value="3">3号楼</option>
+                      <option value="4">4号楼</option>
+
+                    </select>
+                  </div>
+                </div>
+                <div class="layui-inline">
+                  <label class="layui-form-label">选择专业:</label>
+                  <div class="layui-input-inline">
+                    <select name="modules">
+                      <option value=""></option>
+                      <option value="1">安全</option>
+                      <option value="2">安全</option>
+                      <option value="3">安全</option>
+                      <option value="4">安全</option>
+
+                    </select>
+                  </div>
+                </div>
+
+                <div class="layui-inline search-groups fr">
+                  <div class="cy-search-div">
+                    <input type="text" class="layui-input cy-search-input" placeholder="请输入工程名称、地点、负责"></div>
+                  <button class="datapick-btn">
+                    <i class="layui-icon" style="color: #fff">&#xe615;</i>
+                  </button>
+                </div>
+              </form>
+
+              <div class="layui-row" >
+                <div class="layui-col-xs4 cy-col-l clearfix">
+                  <div class="div-title">分部工程</div>
+                  <div class="content_wrap">
+                    <div class="zTreeDemoBackground left">
+                      <ul id="treeDemo3" class="ztree"></ul>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="layui-col-xs8 cy-col-r clearfix">
+                  <table class="base-table layui-table">
+                    <thead>
+                      <tr>
+                        <th>序号</th>
+                        <th>名称</th>
+                        <th>创建人</th>
+                        <th>修改时间</th>
+                        <th>详情</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <form class="layui-form" action="">
+                <div class="layui-inline">
+                  <label class="layui-form-label cy-labels">单体名称:</label>
+                  <div class="layui-input-inline">
+                    <select name="modules">
+                      <option value=""></option>
+                      <option value="1">1号楼</option>
+                      <option value="2">2号楼</option>
+                      <option value="3">3号楼</option>
+                      <option value="4">4号楼</option>
+
+                    </select>
+                  </div>
+                </div>
+                <div class="layui-inline">
+                  <label class="layui-form-label">选择专业:</label>
+                  <div class="layui-input-inline">
+                    <select name="modules">
+                      <option value=""></option>
+                      <option value="1">安全</option>
+                      <option value="2">安全</option>
+                      <option value="3">安全</option>
+                      <option value="4">安全</option>
+
+                    </select>
+                  </div>
+                </div>
+
+                <div class="layui-inline search-groups fr">
+                  <div class="cy-search-div">
+                    <input type="text" class="layui-input cy-search-input" placeholder="请输入工程名称、地点、负责"></div>
+                  <button class="datapick-btn">
+                    <i class="layui-icon" style="color: #fff">&#xe615;</i>
+                  </button>
+                </div>
+              </form>
+
+              <div class="layui-row" >
+                <div class="layui-col-xs4 cy-col-l clearfix">
+                  <div class="div-title">资料名称</div>
+                  <div class="content_wrap">
+                    <div class="zTreeDemoBackground left">
+                      <ul id="treeDemo4" class="ztree"></ul>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="layui-col-xs8 cy-col-r clearfix">
+                  <table class="base-table layui-table">
+                    <thead>
+                      <tr>
+                        <th>序号</th>
+                        <th>名称</th>
+                        <th>创建人</th>
+                        <th>修改时间</th>
+                        <th>详情</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+                      <tr>
+                        <td>华科家属楼</td>
+                        <td>在施</td>
+                        <td>房建</td>
+                        <td>燕郊海油大街</td>
+
+                        <td>
+                          <img src="./img/details.png" class="details-pic"></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <div class="layui-tab-item">
+              <form class="layui-form" action="">
+                <div class="layui-inline">
+                  <a class="cy-printf" href="#">打印</a>
+                </div>
+
+                <div class="layui-inline search-groups fr">
+                  <div class="cy-search-div">
+                    <input type="text" class="layui-input cy-search-input" placeholder="请输入工程名称、地点、负责"></div>
+                  <button class="datapick-btn">
+                    <i class="layui-icon" style="color: #fff">&#xe615;</i>
+                  </button>
+                </div>
+              </form>
+
+              <div class="layui-row" >
+                <div class="layui-col-xs12 cy-col-l clearfix">
+                  <div class="div-title">
+                    <input type="checkbox">
+                    <span class="span-check">工程归档资料目录</span>
+                  </div>
+                  <div class="content_wrap">
+                    <div class="zTreeDemoBackground left">
+                      <ul id="treeDemo5" class="ztree"></ul>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<script src="./plugins/layui/layui.js"></script>
+<script type="text/javascript" src="plugins/jQuery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="plugins/highchart/highstock.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="plugins/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="plugins/ztree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="js/archivedData.js"></script>
+<script>
+
+      layui.use(['layer', 'element', 'form','laydate'], function () { //独立版的layer无需执行这一句
+        var layer = layui.layer; //独立版的layer无需执行这一句
+         var laydate = layui.laydate;
+
+      });
+
+    </script>
+</body>
+</html>

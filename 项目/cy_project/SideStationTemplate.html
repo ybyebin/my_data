@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>系统管理-旁站模板管理</title>
+  <link rel="stylesheet" href="./plugins/layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/SideStationTemplate.css">
+
+  <body>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header">
+        <div class="layui-logo">
+          <img class="logo" src="img/logo.png"></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+          <li class="layui-nav-item project-li">
+            <a class="project-name">工程项目协同管理平台</a>
+          </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+          <li class="layui-nav-item">
+            <a href="javascript:;">北京鹿港嘉苑住宅建设项目</a>
+            <dl class="layui-nav-child">
+              <dd>
+                <a href="javascript:void(0);">北京鹿港建设项目</a>
+              </dd>
+              <dd>
+                <a href="javascript:void(0);">嘉苑住宅建设项目</a>
+              </dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+            <img src="img/help.png"></a>
+          </li>
+          <li class="layui-nav-item info-li-hover">
+            <a class="ling" href="javascript:void(0);">
+            <span class="layui-badge-dot"></span>
+          </a>
+            <ul class="mes-ul-pop">
+              <li style="position: relative;">
+                <input type="text" class="search-ipt" placeholder="请输入搜索内容"> <i style="position: absolute;right: 20px;top: 2px;font-size: 23px;color:#be0e21;"
+                  class="layui-icon">&#xe615;</i>
+              </li>
+              <li class="sanjiao-top"></li>
+              <li class="mes-li-list">
+                <span>05/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <div class="second-div-pop">
+                  <span>1/31 21:45</span>
+                  <span>用户名登录功能下线通知</span>
+                  <p class="p-info">
+                    为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 去设置: http://passport.zcool.com.cn/accountSafe.do
+                  </p>
+                </div>
+              </li>
+              <li class="mes-li-list">
+                <span>05/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <div class="second-div-pop">
+                  <span>2/31 21:45</span>
+                  <span>用户名登录功能下线通知</span>
+                  <p class="p-info">
+                    为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 去设置: http://passport.zcool.com.cn/accountSafe.do
+                  </p>
+                </div>
+              </li>
+              <li class="mes-li-list">
+                <span>05/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <div class="second-div-pop">
+                  <span>3/31 21:45</span>
+                  <span>用户名登录功能下线通知</span>
+                  <p class="p-info">
+                    为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 去设置: http://passport.zcool.com.cn/accountSafe.do
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+            <img src="img/logout.png">
+          </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">
+              <span class="head-portrait">
+                <img src="img/person.png">
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="layui-side layui-bg-black">
+        <span onclick="methodSlide()" class="bars"></span>
+        <div class="bar-span">
+          <div class="layui-side-scroll">
+            <ul class="layui-nav layui-nav-tree cy-sidebar-list">
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/ico-12.png">
+                  </span>
+                  系统管理
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/gcxx.png">
+                  </span>
+                  工程信息管理
+                </a>
+              </li>
+              <li class="layui-nav-item ">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/qygl.png">
+                  </span>
+                  企业信息管理
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/gwgl.png">
+                  </span>
+                  岗位管理
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/usergl.png">
+                  </span>
+                  用户管理
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/qxgl.png">
+                  </span>
+                  权限管理
+                </a>
+              </li>
+              <li class=" layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/bdgl.png">
+                  </span>
+                  表单管理
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/wzk.png">
+                    </span>
+                  物资库
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/yjgl.png">
+                    </span>
+                  隐检项目
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/ico-1.png">
+                    </span>
+                  监理旁站
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="witnessSample.html">
+                  <span>
+                    <img src="img/zlsz.png">
+                    </span>
+                  资料目录设置
+                </a>
+              </li>
+              
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/jypgl.png">
+                    </span>
+                  检验批管理
+                </a>
+              </li>
+              <li class="active layui-nav-item">
+                <a href="javascript:void(0);">
+                  <span>
+                    <img src="img/pzmb.png">
+                    </span>
+                  旁站模板管理
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="layui-side-scroll cy-scroll-small">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/ico-12.png">
+                </a>
+              </li>
+              <li class="layui-nav-item ">
+                <a href="javascript:void(0);">
+                  <img src="img/gcxx.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/qygl.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="archivedData.html">
+                  <img src="img/gwgl.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/usergl.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/qxgl.png">
+                </a>
+              </li>
+              <li class=" layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/bdgl.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/wzk.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/yjgl.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/zlsz.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/jypgl.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/ico-1.png">
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/ico-1.png">
+                </a>
+              </li>
+              <li class="active layui-nav-item">
+                <a href="javascript:void(0);">
+                  <img src="img/pzmb.png">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="layui-body cy-layui-body">
+        <div class="layui-row" style="margin-top: 40px;">
+          <div class="layui-col-xs12 cy-col-l">
+            <div class="cy-col-conent ">
+              <div class="clearfix">
+                <div class="panel-title">
+                  <ul>
+                    <li class="li-title">旁站模板管理</li>
+                  </ul>
+                </div>
+                <div class="layui-inline search-groups">
+                  <a class="cy-back cy-faqi layui-btn" href="#">
+                    <img src="./img/c-save.png" style="vertical-align: middle;">
+                    保存
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="layui-row  layui-col-space20">
+                  <div class="layui-col-md3 layui-col-md3-cyh">
+                    <div class="div-line">
+                      <h1>
+                        旁站工序 
+                        <span class="right-span-cyh fr">
+                          <i class="layui-icon">&#xe61f;</i>   
+                          <img src="./img/bianji-fff.png" style="margin: -4px 7px 0 5px">
+                          <img src="./img/c-del.png" style="margin-top: -3px;">   
+                        </span>
+                      </h1>
+                      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                        <li class="layui-nav-item">
+                          <a href="javascript:;" class="first-a">屋面保温</a>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;" class="first-a">装配式结构安装</a>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;" class="first-a">监理</a>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;" class="first-a">勘察</a>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;" class="first-a">设计</a>
+                        </li>
+                        <li class="layui-nav-item">
+                          <a href="javascript:;" class="first-a">检测</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="layui-col-md9 layui-col-md9-cyh">
+                    <div class="div-line">
+                      <h1>旁站工序</h1>
+                      <h2 class="title-h2">情况</h2>
+                      <div class="div-list-ol">
+                        <h3>一、施工前检查</h3>
+                        <ol class="ol-num">
+                          <li>下承层已通过验收；控制点复测及放样工作符合要求。{select:["是","否"]}</li>
+                          <li>摊铺机型号{text:10}、数量{text:3}，光轮压路机型号{text:10}、数量{text:3}，
+                            振动压路机型号{text:10}、数量{text:3}，胶轮压路机型号{text:10}、数量{text:3}，设备数量、
+                            性能满足施工要求。{select:["是","否"]}</li>
+                          <li>技术管理人员是否到位（技术员{text:5}、{text:5}、{text:5}）。{select:["是","否"]}</li>
+                        </ol>
+                        <h3>二、施工过程检查记录</h3>
+                        <ol class="ol-num">
+                          <li>运输车辆数量是否充足，混合料供应是否及时，摊铺是否连续。{select:["是","否"]}</li>
+                          <li>混合料是否均匀，摊铺时是否有离析现象。{select:["是","否"]}</li>
+                          <li>边缘防护、接茬处理是否整齐、平整、密实、烫缝不得枯焦，
+                            表面是否均匀、稳定、平整密实、无泛油、松散、裂缝、烂边等现象。
+                            {select:["是","否"]}</li>
+                          <li>施工工艺参数记录：本作业段长{text:8}m，宽{text:8}m，面积{text:8}㎡，层厚{text:8}cm，
+                            摊铺机速度：{text:8}m/min，初压遍数：{text:8}，复压遍数：
+                            {text:8}，终压遍数：{text:8}</li>
+                        </ol>
+                      </div>
+                      <h2 class="title-h2">问题处理</h2>
+                      <div class="div-list-ol-wenti ">
+                        <h3>一、施工前检查</h3>
+                        <ol class="ol-num">
+                          <li>下承层已通过验收；控制点复测及放样工作符合要求。{select:["是","否"]}</li>
+                          <li>摊铺机型号{text:10}、数量{text:3}，光轮压路机型号{text:10}、数量{text:3}，
+                            振动压路机型号{text:10}、数量{text:3}，胶轮压路机型号{text:10}、数量{text:3}，设备数量、
+                            性能满足施工要求。{select:["是","否"]}</li>
+                          <li>技术管理人员是否到位（技术员{text:5}、{text:5}、{text:5}）。{select:["是","否"]}</li>
+                        </ol>
+                        <h3>二、施工过程检查记录</h3>
+                        <ol class="ol-num">
+                          <li>运输车辆数量是否充足，混合料供应是否及时，摊铺是否连续。{select:["是","否"]}</li>
+                          <li>混合料是否均匀，摊铺时是否有离析现象。{select:["是","否"]}</li>
+                          <li>边缘防护、接茬处理是否整齐、平整、密实、烫缝不得枯焦，
+                            表面是否均匀、稳定、平整密实、无泛油、松散、裂缝、烂边等现象。
+                            {select:["是","否"]}</li>
+                          <li>施工工艺参数记录：本作业段长{text:8}m，宽{text:8}m，面积{text:8}㎡，层厚{text:8}cm，
+                            摊铺机速度：{text:8}m/min，初压遍数：{text:8}，复压遍数：
+                            {text:8}，终压遍数：{text:8}</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+         <!-- 新增人员信息 -->
+<div id="layer-for-method1" style="display: none;">
+  <div class="layer-contents cy-job-div">
+    <form class="layui-form cy-form">
+      <div class="layui-form-item">
+        <label class="layui-form-label">工序名称 : </label>
+        <div class="layui-input-block">
+          <input type="text" name="title" lay-verify="title" autocomplete="off"  class="layui-input"></div>
+      </div>
+    </form>
+  </div>
+</div>
+    <script src="./plugins/layui/layui.js"></script>
+    <script type="text/javascript" src="plugins/jQuery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/SideStationTemplate.js"></script>
+
+    <script>
+      layui.use(['layer', 'element', 'laydate', 'form'], function () { //独立版的layer无需执行这一句
+        var layer = layui.layer; //独立版的layer无需执行这一句
+        var laydate = layui.laydate;
+        //同时绑定多个
+        lay('.test-item').each(function () {
+          laydate.render({
+            elem: this
+            , trigger: 'click'
+          });
+        });
+
+      });
+    </script>
+  </body>
+
+</html>

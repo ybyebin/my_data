@@ -1,0 +1,140 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    /*background: red;*/
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+table.base-table tbody>tr.tr-type td {
+    background: #fae9e9 !important;
+    border: none !important;
+    height: 30px;
+}
+
+.red {
+    color: #be0e21;
+}
+
+.cy-faqi {
+    background: #be0e21;
+    color: #fff;
+    border: 1px solid #be0e21;
+    border-radius: 2px;
+}
+
+.cy-faqi:hover {
+    color: #fff;
+}
+
+.cy-col-l {
+    margin-top: 10px;
+    border: 1px solid #dedede;
+}
+
+.cy-col-r {
+    padding-top: 10px;
+}
+
+.cy-col-l .div-title {
+    height: 59px;
+    line-height: 59px;
+    background: #5B5863;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.layui-form-item .layui-form-checkbox[lay-skin=primary] {
+    margin-top: 0;
+}
+
+/*.layui-form-checked[lay-skin=primary] i {
+    border-color: #a1b4c3;
+    background-color: #fff;
+    color: #be0e21;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #a1b4c3;
+    color: #fff;
+}
+
+.layui-form-checked[lay-skin=primary]:hover i {
+    border-color: #a1b4c3;
+    background-color: #fff;
+    color: #be0e21;
+}*/
+
+table.base-table thead th {
+    background: #5d5a66;
+    color: #fff;
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+th.title-th-cyh .layui-form-checkbox[lay-skin=primary] span {
+    color: #fff;
+}
+
+.bianji-pic {
+    margin-right: 15px;
+}
+
+
+
+.cy-job-div{
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.layui-layer-btn a.cancel{
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    background: #f3f3f3!important;
+    color: #333;
+     padding: 0 30px !important;
+     bottom: 10px;
+     position: relative;
+}
+.layui-layer-btn a.sure{
+    border: none;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 30px !important;
+     bottom: 10px;
+     position: relative;
+} 
+.layui-form-item .layui-input-inline {
+    float: left;
+    width: 362px;
+    margin-right: 0;
+}
+.layui-form-select .layui-input{
+    text-align: left;
+}

@@ -1,0 +1,398 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    /*background: red;*/
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.panel-title ul li.li-s span:first-child {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #00a8e4;
+}
+
+.panel-title ul li.li-s span.li-s-third {
+    background: #e9ab0d;
+}
+
+.panel-title ul li.li-s span.li-s-forth {
+    background: #e2162c;
+}
+
+.datatime-group {
+    float: right;
+}
+
+.date-line {
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background: #333;
+    position: relative;
+    top: -2px;
+}
+
+.panel-left {
+    /*background: red;*/
+    height: 460px;
+    padding: 0;
+}
+
+.panel-right {
+    padding: 0;
+    padding-top: 20px;
+    /*background: blue;*/
+}
+
+.chart-page {
+    text-align: center;
+}
+
+.span-page {
+    display: inline-block;
+}
+
+.current-page {
+    padding-left: 20px;
+}
+
+.total-page {
+    padding-right: 20px;
+}
+
+.cy-icon-ll {
+    color: #666;
+    font-size: 14px !important;
+}
+
+.search-groups {
+    /*width: 300px;*/
+    padding: 0;
+    float: right;
+    font-size: 12px;
+}
+
+.search-groups input {
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: #efefef;
+}
+
+.search-groups input:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.search-groups button {
+    background: #be0e21;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+}
+
+.search-groups button:focus,
+.search-groups button:active {
+    border: none;
+    outline: none;
+}
+
+.table-edit-span {
+    display: inline-block;
+    width: 17px;
+    cursor: pointer;
+    height: 18px;
+    background: url(../img/edit.png);
+}
+
+.btn-creat {
+    background: #be0e21;
+    color: #fff;
+    width: 115px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-creat-span {
+    position: relative;
+    left: -5px;
+    top: 5px;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background-image: url(../img/creat.png);
+}
+
+.base-table th,
+.base-table td {
+    text-align: center;
+}
+
+table.base-table tbody>tr:nth-of-type(odd) td {
+    background-color: #e7e7e7 !important;
+}
+
+table.base-table tbody>tr:nth-of-type(even) td {
+    background-color: #FFF !important;
+}
+
+.ss-ul-1>li {
+    float: left;
+}
+
+.div-3-1-span {
+    margin-left: 30px;
+}
+
+.div-3-1-form {
+    width: 100px;
+    float: left;
+}
+
+.div-3,
+.div-4 {
+    margin-top: 20px;
+}
+
+.default-select .layui-input {
+    background: #be0e21 !important;
+    color: #fff;
+}
+
+.all-btn {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-select {
+    background: #be0e21;
+    color: #fff;
+    padding: 0;
+    width: 77px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+
+.layui-tab {
+    margin-top:0;
+}
+
+table.base-table thead tr th:last-child {
+    width: auto;
+}
+
+.btn-a-up {
+    padding-left: 43px;
+    margin: -3px 0 0 20px;
+    background: #00a8e1 url(../img/sc.png) no-repeat 18px 9px;
+    background-size: 18px 18px;
+}
+
+.btn-a-tz{
+    background-color: #be0e21;
+}
+.div-2 {
+    margin-top: 15px;
+}
+
+
+/*弹窗*/
+.layer-content{
+    text-align: center;
+    padding-top: 40px;
+    font-size: 14px;
+}
+.layui-layer-btn a.del-person{
+    border: none;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 20px !important;
+     bottom: 20px;
+     position: relative;
+}
+
+.layui-layer-btn a.cancel{
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    background: #f3f3f3!important;
+    color: #333;
+     padding: 0 20px !important;
+     bottom: 0px;
+     position: relative;
+}
+.layui-layer-btn a.sure{
+    border: none;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 20px !important;
+     bottom: 0px;
+     position: relative;
+}
+.lc  {
+   padding: 0 20px;
+   padding-top: 20px;
+   font-size: 16px;
+   color: #666!important;
+}
+.lc-div-first{
+    margin: 10px 0;
+}
+.lc-div-first label:first-child{
+width: 50%;
+display: inline-block;
+}
+.form-title .layui-form-label{
+    width: 60px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.konw-person-num{
+    color: #be0e21;
+    font-size: 14px;
+    padding-left: 100px;
+}
+.div-img{
+
+    height: 200px;
+    /*background: red;*/
+    overflow: auto;
+}
+
+.lc-form-1 label{
+    /*background: red;*/
+    width: 100px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.lc-iv-2{
+    padding-left: 62px;
+    color: #666!important;
+}
+.lc-iv-2s{
+    padding-left: 0;
+}
+.lc-form-1 input{
+    width: 473px;
+    text-align: left!important;
+}
+.layui-form-select dl dd, .layui-form-select dl dt{
+    text-align:left;
+}
+.btn-add{
+    height: 38px;
+    color: #be0e21;
+    padding: 5px 20px;
+    line-height: 35px;
+    padding-bottom: 0;
+    display: inline-block;
+    background: #EAEAEA;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+
+}
+.btn-add:hover{
+    color: #be0e21; 
+}
+
+
+.span-des{
+    font-size: 12px !important;
+}
+
+
+.cy-div-select{
+    position: relative;
+    /*background: blue;*/
+    /*width: 300px;*/
+}
+
+
+.cy-form-label {
+    float: left;
+    display: block;
+    padding-left: 23px;
+
+    padding-right: 14px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #666 !important;
+    /*width: 80px;*/
+    font-weight: 400;
+    text-align: right;
+     line-height: 20px;
+    position: relative;
+        font-size: 16px!important;
+        /*background: red;*/
+}
+
+
+.cy-div-select button{
+    height: 38px;   
+    background: #fff;
+    border: 1px solid #dedede;
+    padding-left: 10px;
+    outline: none;
+    /*background: red;*/
+}
+.cy-div-select button input{
+    height: 32px;
+    width: 425px;
+    border: none;
+}
+.cy-div-select i{
+    margin-right: 10px;
+    color: #dedede;
+}
+.select-body{
+    background: #fff;
+    border: 1px solid #dedede;
+    border-top: none;
+    width: 465px;
+    position: absolute;
+    z-index: 100;
+    left: 110px;
+}
+.select-body form{
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.select-body div.layui-form-item{
+    width: 344px;
+    background: #fff;
+}

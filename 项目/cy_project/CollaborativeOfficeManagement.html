@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>协同办公管理</title>
+  <link rel="stylesheet" href="./plugins/layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" href="plugins/ztree/metroStyle/metroStyle.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/CollaborativeOfficeManagement.css">
+<body>
+  <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">
+        <img class="logo" src="img/logo.png"></div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item project-li">
+          <a class="project-name">工程项目协同管理平台</a>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="javascript:;">北京鹿港嘉苑住宅建设项目</a>
+          <dl class="layui-nav-child">
+            <dd>
+              <a href="javascript:void(0);">北京鹿港嘉苑住宅建设项目</a>
+            </dd>
+            <dd>
+              <a href="javascript:void(0);">北京鹿港嘉苑住宅建设项目</a>
+            </dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:void(0);">
+            <img src="img/help.png"></a>
+        </li>
+        <li class="layui-nav-item info-li-hover">
+          <a class="ling" href="javascript:void(0);">
+            <span class="layui-badge-dot"></span>
+          </a>
+          <ul class="mes-ul-pop">
+            <li style="position: relative;">
+              <input type="text" class="search-ipt" placeholder="请输入搜索内容"> <i style="position: absolute;right: 20px;top: 2px;font-size: 23px;color:#be0e21;" class="layui-icon">&#xe615;</i>
+            </li>
+            <li class="sanjiao-top"></li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>1/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                      去设置:
+                      http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>2/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                          去设置:
+                          http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+            <li class="mes-li-list">
+              <span>05/31 21:45</span>
+              <span>用户名登录功能下线通知</span>
+              <div class="second-div-pop">
+                <span>3/31 21:45</span>
+                <span>用户名登录功能下线通知</span>
+                <p class="p-info">
+                  为了更好的维护帐号安全体系，我们将于2017年06月15日起，下线用户名登录功能。 届时请使用您的手机、邮箱、或第三方帐号登录站酷及全部旗下产品。 您可以在站酷通行证中绑定或修改手机号及邮箱。 
+                          去设置:
+                          http://passport.zcool.com.cn/accountSafe.do
+                </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:void(0);">
+            <img src="img/logout.png"></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+            <span class="head-portrait">
+              <img src="img/person.png"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+   <div class="layui-side layui-bg-black">
+      <span onclick="methodSlide()" class="bars"></span>
+      <div class="bar-span">
+        <div class="layui-side-scroll cy-scroll-big">
+          <ul class="layui-nav layui-nav-tree cy-sidebar-list">
+            <li class="layui-nav-item layui-nav-iteme scroll-li-sec">
+              <a class="" href="engineeringPatrol.html">
+                <span>
+                  <img src="img/ico-1.png"></span>
+                工程巡检
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="engineeringPreControl.html">
+                <span>
+                  <img src="img/ico-2.png"></span>
+                工程预控
+              </a>
+
+            </li>
+            <li class="layui-nav-item">
+              <a href="engineeringInformation.html">
+                <span >
+                  <img src="img/ico-3.png"></span>
+                工程信息
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="archivedData.html">
+                <span>
+                  <img src="img/ico-4.png"></span>
+                归档资料
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="projectInformation.html">
+                <span >
+                  <img src="img/ico-5.png"></span>
+                项目信息
+              </a>
+            </li>
+            <li class="layui-nav-item">
+              <a href="materialInspection.html">
+                <span >
+                  <img src="img/ico-6.png"></span>
+                物资检查
+              </a>
+            </li>
+            <li class=" layui-nav-item">
+              <a href="riskPreWarnings.html">
+                <span>
+                  <img src="img/ico-7.png"></span>
+                风险预警
+             
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInspections.html">
+              <span>
+                <img src="img/ico-8.png"></span>
+              工程检查
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="qualityAcceptance.html">
+              <span>
+                <img src="img/ico-9.png"></span>
+              质量验收
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="supervisionStation.html">
+              <span >
+                <img src="img/ico-10.png"></span>
+              监理旁站
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="witnessSample.html">
+              <span>
+                <img src="img/ico-11.png"></span>
+              见证取样
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="drawingManagement.html">
+              <span>
+                <img src="img/ico-12.png"></span>
+              图纸管理
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+              <span>
+                <img src="img/ico-14.png"></span>
+              系统设置
+            </a>
+          </li>
+          <li class="layui-nav-item active">
+            <a href="#">
+              <span>
+                <img src="img/ico-13.png"></span>
+              协同办公管理
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="layui-side-scroll cy-scroll-small">
+       <ul class="layui-nav layui-nav-tree" lay-filter="test">
+
+          <li class="layui-nav-item scroll-li-sec">
+            <a href="engineeringPatrol.html">
+              <img src="img/ico-1.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringPreControl.html">
+              <img src="img/ico-2.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInformation.html">
+              <img src="img/ico-3.png"></a>
+          </li>
+          <li class="layui-nav-item ">
+            <a href="archivedData.html">
+              <img src="img/ico-4.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="projectInformation.html">
+              <img src="img/ico-5.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="materialInspection.html">
+              <img src="img/ico-6.png"></a>
+          </li>
+          <li class=" layui-nav-item">
+            <a href="riskPreWarnings.html">
+              <img src="img/ico-7.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="engineeringInspections.html">
+              <img src="img/ico-8.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="qualityAcceptance.html">
+              <img src="img/ico-9.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="supervisionStation.html">
+              <img src="img/ico-10.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="witnessSample.html">
+              <img src="img/ico-11.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="drawingManagement.html">
+              <img src="img/ico-12.png"></a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:void(0);">
+              <img src="img/ico-14.png"></a>
+          </li>
+          <li class="layui-nav-item active">
+            <a href="CollaborativeOfficeManagement.html">
+              <img src="img/ico-13.png"></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="layui-body cy-layui-body">
+
+    <div class="layui-row" style="margin-top: 40px;">
+      <div class="layui-col-xs6 cy-col-l clearfix">
+        <div class="cy-col-conent clearfix">
+          <div class="cy-content-head clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">
+                  待办
+                  <span class="numbers layui-badge db-num ">9</span>
+                </li>
+              </ul>
+            </div>
+            <div class="layui-inline search-groups" style="z-index: 1000;">
+              <div class="cy-search-div">
+                <input type="text" class="layui-input cy-search-input" placeholder="请输入关键字搜索"></div>
+                <button class="datapick-btn">
+                  <i class="layui-icon" style="color: #fff">&#xe615;</i>
+                </button>
+            </div>
+          </div>
+          <div class="com-content ">
+            <ul class="com-content-ul clearfix checkbox-ul">
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="layui-col-xs6 cy-col-r clearfix">
+        <div class="cy-col-conent clearfix">
+          <div class="cy-content-head clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">
+                  已办
+                  <span class="numbers layui-badge yb-num ">9</span>
+                </li>
+              </ul>
+            </div>
+            <div class="layui-inline search-groups" style="z-index: 1000;">
+              <div class="cy-search-div">
+                <input type="text" class="layui-input cy-search-input" placeholder="请输入关键字搜索"></div>
+              <button class="datapick-btn">
+                <i class="layui-icon" style="color: #fff">&#xe615;</i>
+              </button>
+            </div>
+          </div>
+          <div class="com-content ">
+            <ul class="com-content-ul clearfix ">
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="clearfix">
+                  <span class="layui-col-xs8">
+                    <i class="layui-icon">&#xe623;</i>
+                    <span>云平台驻场开发8月费用申请审批单----通用</span>
+                  </span>
+                  <span class="layui-col-xs2">2017-9-01</span>
+                  <span class="layui-col-xs2">王全勇</span>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="layui-row" style="margin-top: 20px;">
+      <div class="layui-col-xs6 cy-col-l clearfix">
+        <div class="cy-col-conent clearfix">
+          <div class="cy-content-head clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">新建事项</li>
+              </ul>
+            </div>
+            <div class="layui-inline search-groups" style="z-index: 1000;">
+              <div class="cy-search-div">
+                <input type="text" class="layui-input cy-search-input" placeholder="请输入关键字搜索"></div>
+              <button class="datapick-btn">
+                <i class="layui-icon" style="color: #fff">&#xe615;</i>
+              </button>
+            </div>
+          </div>
+          <div class="com-content " style="padding-bottom: 0">
+
+            <ul class="com-content-ul">
+              <li class="new-matter new-matter-title am-g">
+                <span class="new-span-titie layui-col-xs2">标题：</span>
+                <input type="text" class="new-matter-title-ipt layui-col-xs10">
+                <select class="new-matter-select">
+                  <option value="">普通</option>
+                  <option value="">加急</option>
+                  <option value="">特殊</option>
+                </select>
+              </li>
+              <li class="new-matter new-matter-title am-g">
+                <span class="new-span-titie layui-col-xs2">流程：</span>
+                <input type="text" class="new-matter-title-ipt layui-col-xs8">
+                <a href="###" class="layui-col-xs2 btn_bj"></a>
+              </li>
+            </ul>
+
+          </div>
+          <form class="layui-form">
+            <div class="layui-form-item ">
+              <div class="">
+                <textarea class="layui-textarea layui-hide" name="content" lay-verify="content" id="LAY_demo_editor"></textarea>
+              </div>
+            </div>
+          </form>
+          <div>
+            <button class="btn-fr btn_BD0E20">确定</button>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-xs6 cy-col-r clearfix">
+        <div class="cy-col-conent clearfix">
+          <div class="cy-content-head clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">我的模板</li>
+              </ul>
+            </div>
+            <div class="layui-inline search-groups">
+              <div class="cy-search-div">
+                <input type="text" class="layui-input cy-search-input" placeholder="请输入关键字搜索"></div>
+              <button class="datapick-btn">
+                <i class="layui-icon" style="color: #fff">&#xe615;</i>
+              </button>
+            </div>
+          </div>
+          <div class="com-content ">
+            <ul class="com-content-ul mb-com-content-ul clearfix my-template-ul">
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批---行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="票据(发票,收据)开具申请审批---通用" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="回款计划调整申请审批---通用" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="图书需求申请审批---技术部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="部门（项目）管理目标分解审批——技术部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="票据（发票、收据）开具申请审批——通用" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="回款计划调整申请审批——通用" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="图书需求申请审批——技术部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a class="btn_a btn_a_add" href="javascript:void(0);"></a>
+            <a class="btn_a btn_a_del check_del" href="javascript:void(0);"></a>
+            <button class="btn-fr btn_BD0E20">确定</button>
+            <button class="btn-fr btn_BD0E20" style="margin-right: 10px;">配置模板</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row" style="margin-top: 20px;">
+      <div class="layui-col-xs6 cy-col-l clearfix">
+        <div class="cy-col-conent clearfix">
+          <div class="cy-content-head clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">
+                  代发
+                  <span class="numbers layui-badge df-num ">9</span>
+                </li>
+              </ul>
+            </div>
+            <!--   <div class="layui-inline search-groups">
+            -->
+            <div class="am-input-group " style="float: right;">
+              <a class="btn_a btn_a_del fr" href="javascript:void(0);"></a>
+              <a class="btn_a btn_a_copy fr" href="javascript:void(0);"></a>
+            </div>
+            <!-- </div>--></div>
+          <div class="com-content ">
+            <ul class="com-content-ul clearfix ">
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="layui-col-xs6 cy-col-r clearfix">
+        <div class="cy-col-conent clearfix">
+          <div class="cy-content-head clearfix">
+            <div class="panel-title">
+              <ul>
+                <li class="li-title">
+                  待办
+                  <span class="numbers layui-badge db-num ">9</span>
+                </li>
+
+              </ul>
+            </div>
+            <div class="layui-inline search-groups" style="z-index: 1000;">
+              <div class="cy-search-div">
+                <input type="text" class="layui-input cy-search-input" placeholder="请输入关键字搜索"></div>
+              <button class="datapick-btn">
+                <i class="layui-icon" style="color: #fff">&#xe615;</i>
+              </button>
+            </div>
+          </div>
+          <div class="com-content ">
+            <ul class="com-content-ul clearfix ">
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+              <li>
+                <form class="layui-form">
+                  <div>
+                    <input type="checkbox" lay-skin="primary" title="用车申请审批——行政部" checked=""></div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新建表格 -->
+  <div id="layer-for-method1" style="display: none;">
+    <div class="lc">
+      <form class="layui-form" action="">
+        <ul>
+          <li class="form-title title-firsts">
+            <div class="layui-form-item">
+              <label class="layui-form-label">名称 :</label>
+              <div class="layui-input-block">
+                <select name="city" lay-verify="required">
+                  <option value=""></option>
+                  <option value="0">北京</option>
+                  <option value="1">上海</option>
+                  <option value="2">广州</option>
+                  <option value="3">深圳</option>
+                  <option value="4">杭州</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li class="form-title">
+            <div class="layui-form-item">
+              <label class="layui-form-label">数量 :</label>
+              <div class="layui-input-block">
+                <select name="city" lay-verify="required">
+                  <option value=""></option>
+                  <option value="0">北京</option>
+                  <option value="1">上海</option>
+                  <option value="2">广州</option>
+                  <option value="3">深圳</option>
+                  <option value="4">杭州</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li class="form-title">
+            <div class="layui-form-item">
+              <label class="layui-form-label">编制人 :</label>
+              <div class="layui-input-block">
+                <select name="city" lay-verify="required">
+                  <option value=""></option>
+                  <option value="0">北京</option>
+                  <option value="1">上海</option>
+                  <option value="2">广州</option>
+                  <option value="3">深圳</option>
+                  <option value="4">杭州</option>
+                </select>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </form>
+    </div>
+  </div>
+  <!-- 提示 -->
+  <div id="layer-for-method2" style="display: none;">
+    <div class="lc">
+      <form class="layui-form" action="">
+        <ul>
+          <li class="form-title title-firsts">
+            <div class="layui-form-item">
+              <label class="layui-form-label">复制份数 :</label>
+              <div class="layui-input-block">
+                <select name="city" lay-verify="required">
+                  <option value=""></option>
+                  <option value="0">1</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                  <option value="4">5</option>
+                </select>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+  <!-- 配置面板 -->
+  <div id="layer-for-method3" style="display: none;">
+    <div class="lc">
+      <div id="tree1" class="zTreeDemoBackground ">
+        <ul id="tree1-ul" class="ztree"></ul>
+      </div>
+    </div>
+  </div>
+  <!-- 编辑流程 -->
+  <div id="layer-for-method4" style="display: none;">
+    <div class="lc" style="padding: 20px 14px;">
+      <form class="layui-form" action="">
+        <ul class="bjlc-ul clearfix">
+          <li class="bjlc-left-li">
+            <div class="bjlc-div-title">所有人员列表</div>
+            <ul class="bjlc-ul-list clearfix">
+              <li class="active">
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">总监理工程师</span>
+              </li>
+            </ul>
+          </li>
+          <li class="bjlc-middle-li">
+            <img src="./img/icon-right.png" class="icon-right">
+            <img src="./img/icon-left.png"></li>
+          <li class="bjlc-right-li">
+            <div class="bjlc-div-title">所有人员列表</div>
+            <ul class="bjlc-ul-list clearfix">
+              <li class="active">
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+              <li>
+                <span class="name">郭海涛</span>
+                <span class="position">
+                  总监理工程师
+                  <img src="./img/icon-up.png" class="icon-up">
+                  <img src="./img/icon-down.png"></span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="./plugins/layui/layui.js"></script>
+<script type="text/javascript" src="plugins/jQuery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="plugins/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="plugins/ztree/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="js/CollaborativeOfficeManagement.js"></script>
+<script>
+      // layui.use(['element','form', 'layedit', 'laydate'], function () {
+      layui.use(['form','element', 'layedit', 'laydate'], function () {
+        var form = layui.form, layedit = layui.layedit; //只有执行了这一步，部分表单元素才会自动修饰成功
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+        //……
+
+        //但是，如果你的HTML是动态生成的，自动渲染就会失效
+        //因此你需要在相应的地方，执行下述方法来手动渲染，跟这类似的还有 element.init();
+        // form.render();
+      });
+
+    </script>
+</body>
+
+</html>

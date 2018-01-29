@@ -1,0 +1,70 @@
+.c-body .right .ipt {
+    width: 285px;
+    color: black;
+    border: 1px solid #e5e5e5;
+    line-height: 42px;
+    border-radius: 5px;
+    padding-left: 40px;
+    height: 42px;
+    background-size: 17px 18px;
+}
+
+.c-body .right .li_ipt {
+    margin-bottom: 15px;
+}
+
+.c-body .right .ipt_name {
+    background: url('../img/name.png') no-repeat 11px;
+}
+
+.c-body .right .ipt_password {
+    background: url('../img/password.png') no-repeat 11px;
+}
+
+.c-body .right .ipt_code {
+    width: 182px;
+    background: url('../img/yanzheng.png') no-repeat 11px;
+}
+
+.radio_remember ,.wangji{
+    margin-top: 5px;
+}
+
+.c-body .right .code {
+    width: 95px;
+    margin-top: 4px;
+}
+
+.c-body .right .code img {
+    width: 100%;
+}
+
+.radio_label {
+    color: #bcbcbc;
+}
+
+.forget_password {
+    color: #c20517;
+    text-decoration: none;
+}
+
+.li_label {
+    margin: 25px 0 15px;
+}
+
+.li_registration {
+    text-align: center;
+    color: #6b6b6b;
+    margin: 15px 0 40px;
+}
+
+.user_registration {
+    color: #c20517;
+}
+
+.c-body .right .title {
+    font-size: 20px;
+    text-align: center;
+    color: #333333;
+    line-height: 68px;
+}

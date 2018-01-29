@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左右结构</title>
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="./demo.css">
+    <style>
+        .ybui-collapse {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ybui-layout">
+        <div class="ybui-header">
+            <div class="ybui-logo">ybui 后台布局</div>
+            <ul class="ybui-nav ybui-layout-left">
+                <li class="ybui-nav-item"><a href="">page-1</a></li>
+                <li class="ybui-nav-item"><a href="">page-1</a></li>
+                <li class="ybui-nav-item"><a href="">page-1</a></li>
+                <li class="ybui-nav-item">
+                    <a href="javascript:;">其它</a>
+
+                    <dl class="ybui-nav-child">
+                        <dd>
+                            <a href="">page-1</a>
+                        </dd>
+                        <dd>
+                            <a href="">page-1</a>
+                        </dd>
+                        <dd>
+                            <a href="">page-1</a>
+                        </dd>
+                    </dl>
+
+                </li>
+            </ul>
+
+            <div class="ybui-inline ybui-layout-left-min">
+                <div class="ybui-hover-select">
+                    <div class="ybui-select-title">
+                        <span>hover</span>
+                    </div>
+                    <ul class="ybui-select-group ybui-anim-upbit ybui-anim">
+                        <li>page-1</li>
+                        <li>page-1</li>
+                        <li>page-1</li>
+                        <li>page-1</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="ybui-nav ybui-layout-right">
+                <li class="ybui-nav-item">
+                    <a href="javascript:;">
+                        查看
+                    </a>
+                    <dl class="ybui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
+                    </dl>
+                </li>
+                <li class="ybui-nav-item"><a href="">退了</a></li>
+            </ul>
+        </div>
+
+        <div class="ybui-side ybui-bg-black">
+            <div class="ybui-side-scroll">
+                <ul class="ybui-nav ybui-nav-tree ybui-inline">
+                    <li class="ybui-nav-item ybui-nav-itemed">
+                        <a class="nav-itemed-title" href="javascript:;">默认展开
+                                <span class="ybui-nav-more"></span>
+                        </a>
+
+                        <dl class="ybui-nav-child">
+                            <dd><a href="javascript:;">选项一</a></dd>
+                            <dd><a href="javascript:;">选项二</a></dd>
+                            <dd><a href="javascript:;">选项三</a></dd>
+                            <dd><a href="">跳转项</a></dd>
+                        </dl>
+                    </li>
+
+                    <li class="ybui-nav-item">
+                        <a class="nav-itemed-title" href="javascript:;">解决方案
+                                <span class="ybui-nav-more"></span>
+                        </a>
+                        <dl class="ybui-nav-child">
+                            <dd><a href="javascript:;">选项一</a></dd>
+                            <dd><a href="javascript:;">选项二</a></dd>
+                            <dd><a href="javascript:;">选项三</a></dd>
+                        </dl>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="ybui-body">
+            <div style="padding: 15px;">
+                <h1>内容主体区域</h1>
+
+                <div class="content">
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">form-select</h2>
+                            <div class="ybui-colla-content ybui-show">
+                                <div class="ybui-inline">
+                                    <div class="ybui-form-select">
+                                        <div class="ybui-select-title">
+                                            <input type="text" value="" readonly placeholder="请选择" class="ybui-select-input ybui-input ybui-unselect">
+                                            <i class="ybui-edge"></i>
+                                        </div>
+                                        <ul class="ybui-select-group ybui-anim-upbit ybui-anim">
+                                            <li>text-1</li>
+                                            <li>text-2</li>
+                                            <li>text-3</li>
+                                            <li>text-4</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">hover-select</h2>
+                            <div class="ybui-colla-content">
+
+                                <div class="hover-select">
+                                    <div class="ybui-inline">
+                                        <div class="ybui-hover-select">
+                                            <div class="ybui-select-title">
+                                                <span>hover</span>
+                                            </div>
+                                            <ul class="ybui-select-group ybui-anim-upbit ybui-anim">
+                                                <li>text-1</li>
+                                                <li>text-2</li>
+                                                <li>text-3</li>
+                                                <li>text-4</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">Tab选项卡</h2>
+                            <div class="ybui-colla-content ybui-show">
+
+                                <div class="ybui-tab">
+                                    <ul class="ybui-tab-title">
+                                        <li class="ybui-this">网站设置</li>
+                                        <li>用户管理</li>
+                                        <li>权限分配</li>
+
+                                    </ul>
+                                    <div class="ybui-tab-content">
+                                        <div class="ybui-tab-item ybui-show">
+                                            1. 高度默认自适应，也可以随意固宽。
+                                            <br>2. Tab进行了响应式处理，所以无需担心数量多少。
+                                        </div>
+                                        <div class="ybui-tab-item">内容2</div>
+                                        <div class="ybui-tab-item">内容3</div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">table</h2>
+                            <div class="ybui-colla-content ybui-show">
+
+                                <table class="ybui-table">
+                                    <thead>
+                                        <tr>
+                                            <th>测试</th>
+                                            <th>测试</th>
+                                            <th>测试</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>内容内容内容内容内容内容内容</td>
+                                            <td>内容</td>
+                                            <td>内容内容内容内容内容内容</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="have-select">
+                                                <div class="ybui-inline">
+                                                    <div class="ybui-form-select">
+                                                        <div class="ybui-select-title">
+                                                            <input type="text" value="" readonly placeholder="请选择" class="ybui-select-input ybui-input ybui-unselect">
+                                                            <i class="ybui-edge"></i>
+                                                        </div>
+                                                        <ul class="ybui-select-group ybui-anim-upbit ybui-anim">
+                                                            <li>text-1</li>
+                                                            <li>text-2</li>
+                                                            <li>text-3</li>
+                                                            <li>text-4</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>内容内容内容内容内容</td>
+                                            <td>内容</td>
+                                        </tr>
+                                        <tr>
+                                            <td>内容内容内容内容内容内容内容内容内容内容</td>
+                                            <td>内容</td>
+                                            <td>内容</td>
+                                        </tr>
+                                        <tr>
+                                            <td>内容</td>
+                                            <td>内容</td>
+                                            <td>内容内容内容内容内容内容内容内容内容内容内容内容内容</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">按钮</h2>
+                            <div class="ybui-colla-content ybui-show">
+
+                                <button class="ybui-btn">原始按钮</button>
+                                <button class="ybui-btn">按钮</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">动画</h2>
+                            <div class="ybui-colla-content ybui-show">
+
+                                <div class="layui-anim-rotate layui-anim-loop" style="width:100px;height:100px;background:#35c99d;border-radius:50%;text-align:center;line-height:100px;">
+                                    旋转
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="ybui-footer">
+            © ybui.com - 底部固定区域
+        </div> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../index/index.js"></script>
+
+
+</body>
+
+</html>

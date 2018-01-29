@@ -1,0 +1,203 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    /*background: red;*/
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.search-groups {
+    /*width: 300px;*/
+    padding: 0;
+    float: right;
+    font-size: 12px;
+}
+
+.search-groups input {
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: #efefef;
+}
+
+.search-groups input:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.search-groups button {
+    background: #be0e21;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+}
+
+.search-groups button:focus,
+.search-groups button:active {
+    border: none;
+    outline: none;
+}
+
+.layui-form-select .layui-input {
+    text-align: left;
+}
+
+.btn-bcmb {
+    background: #be0e21;
+}
+
+table.base-table tbody>tr.tr-type td {
+    background: #fae9e9 !important;
+    border: none !important;
+    height: 30px;
+}
+
+.red {
+    color: #be0e21;
+}
+
+.cy-faqi {
+    background: #be0e21;
+    color: #fff;
+    border: 1px solid #be0e21;
+    border-radius: 2px;
+}
+
+.cy-faqi:hover {
+    color: #fff;
+}
+
+.cy-col-l {
+    margin-top: 10px;
+    border: 1px solid #dedede;
+}
+
+.cy-col-r {
+    padding-top: 10px;
+}
+
+.cy-col-l .div-title {
+    height: 59px;
+    line-height: 59px;
+    background: #5B5863;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.layui-col-md3-cyh .div-tree{
+    border: 1px solid #dedede;
+}
+
+.layui-col-md3-cyh h1 {
+    line-height: 41px;
+    font-size: 16px;
+    height: 41px;
+    background: #5d5a66;
+    color: #fff;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.ws-div-form{
+width: 200px;
+float: right;
+}
+.jian-ul li{
+     float: right;
+    display: inline-block;
+    padding: 8px 10px;
+    padding-top: 5px;
+    /*border: 1px solid #be0e21;*/
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #be0e21;
+    font-size: 14px;
+    border-radius: 3px;
+    color: #fff;
+}
+.refresh{
+    background: #09ace5;
+}
+.deletes{
+    background: #be0e21;
+}
+.jian-ul li i{
+     display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 5px;
+    margin-right: 2px;
+}
+.gl-i{
+    background-image: url('../img/guanli-i.png');
+}
+.jian-del-i{
+    width: 16px;
+    height: 18px;
+     background-image: url('../img/jian-del.png');
+}
+
+
+.formM-titel-span{
+    float: right;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top: 13px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.formM-titel-span:first-child{
+    background-image: url('../img/form-add.png');
+}
+
+.div-content-form{
+    padding-left: 10px;
+}
+
+.cy-job-div{
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.layui-layer-btn a.cancel{
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    background: #f3f3f3!important;
+    color: #333;
+     padding: 0 30px !important;
+     bottom: 10px;
+     position: relative;
+}
+.layui-layer-btn a.sure{
+    border: none;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 30px !important;
+     bottom: 10px;
+     position: relative;
+} 

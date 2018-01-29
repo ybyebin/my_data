@@ -1,0 +1,56 @@
+.fir{
+    width: 75px !important;
+  max-width: 75px !important;
+  min-width: 75px !important;
+  background: blue;
+}
+
+.sed{
+  width: 75px !important;
+  max-width: 175px !important;
+  min-width: 75px !important;
+  background: red;
+
+      overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow:ellipsis;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*tab选项卡*/
+.cy-tab{
+  border:1px solid #e2e2e2;
+  border-top: none;
+  /*background: red;*/
+}
+
+
+
+
+/*清除浮动*/
+
+.clearfix:after {
+    content: ".";
+    /*加一段内容*/
+    display: block;
+    /*让生成的元素以块级元素显示，占满剩余空间*/
+    height: 0;
+    /*避免生成的内容破坏原有布局高度*/
+    clear: both;
+    /*清除浮动*/
+    visibility: hidden;
+    /*让生成的内容不可见*/
+}

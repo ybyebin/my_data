@@ -1,0 +1,238 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.search-groups {
+    padding: 0;
+    float: right;
+    font-size: 12px;
+}
+
+.search-groups input {
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: #efefef;
+}
+
+.search-groups input:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.search-groups button {
+    background: #be0e21;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+}
+
+.search-groups button:focus,
+.search-groups button:active {
+    border: none;
+    outline: none;
+}
+
+.layui-form-select .layui-input {
+    text-align: left;
+}
+
+.btn-bcmb {
+    background: #be0e21;
+}
+
+table.base-table tbody>tr.tr-type td {
+    background: #fae9e9 !important;
+    border: none !important;
+    height: 30px;
+}
+
+.red {
+    color: #be0e21;
+}
+
+.cy-faqi {
+    background: #be0e21;
+    color: #fff;
+    border: 1px solid #be0e21;
+    border-radius: 2px;
+}
+
+.cy-faqi:hover {
+    color: #fff;
+}
+
+.cy-col-l {
+    margin-top: 10px;
+    border: 1px solid #dedede;
+}
+
+.cy-col-r {
+    padding-top: 10px;
+}
+
+.cy-col-l .div-title {
+    height: 59px;
+    line-height: 59px;
+    background: #5B5863;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.layui-form-item .layui-form-checkbox[lay-skin=primary] {
+    margin-top: 0;
+}
+
+.cy-tables th {
+    height: 22px !important;
+    line-height: 22px !important;
+}
+
+.select-padding {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #a1b4c3;
+    background-color: #fff;
+    color: #be0e21;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #a1b4c3;
+    color: #fff;
+}
+
+.layui-form-checked[lay-skin=primary]:hover i {
+    border-color: #a1b4c3;
+    background-color: #fff;
+    color: #be0e21;
+}
+
+table.base-table thead th {
+    background: #5d5a66;
+    color: #fff;
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+th.title-th-cyh .layui-form-checkbox[lay-skin=primary] span {
+    color: #fff;
+}
+
+.div-line {
+    border:1px solid #e4e4e4;
+    margin-top: 10px;
+}
+.layui-col-md3-cyh .layui-nav-tree {
+    background: #FFF;
+    width: 100%;
+}
+
+.layui-col-md3-cyh .layui-nav-tree a {
+    color: #7a7a7a;
+    background: #fff;
+}
+
+.layui-col-md3-cyh .layui-nav-tree .layui-nav-item:hover a.first-a {
+    background: #f9e9e9 !important;
+    color: #7a7a7a;
+}
+
+.layui-col-md3-cyh h1 ,.layui-col-md9-cyh h1{
+    line-height: 41px;
+    font-size: 16px;
+    height: 41px;
+    background: #5d5a66;
+    color: #fff;
+    padding:0 20px;
+}
+.right-span-cyh {
+    display: inline-block;
+    height: 41px;
+    line-height: 41px;
+}
+.right-span-cyh i{
+    font-size: 18px;
+}
+.right-span-cyh i,.right-span-cyh img {
+    cursor: pointer;
+}
+.layui-col-md9-cyh .title-h2 {
+    font-size: 14px;
+    padding: 0 20px;
+}
+.ol-num {
+    padding-left: 12px;
+}
+.ol-num li{
+    line-height: 22px;
+    list-style:  decimal; 
+}
+.title-h2{
+    line-height: 25px;
+}
+.div-list-ol,.div-list-ol-wenti {
+    margin:0px 20px 20px;
+    padding: 20px 12px;
+}
+.div-list-ol-wenti{
+    border:1px solid #d3d3d3;
+    max-height: 166px;
+    overflow-y: auto;
+}
+.div-list-ol{
+    border:1px solid #df8790;
+}
+
+
+.cy-job-div{
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.layui-layer-btn a.cancel{
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    background: #f3f3f3!important;
+    color: #333;
+     padding: 0 30px !important;
+     bottom: 10px;
+     position: relative;
+}
+.layui-layer-btn a.sure{
+    border: none;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 30px !important;
+     bottom: 10px;
+     position: relative;
+} 

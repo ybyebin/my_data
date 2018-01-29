@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="js/amazeui/css/amazeui.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/register.css"></head>
+
+<body>
+    <div class="wrap">
+        <div class="header oh">
+            <a href="javascript:void(0);" class="fl">
+                <img src="./img/logo.png" ></a>
+            <a href="" class="fl pro">工程项目协同管理平台</a>
+        </div>
+        <div  class="hr"></div>
+        <div class="c-content">
+            <div class="c-body oh">
+                <div class="left fl">
+                    <img src="./img/info.png"></div>
+                <ul class="right fr">
+                    <li class="title">用户注册</li>
+                    <li>
+                        <input class="ipt" type="text" name="i-code" value="" placeholder="请输入邀请码"></li>
+                    <li>
+                        <input class="ipt" type="text" name="phone" value="" placeholder="请输入手机号"></li>
+                    <li style="position: relative;">
+                        <input class="ipt" type="text" name="v-code" value="" placeholder="验证码">
+                        <a href="javascript:void(0);" class="v_code">获取验证码</a>
+                    </li>
+                    <li>
+                        <input class="ipt" type="text" name="" value="" placeholder="输入密码"></li>
+                    <li>
+                        <input class="ipt" type="text" name="" value="" placeholder="确认密码"></li>
+                    <li class="am-select-li">
+                        <select data-am-selected="{dropUp: 1}">
+                            <option value="请选择专业">请选择专业</option>
+                            <option value="请选择专业1">请选择专业1</option>
+                            <option value="请选择专业2">请选择专业2</option>
+                            <option value="请选择专业3">请选择专业3</option>
+                            <option value="请选择专业1">请选择专业1</option>
+                            <option value="请选择专业2">请选择专业2</option>
+                            <option value="请选择专业3">请选择专业3</option>
+                            <option value="请选择专业1">请选择专业1</option>
+                            <option value="请选择专业2">请选择专业2</option>
+                            <option value="请选择专业3">请选择专业3</option>
+                        </select>
+                    </li>
+                    <li class="li_log_in">
+                        <a href="javascript:void(0);">确 认</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="./js/register.js"></script>
+    <script type="text/javascript" src="js/amazeui/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+
+    (function($) {
+          $(window).load(function() {               
+                $(".am-dropdown-content").mCustomScrollbar();
+             
+          });
+        })(jQuery);
+</script>
+</body>
+
+</html>

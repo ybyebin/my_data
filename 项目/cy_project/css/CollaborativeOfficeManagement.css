@@ -1,0 +1,382 @@
+/*项目面板*/
+
+.panel-title {
+    float: left;
+}
+
+.panel-title ul {
+    padding-left: 0;
+}
+
+.panel-title ul li {
+    float: left;
+    list-style: none;
+}
+
+.li-title {
+    font-size: 22px;
+    margin-right: 80px;
+}
+
+.panel-title ul li.li-s {
+    /*background: red;*/
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.panel-title ul li.li-s span:first-child {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #00a8e4;
+}
+
+.panel-title ul li.li-s span.li-s-third {
+    background: #e9ab0d;
+}
+
+.panel-title ul li.li-s span.li-s-forth {
+    background: #e2162c;
+}
+
+.search-groups {
+    /*width: 300px;*/
+    padding: 0;
+    float: right;
+}
+
+.search-groups input {
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    /*border: none;*/
+}
+
+.search-groups input:focus {
+    outline: none;
+    border: 1px solid #dedede;
+}
+
+.search-groups button {
+    background: #be0e21;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+}
+
+.search-groups button:focus,
+.search-groups button:active {
+    border: none;
+    outline: none;
+}
+
+.cy-search-input {
+    background: #efefef;
+}
+
+.numbers {
+    position: relative;
+    top: -2px;
+    left: 5px;
+    font-size: 14px;
+}
+
+.db-num {
+    background: #be0e21;
+}
+
+.yb-num {
+    background: #eaab0e;
+}
+
+.df-num {
+    background: #00a9e4;
+}
+
+.com-content {
+    margin-top: 10px;
+    /*background: red;*/
+    padding: 20px 0;
+    padding-top: 10px;
+    /*height: 320px;*/
+    max-height: 280px;
+    overflow: auto;
+}
+
+.com-content-ul {
+    padding: 0 0;
+}
+
+.com-content-ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*background: red;*/
+    margin-top: 1px;
+}
+
+.com-content-ul li a {
+    display: block;
+    font-size: 12px;
+}
+
+.com-content-ul li a span {
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333;
+}
+
+.com-content-ul li a span i {
+    margin-right: 5px;
+    color: #be0e21;
+}
+
+.com-content-ul li a>span:nth-child(2) {
+    padding-left: 10px;
+    text-align: right;
+}
+
+.com-content-ul li a span:nth-child(3) {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.com-content-second {
+    max-height: 420px;
+}
+
+.mb-com-content-ul li {
+    /*background: red;*/
+}
+
+.btn_a_copy {
+    margin-right: 10px;
+}
+
+.btn_a_add {
+    margin-right: 6px;
+}
+
+.btn-fr {
+    float: right;
+}
+
+
+/* 新建事项富文本编辑器 */
+
+li.new-matter {
+    padding: 0 !important;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 0 !important;
+    margin-bottom: 7px;
+}
+
+.new-matter span,
+.new-matter input {
+    display: inline-block;
+}
+
+.new-matter .new-span-titie {
+    font-size: 12px;
+    padding: 0;
+    padding-left: 15px;
+    min-width: 40px;
+}
+
+.new-matter-title-ipt {
+    height: 38px;
+    padding-top: 0;
+    line-height: 38px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.new-matter-title {
+    position: relative;
+}
+
+.new-matter-select {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    width: auto;
+    height: 35px;
+    text-align: center;
+    color: #be0e21;
+    outline: none;
+    border: none;
+    padding: 0 2%;
+    border-left: 1px solid #e0e0e0;
+}
+
+.new-matter-select option {
+    text-align: center;
+    width: auto;
+    height: 20px;
+}
+
+.am-g {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: auto;
+}
+
+.btn_bj {
+    height: 38px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background: #ffffff url('../img/bjlc.png') no-repeat center;
+    background-size: auto 12px;
+}
+
+.layui-form-item body,
+.layui-form-item iframe {
+    max-height: 130px!important;
+}
+
+
+
+
+
+/*弹窗*/
+.layer-content{
+    text-align: center;
+    padding-top: 40px;
+    font-size: 14px;
+}
+.layui-layer-btn a.del-person{
+    border: none;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 20px !important;
+     bottom: 20px;
+     position: relative;
+}
+
+.layui-layer-btn a.cancel{
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    background: #f3f3f3!important;
+    color: #333;
+     padding: 0 20px !important;
+     bottom: 0px;
+     position: relative;
+}
+.layui-layer-btn a.sure{
+    border: none;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    background: #be0e21!important;
+    color: #fff;
+     padding: 0 20px !important;
+     bottom: 0px;
+     position: relative;
+}
+.lc form {
+   padding: 0 20px;
+   padding-left: 10px;
+}
+.lc form li{
+    font-size: 14px;
+    color: #666;
+}
+.lc form li input{
+    border-radius: 2px;
+}
+li.title-firsts{
+    /*margin-bottom: 10px;*/
+    margin-top: 10px !important;
+
+}
+.form-title .layui-form-label{
+    width: 60px;
+    /*background: red;*/
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.layer-add-person label{
+    /*background: red;*/
+    width: 70px !important;
+}
+ .layui-input-block{
+    margin-left: 70px;
+}
+.layui-select-title input{
+    text-align: left!important;
+}
+
+.layui-form-select dl dd, .layui-form-select dl dt{
+    text-align: left;
+}
+
+.zTreeDemoBackground{
+    padding-left: 30px;
+}
+
+.my-template-ul .layui-form-checked[lay-skin=primary] i {
+    visibility:hidden;
+}
+
+
+/* 编辑流程 */
+.bjlc-ul {
+    border:1px solid #e4e4e4;
+}
+.bjlc-ul li {
+    float: left;
+    text-align: center;
+}
+.bjlc-left-li {
+    width: 298px;
+    border-right:1px solid #e4e4e4;
+}
+.bjlc-right-li {
+    width: 270px;
+    border-left:1px solid #e4e4e4;
+}
+.bjlc-middle-li {
+    width: 40px;
+}
+.bjlc-div-title {
+    line-height: 45px;
+    height: 45px;
+    background: #7c7a85;
+    color: #ffffff;
+}
+.bjlc-ul-list {
+    padding: 10px 0;
+}
+.bjlc-ul-list li{
+    display: block;
+    width: 100%;
+    line-height: 30px;
+    cursor: pointer;
+}
+.bjlc-ul-list li.active{
+    background: #fff1f3;
+}
+.bjlc-left-li .bjlc-ul-list li .name{
+    margin-right: 80px;
+}
+.bjlc-middle-li img{
+    cursor: pointer;
+}
+.bjlc-middle-li  .icon-right {
+    margin: 116px 0 10px;
+}
+.bjlc-ul-list li .position img{
+    vertical-align: middle;
+}
+.bjlc-ul-list li .position .icon-up {
+    margin: 0 10px;
+}
+.bjlc-right-li .bjlc-ul-list li .name{
+    margin-right: 40px;
+}
