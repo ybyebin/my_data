@@ -26,6 +26,7 @@
 
 .ybui-layout .ybui-header .ybui-nav {
     background: 0 0;
+    line-height: 60px;
 }
 
 .ybui-layout-left {
@@ -36,7 +37,7 @@
 
 .ybui-layout-left .ybui-nav-item:hover .ybui-nav-child,
 .ybui-layout-right .ybui-nav-item:hover .ybui-nav-child {
-    display: block;
+    /* display: block; */
     top: 60px;
 }
 

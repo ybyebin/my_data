@@ -1,0 +1,81 @@
+/*
+ * @Author: yb 
+ * @Date: 2018-01-30 10:57:16 
+ * @Last Modified by: yb
+ * @Last Modified time: 2018-01-30 10:57:40
+ */
+
+.ybui-icheck {
+    display: none;
+}
+
+.ybui-i-check,
+.ybui-i-radio {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(purple.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.ybui-i-check {
+    background-position: 0 0;
+}
+
+.ybui-i-check:hover {
+    background-position: -24px 0;
+}
+
+.ybui-icheck:checked+.ybui-i-check {
+    background-position: -48px 0;
+}
+
+.ybui-icheck:disabled+.ybui-i-check {
+    background-position: -72px 0;
+    cursor: default;
+}
+
+.ybui-icheck:disabled:checked+.ybui-i-check {
+    background-position: -96px 0;
+}
+
+.ybui-i-radio {
+    background-position: -120px 0;
+}
+
+.ybui-i-radio:hover {
+    background-position: -144px 0;
+}
+
+.ybui-icheck:checked+.ybui-i-radio {
+    background-position: -168px 0;
+}
+
+.ybui-icheck:disabled+.ybui-i-radio {
+    background-position: -192px 0;
+    cursor: default;
+}
+
+.ybui-icheck:disabled:checked+.ybui-i-radio {
+    background-position: -216px 0;
+}
+
+
+/* HiDPI support */
+
+@media (-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi),
+(min-resolution: 1.25dppx) {
+    .ybui-i-check,
+    .ybui-i-radio {
+        background-image: url(purple@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}

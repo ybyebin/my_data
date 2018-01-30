@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>左右结构</title>
-    <link rel="stylesheet" href="../index/index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./demo.css">
+    <link rel="stylesheet" href="./css/button.css">
     <style>
         .ybui-collapse {
             margin-top: 30px;
+        }
+        
+        .div-anim-demo {
+            width: 100px;
+            height: 100px;
+            background: #35c99d;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
         }
     </style>
 </head>
@@ -24,7 +34,7 @@
                 <li class="ybui-nav-item"><a href="">page-1</a></li>
                 <li class="ybui-nav-item"><a href="">page-1</a></li>
                 <li class="ybui-nav-item"><a href="">page-1</a></li>
-                <li class="ybui-nav-item">
+                <li class="ybui-nav-item ybui-nav-select">
                     <a href="javascript:;">其它</a>
 
                     <dl class="ybui-nav-child">
@@ -56,7 +66,7 @@
                 </div>
             </div>
             <ul class="ybui-nav ybui-layout-right">
-                <li class="ybui-nav-item">
+                <li class="ybui-nav-item ybui-nav-select">
                     <a href="javascript:;">
                         查看
                     </a>
@@ -108,7 +118,7 @@
 
                     <div class="ybui-collapse">
                         <div class="ybui-colla-item">
-                            <h2 class="ybui-colla-title">form-select</h2>
+                            <h2 class="ybui-colla-title">ybui-form-select</h2>
                             <div class="ybui-colla-content ybui-show">
                                 <div class="ybui-inline">
                                     <div class="ybui-form-select">
@@ -131,8 +141,8 @@
                     </div>
                     <div class="ybui-collapse">
                         <div class="ybui-colla-item">
-                            <h2 class="ybui-colla-title">hover-select</h2>
-                            <div class="ybui-colla-content">
+                            <h2 class="ybui-colla-title">ybui-hover-select</h2>
+                            <div class="ybui-colla-content ybui-show">
 
                                 <div class="hover-select">
                                     <div class="ybui-inline">
@@ -152,6 +162,32 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title"> ybui-nav-select</h2>
+                            <div class="ybui-colla-content ybui-show">
+
+                                <div class="hover-select">
+                                    <div class="ybui-inline">
+                                        <ul class="ybui-nav" style="background:gray">
+                                            <li class="ybui-nav-item ybui-nav-select">
+                                                <a href="javascript:;">
+                                                            查看
+                                                        </a>
+                                                <dl class="ybui-nav-child" style="top:23px;">
+                                                    <dd><a href="">基本资料</a></dd>
+                                                    <dd><a href="">安全设置</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <div class="ybui-collapse">
                         <div class="ybui-colla-item">
@@ -247,6 +283,33 @@
                                 <button class="ybui-btn">原始按钮</button>
                                 <button class="ybui-btn">按钮</button>
 
+                                <a href="javascript:;" class="button button-royal button-giant">Go</a>
+                                <a href="javascript:;" class="button button-royal button-rounded button-giant">Go</a>
+                                <a href="javascript:;" class="button button-royal button-pill ">Go</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">自定义check</h2>
+                            <div class="ybui-colla-content ybui-show">
+
+                                <input type="checkbox" id="square-checkbox-2" class="ybui-icheck">
+                                <label for="square-checkbox-2" class="ybui-i-check"></label>
+
+                                <input type="checkbox" disabled checked id="square-checkbox-3" class="ybui-icheck">
+                                <label for="square-checkbox-3" class="ybui-i-check"></label>
+
+                                <input type="radio" id="square-checkbox-4" name='sex' class="ybui-icheck">
+                                <label for="square-checkbox-4" class="ybui-i-radio"></label>
+                                <input type="radio" id="square-checkbox-6" name='sex' class="ybui-icheck">
+                                <label for="square-checkbox-6" class="ybui-i-radio"></label>
+
+                                <input type="radio" disabled checked id="square-checkbox-5" class="ybui-icheck">
+                                <label for="square-checkbox-5" class="ybui-i-radio"></label>
+
                             </div>
                         </div>
                     </div>
@@ -257,7 +320,7 @@
                             <h2 class="ybui-colla-title">动画</h2>
                             <div class="ybui-colla-content ybui-show">
 
-                                <div class="layui-anim-rotate layui-anim-loop" style="width:100px;height:100px;background:#35c99d;border-radius:50%;text-align:center;line-height:100px;">
+                                <div class="div-anim-demo layui-anim-rotate layui-anim-loop">
                                     旋转
                                 </div>
 
@@ -285,7 +348,8 @@
 
 
 
-    <script src="../index/index.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="../../../../js/基础方法/base.js"></script> -->
 
 
 </body>

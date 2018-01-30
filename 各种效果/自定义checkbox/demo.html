@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./purple.css">
+    <style>
+        .content {
+            width: 500px;
+            height: 400px;
+            background: #999999;
+            margin: 20px auto;
+            padding-top: 20px;
+        }
+        
+        div.v {
+            height: 50px;
+            text-align: center;
+            background: gray;
+            margin-top: 10px;
+        }
+        
+        .bayaxcheckbox {
+            display: none;
+        }
+        
+        .checkbox-i {
+            margin-right: 10px;
+            background: url(purple.png) no-repeat;
+            background-repeat: no-repeat;
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            position: relative;
+            top: 0px;
+            background-position: 0 0;
+            cursor: pointer;
+        }
+        
+        .checkbox-i:hover {
+            background-position: -24px 0;
+        }
+        
+        .bayaxcheckbox:checked+.checkbox-i {
+            background-position: -48px 0;
+        }
+        
+        .bayaxcheckbox:checked:hover+.checkbox-i {
+            background-position: -48px 0;
+        }
+        
+        .bayaxcheckbox:disabled+.checkbox-i {
+            background-position: -72px 0;
+        }
+        
+        .bayaxcheckbox:disabled:hover+.checkbox-i {
+            background-position: -72px 0;
+        }
+        
+        .radiobox-i {
+            margin-right: 10px;
+            background: url(../images/icheckblack.png) no-repeat;
+            background-repeat: no-repeat;
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            position: relative;
+            top: 0px;
+            background-position: -120px 0;
+            cursor: pointer;
+        }
+        
+        .radiobox-i:hover {
+            background-position: -144px 0;
+        }
+        
+        .bayaxcheckbox:checked+.radiobox-i {
+            background-position: -168px 0
+        }
+        
+        .bayaxcheckbox:checked:hover+.radiobox-i {
+            /* background-position: -48px 0; */
+        }
+        
+        .bayaxcheckbox:disabled+.radiobox-i {
+            /* background-position: -192px 0; */
+        }
+        
+        .bayaxcheckbox:disabled:hover+.radiobox-i {
+            background-position: -72px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="v">
+            <input type="checkbox" id="square-checkbox-1" class="bayaxcheckbox">
+            <label for="square-checkbox-1" class="checkbox-i"></label>
+        </div>
+
+        <div class="v">
+            <input type="checkbox" id="square-checkbox-2" class="ybui-icheck">
+            <label for="square-checkbox-2" class="ybui-i-check"></label>
+
+            <input type="checkbox" disabled checked id="square-checkbox-3" class="ybui-icheck">
+            <label for="square-checkbox-3" class="ybui-i-check"></label>
+
+            <input type="radio" id="square-checkbox-4" name='sex' class="ybui-icheck">
+            <label for="square-checkbox-4" class="ybui-i-radio"></label>
+            <input type="radio" id="square-checkbox-6" name='sex' class="ybui-icheck">
+            <label for="square-checkbox-6" class="ybui-i-radio"></label>
+
+            <input type="radio" disabled checked id="square-checkbox-5" class="ybui-icheck">
+            <label for="square-checkbox-5" class="ybui-i-radio"></label>
+        </div>
+
+    </div>
+</body>
+
+</html>
