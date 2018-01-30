@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-25 09:48:01 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-30 12:04:50
+ * @Last Modified time: 2018-01-30 14:15:12
  */
 
 .ybui-inline,
@@ -783,8 +783,8 @@ ul.ybui-select-group li {
 
 /*旋转 360度 */
 
-.layui-anim-rotate {
-    -webkit-animation-name: layui-rotate;
+.ybui-anim-rotate {
+    -webkit-animation-name: ybui-rotate;
     animation-name: layui-rotate;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -793,19 +793,19 @@ ul.ybui-select-group li {
 }
 
 
-/* 缩放 */
+/* 持续旋转 */
 
-.pulse {
-    animation: finger 1s infinite;
-    -webkit-animation: pulse 1s infinite;
+.ybui-anim-loop {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
 }
 
 
-/* 持续旋转 */
+/* 缩放 */
 
-.layui-anim-loop {
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite
+.ybui-pulse {
+    animation: ybui-pulse 1s infinite;
+    -webkit-animation: ybui-pulse 1s infinite;
 }
 
 
@@ -860,7 +860,7 @@ ul.ybui-select-group li {
 
 /* 缩放 */
 
-@keyframes pulse {
+@keyframes ybui-pulse {
     from {
         transform: scale3d(1, 1, 1);
     }
@@ -872,7 +872,7 @@ ul.ybui-select-group li {
     }
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes ybui-pulse {
     from {
         transform: scale3d(1, 1, 1);
     }
