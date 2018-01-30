@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-24 10:16:04 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-30 14:00:49
+ * @Last Modified time: 2018-01-30 18:22:50
  */
 
 "use strict";
@@ -35,11 +35,13 @@
         // 全局数据状态管理方法--------------end
         timeFormat: timeFormat, //时间格式化函数
         individuationTimeFormat: individuationTimeFormat, //时间个性化输出
+        getJsonKey: getJsonKey, //获取 JSON key   IE 9+
         countDown: countDown, //倒计时
         randomNumber: randomNumber, //随机数
         deepClone: deepClone, //深拷贝
         loadStyle: loadStyle, //动态加载样式表
         imgLoader: imgLoader, //图片预加载 (多用于移动端)
+        pageInit: pageInit, //简单分页
         goTop: goTop, //回到顶部
         strRegeMatch: strRegeMatch, //判断输入字符串是否合法
         getRequest: getRequest, //获取地址栏参数
@@ -204,8 +206,8 @@
         switch (Object.prototype.toString.call(obj)) {
             case '[object Array]':
                 {
-                    const result = new Array(obj.length);
-                    for (let i = 0; i < result.length; ++i) {
+                    var result = new Array(obj.length);
+                    for (var i = 0; i < result.length; ++i) {
                         result[i] = deepClone(obj[i]);
                     }
                     return result;
@@ -213,7 +215,7 @@
 
             case '[object Error]':
                 {
-                    const result = new obj.constructor(obj.message);
+                    var result = new obj.constructor(obj.message);
                     result.stack = obj.stack; // hack...
                     return result;
                 }
@@ -235,10 +237,10 @@
 
             case '[object Object]':
                 {
-                    const keys = Object.keys(obj);
-                    const result = {};
-                    for (let i = 0; i < keys.length; ++i) {
-                        const key = keys[i];
+                    var keys = Object.keys(obj);
+                    var result = {};
+                    for (var i = 0; i < keys.length; ++i) {
+                        var key = keys[i];
                         result[key] = deepClone(obj[key]);
                     }
                     return result;
@@ -438,6 +440,240 @@
     }
 
 
+
+    function pageInit(config) {
+        this.option = {
+            id: '',
+            pageCount: 0,
+            current: 0,
+            backFn: function() {}
+        }
+        var isIE = false;
+
+
+        console.log(':' + getExploreName())
+        if (getExploreName() == 'IE') {
+            isIE = true;
+        }
+        if (config) {
+            for (var i in config) {
+                this.option[i] = config[i];
+            }
+        } else {
+            alert('参数错误！');
+            return;
+        }
+
+
+        var page_div = document.getElementById(this.option.id);
+        page_div.removeEventListener('click', clicks, false);
+        var args = this.option;
+        if (args.pageCount === 0) {
+            return false;
+        }
+
+        fillHtml(page_div, args);
+
+        function fillHtml(obj, args) {
+
+
+            page_div.innerHTML = '';
+            page_div.removeEventListener('click', clicks, false);
+            //上一页
+            if (args.current > 1) {
+                var a = document.createElement('a');
+                a.classList.add('prevPage');
+                page_div.appendChild(a);
+            } else {
+                var span = document.createElement('span');
+                console.log(span)
+                if (isIE) {
+                    span.className += ' disabled disabled-prve';
+                } else {
+                    span.classList.add('disabled');
+                    span.classList.add('disabled-prve');
+                }
+
+
+                page_div.appendChild(span);
+            }
+
+            // //中间页码
+            if (args.current != 1 && args.current >= 4 && args.pageCount != 4) {
+                var a = document.createElement('a');
+                if (isIE) {
+                    a.className += ' tcdNumber';
+                } else {
+                    a.classList.add('tcdNumber');
+                }
+
+                a.setAttribute('href', 'javascript:;');
+                a.innerHTML = 1;
+                page_div.appendChild(a);
+            }
+            if (args.current - 2 > 2 && args.current <= args.pageCount && args.pageCount > 5) {
+                var a = document.createElement('a');
+                var span = document.createElement('span');
+                span.innerHTML = '...';
+                a.appendChild(span);
+
+                if (isIE) {
+                    a.className += ' page-omit';
+                } else {
+                    a.classList.add('page-omit');
+                }
+
+                a.setAttribute('href', 'javascript:;');
+                page_div.appendChild(a);
+            }
+
+            var start = args.current - 2,
+                end = args.current + 2;
+            if ((start > 1 && args.current < 4) || args.current == 1) {
+                end++;
+            }
+            if (args.current > args.pageCount - 4 && args.current >= args.pageCount) {
+                start--;
+            }
+
+            for (; start <= end; start++) {
+                if (start <= args.pageCount && start >= 1) {
+                    if (start != args.current) {
+                        var a = document.createElement('a');
+                        if (isIE) {
+                            a.className += ' tcdNumber';
+                        } else {
+                            a.classList.add('tcdNumber');
+                        }
+
+                        a.setAttribute('href', 'javascript:;');
+                        a.innerHTML = start;
+                        page_div.appendChild(a);
+                    } else {
+                        var span = document.createElement('span');
+
+                        if (isIE) {
+                            span.className += ' current';
+                        } else {
+                            span.classList.add('current');
+                        }
+
+                        span.innerHTML = start;
+                        page_div.appendChild(span);
+                    }
+                }
+            }
+
+
+            if (args.current + 2 < args.pageCount - 1 && args.current >= 1 && args.pageCount > 5) {
+                var a = document.createElement('a');
+                var span = document.createElement('span');
+                span.innerHTML = '...';
+                a.appendChild(span);
+
+
+                if (isIE) {
+                    a.className += ' page-omit';
+                } else {
+                    a.classList.add('page-omit');
+                }
+                a.setAttribute('href', 'javascript:;');
+                page_div.appendChild(a);
+            }
+            if (args.current != args.pageCount && args.current < args.pageCount - 2 && args.pageCount != 4) {
+                var a = document.createElement('a');
+                if (isIE) {
+                    a.className += ' tcdNumber';
+                } else {
+                    a.classList.add('tcdNumber');
+                }
+
+                a.setAttribute('href', 'javascript:;');
+                a.innerHTML = args.pageCount;
+                page_div.appendChild(a);
+            }
+            // //下一页
+            if (args.current < args.pageCount) {
+
+                var a = document.createElement('a');
+
+                if (isIE) {
+                    a.className += ' nextPage';
+                } else {
+                    a.classList.add('nextPage');
+                }
+
+                a.setAttribute('href', 'javascript:;');
+                page_div.appendChild(a);
+            } else {
+                var span = document.createElement('span');
+
+
+                if (isIE) {
+                    span.className += ' disabled disabled-next';
+                } else {
+                    span.classList.add('disabled');
+                    span.classList.add('disabled-next');
+                }
+
+                page_div.appendChild(span);
+            }
+
+            page_div.addEventListener('click', clicks, false);
+            // page_div.removeEventListener('click', clicks, false);
+        }
+
+
+
+
+        function clicks(ev) {
+            var ev = ev || window.event;
+            var target = ev.target || ev.srcElement;
+            var node_name = target.nodeName.toLowerCase();
+            console.log(node_name)
+            if ((' ' + target.className + ' ').indexOf(' ' + 'prevPage' + ' ') > -1) {
+                console.log('上一页');
+                var current = parseInt(page_div.getElementsByClassName('current')[0].innerHTML);
+                fillHtml(page_div, { "current": current - 1, "pageCount": args.pageCount });
+
+                if (typeof(args.backFn) == "function") {
+                    args.backFn(current - 1);
+                }
+            }
+
+            if ((' ' + target.className + ' ').indexOf(' ' + 'tcdNumber' + ' ') > -1) {
+                console.log('页数');
+
+                var current = parseInt(target.innerHTML);
+                fillHtml(page_div, { "current": current, "pageCount": args.pageCount });
+
+                if (typeof(args.backFn) == "function") {
+                    args.backFn(current);
+                }
+            }
+
+            if ((' ' + target.className + ' ').indexOf(' ' + 'nextPage' + ' ') > -1) {
+                console.log('下一页');
+                var current = parseInt(page_div.getElementsByClassName('current')[0].innerHTML);
+                fillHtml(page_div, { "current": current + 1, "pageCount": args.pageCount });
+
+                if (typeof(args.backFn) == "function") {
+                    args.backFn(current + 1);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+
     /**
      * 随机数
      * 
@@ -536,12 +772,12 @@
             (s = ua.match(/chrome\/([\d\.]+)/)) ? Sys.chrome = s[1] :
             (s = ua.match(/version\/([\d\.]+).*safari/)) ? Sys.safari = s[1] : 0;
         // 根据关系进行判断
-        if (Sys.ie) return ('IE: ' + Sys.ie);
-        if (Sys.edge) return ('EDGE: ' + Sys.edge);
-        if (Sys.firefox) return ('Firefox: ' + Sys.firefox);
-        if (Sys.chrome) return ('Chrome: ' + Sys.chrome);
-        if (Sys.opera) return ('Opera: ' + Sys.opera);
-        if (Sys.safari) return ('Safari: ' + Sys.safari);
+        if (Sys.ie) return ('IE:' + Sys.ie);
+        if (Sys.edge) return ('EDGE:' + Sys.edge);
+        if (Sys.firefox) return ('Firefox:' + Sys.firefox);
+        if (Sys.chrome) return ('Chrome:' + Sys.chrome);
+        if (Sys.opera) return ('Opera:' + Sys.opera);
+        if (Sys.safari) return ('Safari:' + Sys.safari);
         return 'Unkonwn';
     }
 
@@ -648,22 +884,40 @@
         // })(document);
     }
 
+    /**
+     * 获取 JSON key   IE 9+
+     * 
+     * @param {obj} json 
+     * @returns 
+     */
+    function getJsonKey(json) {
+        return Object.keys(json)
+    }
+
     //暴露公共方法
     return base;
 }));
 
-base.statesSet({ name: 'yb' });
-console.log(JSON.stringify(base.getGlobalStatusData(), null, 2));
-console.log(base.statesGet('name'));
+// base.statesSet({ name: 'yb' });
+// console.log(JSON.stringify(base.getGlobalStatusData(), null, 2));
+// console.log(base.statesGet('name'));
 
 
-base.countDown(5);
-console.log('日期:' + base.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
-console.log('浏览器类型:' + base.getExplore() + '========' + base.getExploreName())
-console.log('获取浏览器语言:' + base.getBrowserLanguage());
-console.log('pc？移动:' + base.judgeMachine());
-console.log('个性化输出:' + base.individuationTimeFormat('2018/01/25 13:20:56'));
-console.log('随机字符串:' + base.randomString());
+// // base.countDown(5);
+// console.log('日期:' + base.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
+// console.log('浏览器类型:' + base.getExplore() + '========' + base.getExploreName())
+// console.log('获取浏览器语言:' + base.getBrowserLanguage());
+// console.log('pc？移动:' + base.judgeMachine());
+// console.log('个性化输出:' + base.individuationTimeFormat('2018/01/25 13:20:56'));
+// console.log('随机字符串:' + base.randomString());
+
+// console.log(JSON.stringify(base.getJsonKey({
+//     a: '1',
+//     b: '2',
+//     c: {
+//         a: '1'
+//     }
+// }), null, 2))
 
 
 // tableExport('table', 'table', 'csv');

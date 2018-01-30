@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-29 13:59:07 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-29 15:37:30
+ * @Last Modified time: 2018-01-30 14:39:56
  */
 
 
@@ -42,7 +42,6 @@
         tab: tab, //选项卡
         collapse: collapse, // 折叠面板
         verticalNavMenu: verticalNavMenu, //垂直导航菜单
-
     };
     /**
      * 下拉菜单
