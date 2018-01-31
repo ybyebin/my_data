@@ -2,7 +2,8 @@
  * @Author: yb 
  * @Date: 2018-01-24 10:16:04 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-30 18:22:50
+ * @Last Modified time: 2018-01-31 15:27:43
+ * IE 9
  */
 
 "use strict";
@@ -15,46 +16,21 @@
         module.exports = factory();
     } else if (window.layui && layui.define) { //用于layui 加载
         layui.define(function(exports) { //layui加载
-            exports('base', factory(root));
+            exports('ybTool', factory(root));
         });
     } else {
         //浏览器全局变量(root 即 window)
-        root.base = factory(root);
+        root.ybTool = factory(root);
     }
 }(this, function() {
+    var ybTool = {}; //工具类  对外接口
 
-    // 全局数据状态管理
-    var states = {}; // 私有变量，用来存储状态与数据
+    /*************私有************* */
+    var states = {}; // 私有变量，用来存储全局数据状态
+    var ybuiPage = {}; //分页
+    var timeout_id; //   暂存延迟执行定时器 
 
-    /**********************************对外接口******************************************/
-    var base = {
-        // 全局数据状态管理方法--------------begin
-        statesSet: statesSet, //设置值
-        statesGet: statesGet, //根据key取值
-        getGlobalStatusData: getGlobalStatusData, //取全部值
-        // 全局数据状态管理方法--------------end
-        timeFormat: timeFormat, //时间格式化函数
-        individuationTimeFormat: individuationTimeFormat, //时间个性化输出
-        getJsonKey: getJsonKey, //获取 JSON key   IE 9+
-        countDown: countDown, //倒计时
-        randomNumber: randomNumber, //随机数
-        deepClone: deepClone, //深拷贝
-        loadStyle: loadStyle, //动态加载样式表
-        imgLoader: imgLoader, //图片预加载 (多用于移动端)
-        pageInit: pageInit, //简单分页
-        goTop: goTop, //回到顶部
-        strRegeMatch: strRegeMatch, //判断输入字符串是否合法
-        getRequest: getRequest, //获取地址栏参数
-        getExplore: getExplore, //获取浏览器版本和序号-1
-        getExploreName: getExploreName, //获取浏览器名称
-        getBrowserLanguage: getBrowserLanguage, //检测浏览器语言
-        judgeMachine: judgeMachine, // 判断iPhone|iPad|iPod|iOS|Android
-        randomString: randomString, //生成随机字符转
-        setHtmlRem: setHtmlRem, //自适应rem初始化(淘宝~)
-        on: on, //添加动作监听
-        yszzAdd: yszzAdd, //隐式转换
 
-    }
 
     /**
      * 判断是否是function
@@ -299,21 +275,6 @@
         }
     }
 
-    /**
-     * [js 添加on]
-     * @param  {obj} elem [要添加的 js对象]
-     * @param  {string} even ['click','input'。。。。。。]
-     * @param  {function} fn [执行的方法]
-     * 
-     */
-    function on(elem, even, fn) {
-        elem.attachEvent ? elem.attachEvent('on' + even, function(e) { //for ie
-            e.target = e.srcElement;
-            fn.call(elem, e);
-        }) : elem.addEventListener(even, fn, false);
-        return this;
-    }
-
 
     /**
      * 判断输入字符串是否合法
@@ -438,241 +399,6 @@
             }
         }
     }
-
-
-
-    function pageInit(config) {
-        this.option = {
-            id: '',
-            pageCount: 0,
-            current: 0,
-            backFn: function() {}
-        }
-        var isIE = false;
-
-
-        console.log(':' + getExploreName())
-        if (getExploreName() == 'IE') {
-            isIE = true;
-        }
-        if (config) {
-            for (var i in config) {
-                this.option[i] = config[i];
-            }
-        } else {
-            alert('参数错误！');
-            return;
-        }
-
-
-        var page_div = document.getElementById(this.option.id);
-        page_div.removeEventListener('click', clicks, false);
-        var args = this.option;
-        if (args.pageCount === 0) {
-            return false;
-        }
-
-        fillHtml(page_div, args);
-
-        function fillHtml(obj, args) {
-
-
-            page_div.innerHTML = '';
-            page_div.removeEventListener('click', clicks, false);
-            //上一页
-            if (args.current > 1) {
-                var a = document.createElement('a');
-                a.classList.add('prevPage');
-                page_div.appendChild(a);
-            } else {
-                var span = document.createElement('span');
-                console.log(span)
-                if (isIE) {
-                    span.className += ' disabled disabled-prve';
-                } else {
-                    span.classList.add('disabled');
-                    span.classList.add('disabled-prve');
-                }
-
-
-                page_div.appendChild(span);
-            }
-
-            // //中间页码
-            if (args.current != 1 && args.current >= 4 && args.pageCount != 4) {
-                var a = document.createElement('a');
-                if (isIE) {
-                    a.className += ' tcdNumber';
-                } else {
-                    a.classList.add('tcdNumber');
-                }
-
-                a.setAttribute('href', 'javascript:;');
-                a.innerHTML = 1;
-                page_div.appendChild(a);
-            }
-            if (args.current - 2 > 2 && args.current <= args.pageCount && args.pageCount > 5) {
-                var a = document.createElement('a');
-                var span = document.createElement('span');
-                span.innerHTML = '...';
-                a.appendChild(span);
-
-                if (isIE) {
-                    a.className += ' page-omit';
-                } else {
-                    a.classList.add('page-omit');
-                }
-
-                a.setAttribute('href', 'javascript:;');
-                page_div.appendChild(a);
-            }
-
-            var start = args.current - 2,
-                end = args.current + 2;
-            if ((start > 1 && args.current < 4) || args.current == 1) {
-                end++;
-            }
-            if (args.current > args.pageCount - 4 && args.current >= args.pageCount) {
-                start--;
-            }
-
-            for (; start <= end; start++) {
-                if (start <= args.pageCount && start >= 1) {
-                    if (start != args.current) {
-                        var a = document.createElement('a');
-                        if (isIE) {
-                            a.className += ' tcdNumber';
-                        } else {
-                            a.classList.add('tcdNumber');
-                        }
-
-                        a.setAttribute('href', 'javascript:;');
-                        a.innerHTML = start;
-                        page_div.appendChild(a);
-                    } else {
-                        var span = document.createElement('span');
-
-                        if (isIE) {
-                            span.className += ' current';
-                        } else {
-                            span.classList.add('current');
-                        }
-
-                        span.innerHTML = start;
-                        page_div.appendChild(span);
-                    }
-                }
-            }
-
-
-            if (args.current + 2 < args.pageCount - 1 && args.current >= 1 && args.pageCount > 5) {
-                var a = document.createElement('a');
-                var span = document.createElement('span');
-                span.innerHTML = '...';
-                a.appendChild(span);
-
-
-                if (isIE) {
-                    a.className += ' page-omit';
-                } else {
-                    a.classList.add('page-omit');
-                }
-                a.setAttribute('href', 'javascript:;');
-                page_div.appendChild(a);
-            }
-            if (args.current != args.pageCount && args.current < args.pageCount - 2 && args.pageCount != 4) {
-                var a = document.createElement('a');
-                if (isIE) {
-                    a.className += ' tcdNumber';
-                } else {
-                    a.classList.add('tcdNumber');
-                }
-
-                a.setAttribute('href', 'javascript:;');
-                a.innerHTML = args.pageCount;
-                page_div.appendChild(a);
-            }
-            // //下一页
-            if (args.current < args.pageCount) {
-
-                var a = document.createElement('a');
-
-                if (isIE) {
-                    a.className += ' nextPage';
-                } else {
-                    a.classList.add('nextPage');
-                }
-
-                a.setAttribute('href', 'javascript:;');
-                page_div.appendChild(a);
-            } else {
-                var span = document.createElement('span');
-
-
-                if (isIE) {
-                    span.className += ' disabled disabled-next';
-                } else {
-                    span.classList.add('disabled');
-                    span.classList.add('disabled-next');
-                }
-
-                page_div.appendChild(span);
-            }
-
-            page_div.addEventListener('click', clicks, false);
-            // page_div.removeEventListener('click', clicks, false);
-        }
-
-
-
-
-        function clicks(ev) {
-            var ev = ev || window.event;
-            var target = ev.target || ev.srcElement;
-            var node_name = target.nodeName.toLowerCase();
-            console.log(node_name)
-            if ((' ' + target.className + ' ').indexOf(' ' + 'prevPage' + ' ') > -1) {
-                console.log('上一页');
-                var current = parseInt(page_div.getElementsByClassName('current')[0].innerHTML);
-                fillHtml(page_div, { "current": current - 1, "pageCount": args.pageCount });
-
-                if (typeof(args.backFn) == "function") {
-                    args.backFn(current - 1);
-                }
-            }
-
-            if ((' ' + target.className + ' ').indexOf(' ' + 'tcdNumber' + ' ') > -1) {
-                console.log('页数');
-
-                var current = parseInt(target.innerHTML);
-                fillHtml(page_div, { "current": current, "pageCount": args.pageCount });
-
-                if (typeof(args.backFn) == "function") {
-                    args.backFn(current);
-                }
-            }
-
-            if ((' ' + target.className + ' ').indexOf(' ' + 'nextPage' + ' ') > -1) {
-                console.log('下一页');
-                var current = parseInt(page_div.getElementsByClassName('current')[0].innerHTML);
-                fillHtml(page_div, { "current": current + 1, "pageCount": args.pageCount });
-
-                if (typeof(args.backFn) == "function") {
-                    args.backFn(current + 1);
-                }
-            }
-        }
-
-
-
-
-
-
-
-
-
-    }
-
 
     /**
      * 随机数
@@ -884,8 +610,9 @@
         // })(document);
     }
 
+
     /**
-     * 获取 JSON key   IE 9+
+     * 获取 JSON key   IE 9 +
      * 
      * @param {obj} json 
      * @returns 
@@ -894,24 +621,364 @@
         return Object.keys(json)
     }
 
+    /**
+     * 判断 原生对象  是否有某个类名
+     * 
+     * @param {object} obj 
+     * @param {string} className 
+     * @returns 
+     */
+    function jsObjHasClass(obj, className) {
+        if ((' ' + obj.className + ' ').indexOf(' ' + className + ' ') > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * 检测绑定事件
+     * 
+     * @param {any} element 
+     * @param {any} type 
+     * @param {any} handler 
+     */
+    function addHandler(element, type, handler) {
+        if (element.addEventListener) {
+            element.addEventListener(type, handler, false);
+        } else if (element.attachEvent) {
+            element.attachEvent('on' + type, handler);
+        } else {
+            element["on" + type] = handler /*直接赋给事件*/
+        }
+
+    }
+
+    /**
+     * 通过removeHandler
+     * 
+     * @param {any} element 
+     * @param {any} type 
+     * @param {any} handler 
+     */
+    function removeHandler(element, type, handler) { /*Chrome*/
+        if (element.removeEventListener)
+            element.removeEventListener(type, handler, false);
+        else if (element.deattachEvent) { /*IE*/
+            element.deattachEvent('on' + type, handler);
+        } else {
+            element["on" + type] = null;
+            /*直接赋给事件*/
+        }
+    }
+
+
+    /**
+     *  延时执行
+     * 
+     * @param {function} fn  要执行的方法
+     * @param {number} delay 延时时间
+     * @param {} options 
+     * timeoutId  全局变量 暂存延时定时器
+     * 
+     * debounce(function() {}, 300, {
+     *   leading: false
+     * })
+     * @returns 
+     */
+    function debounce(fn, delay, options) {
+        if (!options) {
+            options = {};
+        }
+        var leadingExc = false;
+
+        return function() {
+            var that = this,
+                args = arguments;
+            if (!leadingExc && !(options.leading === false)) {
+                fn.apply(that, args);
+            }
+            leadingExc = true;
+            if (timeout_id) {
+                clearTimeout(timeout_id);
+            }
+            timeout_id = setTimeout(function() {
+                if (!(options.trailing === false)) {
+                    fn.apply(that, args);
+                }
+                leadingExc = false;
+            }, delay);
+        }
+    }
+
+
+    ybuiPage = {
+        pageInit: function(config) {
+            this.option = {
+                id: '',
+                pageCount: 0,
+                current: 0,
+                backFn: function() {}
+            }
+
+            if (config) {
+                for (var i in config) {
+                    this.option[i] = config[i];
+                }
+            } else {
+                alert('参数错误！');
+                return;
+            }
+            var args = this.option;
+            if (args.pageCount === 0) {
+                return false;
+            }
+            var page_div = document.getElementById(this.option.id);
+            ybuiPage.fillHtml(page_div, args);
+        },
+        pageClicks: function(arg) {
+            var a = [].slice.call(arguments);
+            var ev = a[1] || window.event;
+            var args = a[0];
+            var fun = args.backFn;
+            var target = ev.target || ev.srcElement;
+            var node_name = target.nodeName.toLowerCase();
+            var parent_div = target.parentNode.parentNode;
+            var parent_parent_div = target.parentNode;
+            var current = Number(parent_parent_div.getAttribute('data-current'));
+            var pageCount = Number(parent_parent_div.getAttribute('data-pagecount'));
+
+            if (jsObjHasClass(target, 'prevPage')) {
+                console.log('上一页');
+                ybuiPage.fillHtml(parent_div, { "current": current - 1, "pageCount": pageCount, 'backFn': fun });
+
+                if (typeof(fun) == "function") {
+                    fun(current - 1);
+                }
+            }
+            if (jsObjHasClass(target, 'tcdNumber')) {
+                console.log('页数');
+                var current = parseInt(target.innerHTML);
+                ybuiPage.fillHtml(parent_div, { "current": current, "pageCount": pageCount, 'backFn': fun });
+                if (typeof(fun) == "function") {
+                    fun(current);
+                }
+            }
+            if (jsObjHasClass(target, 'nextPage')) {
+                console.log('下一页');
+                ybuiPage.fillHtml(parent_div, { "current": current + 1, "pageCount": pageCount, 'backFn': fun });
+
+                if (typeof(fun) == "function") {
+                    fun(current + 1);
+                }
+            }
+        },
+        fillHtml: function(obj, args) {
+
+            var page_div = document.createElement('div');
+            var isIE = false;
+            obj.innerHTML = '';
+            if (getExploreName() == 'IE') {
+                isIE = true;
+            }
+
+            //上一页
+            if (args.current > 1) {
+                var a = document.createElement('a');
+                a.classList.add('prevPage');
+                page_div.appendChild(a);
+            } else {
+                var span = document.createElement('span');
+                if (isIE) {
+                    span.className += ' disabled disabled-prve';
+                } else {
+                    span.classList.add('disabled');
+                    span.classList.add('disabled-prve');
+                }
+                page_div.appendChild(span);
+            }
+
+            // //中间页码
+            if (args.current != 1 && args.current >= 4 && args.pageCount != 4) {
+                var a = document.createElement('a');
+                if (isIE) {
+                    a.className += ' tcdNumber';
+                } else {
+                    a.classList.add('tcdNumber');
+                }
+                a.setAttribute('href', 'javascript:;');
+                a.innerHTML = 1;
+                page_div.appendChild(a);
+            }
+            if (args.current - 2 > 2 && args.current <= args.pageCount && args.pageCount > 5) {
+                var a = document.createElement('a');
+                var span = document.createElement('span');
+                span.innerHTML = '...';
+                a.appendChild(span);
+
+                if (isIE) {
+                    a.className += ' page-omit';
+                } else {
+                    a.classList.add('page-omit');
+                }
+                a.setAttribute('href', 'javascript:;');
+                page_div.appendChild(a);
+            }
+
+            var start = args.current - 2,
+                end = args.current + 2;
+            if ((start > 1 && args.current < 4) || args.current == 1) {
+                end++;
+            }
+            if (args.current > args.pageCount - 4 && args.current >= args.pageCount) {
+                start--;
+            }
+
+            for (; start <= end; start++) {
+                if (start <= args.pageCount && start >= 1) {
+                    if (start != args.current) {
+                        var a = document.createElement('a');
+                        if (isIE) {
+                            a.className += ' tcdNumber';
+                        } else {
+                            a.classList.add('tcdNumber');
+                        }
+
+                        a.setAttribute('href', 'javascript:;');
+                        a.innerHTML = start;
+                        page_div.appendChild(a);
+                    } else {
+                        var span = document.createElement('span');
+
+                        if (isIE) {
+                            span.className += ' current';
+                        } else {
+                            span.classList.add('current');
+                        }
+
+                        span.innerHTML = start;
+                        page_div.appendChild(span);
+                    }
+                }
+            }
+
+
+            if (args.current + 2 < args.pageCount - 1 && args.current >= 1 && args.pageCount > 5) {
+                var a = document.createElement('a');
+                var span = document.createElement('span');
+                span.innerHTML = '...';
+                a.appendChild(span);
+
+
+                if (isIE) {
+                    a.className += ' page-omit';
+                } else {
+                    a.classList.add('page-omit');
+                }
+                a.setAttribute('href', 'javascript:;');
+                page_div.appendChild(a);
+            }
+            if (args.current != args.pageCount && args.current < args.pageCount - 2 && args.pageCount != 4) {
+                var a = document.createElement('a');
+                if (isIE) {
+                    a.className += ' tcdNumber';
+                } else {
+                    a.classList.add('tcdNumber');
+                }
+
+                a.setAttribute('href', 'javascript:;');
+                a.innerHTML = args.pageCount;
+                page_div.appendChild(a);
+            }
+            // //下一页
+            if (args.current < args.pageCount) {
+
+                var a = document.createElement('a');
+
+                if (isIE) {
+                    a.className += ' nextPage';
+                } else {
+                    a.classList.add('nextPage');
+                }
+
+                a.setAttribute('href', 'javascript:;');
+                page_div.appendChild(a);
+            } else {
+                var span = document.createElement('span');
+
+                if (isIE) {
+                    span.className += ' disabled disabled-next';
+                } else {
+                    span.classList.add('disabled');
+                    span.classList.add('disabled-next');
+                }
+                page_div.appendChild(span);
+            }
+            var fn = ybuiPage.pageClicks.bind(null, args);
+            addHandler(page_div, 'click', fn);
+            page_div.setAttribute('data-pagecount', args.pageCount);
+            page_div.setAttribute('data-current', args.current);
+            obj.appendChild(page_div);
+        }
+
+    }
+
+
+
+
+
+
+
+    ybTool = {
+        // 全局数据状态管理方法--------------begin
+        statesSet: statesSet, //设置值
+        statesGet: statesGet, //根据key取值
+        getGlobalStatusData: getGlobalStatusData, //取全部值
+        // 全局数据状态管理方法--------------end
+        timeFormat: timeFormat, //时间格式化函数
+        individuationTimeFormat: individuationTimeFormat, //时间个性化输出
+        getJsonKey: getJsonKey, //获取 JSON key   IE 9+
+        countDown: countDown, //倒计时
+        randomNumber: randomNumber, //随机数
+        deepClone: deepClone, //深拷贝
+        loadStyle: loadStyle, //动态加载样式表
+        imgLoader: imgLoader, //图片预加载 (多用于移动端)
+        pageInit: ybuiPage.pageInit, //简单分页
+        goTop: goTop, //回到顶部
+        debounce: debounce, //延时执行
+        addHandler: addHandler, //添加监听
+        removeHandler: removeHandler, //移除监听
+        jsObjHasClass: jsObjHasClass, //js 判断 是否有 某 类名
+        strRegeMatch: strRegeMatch, //判断输入字符串是否合法
+        getRequest: getRequest, //获取地址栏参数
+        getExplore: getExplore, //获取浏览器版本和序号-1
+        getExploreName: getExploreName, //获取浏览器名称
+        getBrowserLanguage: getBrowserLanguage, //检测浏览器语言
+        judgeMachine: judgeMachine, // 判断iPhone|iPad|iPod|iOS|Android
+        randomString: randomString, //生成随机字符转
+        setHtmlRem: setHtmlRem, //自适应rem初始化(淘宝~)
+        yszzAdd: yszzAdd, //隐式转换
+    }
+
     //暴露公共方法
-    return base;
+    return ybTool;
 }));
 
-// base.statesSet({ name: 'yb' });
-// console.log(JSON.stringify(base.getGlobalStatusData(), null, 2));
-// console.log(base.statesGet('name'));
+// ybTool.statesSet({ name: 'yb' });
+// console.log(JSON.stringify(ybTool.getGlobalStatusData(), null, 2));
+// console.log(ybTool.statesGet('name'));
 
 
-// // base.countDown(5);
-// console.log('日期:' + base.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
-// console.log('浏览器类型:' + base.getExplore() + '========' + base.getExploreName())
-// console.log('获取浏览器语言:' + base.getBrowserLanguage());
-// console.log('pc？移动:' + base.judgeMachine());
-// console.log('个性化输出:' + base.individuationTimeFormat('2018/01/25 13:20:56'));
-// console.log('随机字符串:' + base.randomString());
+// // ybTool.countDown(5);
+// console.log('日期:' + ybTool.timeFormat(new Date(), 'yyyy-MM-dd hh:mm:ss'));
+// console.log('浏览器类型:' + ybTool.getExplore() + '========' + ybTool.getExploreName())
+// console.log('获取浏览器语言:' + ybTool.getBrowserLanguage());
+// console.log('pc？移动:' + ybTool.judgeMachine());
+// console.log('个性化输出:' + ybTool.individuationTimeFormat('2018/01/25 13:20:56'));
+// console.log('随机字符串:' + ybTool.randomString());
 
-// console.log(JSON.stringify(base.getJsonKey({
+// console.log(JSON.stringify(ybTool.getJsonKey({
 //     a: '1',
 //     b: '2',
 //     c: {
@@ -923,4 +990,4 @@
 // tableExport('table', 'table', 'csv');
 
 
-// base.loadStyle('./css/reset.css');
+// ybTool.loadStyle('./css/reset.css')

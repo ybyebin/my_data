@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-25 09:48:01 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-30 14:15:12
+ * @Last Modified time: 2018-01-31 17:23:55
  */
 
 .ybui-inline,
@@ -668,11 +668,13 @@ ul.ybui-select-group li {
 
 .ybui-btn:hover {
     opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
 }
 
 .ybui-btn:active {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100)
 }
 
@@ -747,20 +749,103 @@ ul.ybui-select-group li {
 
 /* HiDPI support */
 
-@media (-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
+@media (-webkit-min-device-pixel-ratio: 1.25),
 (min-resolution: 120dpi),
 (min-resolution: 1.25dppx) {
     .ybui-i-check,
     .ybui-i-radio {
         background-image: url(../image/check@2x.png);
-        -webkit-background-size: 240px 24px;
         background-size: 240px 24px;
     }
 }
 
 
 /* 自定义checkbox ---------end */
+
+
+/* 自定义分页 ----------begin*/
+
+.ybui-page-css {
+    padding: 5px 10px;
+    color: #333;
+    text-align: center;
+}
+
+.ybui-page-css a.tcdNumber,
+.ybui-page-css a.prevPage,
+.ybui-page-css a.nextPage {
+    text-decoration: none;
+}
+
+.ybui-page-css a.tcdNumber {
+    display: inline-block;
+    color: #838383;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+.ybui-page-css a.page-omit {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.ybui-page-css a.prevPage,
+.ybui-page-css a.nextPage,
+.ybui-page-css span.disabled {
+    display: inline-block;
+    color: #9FA2A8;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.ybui-page-css span.current {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+.ybui-page-css a.page-omit span {
+    position: relative;
+    top: -5px;
+}
+
+.ybui-page-css a.prevPage:after,
+.ybui-page-css span.disabled-prve:after {
+    font-family: 'fontAwesome';
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #9FA2A8;
+    border-left: 1px solid #9FA2A8;
+    margin-left: 2px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.ybui-page-css a.nextPage:after,
+.ybui-page-css span.disabled-next:after {
+    font-family: 'fontAwesome';
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: -2px;
+    border-top: 1px solid #9FA2A8;
+    border-right: 1px solid #9FA2A8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* 自定义分页 ----------end */
 
 
 /* ********************************************* */
@@ -817,22 +902,28 @@ ul.ybui-select-group li {
 @-webkit-keyframes ybui-upbit {
     from {
         -webkit-transform: translate3d(0, 30px, 0);
-        opacity: .3
+        opacity: .3;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"
     }
     to {
         -webkit-transform: translate3d(0, 0, 0);
-        opacity: 1
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
     }
 }
 
 @keyframes ybui-upbit {
     from {
+        -webkit-transform: translate3d(0, 30px, 0);
         transform: translate3d(0, 30px, 0);
-        opacity: .3
+        opacity: .3;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"
     }
     to {
+        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        opacity: 1
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
     }
 }
 
@@ -850,9 +941,11 @@ ul.ybui-select-group li {
 
 @keyframes layui-rotate {
     from {
+        -webkit-transform: rotate(0);
         transform: rotate(0)
     }
     to {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg)
     }
 }
@@ -862,24 +955,30 @@ ul.ybui-select-group li {
 
 @keyframes ybui-pulse {
     from {
+        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
     50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
         transform: scale3d(1.05, 1.05, 1.05);
     }
     to {
+        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
 }
 
 @-webkit-keyframes ybui-pulse {
     from {
+        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
     50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
         transform: scale3d(1.05, 1.05, 1.05);
     }
     to {
+        -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
 }

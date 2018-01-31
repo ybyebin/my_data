@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-29 13:59:07 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-30 14:39:56
+ * @Last Modified time: 2018-01-31 16:05:25
  */
 
 
@@ -127,7 +127,6 @@
                 var ev = ev || window.event;
                 var target = ev.target || ev.srcElement;
                 var node_name = target.nodeName.toLowerCase();
-                var tab_item = target.parentNode.parentNode.getElementsByClassName('ybui-tab-item');
                 if (node_name == 'h2') {
                     var cls = class_list.ybui_show;
                     var colla_content = getNearEle(target, 0);
