@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-24 10:16:04 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-31 15:27:43
+ * @Last Modified time: 2018-02-01 14:34:10
  * IE 9
  */
 
@@ -638,7 +638,7 @@
 
 
     /**
-     * 检测绑定事件
+     * 添加绑定事件
      * 
      * @param {any} element 
      * @param {any} type 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./demo.css">
     <link rel="stylesheet" href="./css/button.css">
+    <!-- <link rel="stylesheet" href=""> -->
     <style>
         .ybui-collapse {
             margin-top: 30px;
@@ -30,7 +31,7 @@
 
     <div class="ybui-layout">
         <div class="ybui-header">
-            <div class="ybui-logo">ybui 后台布局</div>
+            <div class="ybui-logo" id="a">ybui 后台布局</div>
             <ul class="ybui-nav ybui-layout-left">
                 <li class="ybui-nav-item"><a href="">page-1</a></li>
                 <li class="ybui-nav-item"><a href="">page-1</a></li>
@@ -321,6 +322,7 @@
 
                                 <div class="ybui-page-css" id="pages-2"></div>
 
+
                             </div>
                         </div>
                     </div>
@@ -365,9 +367,10 @@
 
 
     <script src="./js/index.js"></script>
-    <script src="../../../../js/基础方法/ybTool.js"></script>
+    <!-- <script src="../../../../js/基础方法/ybTool.js"></script> -->
+    <script src="../../../../js/基础方法/myYbtool.js"></script>
     <script type="text/javascript">
-        ybTool.pageInit({
+        ybtool.pageInit({
             id: 'pages-2',
             pageCount: 20,
             current: 15,
@@ -375,6 +378,20 @@
                 console.log(p)
             }
         });
+
+
+
+
+        setTimeout(function() {
+            ybtool.pageInit({
+                id: 'pages-2',
+                pageCount: 30,
+                current: 5,
+                backFn: function(p) {
+                    console.log(p)
+                }
+            });
+        }, 2000)
     </script>
 
 </body>
