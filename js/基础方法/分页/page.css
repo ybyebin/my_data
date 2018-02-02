@@ -37,6 +37,10 @@
     text-align: center;
 }
 
+.ybui-page-css span.disabled {
+    cursor: not-allowed!important;
+}
+
 .ybui-page-css span.current {
     display: inline-block;
     height: 25px;

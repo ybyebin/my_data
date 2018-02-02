@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-25 09:48:01 
  * @Last Modified by: yb
- * @Last Modified time: 2018-01-31 17:23:55
+ * @Last Modified time: 2018-02-02 16:01:12
  */
 
 .ybui-inline,
@@ -802,6 +802,10 @@ ul.ybui-select-group li {
     margin: 0 2px;
     border-radius: 15px;
     text-align: center;
+}
+
+.ybui-page-css span.disabled {
+    cursor: not-allowed!important;
 }
 
 .ybui-page-css span.current {

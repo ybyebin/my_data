@@ -17,7 +17,7 @@
 
     <div>
 
-        <div class="ybui-page-css tcdPageCode" id="pages">111111111</div>
+        <div class="ybui-page-css tcdPageCode" id="pages"></div>
 
         <div class="ybui-page-css tcdPageCode" id="pages-2">222222</div>
 
@@ -27,7 +27,7 @@
     <script type="text/javascript">
         console.log(ybTool.pageInit)
         ybTool.pageInit({
-            id: 'pages',
+            id: 'pages-2',
             pageCount: 90,
             current: 4,
             backFn: function(p) {
@@ -35,26 +35,13 @@
             }
         });
 
-        ybTool.pageInit({
-            id: 'pages-2',
+        $('#pages').createPage({
             pageCount: 20,
             current: 15,
             backFn: function(p) {
                 console.log(p)
             }
         });
-
-
-        setTimeout(function() {
-            ybTool.pageInit({
-                id: 'pages-2',
-                pageCount: 200,
-                current: 15,
-                backFn: function(p) {
-                    console.log(p)
-                }
-            });
-        }, 3000)
     </script>
 </body>
 
