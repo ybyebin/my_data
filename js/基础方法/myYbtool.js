@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-02-01 10:32:18 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-01 16:23:16
+ * @Last Modified time: 2018-02-02 10:12:46
  */
 
 /******************查询***********************
@@ -369,13 +369,13 @@
     // 动态加载样式表
     Ybtool.prototype.loadStyle = function(url) {
         try {
-            document.createStyleSheet(url)
+            doc.createStyleSheet(url)
         } catch (e) {
-            var cssLink = document.createElement('link');
+            var cssLink = doc.createElement('link');
             cssLink.rel = 'stylesheet';
             cssLink.type = 'text/css';
             cssLink.href = url;
-            var head = document.getElementsByTagName('head')[0];
+            var head = doc.getElementsByTagName('head')[0];
             head.appendChild(cssLink)
         }
 
@@ -404,10 +404,10 @@
      * @param {any} callback  //回调
      */
     Ybtool.prototype.loadJs = function(sid, jsurl, callback) {
-        var nodeHead = document.getElementsByTagName('head')[0];
+        var nodeHead = doc.getElementsByTagName('head')[0];
         var nodeScript = null;
-        if (document.getElementById(sid) == null) {
-            nodeScript = document.createElement('script');
+        if (doc.getElementById(sid) == null) {
+            nodeScript = doc.createElement('script');
             nodeScript.setAttribute('type', 'text/javascript');
             nodeScript.setAttribute('src', jsurl);
             nodeScript.setAttribute('id', sid);
@@ -440,11 +440,11 @@
         var y1 = 0;
         var y2 = 0;
         var y3 = 0;
-        if (document.documentElement) {
-            y1 = document.documentElement.scrollTop || 0;
+        if (doc.documentElement) {
+            y1 = doc.documentElement.scrollTop || 0;
         }
-        if (document.body) {
-            y2 = document.body.scrollTop || 0;
+        if (doc.body) {
+            y2 = doc.body.scrollTop || 0;
         }
         var y3 = window.scrollY || 0;
         // 滚动条到页面顶部的垂直距离 
@@ -710,7 +710,7 @@
         if (option.pageCount === 0) {
             return false;
         }
-        var page_div = document.getElementById(option.id);
+        var page_div = doc.getElementById(option.id);
         fillHtml(page_div, option);
     };
 
@@ -889,21 +889,20 @@
 
     // 简单分页-----填充数据
     function fillHtml(obj, args) {
-        var page_div = document.createElement('div');
+        var page_div = doc.createElement('div');
         var isIE = false;
         obj.innerHTML = '';
         if (getExploreName() == 'IE') {
             isIE = true;
         }
-
         //上一页
         if (args.current > 1) {
-            var a = document.createElement('a');
+            var a = doc.createElement('a');
             a.classList.add('prevPage');
             a.setAttribute('href', 'javascript:;');
             page_div.appendChild(a);
         } else {
-            var span = document.createElement('span');
+            var span = doc.createElement('span');
             if (isIE) {
                 span.className += ' disabled disabled-prve';
             } else {
@@ -912,10 +911,9 @@
             }
             page_div.appendChild(span);
         }
-
         // //中间页码
         if (args.current != 1 && args.current >= 4 && args.pageCount != 4) {
-            var a = document.createElement('a');
+            var a = doc.createElement('a');
             if (isIE) {
                 a.className += ' tcdNumber';
             } else {
@@ -926,11 +924,10 @@
             page_div.appendChild(a);
         }
         if (args.current - 2 > 2 && args.current <= args.pageCount && args.pageCount > 5) {
-            var a = document.createElement('a');
-            var span = document.createElement('span');
+            var a = doc.createElement('a');
+            var span = doc.createElement('span');
             span.innerHTML = '...';
             a.appendChild(span);
-
             if (isIE) {
                 a.className += ' page-omit';
             } else {
@@ -939,7 +936,6 @@
             a.setAttribute('href', 'javascript:;');
             page_div.appendChild(a);
         }
-
         var start = args.current - 2,
             end = args.current + 2;
         if ((start > 1 && args.current < 4) || args.current == 1) {
@@ -948,11 +944,10 @@
         if (args.current > args.pageCount - 4 && args.current >= args.pageCount) {
             start--;
         }
-
         for (; start <= end; start++) {
             if (start <= args.pageCount && start >= 1) {
                 if (start != args.current) {
-                    var a = document.createElement('a');
+                    var a = doc.createElement('a');
                     if (isIE) {
                         a.className += ' tcdNumber';
                     } else {
@@ -963,7 +958,7 @@
                     a.innerHTML = start;
                     page_div.appendChild(a);
                 } else {
-                    var span = document.createElement('span');
+                    var span = doc.createElement('span');
 
                     if (isIE) {
                         span.className += ' current';
@@ -976,15 +971,11 @@
                 }
             }
         }
-
-
         if (args.current + 2 < args.pageCount - 1 && args.current >= 1 && args.pageCount > 5) {
-            var a = document.createElement('a');
-            var span = document.createElement('span');
+            var a = doc.createElement('a');
+            var span = doc.createElement('span');
             span.innerHTML = '...';
             a.appendChild(span);
-
-
             if (isIE) {
                 a.className += ' page-omit';
             } else {
@@ -994,33 +985,28 @@
             page_div.appendChild(a);
         }
         if (args.current != args.pageCount && args.current < args.pageCount - 2 && args.pageCount != 4) {
-            var a = document.createElement('a');
+            var a = doc.createElement('a');
             if (isIE) {
                 a.className += ' tcdNumber';
             } else {
                 a.classList.add('tcdNumber');
             }
-
             a.setAttribute('href', 'javascript:;');
             a.innerHTML = args.pageCount;
             page_div.appendChild(a);
         }
         // //下一页
         if (args.current < args.pageCount) {
-
-            var a = document.createElement('a');
-
+            var a = doc.createElement('a');
             if (isIE) {
                 a.className += ' nextPage';
             } else {
                 a.classList.add('nextPage');
             }
-
             a.setAttribute('href', 'javascript:;');
             page_div.appendChild(a);
         } else {
-            var span = document.createElement('span');
-
+            var span = doc.createElement('span');
             if (isIE) {
                 span.className += ' disabled disabled-next';
             } else {
@@ -1080,15 +1066,15 @@
 }(window);
 
 
-// ybtool.setStates({ name: 'yb' });
-// console.log(JSON.stringify(ybtool.getStatusData(), null, 2));
-// console.log(ybtool.getStates('name'));
-// ybtool.countDown(3);
+ybtool.setStates({ name: 'yb' });
+console.log(JSON.stringify(ybtool.getStatusData(), null, 2));
+console.log(ybtool.getStates('name'));
+ybtool.countDown(3);
 
 
 // ybtool.loadStyle('../../../../css/reset.css');
 
-// ybtool.link('../../../../css/reset.css', 'reset');
+ybtool.link('../../../../css/reset.css', 'reset');
 
 
 // var loading = ybtool.imgLoader;

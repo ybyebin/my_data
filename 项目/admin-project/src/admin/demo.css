@@ -1,8 +1,17 @@
-.ybui-edge,
-.ybui-header,
-.ybui-inline,
-.ybui-main {
-    position: relative;
+/*
+ * 大页面布局
+ * @Author: yb 
+ * @Date: 2018-02-02 11:24:09 
+ * @Last Modified by: yb
+ * @Last Modified time: 2018-02-02 11:26:58
+ */
+
+
+/* 头部 */
+
+.ybui-layout .ybui-header .ybui-nav {
+    background: 0 0;
+    line-height: 60px;
 }
 
 .ybui-header {
@@ -24,42 +33,37 @@
     background: gray;
 }
 
-.ybui-layout .ybui-header .ybui-nav {
-    background: 0 0;
-    line-height: 60px;
-}
-
-.ybui-layout-left {
+.ybui-header .ybui-layout-left {
     position: absolute!important;
     left: 200px;
     top: 0;
 }
 
-.ybui-layout-left .ybui-nav-item:hover .ybui-nav-child,
-.ybui-layout-right .ybui-nav-item:hover .ybui-nav-child {
+.ybui-header .ybui-layout-left .ybui-nav-item:hover .ybui-nav-child,
+.ybui-header .ybui-layout-right .ybui-nav-item:hover .ybui-nav-child {
     /* display: block; */
     top: 60px;
 }
 
-.ybui-layout-right {
+.ybui-header .ybui-layout-right {
     position: absolute!important;
     right: 20px;
     top: 0;
 }
 
-.ybui-layout-left-min {
+.ybui-header .ybui-layout-left-min {
     margin-left: 220px;
     display: none;
     width: 100px;
 }
 
-.ybui-layout-left-min .ybui-hover-select .ybui-select-title {
+.ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-title {
     height: 60px;
     text-align: center;
     line-height: 60px;
 }
 
-.ybui-layout-left-min .ybui-hover-select .ybui-select-group {
+.ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-group {
     top: 60px;
 }
 
@@ -98,6 +102,9 @@
     width: 200px;
 }
 
+
+/* 主体内容 */
+
 .ybui-body {
     position: absolute;
     left: 200px;
@@ -105,7 +112,6 @@
     top: 60px;
     bottom: 0;
     z-index: 998;
-    /* width: auto; */
     overflow: auto;
     box-sizing: border-box;
 }

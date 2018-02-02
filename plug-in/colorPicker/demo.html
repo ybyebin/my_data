@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./colpick.css">
+    <script src="../jQuery/jquery-1.11.1.min.js"></script>
+    <script src="./colpick.js"></script>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    $('#btn').colpick({
+        layout: 'hex',
+        submitText: '确定',
+        onShow: function() {
+
+            // $(this).colpickSetColor(color.substring(1));
+        },
+        onSubmit: function(hsb, hex, rgb, el) {
+            var color = ('#' + hex).toUpperCase();
+            // console.log('选择了:' + color)
+            console.log(hsb)
+            console.log(hex)
+            console.log(rgb)
+            console.log(el)
+            $(el).colpickHide();
+        }
+    });
+</script>
+
+</html>
