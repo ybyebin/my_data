@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-02-01 10:32:18 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-02 16:10:38
+ * @Last Modified time: 2018-02-05 13:59:56
  */
 
 /******************查询***********************
@@ -38,6 +38,7 @@
  * pageInit------------->简单分页
  * getStyle------------->获取节点的style属性值
  * imgLoader------------>图片预加载
+ * imgUpload------------> 图片上传(**不能直接使用**)
  * 
  * 
  * ******************************************* */
@@ -798,6 +799,104 @@
         }
     };
 
+    // 图片上传
+    Ybtool.prototype.imgUpload = function(config) {
+
+        // 生成方法
+        var config = config || {};
+        if (!config.hasOwnProperty('id')) {
+            config.id = ybtool.randomString()
+        }
+        if (!config.hasOwnProperty('fun')) {
+            config.fun = '';
+        }
+
+        var inp = document.createElement('input');
+        inp.setAttribute('type', 'file');
+        inp.setAttribute('id', config.id);
+        inp.setAttribute('data-fnname', config.fun);
+
+        inp.classList.add('ybui-hide')
+        inp.onchange = function(a) {
+            var file = this.files[0];
+
+            var fun_name = this.getAttribute('data-fnname');
+
+            if (fun_name === '') {
+                alert('未定义方法');
+            } else {
+                fns(file, fun_name);
+            }
+
+            console.log(this.getAttribute('id'))
+
+        };
+        var btn = document.createElement('button');
+        btn.setAttribute('data-id', config.id);
+        btn.innerHTML = '点击上传图片';
+        btn.onclick = function() {
+            var id = this.getAttribute('data-id');
+            var a = document.getElementById(id);
+            a.value = '';
+            a.click();
+
+        }
+        var div = document.createElement('div');
+        div.appendChild(inp);
+        div.appendChild(btn);
+        document.getElementById('mode').appendChild(div);
+
+
+        // 要执行的方法
+        function fns(file, fun) {
+            console.log(file)
+
+            if (file == null) {
+                return;
+            }
+            if (!/image\/\w+/.test(file.type)) {
+                layer.msg("请确保文件为图像类型")
+                return false;
+            }
+            if (window.FileReader) {
+                var fr = new FileReader();
+                fr.readAsDataURL(file);
+                fr.onload = function(e) {
+                    // console.log(e.target.result);
+                    method.fun(e.target.result);
+                };
+            }
+
+        }
+
+        // 执行
+        imageUp({
+            fun: 'fun'
+        });
+        var method = {};
+        method.fun = function(data) {
+            console.log(data);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    };
+
 
 
 
@@ -1060,14 +1159,13 @@
     }
 
     win.ybtool = new Ybtool();
-
 }(window);
 
 
-ybtool.setStates({ name: 'yb' });
-console.log(JSON.stringify(ybtool.getStatusData(), null, 2));
-console.log(ybtool.getStates('name'));
-ybtool.countDown(3);
+// ybtool.setStates({ name: 'yb' });
+// console.log(JSON.stringify(ybtool.getStatusData(), null, 2));
+// console.log(ybtool.getStates('name'));
+// ybtool.countDown(3);
 
 
 // ybtool.loadStyle('../../../../css/reset.css');
@@ -1095,3 +1193,12 @@ ybtool.link('../../../../css/reset.css', 'reset');
 
 
 // loader.start();
+
+// ybtool.pageInit({
+//     id: 'pages-2',
+//     pageCount: 20,
+//     current: 15,
+//     backFn: function(p) {
+//         console.log(p)
+//     }
+// });
