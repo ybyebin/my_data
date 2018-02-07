@@ -175,3 +175,88 @@ var d = function() {
 }
 
 d();
+
+
+
+
+
+
+
+
+
+
+
+
+function tt() {
+    function parent(name) {
+        this.name = name;
+        this.pro = {
+            num: 1,
+            money: 100
+        }
+    }
+    parent.prototype.getName = function() {
+        return this.name;
+    }
+
+
+    function child(name, age) {
+        parent.call(this, name);
+        this.age = age;
+    }
+
+    function prototype(parent, child) {
+        function f() {};
+        f.prototype = parent.prototype;
+        var proto = new f();
+        proto.constructor = child;
+        child.prototype = proto;
+    }
+
+    prototype(parent, child);
+
+    child.prototype.getAge = function() {
+        return this.age;
+    }
+
+    var child1 = new child('Tom', 12);
+    var child2 = new child('Jery', 23);
+    child1.pro.money = 1000;
+    console.log('child1:' + JSON.stringify(child1.pro));
+    console.log('child2:' + JSON.stringify(child2.pro));
+
+}
+
+tt();
+
+for (let i = 1; i <= 5; i++) {
+    setTimeout(function timer() {
+        console.log(i);
+    }, i * 1000);
+}
+
+
+for (var i = 1; i <= 5; i++) {
+    (function(i) {
+        setTimeout(function timer() {
+            console.log(i)
+
+        }, i * 1000);
+    })(i)
+}
+
+
+
+for (var i = 1; i <= 5; i++) {
+    setTimeout(function timer(i) {
+        return function() {
+            console.log(i)
+        }
+
+    }(i), i * 1000);
+
+
+}
+
+
+
