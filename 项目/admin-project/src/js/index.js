@@ -2,11 +2,11 @@
  * @Author: yb 
  * @Date: 2018-01-29 13:59:07 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-01 09:51:43
+ * @Last Modified time: 2018-02-09 17:38:40
  */
 
 
-"use strict";
+
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(factory);
@@ -20,6 +20,7 @@
         root.custom = factory(root);
     }
 }(this, function() {
+    "use strict";
     var class_list = {
         active_cls: 'ybui-this',
         ybui_show: 'ybui-show',
