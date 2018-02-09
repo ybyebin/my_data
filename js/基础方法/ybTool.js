@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-02-01 10:32:18 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-05 13:59:56
+ * @Last Modified time: 2018-02-09 11:16:36
  */
 
 /******************查询***********************
@@ -40,7 +40,8 @@
  * imgLoader------------>图片预加载
  * imgUpload------------> 图片上传(**不能直接使用**)
  * 
- * 
+ * countInArr----------->统计数组中特定值出现的次数
+ * countAllInArr-------->统计数组中每个元素出现的次数
  * ******************************************* */
 
 
@@ -799,7 +800,7 @@
         }
     };
 
-    // 图片上传
+    // 图片上传(自行使用)
     Ybtool.prototype.imgUpload = function(config) {
 
         // 生成方法
@@ -878,29 +879,37 @@
             console.log(data);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     };
 
+    /**
+     * 统计数组中特定值出现的次数
+     * @param {*} arr
+     * @param {*} value
+     * @return {number}
+     * countInArr([1, 1, 2, 1, 2, 3], 1) -> 3
+     */
+    Ybtool.prototype.countInArr = function(arr, value) {
+        return arr.reduce(function(a, v) {
+            return v === value ? a + 1 : a + 0;
+        }, 0);
+    };
 
-
-
-
+    /**
+     * 统计数组中每个元素出现的次数
+     * @param {*} arr
+     * @return {number}
+     */
+    Ybtool.prototype.countAllInArr = function(arr) {
+        return arr.reduce(function(allNames, name) {
+            if (name in allNames) {
+                allNames[name]++;
+            } else {
+                allNames[name] = 1;
+            }
+            return allNames;
+        }, {});
+    };
+    /** ******************************************************************* */
     /**
      * 判断是否是function
      * 
