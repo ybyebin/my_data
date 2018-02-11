@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-25 09:48:01 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-09 18:02:07
+ * @Last Modified time: 2018-02-09 18:02:39
  */
 .ybui-inline,
 img {
@@ -116,11 +116,13 @@ a:hover {
 /* box-sizing */
 .ybui-border-box,
 .ybui-border-box * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .ybui-box,
 .ybui-box * {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 /* 清除浮动 */
 .ybui-clear {
@@ -195,7 +197,8 @@ a:hover {
   border-style: solid;
   border-bottom-color: #fff;
   border-radius: 2px 2px 0 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   pointer-events: none;
 }
 .ybui-btn,
@@ -206,7 +209,8 @@ a:hover {
   -webkit-appearance: none;
   transition: all .3s;
   -webkit-transition: all .3s;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .ybui-input,
 .ybui-select,
@@ -263,8 +267,10 @@ ul.ybui-select-group {
   overflow-y: auto;
   background-color: #fff;
   border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 ul.ybui-select-group li {
   cursor: pointer;
@@ -273,7 +279,8 @@ ul.ybui-select-group li {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .ybui-select-group li:hover {
   background-color: #f2f2f2;
@@ -305,6 +312,7 @@ ul.ybui-select-group li {
   border-width: 6px;
   border-top-color: #c2c2c2;
   border-top-style: solid;
+  -webkit-transition: all .3s;
   transition: all .3s;
   -webkit-transition: all 0.3s;
 }
@@ -400,7 +408,8 @@ ul.ybui-select-group li {
   /* background-color: #393D49; */
   border-radius: 2px;
   color: #fff;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .ybui-nav .ybui-nav-item {
   position: relative;
@@ -446,7 +455,8 @@ ul.ybui-select-group li {
   min-width: 100%;
   line-height: 36px;
   padding: 5px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
   border: 1px solid #d2d2d2;
   background: #fff;
   z-index: 999;
@@ -492,7 +502,8 @@ ul.ybui-select-group li {
   z-index: 0;
   top: 0;
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background: #212D3C;
 }
 .ybui-nav-itemed .ybui-nav-more {
