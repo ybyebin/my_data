@@ -10,6 +10,10 @@ var revMd5 = require('gulp-rev'); //- 对文件名加MD5后缀
 var revCollector = require('gulp-rev-collector'); //- 路径替换
 var clean = require('gulp-clean'); //清空
 var runSequence = require('run-sequence'); // 依赖执行
+var autoprefixer = require('gulp-autoprefixer'); //自动加上浏览器前缀
+//加载browser-sync模块
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 
 //删除dist文件
 gulp.task('clean', function(cb) {
@@ -23,7 +27,8 @@ gulp.task('clean', function(cb) {
 // 压缩 css
 gulp.task('mincss', function() {
     gulp.src([config.css.src, config.css.no])
-        .pipe(minCss()) //- 压缩处理成一行
+
+    .pipe(minCss()) //- 压缩处理成一行
         .pipe(revMd5()) //- 文件名加MD5后缀
         .pipe(gulp.dest(config.css.dest)) //- 输出文件本地
         .pipe(revMd5.manifest({
@@ -60,22 +65,27 @@ gulp.task('minjs', function() {
 // 压缩 image
 gulp.task('minimg', function() {
     gulp.src('src/image/*.{png,jpg,gif,ico}') //压缩图片路径
-        .pipe(minImage()) //压缩图片
-        .pipe(gulp.dest('dist')) //压缩图片输出路径
+        .pipe(minImage({
+            progressive: true, //Boolean类型 默认:false 无损压缩图片
+            optimizationLevel: 5, //number类型 默认:3 取值范围:0-7(优化等级)
+            interlced: true, //Boolean类型 默认false 隔行扫描gif进行渲染
+            multipass: true //Boolean类型 默认false 多次优化svg直到完全优化
+        })) //压缩图片
+        .pipe(gulp.dest('dist/image')) //压缩图片输出路径
         .on('data', function(file) {
             console.log(file.history[0])
         });
 });
 
 // 压缩  html
-// gulp.task('minhtml', function() {
-//     gulp.src('dist/**/*.html')
-//         .pipe(minHtml(config.html.options))
-//         .pipe(gulp.dest('dist'))
-//         .on('data', function(file) {
-//             console.log('压缩html' + file.history[0])
-//         });
-// });
+gulp.task('minhtml', function() {
+    gulp.src('dist/**/*.html')
+        .pipe(minHtml(config.html.options))
+        .pipe(gulp.dest('dist'))
+        .on('data', function(file) {
+            console.log('压缩html' + file.history[0])
+        });
+});
 
 //复制文件夹 plugin
 gulp.task('copy', function() {
@@ -101,6 +111,48 @@ gulp.task('revjs', ['mincss', 'minjs'], function() {
     //- 替换后的文件输出的目录
 });
 
+
+
+// less 处理
+// 编译 less
+gulp.task('less', function() {
+    gulp.src([config.less.all, config.less.no])
+        .pipe(less())
+        .pipe(autoprefixer({ //自动加上浏览器前缀
+            browsers: ['last 2 versions', 'Android >= 4.0'],
+            cascade: true, //是否美化属性值 默认：true 像这样：
+            //-webkit-transform: rotate(45deg);
+            //        transform: rotate(45deg);
+            remove: true //是否去掉不必要的前缀 默认：true 
+        }))
+        .pipe(gulp.dest('./src/css')) //- 输出文件本地
+});
+
+
+
+
+
+// gulp.task('lesswatch', function() {
+//     gulp.watch('src/**/*.less', ['testless']); //当所有less文件发生改变时，调用testLess任务
+// });
+
+//启动热更新  
+gulp.task('serve', function() {
+    // gulp.start('script', 'less', 'html');
+    browserSync.init({
+        port: 2017,
+        server: {
+            baseDir: ['src'],
+            index: 'admin.html' // 指定默认打开的文件
+        }
+    });
+    gulp.watch('src/**/*.less', ['less']).on('change', reload); //当所有less文件发生改变时，调用testLess任务
+    gulp.watch('src/**/*.html').on('change', reload); //当所有less文件发生改变时，调用testLess任务
+
+});
+
+
+
 // 默认执行
 gulp.task('default', function(callback) {
     runSequence('clean', ['copy', 'revjs', 'minimg'],
@@ -108,25 +160,7 @@ gulp.task('default', function(callback) {
 });
 
 
-
-// less 处理
-// 编译 less
-gulp.task('testless', function() {
-    gulp.src([config.less.all, config.less.no])
-        .pipe(less())
-        .pipe(gulp.dest('./src/css')) //- 输出文件本地
-});
-
-gulp.task('lesswatch', function() {
-    gulp.watch('src/**/*.less', ['testless']); //当所有less文件发生改变时，调用testLess任务
-});
-
-
-
-
-
-
-
+gulp.task('text', ['serve']);
 
 
 
