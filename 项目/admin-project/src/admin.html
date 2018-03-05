@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/ybtool.css">
     <!-- <link rel="stylesheet" href="./demo.css"> -->
     <!-- <link rel="stylesheet" href="./css/button.css"> -->
-    <!-- <link rel="stylesheet" href=""> -->
+    <!-- <link rel="stylesheet" href="./layui.css"> -->
     <style>
         .ybui-collapse {
             margin-top: 30px;
@@ -34,48 +34,32 @@
         <div class="ybui-header">
             <div class="ybui-logo" id="a">ybui 后台布局</div>
             <ul class="ybui-nav ybui-layout-left">
+                <li class="ybui-nav-item"><a href="">page-1page-1page-1page-1</a></li>
                 <li class="ybui-nav-item"><a href="">page-1</a></li>
-                <li class="ybui-nav-item"><a href="">page-1</a></li>
-                <li class="ybui-nav-item"><a href="">page-1</a></li>
+                <li class="ybui-nav-item ybui-this"><a href="">page-1</a></li>
                 <li class="ybui-nav-item ybui-nav-select">
-                    <a href="javascript:;">其它</a>
-
-                    <dl class="ybui-nav-child">
-                        <dd>
-                            <a href="">page-1</a>
-                        </dd>
-                        <dd>
-                            <a href="">page-1</a>
-                        </dd>
-                        <dd>
-                            <a href="">page-1</a>
-                        </dd>
+                    <a href="javascript:;">
+                        <span>产品测试测</span>
+                        <i class="ybui-edge"></i>
+                    </a>
+                    <dl class="ybui-nav-dl ybui-anim-upbit ybui-anim">
+                        <dd><a href="">选项1</a></dd>
+                        <dd><a href="">选项2</a></dd>
+                        <dd><a href="">选项3</a></dd>
                     </dl>
-
                 </li>
             </ul>
 
-            <div class="ybui-inline ybui-layout-left-min">
-                <div class="ybui-hover-select">
-                    <div class="ybui-select-title">
-                        <span>hover</span>
-                    </div>
-                    <ul class="ybui-select-group ybui-anim-upbit ybui-anim">
-                        <li>page-1</li>
-                        <li>page-1</li>
-                        <li>page-1</li>
-                        <li>page-1</li>
-                    </ul>
-                </div>
-            </div>
             <ul class="ybui-nav ybui-layout-right">
                 <li class="ybui-nav-item ybui-nav-select">
                     <a href="javascript:;">
-                        查看
+                        <span>产品测试测</span>
+                        <i class="ybui-edge"></i>
                     </a>
-                    <dl class="ybui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">安全设置</a></dd>
+                    <dl class="ybui-nav-dl ybui-anim-upbit ybui-anim">
+                        <dd><a href="">选项1</a></dd>
+                        <dd><a href="">选项2</a></dd>
+                        <dd><a href="">选项3</a></dd>
                     </dl>
                 </li>
                 <li class="ybui-nav-item"><a href="">退了</a></li>
@@ -84,7 +68,19 @@
 
         <div class="ybui-side ybui-bg-black">
             <div class="ybui-side-scroll">
-                <ul class="ybui-nav ybui-nav-tree ybui-inline">
+                <ul class="ybui-nav-tree">
+                    <li class="ybui-nav-item ybui-nav-itemed">
+                        <a class="nav-itemed-title" href="javascript:;">默认展开
+                                <span class="ybui-nav-more"></span>
+                        </a>
+
+                        <dl class="ybui-nav-child">
+                            <dd><a href="javascript:;">选项一</a></dd>
+                            <dd><a href="javascript:;">选项二</a></dd>
+                            <dd><a href="javascript:;">选项三</a></dd>
+                            <dd><a href="">跳转项</a></dd>
+                        </dl>
+                    </li>
                     <li class="ybui-nav-item ybui-nav-itemed">
                         <a class="nav-itemed-title" href="javascript:;">默认展开
                                 <span class="ybui-nav-more"></span>
@@ -98,16 +94,7 @@
                         </dl>
                     </li>
 
-                    <li class="ybui-nav-item">
-                        <a class="nav-itemed-title" href="javascript:;">解决方案
-                                <span class="ybui-nav-more"></span>
-                        </a>
-                        <dl class="ybui-nav-child">
-                            <dd><a href="javascript:;">选项一</a></dd>
-                            <dd><a href="javascript:;">选项二</a></dd>
-                            <dd><a href="javascript:;">选项三</a></dd>
-                        </dl>
-                    </li>
+
 
                 </ul>
             </div>
@@ -154,7 +141,7 @@
                                                 <span>hover</span>
                                             </div>
                                             <ul class="ybui-select-group ybui-anim-upbit ybui-anim">
-                                                <li>text-1</li>
+                                                <li>text-1 text-1 text-1 text-1</li>
                                                 <li>text-2</li>
                                                 <li>text-3</li>
                                                 <li>text-4</li>
@@ -170,22 +157,20 @@
                         <div class="ybui-colla-item">
                             <h2 class="ybui-colla-title"> ybui-nav-select</h2>
                             <div class="ybui-colla-content ybui-show">
+                                <ul class="nav-select-demo">
+                                    <li class="ybui-nav-item ybui-nav-select">
+                                        <a href="javascript:;">
+                                            <span>产品测试测</span>
+                                            <i class="ybui-edge"></i>
+                                        </a>
+                                        <dl class="ybui-nav-dl ybui-anim-upbit ybui-anim">
+                                            <dd><a href="">选项1</a></dd>
+                                            <dd><a href="">选项2</a></dd>
+                                            <dd><a href="">选项3</a></dd>
+                                        </dl>
+                                    </li>
+                                </ul>
 
-                                <div class="hover-select">
-                                    <div class="ybui-inline">
-                                        <ul class="ybui-nav" style="background:gray">
-                                            <li class="ybui-nav-item ybui-nav-select">
-                                                <a href="javascript:;">
-                                                            查看
-                                                        </a>
-                                                <dl class="ybui-nav-child" style="top:23px;">
-                                                    <dd><a href="">基本资料</a></dd>
-                                                    <dd><a href="">安全设置</a></dd>
-                                                </dl>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -313,9 +298,26 @@
                                 <input type="radio" disabled checked id="square-checkbox-5" class="ybui-icheck">
                                 <label for="square-checkbox-5" class="ybui-i-radio"></label>
 
+
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="ybui-collapse">
+                        <div class="ybui-colla-item">
+                            <h2 class="ybui-colla-title">自定义check-------2</h2>
+                            <div class="ybui-colla-content ybui-show">
+                                <span class="add-item-status swift-btn">
+                                    <input type="checkbox" name="" id='checkbox' />
+                                    <label class="" for='checkbox'></label>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="ybui-collapse">
                         <div class="ybui-colla-item">
                             <h2 class="ybui-colla-title">简单分页</h2>
@@ -340,16 +342,6 @@
                         </div>
                     </div>
 
-
-                    <div class="ybui-collapse">
-                        <div class="ybui-colla-item">
-                            <h2 class="ybui-colla-title">组件-图片上传</h2>
-                            <div id="mode" class="ybui-colla-content ybui-show">
-                                查看:ybtool------imgUpload方法，具体处理
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
@@ -362,7 +354,7 @@
 
     <script src="./js/index.js"></script>
     <script src="./plug-in/jQuery/jquery-1.11.1.min.js"></script>
-    <!-- <script src="../../../js/基础方法/Ybtool.js"></script> -->
+    <script src="./js/Ybtool.js"></script>
 
 
 </body>

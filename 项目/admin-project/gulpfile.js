@@ -125,6 +125,7 @@ gulp.task('less', function() {
             //        transform: rotate(45deg);
             remove: true //是否去掉不必要的前缀 默认：true 
         }))
+        .pipe(minCss()) //- 压缩处理成一行
         .pipe(gulp.dest('./src/css')) //- 输出文件本地
 });
 
