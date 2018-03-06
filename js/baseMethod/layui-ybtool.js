@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-24 10:16:04 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-02 16:10:28
+ * @Last Modified time: 2018-03-06 14:02:50
  * IE 9
  */
 
@@ -23,7 +23,18 @@
     }
 }(this, function() {
     "use strict";
-    ybTool = {}
+    var Ybtool = function() {
+        this.data = {} // 全局数据状态管理 存储全局数据
+        this.timeout_id = '';
+        this.v = '0.0.1'; //版本号
+    }
+
+    Ybtool.prototype = {
+            constructor: Ybtool,
+            init: function() {
+                // 初始时需要做些什么事情
+            },
+        }
         //暴露公共方法
-    return ybTool;
+    return new Ybtool();
 }));

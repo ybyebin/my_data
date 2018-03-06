@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-02-01 10:32:18 
  * @Last Modified by: yb
- * @Last Modified time: 2018-02-09 11:16:36
+ * @Last Modified time: 2018-03-06 14:51:37
  */
 
 /******************查询***********************
@@ -110,7 +110,7 @@
      * @return {[string]}        [返回格式化后的字符串]
      * 
      */
-    Ybtool.prototype.timeFormat = function(date, format) {
+    Ybtool.prototype.timeFormat = function(format, date) {
         var date = date || new Date;
         var args = {
             "M+": date.getMonth() + 1,

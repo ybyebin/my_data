@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-29 13:59:07 
  * @Last Modified by: yb
- * @Last Modified time: 2018-03-05 14:41:52
+ * @Last Modified time: 2018-03-06 14:03:46
  */
 
 
@@ -35,8 +35,6 @@
             this.tab();
             this.collapse();
             this.verticalNavMenu();
-
-
         },
         bodyClick: bodyClick,
         formSelect: formSelect, //下拉菜单
