@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-01-29 13:59:07 
  * @Last Modified by: yb
- * @Last Modified time: 2018-03-06 14:03:46
+ * @Last Modified time: 2018-03-09 15:13:32
  */
 
 
@@ -178,6 +178,8 @@
         }
 
     }
+
+
     /**
      * 获取相邻元素
      * @param ele 参考物元素
@@ -199,6 +201,53 @@
         return null;
     }
 
+        // 解决 ie9 往下 不支持  classlist 属性
+     function check() {
+        if (!("classList" in document.documentElement)) {
+            Object.defineProperty(HTMLElement.prototype, 'classList', {
+                get: function() {
+                    var self = this;
+
+                    function update(fn) {
+                        return function(value) {
+                            var classes = self.className.split(/\s+/g),
+                                index = classes.indexOf(value);
+
+                            fn(classes, index, value);
+                            self.className = classes.join(" ");
+                        }
+                    }
+
+                    return {
+                        add: update(function(classes, index, value) {
+                            if (!~index) classes.push(value);
+                        }),
+
+                        remove: update(function(classes, index) {
+                            if (~index) classes.splice(index, 1);
+                        }),
+
+                        toggle: update(function(classes, index, value) {
+                            if (~index)
+                                classes.splice(index, 1);
+                            else
+                                classes.push(value);
+                        }),
+
+                        contains: function(value) {
+                            return !!~self.className.split(/\s+/g).indexOf(value);
+                        },
+
+                        item: function(i) {
+                            return self.className.split(/\s+/g)[i] || null;
+                        }
+                    };
+                }
+            });
+        }
+    }
+
+
 
 
 
@@ -206,4 +255,4 @@
     return custom;
 }));
 
-custom.init();
+window.custom.init();

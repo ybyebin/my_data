@@ -5,6 +5,8 @@ var minCss = require('gulp-clean-css'); //- 压缩CSS为一行；
 var minImage = require('gulp-imagemin'); //压缩图片
 var minHtml = require('gulp-htmlmin'); //压缩 Html
 var less = require('gulp-less');
+var babel = require('gulp-babel');
+
 var concat = require('gulp-concat'); //- 多个文件合并为一个；
 var revMd5 = require('gulp-rev'); //- 对文件名加MD5后缀
 var revCollector = require('gulp-rev-collector'); //- 路径替换
@@ -45,6 +47,9 @@ gulp.task('mincss', function() {
 //压缩js
 gulp.task('minjs', function() {
     gulp.src([config.js.src])
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(minJs({
             compress: {
                 drop_console: true //去掉console.log
