@@ -1,0 +1,136 @@
+/******************************  水平居中   ****************************/
+
+
+/* inline-block+text-align */
+
+.parent1 {
+    text-align: center;
+}
+
+.child1 {
+    display: inline-block;
+}
+
+
+/* table+margin */
+
+.child2 {
+    display: table;
+    margin: 0 auto;
+}
+
+
+/* absolute+transform */
+
+.parent3 {
+    position: relative;
+}
+
+.child3 {
+    background: cadetblue;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* flex+justify-content */
+
+.parent4 {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* flex+margin */
+
+.parent5 {
+    display: flex;
+}
+
+.child5 {
+    background: cadetblue;
+    margin: 0 auto;
+}
+
+
+/************************* 垂直居中 ***************************/
+
+.model.parent6 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.parent7 {
+    position: relative;
+}
+
+.child7 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.parent8 {
+    display: flex;
+    align-items: center;
+}
+
+
+/****************************** 垂直水平居中 *******************/
+
+.parent9 {
+    position: relative;
+}
+
+.child9 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parent10 {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.child10 {
+    display: inline-block;
+}
+
+.parent11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/******************************* 多列布局 ***********************/
+
+.parent12 .left {
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+    background: cadetblue;
+}
+
+.parent12 .right {
+    overflow: hidden;
+    background: burlywood;
+}
+
+.parent13 {
+    display: flex;
+}
+
+.parent13 .left {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.parent13 .right {
+    flex: 1;
+    background: burlywood;
+}

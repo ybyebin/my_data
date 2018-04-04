@@ -1,0 +1,91 @@
+<html lang='en' ng-app="hcm">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style>
+        body,
+        ul,
+        li,
+        div {
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+        
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .container_ul>li {
+            width: 30%;
+            float: left;
+            border: 1px solid grey;
+            margin-left: 2.5%;
+            display: inline-block;
+            position: relative;
+            margin-top: 2.5%;
+            background: #eeeeee;
+            box-sizing: border-box;
+        }
+        
+        .container_ul>li::before {
+            content: "";
+            display: block;
+            padding-top: 200%;
+        }
+        
+        .container_ul>li .container_content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <ul class="container_ul">
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+            <li>
+                <div class="container_content">
+                    container
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</body>

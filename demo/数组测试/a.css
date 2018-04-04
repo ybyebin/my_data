@@ -1,0 +1,41 @@
+.left {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    bottom: 0;
+    background: red;
+}
+
+.right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 100px;
+    background: cadetblue;
+}
+
+.parent {
+    position: relative;
+    width: 20%;
+    background: burlywood;
+}
+
+.parent>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: brown;
+    overflow: hidden;
+}
+
+.parent:after {
+    content: '';
+    display: block;
+    padding-top: 200%;
+}
