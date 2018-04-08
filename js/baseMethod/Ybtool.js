@@ -2,7 +2,7 @@
  * @Author: yb 
  * @Date: 2018-02-01 10:32:18 
  * @Last Modified by: yb
- * @Last Modified time: 2018-04-02 10:14:46
+ * @Last Modified time: 2018-04-08 17:25:27
  */
 
 /******************查询***********************
@@ -259,12 +259,12 @@
          * @return  [string]    
          */
         randomString: function(length) {
-            var type = typeof(length);
-            if (type === 'number' || type === 'undefined') {
+            var type = Object.prototype.toString.call(length);
+            if (type === '[object Number]' || type === '[[object Undefined]]') {
                 length = length || 18;
                 var random_number = new Date().getTime().toString(36);　
                 console.log(random_number)
-                var base_charts = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'; /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/ 　　
+                var base_charts = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
                 var chart_length = base_charts.length;
                 var str = '';
                 for (var i = 0; i < length; i++) {　　　　
