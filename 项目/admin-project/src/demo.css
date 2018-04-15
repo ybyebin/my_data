@@ -1,133 +1,127 @@
-/*
+    /*
  * 大页面布局
  * @Author: yb 
  * @Date: 2018-02-02 11:24:09 
  * @Last Modified by: yb
  * @Last Modified time: 2018-02-02 11:26:58
  */
-
-
-/* 头部 */
-
-.ybui-layout .ybui-header .ybui-nav {
-    background: 0 0;
-    /*  */
-    line-height: 60px;
-}
-
-.ybui-header {
-    height: 60px;
-    border-bottom: none;
-    background: #35c99d;
-}
-
-.ybui-header .ybui-logo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 200px;
-    height: 100%;
-    line-height: 60px;
-    text-align: center;
-    color: #333333;
-    font-size: 16px;
-    background: gray;
-}
-
-.ybui-header .ybui-layout-left {
-    position: absolute!important;
-    left: 200px;
-    top: 0;
-}
-
-.ybui-header .ybui-layout-left .ybui-nav-item:hover .ybui-nav-child,
-.ybui-header .ybui-layout-right .ybui-nav-item:hover .ybui-nav-child {
-    /* display: block; */
-    top: 60px;
-}
-
-.ybui-header .ybui-layout-right {
-    position: absolute!important;
-    right: 20px;
-    top: 0;
-}
-
-.ybui-header .ybui-layout-left-min {
-    margin-left: 220px;
-    display: none;
-    width: 100px;
-}
-
-.ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-title {
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-}
-
-.ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-group {
-    top: 60px;
-}
-
-@media screen and (max-width:768px) {
-    .ybui-layout-left-min {
-        display: block;
+    /* 头部 */
+    
+    .ybui-layout .ybui-header .ybui-nav {
+        background: 0 0;
+        /*  */
+        line-height: 60px;
     }
-    .ybui-layout-left {
+    
+    .ybui-header {
+        height: 60px;
+        border-bottom: none;
+        background: #35c99d;
+    }
+    
+    .ybui-header .ybui-logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        line-height: 60px;
+        text-align: center;
+        color: #333333;
+        font-size: 16px;
+        background: gray;
+    }
+    
+    .ybui-header .ybui-layout-left {
+        position: absolute!important;
+        left: 200px;
+        top: 0;
+    }
+    
+    .ybui-header .ybui-layout-left .ybui-nav-item:hover .ybui-nav-child,
+    .ybui-header .ybui-layout-right .ybui-nav-item:hover .ybui-nav-child {
+        /* display: block; */
+        top: 60px;
+    }
+    
+    .ybui-header .ybui-layout-right {
+        position: absolute!important;
+        right: 20px;
+        top: 0;
+    }
+    
+    .ybui-header .ybui-layout-left-min {
+        margin-left: 220px;
         display: none;
+        width: 100px;
     }
-}
-
-
-/* 侧边栏 */
-
-.ybui-side {
-    position: fixed;
-    top: 60px;
-    bottom: 0;
-    z-index: 999;
-    width: 200px;
-    overflow-x: hidden;
-}
-
-.ybui-bg-black {
-    background-color: #999!important;
-}
-
-.ybui-side-scroll {
-    width: 220px;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-.ybui-side-scroll .ybui-nav-tree {
-    width: 200px;
-}
-
-
-/* 主体内容 */
-
-.ybui-body {
-    position: absolute;
-    left: 200px;
-    right: 0;
-    top: 60px;
-    bottom: 0;
-    z-index: 998;
-    overflow: auto;
-    box-sizing: border-box;
-}
-
-.ybui-footer {
-    position: fixed;
-    left: 200px;
-    right: 0;
-    bottom: 0;
-    height: 44px;
-    line-height: 44px;
-    padding: 0 15px;
-    background-color: #eee;
-}
-
-.yb {
-    background: red;
-}
+    
+    .ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-title {
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+    }
+    
+    .ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-group {
+        top: 60px;
+    }
+    
+    @media screen and (max-width:768px) {
+        .ybui-layout-left-min {
+            display: block;
+        }
+        .ybui-layout-left {
+            display: none;
+        }
+    }
+    /* 侧边栏 */
+    
+    .ybui-side {
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        z-index: 999;
+        width: 200px;
+        overflow-x: hidden;
+    }
+    
+    .ybui-bg-black {
+        background-color: #999!important;
+    }
+    
+    .ybui-side-scroll {
+        width: 220px;
+        height: 100%;
+        overflow-x: hidden;
+    }
+    
+    .ybui-side-scroll .ybui-nav-tree {
+        width: 200px;
+    }
+    /* 主体内容 */
+    
+    .ybui-body {
+        position: absolute;
+        left: 200px;
+        right: 0;
+        top: 60px;
+        bottom: 0;
+        z-index: 998;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+    
+    .ybui-footer {
+        position: fixed;
+        left: 200px;
+        right: 0;
+        bottom: 0;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 15px;
+        background-color: #eee;
+    }
+    
+    .yb {
+        background: red;
+    }
