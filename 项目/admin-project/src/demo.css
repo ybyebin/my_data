@@ -33,7 +33,7 @@
     }
     
     .ybui-header .ybui-layout-left {
-        position: absolute!important;
+        position: absolute !important;
         left: 200px;
         top: 0;
     }
@@ -45,7 +45,7 @@
     }
     
     .ybui-header .ybui-layout-right {
-        position: absolute!important;
+        position: absolute !important;
         right: 20px;
         top: 0;
     }
@@ -86,7 +86,7 @@
     }
     
     .ybui-bg-black {
-        background-color: #999!important;
+        background-color: #999 !important;
     }
     
     .ybui-side-scroll {
@@ -120,8 +120,4 @@
         line-height: 44px;
         padding: 0 15px;
         background-color: #eee;
-    }
-    
-    .yb {
-        background: red;
     }
