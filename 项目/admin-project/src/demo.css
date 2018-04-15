@@ -9,7 +9,6 @@
     
     .ybui-layout .ybui-header .ybui-nav {
         background: 0 0;
-        /*  */
         line-height: 60px;
     }
     
@@ -110,61 +109,59 @@
         overflow: auto;
         box-sizing: border-box;
     }
-
-
-/* 侧边栏 */
-
-.ybui-side {
-    position: fixed;
-    top: 60px;
-    bottom: 0;
-    z-index: 999;
-    width: 200px;
-    overflow-x: hidden;
-}
-
-.ybui-bg-black {
-    background-color: #999!important;
-}
-
-.ybui-side-scroll {
-    width: 220px;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-.ybui-side-scroll .ybui-nav-tree {
-    width: 200px;
-}
-
-
-/* 主体内容 */
-
-.ybui-body {
-    position: absolute;
-    left: 200px;
-    right: 0;
-    top: 60px;
-    bottom: 0;
-    z-index: 998;
-    overflow: auto;
-    box-sizing: border-box;
-}
-
-.ybui-footer {
-    position: fixed;
-    left: 200px;
-    right: 0;
-    bottom: 0;
-    height: 44px;
-    line-height: 44px;
-    padding: 0 15px;
-    background-color: #eee;
-}
-
-.test{
-    background: #fff;
-}
-.cyh{
-    background: yellow;
-}
+    /* 侧边栏 */
+    
+    .ybui-side {
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        z-index: 999;
+        width: 200px;
+        overflow-x: hidden;
+    }
+    
+    .ybui-bg-black {
+        background-color: #999!important;
+    }
+    
+    .ybui-side-scroll {
+        width: 220px;
+        height: 100%;
+        overflow-x: hidden;
+    }
+    
+    .ybui-side-scroll .ybui-nav-tree {
+        width: 200px;
+    }
+    /* 主体内容 */
+    
+    .ybui-body {
+        position: absolute;
+        left: 200px;
+        right: 0;
+        top: 60px;
+        bottom: 0;
+        z-index: 998;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+    
+    .ybui-footer {
+        position: fixed;
+        left: 200px;
+        right: 0;
+        bottom: 0;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 15px;
+        background-color: #eee;
+    }
+    
+    .test {
+        background: #fff;
+    }
+    
+    .cyh {
+        background: yellow;
+        border: 1px solid #35c99d;
+    }
