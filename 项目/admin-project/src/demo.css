@@ -5,19 +5,20 @@
  * @Last Modified by: yb
  * @Last Modified time: 2018-02-02 11:26:58
  */
+
     /* 头部 */
-    
+
     .ybui-layout .ybui-header .ybui-nav {
         background: 0 0;
         line-height: 60px;
     }
-    
+
     .ybui-header {
         height: 60px;
         border-bottom: none;
         background: #35c99d;
     }
-    
+
     .ybui-header .ybui-logo {
         position: absolute;
         left: 0;
@@ -30,41 +31,41 @@
         font-size: 16px;
         background: gray;
     }
-    
+
     .ybui-header .ybui-layout-left {
         position: absolute !important;
         left: 200px;
         top: 0;
     }
-    
+
     .ybui-header .ybui-layout-left .ybui-nav-item:hover .ybui-nav-child,
     .ybui-header .ybui-layout-right .ybui-nav-item:hover .ybui-nav-child {
         /* display: block; */
         top: 60px;
     }
-    
+
     .ybui-header .ybui-layout-right {
         position: absolute !important;
         right: 20px;
         top: 0;
     }
-    
+
     .ybui-header .ybui-layout-left-min {
         margin-left: 220px;
         display: none;
         width: 100px;
     }
-    
+
     .ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-title {
         height: 60px;
         text-align: center;
         line-height: 60px;
     }
-    
+
     .ybui-header .ybui-layout-left-min .ybui-hover-select .ybui-select-group {
         top: 60px;
     }
-    
+
     @media screen and (max-width:768px) {
         .ybui-layout-left-min {
             display: block;
@@ -73,8 +74,9 @@
             display: none;
         }
     }
+
     /* 侧边栏 */
-    
+
     .ybui-side {
         position: fixed;
         top: 60px;
@@ -83,22 +85,23 @@
         width: 200px;
         overflow-x: hidden;
     }
-    
+
     .ybui-bg-black {
         background-color: #999 !important;
     }
-    
+
     .ybui-side-scroll {
         width: 220px;
         height: 100%;
         overflow-x: hidden;
     }
-    
+
     .ybui-side-scroll .ybui-nav-tree {
         width: 200px;
     }
+
     /* 主体内容 */
-    
+
     .ybui-body {
         position: absolute;
         left: 200px;
@@ -109,8 +112,9 @@
         overflow: auto;
         box-sizing: border-box;
     }
+
     /* 侧边栏 */
-    
+
     .ybui-side {
         position: fixed;
         top: 60px;
@@ -119,22 +123,23 @@
         width: 200px;
         overflow-x: hidden;
     }
-    
+
     .ybui-bg-black {
-        background-color: #999!important;
+        background-color: #999 !important;
     }
-    
+
     .ybui-side-scroll {
         width: 220px;
         height: 100%;
         overflow-x: hidden;
     }
-    
+
     .ybui-side-scroll .ybui-nav-tree {
         width: 200px;
     }
+
     /* 主体内容 */
-    
+
     .ybui-body {
         position: absolute;
         left: 200px;
@@ -145,7 +150,7 @@
         overflow: auto;
         box-sizing: border-box;
     }
-    
+
     .ybui-footer {
         position: fixed;
         left: 200px;
@@ -156,12 +161,66 @@
         padding: 0 15px;
         background-color: #eee;
     }
-    
+
     .test {
         background: #fff;
     }
-    
+
+    /* 侧边栏 */
+
+    .ybui-side {
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        z-index: 999;
+        width: 200px;
+        overflow-x: hidden;
+    }
+
+    .ybui-bg-black {
+        background-color: #999 !important;
+    }
+
+    .ybui-side-scroll {
+        width: 220px;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .ybui-side-scroll .ybui-nav-tree {
+        width: 200px;
+    }
+
+    /* 主体内容 */
+
+    .ybui-body {
+        position: absolute;
+        left: 200px;
+        right: 0;
+        top: 60px;
+        bottom: 0;
+        z-index: 998;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    .ybui-footer {
+        position: fixed;
+        left: 200px;
+        right: 0;
+        bottom: 0;
+        height: 44px;
+        line-height: 44px;
+        padding: 0 15px;
+        background-color: #eee;
+    }
+
+    .test {
+        background: #fff;
+    }
+
     .cyh {
         background: yellow;
-        border: 1px solid #35c99d;
+        width: 100px;
+        height: 999px;
     }
