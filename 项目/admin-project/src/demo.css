@@ -3,7 +3,7 @@
  * @Author: yb 
  * @Date: 2018-02-02 11:24:09 
  * @Last Modified by: yb
- * @Last Modified time: 2018-04-15 15:56:47
+ * @Last Modified time: 2018-04-15 16:01:53
  */
     /* 头部 */
     
@@ -213,6 +213,7 @@
     }
     
     .cyh {
+        padding: 0;
         background: yellow;
         width: 100px;
         height: 599px;
