@@ -197,5 +197,39 @@ function randomString(length) {
     }
 }
 
-console.log(randomString('123'));
-console.log(randomString(10))
+
+function adds() {
+    var arr = [].slice.call(arguments);
+    var num = arr.reduce(function(a, b) {
+        return a + b;
+    }, 0);
+    console.log(num);
+    return num;
+}
+
+
+
+// function add() {
+//     var args = [].slice.call(arguments);
+//     console.log('查看arguments111111111111:' + JSON.stringify(arguments))
+//     console.log('查看args:' + JSON.stringify(args));
+//     var fn = function() {
+
+//         var arg_fn = [].slice.call(arguments);
+//         console.log('查看arg_fn:' + JSON.stringify(arg_fn));
+//         console.log('查看arguments2222222:' + JSON.stringify(arguments))
+//         return add.apply(null, args.concat(arg_fn));
+//     }
+
+//     fn.valueOf = function() {
+//         return args.reduce((a, b) => a + b);
+//     }
+//     return fn;
+// }
+
+
+function add() {
+    var
+}
+var arr = [];
+Array.isArray(arr);
