@@ -29,8 +29,7 @@ gulp.task('clean', function(cb) {
 // 压缩 css
 gulp.task('mincss', function() {
     gulp.src([config.css.src, config.css.no])
-
-    .pipe(minCss()) //- 压缩处理成一行
+        .pipe(minCss()) //- 压缩处理成一行
         .pipe(revMd5()) //- 文件名加MD5后缀
         .pipe(gulp.dest(config.css.dest)) //- 输出文件本地
         .pipe(revMd5.manifest({
@@ -69,7 +68,7 @@ gulp.task('minjs', function() {
 
 // 压缩 image
 gulp.task('minimg', function() {
-    gulp.src('src/image/*.{png,jpg,gif,ico}') //压缩图片路径
+    gulp.src('src/image/**/*.{png,jpg,gif,ico}') //压缩图片路径
         .pipe(minImage({
             progressive: true, //Boolean类型 默认:false 无损压缩图片
             optimizationLevel: 5, //number类型 默认:3 取值范围:0-7(优化等级)
@@ -160,7 +159,7 @@ gulp.task('serve', function() {
 
 // 默认执行
 gulp.task('default', function(callback) {
-    runSequence('clean', ['copy', 'revjs', 'minimg'],
+    runSequence(['copy', 'revjs', 'minimg'],
         callback);
 });
 

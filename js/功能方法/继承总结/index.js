@@ -1,5 +1,6 @@
 /**
  *  原型链继承
+ * 父类的示例作为子类的原型
  * 
  * 问题：
  * 1.引用类型的属性被所有实例共享
@@ -38,6 +39,7 @@ var a = function() {
  * 优点：去掉了1的缺点
  * 缺点：
  *  方法都在构造函数中定义，每次创建实例都会创建一遍方法。
+ * 只能继承父类的实例属性和方法，不能继承原型属性/方法
  * 
  */
 
@@ -47,6 +49,9 @@ var b = function() {
     function parent(name) {
         this.name = name;
         this.arr = [1, 2, 3, 4, 5];
+    }
+    parent.prototype.getName = function() {
+        return this.name;
     }
 
     function child(name) {
@@ -61,12 +66,13 @@ var b = function() {
 
     var child1 = new child('tom');
     child1.arr.push('child1');
+    console.log(child1.getName())
     console.log(JSON.stringify(child1.arr))
     var child2 = new child('jerry');
     child2.arr.push('child2');
     console.log(JSON.stringify(child2.arr))
 }
-
+b();
 
 /** 
  *  组合继承  (原型链+构造函数)
@@ -174,7 +180,7 @@ var d = function() {
 
 }
 
-d();
+// d();
 
 
 
@@ -227,4 +233,4 @@ function tt() {
 
 }
 
-tt();
+// tt();
