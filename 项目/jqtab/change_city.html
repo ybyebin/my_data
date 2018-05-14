@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./jquery-1.11.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="change-city">
+        <div class="city-title">当前城市</div>
+        <div class="focus-city">北京</div>
+        <div class="city-title">当前开通服务的城市</div>
+        <div class="city-list">
+            <ul>
+                <li class="city-li">北京</li>
+                <li class="city-li">上海</li>
+                <li class="city-li">深圳</li>
+                <li class="city-li">北京</li>
+                <li class="city-li">上海</li>
+                <li class="city-li">深圳</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+    <script>
+        $('.city-li').on('click', function() {
+            var city = $(this).text();
+            localStorage.setItem('focuscity', city);
+            window.location.href = './index.html'
+        })
+    </script>
+</body>
+
+</html>

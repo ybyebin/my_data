@@ -17,6 +17,9 @@ $(function() {
         var tab = _this.data('for');
         $(tab).addClass(tab_show);
         console.log(_this.data('type'));
+        var type = _this.data('type');
+        console.log(type);
+        $('#car-type').data('type', type);
     });
 
     setHtmlRem();
