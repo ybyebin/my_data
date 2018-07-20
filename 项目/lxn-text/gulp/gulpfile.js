@@ -27,7 +27,7 @@ var reload = browserSync.reload;
 // 百度校验测试
 gulp.task('fecs', function() {
     // return gulp.src(['./test/css/*', './test/html/*', './test/js/*'])
-    return gulp.src([config.js.src])
+    return gulp.src([config.js.src,'.src/css/**/*.less'])
       
         .pipe(
             // 这么写reporter的配置都是默认的

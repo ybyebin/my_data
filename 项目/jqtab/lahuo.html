@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        * {
+    padding: 0;
+    margin: 0;
+  }
+  .clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+  html,body{
+    background: #F3F3F3;
+  }
+.order_pay{
+    font-size: 0;
+  
+    
+}
+.heard{
+    background: #36A0E9;
+    padding: 0 .4rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.20);
+    border-radius: 2px;
+}
+.heard-top{
+    text-align: center;
+    padding: .23rem;
+}
+.text_date{
+    font-size: .32rem;
+    color: #ffffff;
+}
+.heard_bottom{
+    /* display: flex; */
+    font-size: .32rem;
+    color: #ffffff;
+
+}
+.heard_bottom .item{
+    float: left;
+    width: 33.3%;
+    margin-bottom: .2rem;
+
+}
+.left_div div:first-child span,
+.right_div div:first-child span{
+   width: 100%;
+   display: inline-block;
+   overflow: hidden;
+   white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.right_div div:last-child {
+    text-align: right;
+}
+.center_div{
+    text-align: center;
+}
+
+.center{
+    padding: .2rem;
+}
+.center .title{
+    font-size: .24rem;
+    color: #555555;
+    border-left: 2px solid #36A0E9;
+    padding-left:.1rem;
+    margin-bottom: .2rem;
+}
+.center ul{
+    background: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
+    border-radius: 1px;
+    padding: 0 .4rem;
+}
+.center ul li{
+    list-style: none;
+    font-size: .28rem;
+    color: #555555;
+    letter-spacing: 0.03px;
+    padding: .2rem;
+    border-bottom: .04rem solid #F1F1F1;
+}
+.center ul li:last-child{
+    border: none;
+}
+.center ul li .right{
+    float: right;
+}
+.center ul li .total{
+    color: #FF6666;
+    font-size: .32rem;
+}
+.btn_pay{
+    position: absolute;
+    bottom: .4rem;
+    left: .4rem;
+    right: .4rem;
+    font-size: .34rem;
+    color: #ffffff;
+}
+.btn_pay .sure-pay{
+    background: #36A0E9;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.30);
+    border-radius: 1px;
+    padding: .2rem 0;
+    text-align: center;
+}
+.btn_pay .description{
+    font-family: SourceHanSansCN-Regular;
+    font-size: .2rem;
+    color: #666666;
+    letter-spacing: 0.02px;
+    text-align: center;
+    padding: .1rem 0;
+    background: #FCF0AE;
+    margin-bottom: .1rem;
+}
+    </style>
+    <script>
+        function setHtmlRem() {      
+            var b = document;        
+            var a = {};        
+            a.Html = b.getElementsByTagName("html")[0];        
+            a.widthProportion = function () {            
+                var c = (b.body && b.body.clientWidth || a.Html.offsetWidth) / 750;            
+                return c > 1 ? 1 : c < 0.4 ? 0.4 : c;        
+            };        
+            a.changePage = function () {            
+                a.Html.setAttribute("style", "font-size:" + a.widthProportion() * 100 + "px!important;height:auto");        
+            };     
+            a.changePage();        
+            setInterval(a.changePage, 1000);
+        }
+        setHtmlRem();
+    </script>
+</head>
+
+<body>
+    <div class="order_pay">
+        <div class="heard">
+            <div class="heard-top">
+                <div class="back-con">
+                    <span class="back"></span>
+                </div>
+                <span class="text_date">7月2号-08:00</span>
+            </div>
+            <div class="heard_bottom clearfix">
+                <div class="left_div item ">
+                    <div id="move-out">
+                        <span>天通苑一区12天</span>
+                    </div>
+                    <div id="out-dianti" class="marginT">有电梯</div>
+                </div>
+                <div class="center_div item">
+                    <div>小面</div>
+                    <div>----></div>
+                </div>
+                <div class="right_div item">
+                    <div id="move-in">
+                        <span>天通苑一区12天</span>
+                    </div>
+                    <div id="in-dianti" class="marginT">有电梯</div>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <p class="title">费用明细</p>
+            <ul>
+                <li>
+                    <span>起步价（小面）</span>
+                    <span class="right">96元</span>
+                </li>
+                <li>
+                    <span>超里程费</span>
+                    <span class="right">96元</span>
+                </li>
+                <li>
+                    <span>合计</span>
+                    <span class="right total">192元</span>
+                </li>
+            </ul>
+        </div>
+        <div class="btn_pay">
+            <div class="description">
+                免费提供5000元搬家服务险,服务前40分钟外,免费取消
+            </div>
+            <div class="sure-pay">
+                确认支付
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

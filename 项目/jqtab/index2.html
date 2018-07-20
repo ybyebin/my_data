@@ -19,7 +19,7 @@
 
 
 
-    <div class="lxn-address-title">
+    <div data-lad='1' class="lxn-address-title">
         <div class="left item"><span class="span-one"></span><span class="span-two"></span></div>
         <div class="center item">搬出地址选择</div>
         <div class="right item"><span>北京</span><span class="ss-icon"></span></div>
@@ -36,8 +36,29 @@
         <a class="order-confirm">确定</a>
     </div>
 
+    <div id="tttt" data-for='0'>
 
-    <script src="./index.js"></script>
+    </div>
+
+    <!-- <script src="./index.js"></script> -->
+    <script>
+        $(function(){
+            var datas = {
+            a:'1;2;3;4;4;5;6;6;7;7',
+            b:123123,
+            c:'测试'
+        }
+        $('#tttt').data('for',JSON.stringify(datas));
+        setTimeout(function(){
+            console.log(  $('#tttt').data('for'))
+        },2000)
+      
+       
+        })
+      
+
+    
+    </script>
 </body>
 
 </html>
